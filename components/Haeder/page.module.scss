@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&display=swap');
+
+
+.haeder {
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  color: aliceblue;
+  padding-left: var(--pageP);
+  padding-right: var(--pageP);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--bg);
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+   
+
+  .logo {
+    height: 49px;
+    width: 50px;
+    position: relative;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+
+    p {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 21.86px;
+      padding: 0;
+      text-align: left;
+       
+    }
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+      
+      display: flex;
+      gap: 26px;
+
+      li {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 21.86px;
+        text-align: center;
+        list-style: none;
+        color: #fff;
+        
+   
+        cursor: pointer;
+      }
+    }
+  }
+  .ButtonList {
+    display: flex;
+    gap: 20px;
+    
+    align-items: center;
+    p {
+      color: #fff;
+      font-size: 16px;
+      
+   
+      font-weight: 600;
+      line-height: 21.86px;
+      text-align: center;
+    }
+
+    button {
+      width: 108px;
+      
+   
+      height: 36px;
+      padding: 6px 30px 6px 30px;
+      gap: 10px;
+      border-radius: 36px;
+      border: 1px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 21.86px;
+      text-align: center;
+      color: #fff;
+      border:  1px solid #fff;
+      background-color: #00000000;
+    }
+  }
+}
