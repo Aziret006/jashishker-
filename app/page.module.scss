@@ -169,8 +169,6 @@
       font-weight: 400;
       line-height: normal;
     }
-
-
   }
 
   .CardListBlock4TitelImage {
@@ -193,7 +191,7 @@
   display: flex;
   margin: 0 auto;
   width: 100%;
-  background: var(--white, #FFF);
+  background: var(--white, #fff);
 
   .Block3Titel {
     max-width: var(--maxWidth);
@@ -203,10 +201,179 @@
     padding-top: 120px;
     padding-bottom: 120px;
     display: grid;
-    grid-template-columns: 300px 1fr ;
+    grid-template-columns: 300px 1fr;
     gap: 30px;
     width: 100%;
-    
+
+    .Block3TitelText {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+        color: #222;
+        text-align: left;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        opacity: 0.7;
+        margin: 0;
+        padding: 0;
+        margin-top: 23px;
+      }
+
+      .mainImageBlock2 {
+        position: relative;
+        height: 418px;
+        top: 35px;
+        left: -100px;
+      }
+    }
+  }
+
+  .Block3TitelTextMain {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    p {
+      color: #222;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 800;
+      margin: 0;
+      padding: 0;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+
+    span {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-end;
+
+      p {
+        color: var(--Text-color, #222);
+        font-family: Manrope;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        max-width: 492px;
+        text-transform: lowercase;
+      }
+
+      button {
+        color: #222;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        display: flex;
+        width: 205px;
+        height: 50px;
+        padding: 6px 20px 6px 30px;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 50px;
+        display: flex;
+        gap: 20px;
+        background-color: #00000000;
+        cursor: pointer;
+
+        svg {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .Block3Cards {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+        padding: 40px;
+        border-top: 1px solid rgba(34, 34, 34, 0.3);
+
+        div {
+          display: flex;
+          gap: 20px;
+          padding: 0;
+          border: none;
+
+          span {
+            width: 71px;
+            height: 70px;
+            position: relative;
+          }
+
+          p {
+            color: var(--Text-color, #222);
+            font-family: Manrope;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+        }
+
+        p {
+          color: var(--Text-color, #222);
+          font-family: Manrope;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          color: #222;
+          max-width: 400px;
+          text-transform: math-auto;
+        }
+      }
+    }
+  }
+}
+
+.Block4 {
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 120px;
+  padding-top: 120px;
+  .Block4Titel {
+    max-width: var(--maxWidth);
+    padding-left: var(--pageP);
+    padding-right: var(--pageP);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    .Block4TitelText {
+      color: #222;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+    }
+    .Block4Cards{
+      display:grid;
+      gap: 20px;
+      grid-template-columns: 1fr 1fr 1fr ;
+    }
   }
 }
 

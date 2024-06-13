@@ -5,6 +5,9 @@ import { Bebas_Neue, Manrope } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
+import { BsArrowRight } from "react-icons/bs";
+import NewsCards from "@/components/Cards/NewsCards/NewsCards";
+import { newsCardData } from "@/data";
 export default function Home() {
   return (
     <div className={`${manrope.className} ${s.container}`}>
@@ -73,14 +76,61 @@ export default function Home() {
 
       <div className={s.Block3}>
         <div className={s.Block3Titel}>
-          <div>
+          <div className={s.Block3TitelText}>
             <p>Как открыть свой бизнес</p>
+            <div className={s.mainImageBlock2}>
+              <Image src={'/mainImageBlock2.png'} alt="mainImage" objectFit="contain" layout="fill" />
+            </div>
           </div>
-          <div>
-            <p  >С чего начать бизнес?</p>
+          <div className={s.Block3TitelTextMain}>
+            <p>С чего начать бизнес?</p>
             <span>
               <p>От идеи до бизнес-плана, наш обзор поможет вам освоить основы старта, сократив риски и повысив шансы на успех.”</p>
+              <button>
+                Подробнее<BsArrowRight />
+              </button>
             </span>
+
+            <div className={s.Block3Cards}>
+              <div>
+                <div>
+                  <span>
+                    <Image src={'/Card3Image1.svg'} alt="mainImage" objectFit="contain" layout="fill" />
+                  </span>
+                  <p>Идея исследование</p>
+
+                </div>
+                <p>От идеи до бизнес-плана, наш обзор поможет вам освоить основы старта, сократив риски и повысив шансы на успех.”</p>
+              </div>
+              <div>
+                <div>
+                  <span>
+                    <Image src={'/Card3Image2.svg'} alt="mainImage" objectFit="contain" layout="fill" />
+                  </span>
+                  <p>Рынок анализ</p>
+
+                </div>
+                <p>От идеи до бизнес-плана, наш обзор поможет вам освоить основы старта, сократив риски и повысив шансы на успех.”</p>
+              </div>
+              <div style={{ borderBottom: " 1px solid rgba(34, 34, 34, 0.30)" }}>
+                <div>
+                  <span>
+                    <Image src={'/Card3Image3.svg'} alt="mainImage" objectFit="contain" layout="fill" />
+                  </span>
+                  <p>Бизнес-план создание</p>
+
+                </div>
+                <p>От идеи до бизнес-плана, наш обзор поможет вам освоить основы старта, сократив риски и повысив шансы на успех.”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={s.Block4}>
+        <div className={s.Block4Titel}>
+          <p className={s.Block4TitelText}> Последние новости</p>
+          <div className={s.Block4Cards}>
+            {newsCardData.map((res) => <NewsCards data={res} key={res.id} />)}
           </div>
         </div>
       </div>
