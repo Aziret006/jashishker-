@@ -8,6 +8,7 @@ const manrope = Manrope({ subsets: ["latin"] });
 import { BsArrowRight } from "react-icons/bs";
 import NewsCards from "@/components/Cards/NewsCards/NewsCards";
 import { newsCardData } from "@/data";
+import MainFrom from "@/components/Forms/MainFrom/mainFrom";
 export default function Home() {
   return (
     <div className={`${manrope.className} ${s.container}`}>
@@ -73,7 +74,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <div className={s.Block3}>
         <div className={s.Block3Titel}>
           <div className={s.Block3TitelText}>
@@ -131,6 +131,23 @@ export default function Home() {
           <p className={s.Block4TitelText}> Последние новости</p>
           <div className={s.Block4Cards}>
             {newsCardData.map((res) => <NewsCards data={res} key={res.id} />)}
+          </div>
+        </div>
+      </div>
+      <div className={s.Block5}>
+        <div className={s.Block5Titel}>
+          <div className={s.Block5TitelBloc1}>
+            <h3>Нужна помощь?</h3>
+            <div className={s.Block5TitelImage}>
+              <div className={s.Block5TitelImageBg}>
+                <Image src={'/04.svg'} alt="mainImage" objectFit="cover" layout="fill" />
+              </div>
+              <Image src={'/mainImageBlock5.png'} alt="mainImage" objectFit="contain" layout="fill" />
+            </div>
+          </div>
+          <div>
+            <h3>Наши специалисты ответят на ваши вопросы</h3>
+            <MainFrom />
           </div>
         </div>
       </div>

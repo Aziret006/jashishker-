@@ -1,0 +1,31 @@
+
+.inputFrom {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100% !important;
+  color: var(--black, #161616);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px;
+  opacity: 0.5;
+  border: none;
+  outline: none;
+  background-color: #16161600;
+  border-bottom: 1px solid var(--black, #161616); 
+  &:focus {
+    opacity: 1 !important;
+  }
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding-left: 100px;
+}
