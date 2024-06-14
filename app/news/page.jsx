@@ -8,7 +8,6 @@ const page = () => {
     <div>
       <Haeder />
       <div className={s.news}></div>
-
       <Footer />
     </div>
   );

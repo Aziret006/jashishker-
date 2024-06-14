@@ -13,7 +13,6 @@ const Haeder = () => {
           ИШКЕР
         </p>
       </div>
-
       <nav className={s.nav}>
         <ul>
           <li>О проекте</li>
