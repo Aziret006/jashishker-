@@ -145,7 +145,7 @@ export default function Home() {
               <Image src={'/mainImageBlock5.png'} alt="mainImage" objectFit="contain" layout="fill" />
             </div>
           </div>
-          <div>
+          <div className={s.Block5TitelBloc2}>
             <h3>Наши специалисты ответят на ваши вопросы</h3>
             <MainFrom />
           </div>

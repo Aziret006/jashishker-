@@ -5,12 +5,11 @@
   gap: 24px;
   width: 100% !important;
   color: var(--black, #161616);
-  font-family: Manrope;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 10px;
+  padding: 10px 0px;
   opacity: 0.5;
   border: none;
   outline: none;
@@ -20,12 +19,25 @@
     opacity: 1 !important;
   }
 }
-
+.inputFroms{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  p{
+    margin: 0;
+    padding: 0;
+    color: var(--black, #161616);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+}
 
 .form {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  padding-left: 100px;
 }
