@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&display=swap");
 
 .haeder {
   max-width: var(--maxWidth);
@@ -13,8 +12,6 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-   
-
   .logo {
     height: 49px;
     width: 50px;
@@ -22,7 +19,6 @@
     align-items: center;
     display: flex;
     gap: 10px;
-
     p {
       color: #fff;
       font-size: 16px;
@@ -30,19 +26,14 @@
       line-height: 21.86px;
       padding: 0;
       text-align: left;
-       
     }
   }
-
   .nav {
     display: flex;
     flex-direction: column;
-
     ul {
-      
       display: flex;
       gap: 26px;
-
       li {
         font-size: 16px;
         font-weight: 600;
@@ -50,8 +41,6 @@
         text-align: center;
         list-style: none;
         color: #fff;
-        
-   
         cursor: pointer;
       }
     }
@@ -59,22 +48,16 @@
   .ButtonList {
     display: flex;
     gap: 20px;
-    
     align-items: center;
     p {
       color: #fff;
       font-size: 16px;
-      
-   
       font-weight: 600;
       line-height: 21.86px;
       text-align: center;
     }
-
     button {
       width: 108px;
-      
-   
       height: 36px;
       padding: 6px 30px 6px 30px;
       gap: 10px;
@@ -86,8 +69,55 @@
       line-height: 21.86px;
       text-align: center;
       color: #fff;
-      border:  1px solid #fff;
+      border: 1px solid #fff;
       background-color: #00000000;
+    }
+  }
+  .burgerButton {
+    display: none;
+  }
+
+  @media screen and (max-width: 1039px) {
+    .nav {
+      display: none;
+    }
+    .burgerButton {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      border: none;
+      width: 40px !important;
+      justify-self: right;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+      cursor: pointer !important;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    @media screen and (max-width: 460px) {
+      .logo {
+        p {
+          color: var(--white, #fff);
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+        img {
+          width: 39.2px;
+          height: 40px;
+        }
+      }
+      .ButtonList{
+        button {
+          padding: 0 !important;
+          width: 90px;
+        }
+      }
     }
   }
 }

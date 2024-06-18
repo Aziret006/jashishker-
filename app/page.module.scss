@@ -430,6 +430,21 @@
         height: 110%;
       }
     }
+
+    .Block5TitelBloc2 {
+      padding-left: 100px;
+      display: flex;
+      padding-top: 73px;
+      flex-direction: column;
+      padding-bottom: 100px;
+      h3 {
+        color: #161616;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
   }
 }
 .CardListBlock4TitelBg {
@@ -437,3 +452,10 @@
   height: 651px !important;
 }
 
+.tets {
+  display: flex;
+width: 1440px;
+padding: 16px 100px;
+justify-content: space-between;
+align-items: center;
+}

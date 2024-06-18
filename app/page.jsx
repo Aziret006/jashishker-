@@ -6,9 +6,9 @@ import Footer from "@/components/Footer/Footer";
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
 import { BsArrowRight } from "react-icons/bs";
-import NewsCards from "@/components/Cards/NewsCards/NewsCards";
 import { newsCardData } from "@/data";
 import MainFrom from "@/components/Forms/MainFrom/mainFrom";
+import NewsCards from "@/components/Cards/MainNewsCards/NewsCards";
 export default function Home() {
   return (
     <div className={`${manrope.className} ${s.container}`}>
@@ -38,6 +38,8 @@ export default function Home() {
             />
           </div>
         </div>
+      </div>
+      <div>
       </div>
       <div className={s.CardListBlock}>
         <div>
@@ -145,7 +147,7 @@ export default function Home() {
               <Image src={'/mainImageBlock5.png'} alt="mainImage" objectFit="contain" layout="fill" />
             </div>
           </div>
-          <div>
+          <div className={s.Block5TitelBloc2}>
             <h3>Наши специалисты ответят на ваши вопросы</h3>
             <MainFrom />
           </div>
