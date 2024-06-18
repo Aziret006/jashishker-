@@ -1,99 +1,160 @@
 .footer {
-    max-width: var(--maxWidth);
-    margin: 0 auto;
-    padding-left: var(--pageP);
-    padding-right: var(--pageP);
-    padding-top: 60px;
-    padding-bottom: 60px;
-    .endP{
-        color: rgba(245, 245, 245, 0.50);
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        display: flex;
-        justify-content: center;
-        padding-top: 30px;
-        margin: 0;
-      }
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding-left: var(--pageP);
+  padding-right: var(--pageP);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .endP {
+    color: rgba(245, 245, 245, 0.5);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    margin: 0;
+
+    @media screen and (max-width: 530px) {
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 530px) {
+    font-size: 13px;
+  }
 }
 
 .NavLink {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--white-40, rgba(255, 255, 255, 0.4));
+  padding-bottom: 60px;
+
+  .LoogFooter {
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--white-40, rgba(255, 255, 255, 0.40));
-    padding-bottom: 60px;
+    flex-direction: column;
+    gap: 54px;
 
-    .LoogFooter {
-        display: flex;
-        flex-direction: column;
-        gap: 54px;
+    p {
+      margin: 0;
+      padding: 0;
+      color: #fff;
 
-        p {
-            margin: 0;
-            padding: 0;
-            color: #fff;
-
-            font-size: 16px;
-            max-width: 436px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            p {
-                color: #fff;
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 800;
-                line-height: normal;
-                text-transform: uppercase;
-            }
-        }
+      font-size: 16px;
+      max-width: 436px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
     }
 
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      p {
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .NavFooter {
+    display: flex;
+    gap: 147px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+
+      p {
+        margin-bottom: 10px;
+        color: rgba(245, 245, 245, 0.5);
+        font-size: 14px;
+        margin: 0;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      li {
+        list-style: none;
+        color: #fff;
+
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+        font-style: normal;
+
+        cursor: pointer;
+        font-weight: 400;
+        line-height: normal;
+
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1286px) {
     .NavFooter {
-        display: flex;
-        gap: 147px;
-
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-
-            p {
-                margin-bottom: 10px;
-                color: rgba(245, 245, 245, 0.5);
-                font-size: 14px;
-                margin: 0;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-            }
-
-            li {
-                list-style: none;
-                color: #fff;
-
-                padding: 0;
-                margin: 0;
-                font-size: 16px;
-                font-style: normal;
-
-                cursor: pointer;
-                font-weight: 400;
-                line-height: normal;
-
-                a {
-                    text-decoration: none;
-                    color: #fff;
-                }
-            }
-        }
+      gap: 60px;
     }
+
+    @media screen and (max-width: 996px) {
+      flex-direction: column;
+      gap: 30px;
+      .LoogFooter {
+        gap: 38px;
+      }
+      .NavFooter {
+        ul {
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      @media screen and (max-width: 530px) {
+        padding-bottom: 35px;
+        .NavFooter {
+          flex-direction: column;
+          gap: 30px;
+        }
+        .LoogFooter {
+          gap: 20px;
+          p {
+            max-width: 100%;
+            font-size: 14px;
+          }
+        }
+        .endP {
+          color: rgba(245, 245, 245, 0.5);
+          text-align: center;
+          font-family: Manrope;
+          font-size: 13px !important;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
+
+.LogoCopyn {
+  width: 122.754px;
+  height: 70px;
+
+  @media screen and (max-width: 530px) {
+    width: 87.681px;
+    height: 50px;
+  }
 }

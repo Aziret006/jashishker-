@@ -14,7 +14,7 @@ const Footer = () => {
                         <p >ЖАШ <br />ИШКЕР</p>
                     </div>
                     <p>Энактас Кыргызстан при финансовой поддержке Европейского  Союза в Кыргызской Республике с декабря 2022 года начал реализацию проекта «Молодежь за цифровизацию, лидерство и зеленые навыки».</p>
-                    <img src="/Logo.png" alt="vk" style={{width: "122.754px",  height: "70px" }} />
+                    <img src="/Logo.png" alt="vk" className={s.LogoCopyn}  />
                 </div>
                 <div className={s.NavFooter}>
                     <ul>
