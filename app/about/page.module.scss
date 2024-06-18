@@ -1,0 +1,276 @@
+.aboutAll {
+    width: 100%;
+    background: #fff;
+    padding: 0 0 20px 0;
+    .aboutContainer {
+        max-width: var(--maxWidth);
+        margin: 0 auto;
+        .aboutTitle {
+            position: relative;
+            h1 {
+                padding: 50px 0 64px 0;
+                margin: 0;
+                color: var(--Text-color, #222);
+                font-family: "Be Vietnam Pro";
+                font-size: 80px;
+                font-style: normal;
+                font-weight: 900;
+                line-height: 66px;
+            }
+            h5 {
+                position: absolute;
+                top: 45px;
+                left: 240px;
+                width: 359px;
+                color: var(--black, #161616);
+                font-size: 38px;
+                font-weight: 400;
+                opacity: 0.3;
+            }
+        }
+        hr {
+            height: 1px;
+            opacity: 0.3;
+            background: #161616;
+            margin: 0;
+        }
+        .navflex {
+            display: flex;
+            // justify-content: space-between;
+            align-items: center;
+            ul {
+                padding: 0;
+                display: grid;
+                row-gap: 61px;
+                h4 {
+                    margin: 0;
+                    color: var(--Text-color, #222);
+                    font-family: Manrope;
+                    font-size: 60px;
+                    font-weight: 800;
+                    line-height: 66px;
+                }
+                li {
+                    width: 661px;
+                    color: var(--Text-color, #222);
+                    font-family: Manrope;
+                    font-size: 18px;
+                    font-weight: 500;
+                    opacity: 0.7;
+                    list-style: none;
+                }
+            }
+            .Traced {
+                margin-top: -80px;
+            }
+        }
+        .navblock {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            ul {
+                padding: 100px 0 0 0;
+                li {
+                    width: 600px;
+                    color: #191a1b;
+                    font-family: Manrope;
+                    font-size: 18px;
+                    font-weight: 400;
+                    opacity: 0.7;
+                    list-style: none;
+                    margin: 0;
+                }
+            }
+            .ul {
+                padding: 10px 0 0 190px;
+                h4 {
+                    color: #191a1b;
+                    font-family: Manrope;
+                    font-size: 52px;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    margin: 0 0 20px 0;
+                }
+                p {
+                    width: 398px;
+                    color: #191a1b;
+                    font-family: Manrope;
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin: 0;
+                }
+                .metam {
+                    position: absolute;
+                    left: -120px;
+                    top: 13rem;
+                }
+            }
+        }
+    }
+    .illustration {
+        width: 100%;
+        height: 1648px;
+        background: #f8f8f8;
+        .backtitle {
+            padding: 100px 0 0 0;
+            h4 {
+                width: 870px;
+                color: #191a1b;
+                font-family: Manrope;
+                font-size: 48px;
+                font-weight: 700;
+                margin: 0;
+            }
+        }
+        .abtitle {
+            position: relative;
+            display: flex;
+            h4 {
+                position: absolute;
+                top: -200px;
+                width: 537px;
+                color: #191a1b;
+                font-family: Manrope;
+                font-size: 28px;
+                font-weight: 400;
+                text-transform: uppercase;
+                margin: 0;
+            }
+            ul {
+                display: flex;
+                justify-content: end;
+                width: 100%;
+                li {
+                    width: 600px;
+                    color: #191a1b;
+                    font-family: Manrope;
+                    font-size: 20px;
+                    font-weight: 400;
+                    list-style: none;
+                }
+            }
+        }
+        .contextcenter {
+            display: flex;
+            justify-content: end;
+            width: 100%;
+            h4 {
+                width: 1030px;
+                color: #191a1b;
+                font-family: Manrope;
+                font-size: 40px;
+                font-weight: 400;
+                margin: 0;
+                span {
+                    color: #000;
+                    font-family: Manrope;
+                    font-size: 40px;
+                    font-weight: 700;
+                }
+                .span {
+                    color: #191a1b;
+                }
+            }
+        }
+    }
+    .ourteamtitle {
+        margin: 100px 0 0 0;
+        color: #191a1b;
+        font-family: Manrope;
+        font-size: 52px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+    .ourteamflex {
+        display: flex;
+        align-items: center;
+        p {
+            width: 610px;
+            color: #191a1b;
+            font-family: Manrope;
+            font-size: 38px;
+            font-weight: 500;
+        }
+    }
+    .ourteamul {
+        display: flex;
+        padding: 49px 0 100px 0;
+        .ourteamli {
+            list-style: none;
+            width: 630px;
+            color: #191a1b;
+            font-family: Manrope;
+            font-size: 20px;
+            font-weight: 400;
+            opacity: 0.7;
+        }
+        .ourteamli2 {
+            list-style: none;
+            width: 600px;
+            color: #191a1b;
+            font-family: Manrope;
+            font-size: 20px;
+            font-weight: 400;
+            opacity: 0.7;
+        }
+    }
+    .ourflex2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        nav {
+            p {
+                color: var(--Text-color, #222);
+                font-family: Manrope;
+                font-size: 18px;
+                font-weight: 400;
+                text-transform: uppercase;
+                opacity: 0.7;
+                margin: 0;
+            }
+            h4 {
+                width: 596px;
+                color: #191a1b;
+                font-family: Manrope;
+                font-size: 38px;
+                font-weight: 600;
+                margin: 0;
+            }
+        }
+    }
+    .ourflex3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .flexblock {
+            display: grid;
+            .flexitem {
+                display: flex;
+                align-items: center;
+                width: 600px;
+                border-bottom: 0.793px solid var(--stroke, rgba(160, 160, 160, 0.3));
+                gap: 16px;
+                padding: 20px 16px;
+                p {
+                    color: #191a1b;
+                    font-family: Manrope;
+                    font-size: 16px;
+                    font-weight: 400;
+                    width: 508px;
+                    opacity: 0.7;
+                    margin: 0;
+                }
+                .star {
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 30px;
+                    border: 1.586px solid var(--black, #222);
+                    background: var(--black, #222);
+                }
+            }
+        }
+    }
+}
