@@ -20,8 +20,8 @@ const manrope = Manrope({ subsets: ["latin"] });
 const page = () => {
   return (
     <div>
-    <Haeder />
-     
+      <Haeder />
+
       <div className={s.news}>
         <div className={s.newsContend}>
           <div className={s.newsTitel}>
@@ -88,10 +88,10 @@ const page = () => {
             ))}
           </div>
         </div>
-     
-        </div>
-        <Footer />     
-        </div>
+
+      </div>
+      <Footer />
+    </div>
   );
 };
 
