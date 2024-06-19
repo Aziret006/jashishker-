@@ -7,8 +7,8 @@ const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
 import { BsArrowRight } from "react-icons/bs";
 import { newsCardData } from "@/data";
-import MainFrom from "@/components/Forms/MainFrom/mainFrom";
 import NewsCards from "@/components/Cards/MainNewsCards/NewsCards";
+import MainFrom from "@/components/Forms/MainFrom/MainFrom";
 export default function Home() {
   return (
     <div className={`${manrope.className} ${s.container}`}>
