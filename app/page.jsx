@@ -130,7 +130,7 @@ export default function Home() {
       </div>
       <div className={s.Block4}>
         <div className={s.Block4Titel}>
-          <p className={s.Block4TitelText}> Последние новости</p>
+          <p className={s.Block4TitelText}>Последние новости</p>
           <div className={s.Block4Cards}>
             {newsCardData.map((res) => <NewsCards data={res} key={res.id} />)}
           </div>

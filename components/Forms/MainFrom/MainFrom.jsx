@@ -5,7 +5,7 @@ import s from './page.module.scss'
 const MainFrom = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
     const onSubmit = (data) => console.log(data)
-
+    
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
             <div className={s.inputFroms}>
