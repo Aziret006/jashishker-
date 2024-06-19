@@ -1,0 +1,35 @@
+.digitalization {
+
+  .container {
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+
+    .digitalizationTitle {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      h5 {
+        color: var(--Text-color, #222);
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+        margin: 0;
+        max-width: 476px;
+      }
+
+      p {
+        color: var(--Text-color, #222);
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin: 0 190px 0;
+
+      }
+
+    }
+  }
+}
