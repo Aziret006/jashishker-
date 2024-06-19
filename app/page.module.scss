@@ -258,7 +258,7 @@
 
       p {
         color: var(--Text-color, #222);
-        font-family: Manrope;
+
         font-size: 22px;
         font-style: normal;
         font-weight: 500;
@@ -320,7 +320,7 @@
 
           p {
             color: var(--Text-color, #222);
-            font-family: Manrope;
+
             font-size: 30px;
             font-style: normal;
             font-weight: 500;
@@ -330,7 +330,7 @@
 
         p {
           color: var(--Text-color, #222);
-          font-family: Manrope;
+
           font-size: 18px;
           font-style: normal;
           font-weight: 500;
@@ -454,8 +454,8 @@
 
 .tets {
   display: flex;
-width: 1440px;
-padding: 16px 100px;
-justify-content: space-between;
-align-items: center;
+  width: 1440px;
+  padding: 16px 100px;
+  justify-content: space-between;
+  align-items: center;
 }

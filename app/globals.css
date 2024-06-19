@@ -5,22 +5,20 @@
 }
 
 @media screen and (max-width: 1260px) {
-    
-    :root {
-        --pageP: 30px;
-    }
+  :root {
+    --pageP: 30px;
+  }
 }
 
-@media screen  and (max-width:600px) { 
-
-    :root {
-        --pageP: 20px;
-    }
+@media screen and (max-width: 600px) {
+  :root {
+    --pageP: 20px;
+  }
 }
 body {
   background-color: var(--bg);
   padding: 0;
-  font-family: Manrope;
+
   box-sizing: border-box;
   margin: 0;
 }
