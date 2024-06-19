@@ -79,9 +79,9 @@ export default function Accordion() {
             </div>
           </div>
           <div className={s.accordionWrap}>
-            {data.map((item) => {
+            {data.map((item, index) => {
               return (
-                <div className={s.accordionCard}>
+                <div className={s.accordionCard} key={index}>
                   <div className={s.accordionBlock}>
                     <div onClick={() => toggleAccordion(item.id)}
                       className={s.accordionCardTitle}>
