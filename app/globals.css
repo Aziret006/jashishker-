@@ -1,7 +1,7 @@
 :root {
-    --bg: #161616;
-    --pageP: 100px;
-    --maxWidth: 1240px;
+  --bg: #161616;
+  --pageP: 100px;
+  --maxWidth: 1240px;
 }
 
 @media screen and (max-width: 1260px) {
@@ -18,9 +18,13 @@
     }
 }
 body {
-    background-color: var(--bg);
-    padding: 0;
-    font-family: Manrope;
-    box-sizing: border-box;
-    margin: 0;
+  background-color: var(--bg);
+  padding: 0;
+  font-family: Manrope;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
 }
