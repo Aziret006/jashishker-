@@ -3,6 +3,7 @@ import s from "./page.module.scss";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
 import { FiMenu } from "react-icons/fi";
+import Link from "next/link";
 const manrope = Manrope({ subsets: ["latin"] });
 const Haeder = () => {
   return (
@@ -16,7 +17,7 @@ const Haeder = () => {
       </div>
       <nav className={s.nav}>
         <ul>
-          <li>О проекте</li>
+          <li><Link href={'/'} >О проекте</Link> </li>
           <li>Новости</li>
           <li>База знаний</li>
           <li>История успеха</li>

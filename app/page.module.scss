@@ -352,7 +352,7 @@
   margin: 0 auto;
   padding: 0;
   padding-bottom: 120px;
-  padding-top: 120px;
+  padding-top: 40px;
   .Block4Titel {
     max-width: var(--maxWidth);
     padding-left: var(--pageP);
@@ -447,6 +447,14 @@
         font-weight: 600;
         line-height: normal;
       }
+    }
+  }
+
+  @media screen and (max-width: 1454px) {
+    .Block5Titel {
+      overflow: hidden;
+      max-width: var(--maxWidth);
+      width: 100%;
     }
   }
 }
@@ -687,6 +695,122 @@
                 font-size: 22px;
               }
             }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .Block3Titel {
+        .Block3TitelTextMain {
+          span {
+            display: flex !important;
+            flex-direction: column;
+          }
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .Block3Titel {
+          gap: 0px;
+          padding-top: 40px;
+          padding-bottom: 40px;
+
+          .Block3TitelText {
+            p {
+              font-size: 14px;
+            }
+          }
+
+          .Block3TitelTextMain {
+            gap: 10px;
+            p {
+              font-size: 34px;
+            }
+            span {
+              p {
+                font-size: 14px;
+              }
+            }
+            .Block3Cards {
+              div {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px 0px;
+                gap: 10px;
+                div {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  span {
+                    width: 32.457px;
+                    height: 32px;
+                  }
+                  p {
+                    font-size: 18px;
+                    margin: 0;
+                    padding: 0;
+                  }
+                }
+                p {
+                  max-width: 100% !important;
+                  padding-left: 43px;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Block4 {
+    padding-top: 0px;
+    padding-bottom: 60px;
+
+    .Block4Titel {
+      gap: 30px;
+
+      .Block4TitelText {
+        font-size: 40px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1060px) {
+    .Block4 {
+      .Block4Titel {
+        .Block4Cards {
+          max-width: 1000px;
+          overflow: scroll;
+          grid-template-columns: 350px 350px 350px;
+        }
+        .Block4Cards::-webkit-scrollbar {
+          width: 0px;
+        }
+
+        .Block4Cards::-webkit-scrollbar-track {
+          background-color: #ffffff00;
+        }
+
+        .Block4Cards::-webkit-scrollbar-thumb {
+          background: #ffffff00;
+          border-radius: 1px;
+          bottom: 3px solid #d4d4d400;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .Block4Titel {
+          gap: 20px;
+          .Block4Cards {
+            grid-template-columns: 300px 300px 300px;
+          }
+        }
+        .Block4TitelText {
+          font-size: 34px !important;
+          button {
+            font-size: 13px;
           }
         }
       }
