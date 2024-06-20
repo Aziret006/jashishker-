@@ -54,10 +54,10 @@ const Page = () => {
             </ul>
             <Image
               className={s.traced}
-              src="/Traced.svg"
+              src="/Vector.svg"
               alt="Project illustration"
-              width={654}
-              height={654}
+              width={622}
+              height={446}
             />
           </nav>
           <div className={s.navblock}>
@@ -100,7 +100,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        {/* <div className={s.illustration}>
+        <div className={s.illustration}>
           <div className={s.aboutContainer}>
             <div className={s.backtitle}>
               <h4>
@@ -109,6 +109,7 @@ const Page = () => {
             </div>
             <div className={s.transformborder}>
               <Image
+                className={s.transfrom}
                 src="./Group.svg"
                 alt="Project illustration"
                 width={1247}
@@ -139,23 +140,24 @@ const Page = () => {
               </h4>
             </div>
           </div>
-        </div> */}
-        {/* <div className={s.aboutContainer}>
-          <h4 className={s.ourteamtitle}>Круглый стол</h4> */}
-        {/* <div className={s.ourteamflex}>
+        </div>
+        <div className={s.aboutContainer}>
+          <h4 className={s.ourteamtitle}>Круглый стол</h4>
+          <div className={s.ourteamflex}>
             <p>
               В рамках проекта, в феврале в Бишкеке прошел круглый стол. Целью
               круглого стола является выработка механизмов сотрудничества для
               эффективной реализации проекта
             </p>
             <Image
+              className={s.ourimg}
               src="./image5.svg"
               alt="Project illustration"
               width={600}
               height={400}
             />
-          </div> */}
-        {/* <nav className={s.ourteamul}>
+          </div>
+          {/* <nav className={s.ourteamul}>
             <li className={s.ourteamli}>
               Кроме того, в ходе круглого стола приняли участие региональные
               представители Департамента органического сельского хозяйства,
@@ -171,7 +173,7 @@ const Page = () => {
               Тагаев.
             </li>
           </nav> */}
-        {/* <div className={s.ourflex2}>
+          {/* <div className={s.ourflex2}>
             <nav>
               <p>Стратегическая сессия</p>
               <h4>
@@ -187,7 +189,7 @@ const Page = () => {
               height={400}
             />
           </div> */}
-        {/* <div className={s.ourflex3}>
+          {/* <div className={s.ourflex3}>
             <Image
               className={s.ourimage}
               width={600}
@@ -211,14 +213,14 @@ const Page = () => {
               ))}
             </div>
           </div> */}
-        {/* <div className={s.ourtitle}>
+          {/* <div className={s.ourtitle}>
             <p>Акселерационная программа</p>
             <h4>
               В августе 2023 года в Нарыне, в рамках проекта, прошла
               акселерационная программа для молодых предпринимателей.
             </h4>
           </div> */}
-        {/* <div className={s.ourtextfleximg}>
+          {/* <div className={s.ourtextfleximg}>
             <nav>
               <p>
                  В течение 5-и дней участники освоили навыки
@@ -249,7 +251,7 @@ const Page = () => {
               height={440}
             />
           </div> */}
-        {/* <div className={s.footflex4}>
+          {/* <div className={s.footflex4}>
             <p>Выдача грантов</p>
             <h4>
               27 ноября 2023 года, на Пре-соревнованиях команд “Энактас
@@ -257,7 +259,7 @@ const Page = () => {
               за цифровизацию, лидерство и зелёные навыки”.
             </h4>
           </div> */}
-        {/* <div className={s.footborder}>
+          {/* <div className={s.footborder}>
             <h4>По итогам вручения, по 10 000 € получили:</h4>
             <div className={s.img4}>
               <Image
@@ -269,7 +271,7 @@ const Page = () => {
               />
             </div>
           </div> */}
-        {/* <div className={s.footraduis}>
+          {/* <div className={s.footraduis}>
             <h4>А по 25 000 € получили:</h4>
             <div className={s.img5}>
               <Image
@@ -280,7 +282,7 @@ const Page = () => {
               />
             </div>
           </div> */}
-        {/* <div className={s.footend}>
+          {/* <div className={s.footend}>
             <p>
               Проект «Молодежь за цифровизацию, лидерство и зеленые навыки»
               реализуется «Энактас Кыргызстан» при финансовой поддержке
@@ -291,7 +293,7 @@ const Page = () => {
               следующая часть запланирована на 2024 год.
             </h4>
           </div> */}
-        {/* </div> */}
+        </div>
       </div>
       {/* <Footer /> */}
     </>

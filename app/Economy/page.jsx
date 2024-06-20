@@ -47,10 +47,10 @@ const page = () => {
           </div>
           <div className={s.eimg}>
             <Image
+              className={s.imgr4}
               src="/leadership.svg"
               alt="leadership"
               fill
-              objectFit="cover"
             />
           </div>
           <div className={s.eimgend}>

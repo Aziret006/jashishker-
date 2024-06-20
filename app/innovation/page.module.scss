@@ -5,27 +5,68 @@
   .economycontainer {
     max-width: var(--maxWidth);
     margin: 0 auto;
+    width: 90%;
     .leadershiptitle {
       position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 190px;
+      @media (max-width: 768px) {
+        height: 171px;
+        @media screen and (max-width: 500px) {
+          height: 130px;
+        }
+      }
+
       h1 {
-        padding: 50px 0 64px 0;
         margin: 0;
         color: var(--Text-color, #222);
-        font-family: "Be Vietnam Pro";
         font-size: 80px;
-        font-style: normal;
         font-weight: 900;
         line-height: 66px;
+        @media screen and (max-width: 900px) {
+          font-size: 62px;
+          line-height: normal;
+        }
+        @media (max-width: 630px) {
+          font-size: 42px;
+          line-height: normal;
+        }
       }
       h5 {
         position: absolute;
-        top: 45px;
-        left: 240px;
-        width: 359px;
+        padding-left: 250px;
+        top: 130px;
         color: var(--black, #161616);
         font-size: 38px;
         font-weight: 400;
         opacity: 0.3;
+        margin: 0;
+        @media screen and (max-width: 1130px) {
+          padding-left: 450px;
+          @media screen and (max-width: 900px) {
+            padding-left: 300px;
+            @media (max-width: 768px) {
+              font-size: 38px;
+              padding-left: 13rem;
+              top: 150px;
+              @media (max-width: 630px) {
+                font-size: 28px;
+                padding-left: 7rem;
+                top: 120px;
+                @media screen and (max-width: 500px) {
+                  padding-left: 5rem;
+                  top: 140px;
+                  @media screen and (max-width: 400px) {
+                    padding-left: 4rem;
+                    top: 80px;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
     hr {
@@ -37,14 +78,21 @@
     .innovtext {
       display: flex;
       justify-content: space-between;
+      @media screen and (max-width: 1290px) {
+        flex-direction: column;
+        width: 100%;
+        max-width: 1440px;
+      }
       h2 {
         padding-top: 60px;
         width: 648px;
         color: #191a1b;
-
         font-size: 32px;
         font-weight: 600;
         margin: 0;
+        @media screen and (max-width: 1290px) {
+          width: 100%;
+        }
       }
       p {
         color: #191a1b;
@@ -53,6 +101,9 @@
         font-weight: 400;
         opacity: 0.7;
         margin: 20px 0 40px 0;
+        @media screen and (max-width: 1290px) {
+          width: 100%;
+        }
       }
       h4 {
         width: 715px;
@@ -61,6 +112,9 @@
         font-size: 18px;
         font-weight: 400;
         margin: 0;
+        @media screen and (max-width: 1290px) {
+          width: 100%;
+        }
         span {
           color: #191a1b;
 
@@ -70,35 +124,17 @@
       }
       .image {
         margin-top: -23px;
+        @media screen and (max-width: 1290px) {
+          display: none;
+        }
       }
     }
     .flexinn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 30px 0 25px 0;
-      .image2 {
-        border-radius: 3px;
-      }
-      ul {
-        display: grid;
-        row-gap: 41px;
-        li {
-          width: 605px;
-          color: #191a1b;
-
-          font-size: 18px;
-          font-weight: 400;
-          list-style: none;
-          margin: 0;
-        }
-      }
+      width: 100%;
     }
     .navmenu {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 25px;
       ul {
         display: grid;
         row-gap: 16px;
@@ -106,7 +142,6 @@
         li {
           width: 605px;
           color: #191a1b;
-
           font-size: 18px;
           font-weight: 400;
           list-style: none;
@@ -125,7 +160,6 @@
         li {
           width: 605px;
           color: #191a1b;
-
           font-size: 18px;
           font-weight: 400;
           list-style: none;
@@ -140,7 +174,6 @@
       li {
         width: 605px;
         color: #191a1b;
-
         font-size: 20px;
         font-weight: 600;
         list-style: none;
@@ -152,7 +185,6 @@
         width: 610px;
         height: 255px;
         color: #191a1b;
-
         font-size: 20px;
         font-weight: 600;
       }
