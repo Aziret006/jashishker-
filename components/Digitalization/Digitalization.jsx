@@ -19,8 +19,16 @@ export default function Digitalization() {
           </p>
         </div>
         <div className={s.digitalizationContent}>
-          <div className=''>
-
+          <div className={s.digitalizationContentBlock}>
+            <div className={s.digitalizationBorder} />
+            <div className={s.digitalizationText}>
+              <div className={s.digitalizationNomer}>
+                <span className={FontManrope.className}>01</span>
+              </div>
+              <p className={FontManrope.className}>
+                Базовые навыки
+              </p>
+            </div>
           </div>
 
 
