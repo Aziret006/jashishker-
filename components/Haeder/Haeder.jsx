@@ -17,11 +17,12 @@ const Haeder = () => {
       </div>
       <nav className={s.nav}>
         <ul>
-          <li><Link href={'/'} >О проекте</Link> </li>
-          <li>Новости</li>
-          <li>База знаний</li>
-          <li>История успеха</li>
-          <li>Справочная Enactus</li>
+          <li><Link className={s.Link} href={'/about'} >О проекте</Link> </li>
+          <li><Link className={s.Link} href={'/news'}>Новости</Link></li>
+          <li><Link className={s.Link} href={'/leadership'}>База знаний</Link></li>
+          <li><Link className={s.Link} href={'/Economy'}>История успеха</Link></li>
+          <li><Link className={s.Link} href={'/digitalization'} >Справочная</Link></li>
+          <li><Link className={s.Link} href={'/news'} >Enactus</Link></li>
         </ul>
       </nav>
       <div className={s.ButtonList}>
