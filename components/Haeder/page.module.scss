@@ -98,24 +98,55 @@
       }
     }
     @media screen and (max-width: 460px) {
+      padding-top: 10px;
+      padding-bottom: 10px;
       .logo {
+        gap: 5px;
         p {
           color: var(--white, #fff);
-          font-size: 14px;
+          font-size: 10px;
           font-style: normal;
-          font-weight: 800;
+          font-weight: 700;
           line-height: normal;
           text-transform: uppercase;
         }
         img {
-          width: 39.2px;
-          height: 40px;
+          width: 29.4px;
+          height: 30px;
         }
       }
-      .ButtonList{
+
+      .ButtonList {
+        gap: 10px;
+        p {
+          color: var(--white, #fff);
+          text-align: center;
+          font-size: 12px;
+          font-style: normal;
+          text-transform: uppercase;
+          font-weight: 500;
+          line-height: normal;
+        }
         button {
           padding: 0 !important;
           width: 90px;
+          display: flex;
+          width: 100px;
+          height: 30px;
+          padding: 6px 30px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          color: var(--white, #fff);
+          text-align: center;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          svg {
+            width: 24px;
+            height: 24px;
+          }
         }
       }
     }

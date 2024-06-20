@@ -126,3 +126,4 @@ export const newsCardDataPage = [
     endDate: '2 month ago',
   },
 ]
+

@@ -18,6 +18,8 @@
     padding-top: 38px;
     position: relative;
     z-index: 11;
+    padding-left: var(--pageP);
+    padding-right: var(--pageP);
 
     h1 {
       font-size: 82px;
@@ -228,8 +230,9 @@
       .mainImageBlock2 {
         position: relative;
         height: 418px;
+        width: 418px;
         top: 35px;
-        left: -100px;
+        left: -205px;
       }
     }
   }
@@ -458,4 +461,235 @@
   padding: 16px 100px;
   justify-content: space-between;
   align-items: center;
+}
+
+.CardListBlock4Mobal {
+  display: none !important;
+}
+
+.mainBgImageTablel1 {
+  display: none;
+}
+
+@media screen and (max-width: 1322px) {
+}
+
+@media screen and (max-width: 1040px) {
+  .mainBlock {
+    .mainBlockTitel {
+      h1 {
+        color: var(--black, #161616);
+        text-align: center;
+        font-size: 62px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        br {
+          display: none;
+        }
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .mainImage {
+      @media screen and (max-width: 740px) {
+        .mainBgImage {
+          height: 280px;
+        }
+
+        @media screen and (max-width: 530px) {
+          .mainBgImage1 {
+            display: none;
+          }
+
+          .mainBgImageTablel1 {
+            display: block;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 530px) {
+      .mainBlockTitel {
+        h1 {
+          font-size: 42px;
+          br {
+            display: none;
+          }
+        }
+        p {
+          color: var(--black, #161616);
+          text-align: center;
+          font-family: Manrope;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+      .mainImage {
+        .BgDiv1 {
+          width: 300px;
+          height: 300px;
+
+          margin-top: 90px;
+        }
+        .BgDiv {
+          width: 300px;
+          height: 300px;
+          margin-top: 90px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1208px) {
+  .CardListBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    div {
+      align-items: center;
+      padding: 25px 10px;
+      h3 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 15.015px;
+      }
+      div {
+        width: 260px !important;
+        height: 260px !important;
+
+        position: relative;
+        margin: 0;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .CardListBlock4 {
+      grid-column: 2;
+      display: none;
+    }
+    .CardListBlock4Mobal {
+      display: flex !important;
+    }
+  }
+
+  @media screen and (max-width: 672px) {
+    .CardListBlock {
+      div {
+        div {
+          width: 100% !important;
+          display: flex;
+          height: 215px !important;
+          justify-content: center;
+          img {
+            width: 260px !important;
+            height: 260px !important;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .CardListBlock {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        .CardListBlock4Mobal {
+          display: none !important;
+        }
+
+        div {
+          border-radius: 7px;
+          h3 {
+            font-size: 20px;
+          }
+          p {
+            font-size: 13px;
+          }
+          div {
+            height: 200px !important;
+            img {
+              width: 250px !important;
+              height: 250px !important;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .Block3 {
+    .mainImageBlock2 {
+      display: none !important;
+    }
+
+    .Block3Titel {
+      display: flex !important;
+      flex-direction: column;
+      padding-top: 80px;
+      gap: 16px;
+      padding-bottom: 80px;
+      .Block3TitelText {
+        p {
+          font-size: 15px;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .Block3TitelTextMain {
+        gap: 20px;
+        p {
+          font-size: 40px;
+        }
+        span {
+          display: grid;
+          grid-template-columns: 384px 248px;
+          justify-content: space-between;
+          p {
+            font-size: 17px;
+          }
+          button {
+            display: flex;
+            width: 178px;
+            height: 44px;
+            padding: 5.197px 17.323px 5.197px 25.984px;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #161616;
+            flex-shrink: 0;
+            font-size: 15.59px;
+          }
+        }
+        .Block3Cards {
+          div {
+            padding: 30px;
+            p {
+              font-size: 15px;
+            }
+            div {
+              padding: 0px;
+              span {
+                width: 61.495px;
+                height: 60.629px;
+              }
+              p {
+                font-size: 22px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
