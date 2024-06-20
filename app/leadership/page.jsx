@@ -26,7 +26,7 @@ const page = () => {
         <div className={s.leadershipTitel}>
           <div className={s.leadershiptitle}>
             <h1 className={BeVietnamPro.className}>Лидерство</h1>
-            <div className={Alex.className}>Lorem ipsum dolor sit amet</div>
+            <h5 className={Alex.className}>Lorem ipsum dolor sit amet</h5>
           </div>
           <hr />
           <div className={s.leadershipText}>
@@ -40,7 +40,7 @@ const page = () => {
                 доминирования. Но это не мешает отражать главную суть этого
                 явления преимущество одной или группы особей над другими.
               </p>
-              <p style={{ marginTop: "0" }}>
+              <p>
                 В процессе формирования зачатков межличностных отношений вида
                 Ноmо Sapiens простое доминирование, присущее всему животному
                 миру трансформировалось,{" "}
@@ -55,10 +55,10 @@ const page = () => {
           </div>
           <div className={s.img}>
             <Image
+              className={s.imgs}
               src={"/leadership.svg"}
               alt="leadership"
               fill
-              objectFit="cover"
             />
           </div>
           <div className={s.getextall}>
@@ -88,28 +88,30 @@ const page = () => {
               </p>
             </div>
             <h4 className={s.h4}>Например</h4>
-            {[1, 2, 3].map((_, i) => {
-              return (
-                <div key={i} className={s.getextEndall}>
-                  <div className={s.getborder}>
-                    <Image
-                      src="/star.svg"
-                      width={24}
-                      height={24}
-                      alt="Picture of the author"
-                    />
+            <div>
+              {[1, 2, 3].map((_, i) => {
+                return (
+                  <div key={i} className={s.getextEndall}>
+                    <div className={s.getborder}>
+                      <Image
+                        src="/star.svg"
+                        width={24}
+                        height={24}
+                        alt="Picture of the author"
+                      />
+                    </div>
+                    <p>
+                      <span>На технологическом уровне</span> - разработка новых
+                      компьютерных устройств и развитие интернет-пространства;
+                    </p>
                   </div>
-                  <p>
-                    <span>На технологическом уровне</span> - разработка новых
-                    компьютерных устройств и развитие интернет-пространства;
-                  </p>
-                </div>
-              );
-            })}
-            <h5 className={s.h5}>
-              не затрагивая основ лидерства, вызывают необходимость поиска иных
-              форм его проявления, новых способов его развития.
-            </h5>
+                );
+              })}
+              <h5 className={s.h5}>
+                не затрагивая основ лидерства, вызывают необходимость поиска
+                иных форм его проявления, новых способов его развития.
+              </h5>
+            </div>
           </div>
           <div className={s.getfoottext}>
             <h4>
