@@ -394,17 +394,16 @@
 
   .Block5Titel {
     margin: 0 auto;
-    width: var(--maxWidth);
-    padding-left: var(--pageP);
-    padding-right: var(--pageP);
+    max-width: var(--maxWidth);
+    width: 90% !important ;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 100px;
 
     .Block5TitelBloc1 {
       text-align: left;
       padding: 100px 0px;
       display: grid;
-      padding-right: 100px;
       gap: 68px;
       h3 {
         color: var(--gray, #f0f0f0);
@@ -435,7 +434,6 @@
     }
 
     .Block5TitelBloc2 {
-      padding-left: 100px;
       display: flex;
       padding-top: 73px;
       flex-direction: column;
@@ -455,6 +453,81 @@
       overflow: hidden;
       max-width: var(--maxWidth);
       width: 100%;
+    }
+    @media screen and (max-width: 1440px) {
+      .Block5Titel {
+        .Block5TitelBloc1 {
+          padding: 50px 0px;
+        }
+
+        .Block5TitelBloc2 {
+          padding: 50px 0px;
+        }
+      }
+
+      @media screen and (max-width: 1110px) {
+        background: rgb(22, 22, 22);
+        display: grid;
+        background: linear-gradient(
+          180deg,
+          rgba(22, 22, 22, 1) 50%,
+          rgba(233, 233, 233, 1) 50%
+        );
+        .Block5Titel {
+          grid-template-columns: 1fr;
+          gap: 0px;
+          height: 100%;
+          grid-template-rows: 1fr 1fr;
+          gap: 121px;
+          .Block5TitelBloc1 {
+            gap: 20px;
+            padding: 0;
+            padding-bottom: 0px;
+            padding-top: 60px;
+            h3 {
+              display: flex;
+              text-align: center;
+              margin: 0 auto;
+              font-size: 40px;
+            }
+            .Block5TitelImage {
+              height: 430px;
+              padding: 0;
+            }
+          }
+          .Block5TitelBloc2 {
+            padding: 0;
+            gap: 40px;
+            h3 {
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .Block5Titel {
+            gap: 80px;
+            .Block5TitelBloc1 {
+              padding-top: 30px;
+              h3 {
+                font-size: 34px;
+              }
+              .Block5TitelImage {
+                height: 330px;
+              }
+            }
+
+            .Block5TitelBloc2 {
+              padding-bottom: 40px;
+              gap: 40px;
+              h3 {
+                font-size: 24px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -1,4 +1,3 @@
-
 .inputFrom {
   display: flex;
   flex-direction: column;
@@ -14,16 +13,21 @@
   border: none;
   outline: none;
   background-color: #16161600;
-  border-bottom: 1px solid var(--black, #161616); 
+  border-bottom: 1px solid var(--black, #161616);
+  @media screen and (max-width: 1110px) {
+    padding: 5px 0px;
+  }
+
   &:focus {
     opacity: 1 !important;
   }
 }
-.inputFroms{
+.inputFroms {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  p{
+
+  p {
     margin: 0;
     padding: 0;
     color: var(--black, #161616);
@@ -33,6 +37,12 @@
     line-height: normal;
     text-transform: uppercase;
   }
+  @media screen and (max-width: 1110px) {
+    gap: 10px;
+    p {
+      font-size: 16px;
+    }
+  }
 }
 
 .form {
@@ -40,4 +50,16 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
+  @media screen and (max-width: 1110px) {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .form {
+    gap: 16px;
+  }
+  .inputFrom {
+    gap: 10px !important;
+  }
 }

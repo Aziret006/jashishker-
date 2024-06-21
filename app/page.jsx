@@ -148,6 +148,24 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className={s.Block5}>
+        <div className={s.Block5Titel}>
+          <div className={s.Block5TitelBloc1}>
+            <h3>Нужна помощь?</h3>
+            <div className={s.Block5TitelImage}>
+              <div className={s.Block5TitelImageBg}>
+                <Image src={'/04.svg'} alt="mainImage" objectFit="cover" layout="fill" />
+              </div>
+              <Image src={'/mainImageBlock5.png'} alt="mainImage" objectFit="contain" layout="fill" />
+            </div>
+          </div>
+          <div className={s.Block5TitelBloc2}>
+            <h3>Наши специалисты ответят на ваши вопросы</h3>
+            <MainFrom />
+          </div>
+        </div>
+      </div>
+
 
       <div className={s.LastNews}></div>
       <Footer />
@@ -155,24 +173,6 @@ export default function Home() {
   );
 }
 
-
-// <div className={s.Block5}>
-// <div className={s.Block5Titel}>
-//   <div className={s.Block5TitelBloc1}>
-//     <h3>Нужна помощь?</h3>
-//     <div className={s.Block5TitelImage}>
-//       <div className={s.Block5TitelImageBg}>
-//         <Image src={'/04.svg'} alt="mainImage" objectFit="cover" layout="fill" />
-//       </div>
-//       <Image src={'/mainImageBlock5.png'} alt="mainImage" objectFit="contain" layout="fill" />
-//     </div>
-//   </div>
-//   <div className={s.Block5TitelBloc2}>
-//     <h3>Наши специалисты ответят на ваши вопросы</h3>
-//     <MainFrom />
-//   </div>
-// </div>
-// </div>
 
 
 
