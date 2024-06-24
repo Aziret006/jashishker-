@@ -112,6 +112,38 @@ const page = () => {
           </div>
         </div>
       </div>
+      <div className={s.contactForm}>
+        <div className={s.containerForm}>
+          <div className={s.formWrapper}>
+            <div className={s.formTitle}>
+              <Image src="/contact.svg" alt="contact" width={403.859} height={470} />
+              <div className={s.title}>
+                <h4 className={FontManrope.className}>Нужна </h4>
+                <h5 className={FontManrope.className}><span></span> помощь? </h5>
+              </div>
+              <p className={FontManrope.className}>Наши специалисты ответят на ваши вопросы</p>
+            </div>
+            <div className={s.form}>
+              <div className={s.formInput}>
+                <label className={FontManrope.className} htmlFor="">Ваше Имя</label>
+                <input className={FontManrope.className} type="text" placeholder="Введите ваше имя" />
+              </div>
+              <div className={s.formInput}>
+                <label className={FontManrope.className} htmlFor="">Ваше e-mail</label>
+                <input className={FontManrope.className} type="text" placeholder="Введите ваш e-mail" />
+              </div>
+              <div className={s.formInput}>
+                <label className={FontManrope.className} htmlFor="">Тема</label>
+                <input className={FontManrope.className} type="text" placeholder="Введите тему" />
+              </div>
+              <div className={s.formInput}>
+                <label className={FontManrope.className} htmlFor="">Сообщение</label>
+                <input className={FontManrope.className} type="text" placeholder="Напишите сюда" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );

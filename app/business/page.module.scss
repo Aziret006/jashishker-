@@ -14,11 +14,8 @@
   .container {
     max-width: var(--maxWidth);
     margin: 0 auto;
-    padding: 0;
+    padding: 0 30px;
 
-    @media screen and (max-width: 1024px) {
-      padding: 0 30px;
-    }
 
     @media screen and (max-width: 550px) {
       padding: 0 20px;
@@ -59,13 +56,16 @@
         opacity: 0.3;
 
         @media screen and (max-width: 768px) {
-          left: 200px;
+          left: 150px;
+          top: 60px;
         }
 
         @media screen and (max-width: 610px) {
           font-size: 28px;
           right: 0;
           left: inherit;
+          top: 70px;
+
         }
       }
     }
@@ -92,15 +92,29 @@
       gap: 100px;
       margin-top: 45px;
 
+      @media screen and (max-width: 768px) {
+        gap: 60px;
+      }
+
       .businessWrap {
         display: grid;
         grid-template-columns: 7fr 5fr;
         align-items: center;
         gap: 30px;
 
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 12fr;
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
         img {
           width: 100%;
           height: 348px;
+
+          @media screen and (max-width: 768px) {
+            height: auto;
+          }
         }
 
         .businessItem {
@@ -117,6 +131,15 @@
             line-height: normal;
             opacity: 0.7;
             margin: 0;
+
+            @media screen and (max-width: 768px) {
+              font-size: 16px;
+            }
+
+            @media screen and (max-width: 600px) {
+              font-size: 14px;
+            }
+
           }
 
           .businessLink {
@@ -133,6 +156,10 @@
               text-transform: uppercase;
               opacity: 0.7;
               margin: 0;
+
+              @media screen and (max-width: 600px) {
+                font-size: 14px;
+              }
             }
 
             a {
@@ -143,6 +170,14 @@
               line-height: normal;
               margin: 0;
               text-decoration: none;
+
+              @media screen and (max-width: 768px) {
+                font-size: 16px;
+              }
+
+              @media screen and (max-width: 600px) {
+                font-size: 10px;
+              }
             }
           }
 
@@ -162,6 +197,11 @@
           border-top: 1px solid rgba(22, 22, 22, 0.10);
           border-bottom: 1px solid rgba(22, 22, 22, 0.10);
 
+          @media screen and (max-width: 768px) {
+            padding: 20px 0px;
+            gap: 20px;
+          }
+
 
           p {
             color: var(--black, #161616);
@@ -170,19 +210,37 @@
             font-weight: 600;
             line-height: normal;
             margin: 0;
+
+            @media screen and (max-width: 768px) {
+              font-size: 18px;
+            }
+
+            @media screen and (max-width: 600px) {
+              font-size: 14px;
+            }
           }
 
           .icon {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 60px;
-            height: 60px;
+            min-width: 60px;
+            min-height: 60px;
             border-radius: 100%;
             border: 1.586px solid var(--black, #222);
             background: var(--black, #222);
             margin: 0;
             cursor: pointer;
+
+            @media screen and (max-width: 768px) {
+              min-width: 50px;
+              min-height: 50px;
+            }
+
+            @media screen and (max-width: 600px) {
+              min-width: 42px;
+              min-height: 42px;
+            }
 
 
             svg {
