@@ -149,7 +149,7 @@ const Page = () => {
               круглого стола является выработка механизмов сотрудничества для
               эффективной реализации проекта
             </p>
-            <Image
+            <img
               className={s.ourimg}
               src="./image5.svg"
               alt="Project illustration"
@@ -157,7 +157,7 @@ const Page = () => {
               height={400}
             />
           </div>
-          {/* <nav className={s.ourteamul}>
+          <nav className={s.ourteamul}>
             <li className={s.ourteamli}>
               Кроме того, в ходе круглого стола приняли участие региональные
               представители Департамента органического сельского хозяйства,
@@ -172,8 +172,8 @@ const Page = () => {
               культуры, информации, спорта и молодежной политики КР Марат
               Тагаев.
             </li>
-          </nav> */}
-          {/* <div className={s.ourflex2}>
+          </nav>
+          <div className={s.ourflex2}>
             <nav>
               <p>Стратегическая сессия</p>
               <h4>
@@ -182,14 +182,15 @@ const Page = () => {
                 года.
               </h4>
             </nav>
-            <Image
+            <img
+              className={s.ourimage}
               src="/image6.svg"
               alt="Project illustration"
               width={600}
               height={400}
             />
-          </div> */}
-          {/* <div className={s.ourflex3}>
+          </div>
+          <div className={s.ourflex3}>
             <Image
               className={s.ourimage}
               width={600}
@@ -212,15 +213,15 @@ const Page = () => {
                 </div>
               ))}
             </div>
-          </div> */}
-          {/* <div className={s.ourtitle}>
+          </div>
+          <div className={s.ourtitle}>
             <p>Акселерационная программа</p>
             <h4>
               В августе 2023 года в Нарыне, в рамках проекта, прошла
               акселерационная программа для молодых предпринимателей.
             </h4>
-          </div> */}
-          {/* <div className={s.ourtextfleximg}>
+          </div>
+          <div className={s.ourtextfleximg}>
             <nav>
               <p>
                  В течение 5-и дней участники освоили навыки
@@ -250,19 +251,19 @@ const Page = () => {
               width={600}
               height={440}
             />
-          </div> */}
-          {/* <div className={s.footflex4}>
+          </div>
+          <div className={s.footflex4}>
             <p>Выдача грантов</p>
             <h4>
               27 ноября 2023 года, на Пре-соревнованиях команд “Энактас
               Кыргызстан” состоялось вручение грантов в рамках проекта “Молодёжь
               за цифровизацию, лидерство и зелёные навыки”.
             </h4>
-          </div> */}
-          {/* <div className={s.footborder}>
+          </div>
+          <div className={s.footborder}>
             <h4>По итогам вручения, по 10 000 € получили:</h4>
             <div className={s.img4}>
-              <Image
+              <img
                 className={s.footimgborder}
                 src="/image9.svg"
                 alt="Project illustration"
@@ -270,19 +271,19 @@ const Page = () => {
                 height={230}
               />
             </div>
-          </div> */}
-          {/* <div className={s.footraduis}>
+          </div>
+          <div className={s.footraduis}>
             <h4>А по 25 000 € получили:</h4>
             <div className={s.img5}>
-              <Image
+              <img
                 src="/image10.svg"
                 alt="Project illustration"
                 width={944}
                 height={683}
               />
             </div>
-          </div> */}
-          {/* <div className={s.footend}>
+          </div>
+          <div className={s.footend}>
             <p>
               Проект «Молодежь за цифровизацию, лидерство и зеленые навыки»
               реализуется «Энактас Кыргызстан» при финансовой поддержке
@@ -292,10 +293,10 @@ const Page = () => {
               Напоминаем, что это первая часть выдачи грантов в рамках проекта,
               следующая часть запланирована на 2024 год.
             </h4>
-          </div> */}
+          </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
