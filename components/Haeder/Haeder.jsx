@@ -28,13 +28,13 @@ const Haeder = () => {
   return (
     <div>
       <haeder className={`${manrope.className}  ${s.haeder}`}>
-        <div className={s.logo}>
+        <a  href="/" className={s.logo}>
           <Image src="/logo.svg" alt="logo" width={50} height={50} />
           <p>
             ЖАШ <br />
             ИШКЕР
           </p>
-        </div>
+        </a>
         <nav className={s.nav}>
           <ul>
             <li
@@ -65,7 +65,7 @@ const Haeder = () => {
       {navProduct && (
         <div
           className={cm(s.NavProductBlock, {
-            [s.NavProductBlockVisible]: navProduct === f,
+            [s.NavProductBlockVisible]: navProduct === false,
           })}
           data-visible={navProduct}
         >
