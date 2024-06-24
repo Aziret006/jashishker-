@@ -55,7 +55,7 @@ const page = () => {
             </p>
           </div>
           <div className={s.img}>
-            <Image
+            <img
               className={s.imgs}
               src={"/leadership.svg"}
               alt="leadership"

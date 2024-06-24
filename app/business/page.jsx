@@ -122,6 +122,9 @@ const page = () => {
               </div>
             </div>
           </div>
+          <nav className={s.necessitytext}>
+
+          </nav>
         </div>
       </div>
       <Footer />
