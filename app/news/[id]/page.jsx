@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import s from './page.module.scss'
 import Haeder from '@/components/Haeder/Haeder';
 import Footer from '@/components/Footer/Footer';
@@ -11,14 +11,16 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import NewsCard from '@/components/Cards/NewsCard/NewsCard';
 import { newsCardData } from '@/data';
-const page = ({ id }) => {
-  console.log(id);
+import axios from 'axios';
+const page =  ({ id }) => {
+
   return (
     <div className={s.news}>
       <Haeder />
       <div className={s.newsHaeder}>
         <div className={s.newsContend}>
           <div className={s.newsNav}>
+          
             <ul>
               <li>Politic</li>
               <li>Top news</li>
