@@ -1,4 +1,3 @@
-
 import React from "react";
 import s from "./page.module.scss";
 import Footer from "@/components/Footer/Footer";
@@ -21,9 +20,6 @@ const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const manrope = Manrope({ subsets: ["latin"] });
 
 const page = () => {
-
-
-  
   return (
     <div className={`${manrope.tet} ${s.tet}`}>
       <Haeder />
