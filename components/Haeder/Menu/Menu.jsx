@@ -49,16 +49,15 @@ const Menu = ({ isMenu, setMenu }) => {
                             exit="exit"
                             variants={menuVariants}
                         >
-                            <li><Link className={s.Link} href={'/news'}>О проекте</Link></li>
-                            <li><Link className={s.Link} href={'/leadership'}>Зеленая экономика</Link></li>
-                            <li><Link className={s.Link} href={'/Economy'}>Цифровизация</Link></li>
-                            <li><Link className={s.Link} href={'/digitalization'} >Лидерство</Link></li>
-                            <li><Link className={s.Link} href={'/news'} >Инновация</Link></li>
-
+                            <li><Link className={s.Link} href={'/about'}>О проекте</Link></li>
+                            <li><Link className={s.Link} href={'/Economy'}>Зеленая экономика</Link></li>
+                            <li><Link className={s.Link} href={'/digitalization'}>Цифровизация</Link></li>
+                            <li><Link className={s.Link} href={'/leadership'} >Лидерство</Link></li>
+                            <li><Link className={s.Link} href={'/innovation'} >Инновация</Link></li>
                             <li><Link className={s.Link} href={'/news'}>Как стать ментором</Link></li>
-                            <li><Link className={s.Link} href={'/leadership'}>Партнеры</Link></li>
-                            <li><Link className={s.Link} href={'/Economy'}>Цифровизация</Link></li>
-                            <li><Link className={s.Link} href={'/digitalization'} >Контакты</Link></li>
+                            <li><Link className={s.Link} href={'/parther'}>Партнеры</Link></li>
+                            <li><Link className={s.Link} href={'/digitalization'}>Цифровизация</Link></li>
+                            <li><Link className={s.Link} href={'/contact'} >Контакты</Link></li>
                         </motion.ul>
                     )}
                 </li>
@@ -71,8 +70,8 @@ const Menu = ({ isMenu, setMenu }) => {
                             exit="exit"
                             variants={menuVariants}
                         >
-                            <li><Link className={s.Link} href={'/news'}>С чего начать бизнес</Link></li>
-                            <li><Link className={s.Link} href={'/leadership'}>Как составить бизнес-план</Link></li>
+                            <li><Link className={s.Link} href={'/where-to-start-a-business'}>С чего начать бизнес</Link></li>
+                            <li><Link className={s.Link} href={'/business'}>Как составить бизнес-план</Link></li>
                             <li><Link className={s.Link} href={'/Economy'}>Шаблоны бизнес-планов</Link></li>
                             <li><Link className={s.Link} href={'/digitalization'} >Оценка проекта</Link></li>
                         </motion.ul>

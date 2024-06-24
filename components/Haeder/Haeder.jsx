@@ -107,17 +107,17 @@ const Haeder = () => {
         >
           <div className={s.NavProduct}>
             <ul>
-              <li><Link className={s.Link} href={'/news'}>О проекте</Link></li>
-              <li><Link className={s.Link} href={'/leadership'}>Зеленая экономика</Link></li>
-              <li><Link className={s.Link} href={'/Economy'}>Цифровизация</Link></li>
-              <li><Link className={s.Link} href={'/digitalization'} >Лидерство</Link></li>
-              <li><Link className={s.Link} href={'/news'} >Инновация</Link></li>
+              <li><Link className={s.Link} href={'/about'}>О проекте</Link></li>
+              <li><Link className={s.Link} href={'/Economy'}>Зеленая экономика</Link></li>
+              <li><Link className={s.Link} href={'/digitalization'}>Цифровизация</Link></li>
+              <li><Link className={s.Link} href={'/leadership'} >Лидерство</Link></li>
+              <li><Link className={s.Link} href={'/innovation'} >Инновация</Link></li>
             </ul>
             <ul>
               <li><Link className={s.Link} href={'/news'}>Как стать ментором</Link></li>
-              <li><Link className={s.Link} href={'/leadership'}>Партнеры</Link></li>
-              <li><Link className={s.Link} href={'/Economy'}>Цифровизация</Link></li>
-              <li><Link className={s.Link} href={'/digitalization'} >Контакты</Link></li>
+              <li><Link className={s.Link} href={'/partner'}>Партнеры</Link></li>
+              <li><Link className={s.Link} href={'/digitalization'}>Цифровизация</Link></li>
+              <li><Link className={s.Link} href={'/contact'} >Контакты</Link></li>
             </ul>
           </div>
         </motion.div>
