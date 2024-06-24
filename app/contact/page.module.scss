@@ -14,11 +14,9 @@
   .container {
     max-width: var(--maxWidth);
     margin: 0 auto;
-    padding: 0;
+    padding: 0 30px;
 
-    @media screen and (max-width: 1024px) {
-      padding: 0 30px;
-    }
+
 
     @media screen and (max-width: 550px) {
       padding: 0 20px;
@@ -309,5 +307,199 @@
 
 
 
+  }
+
+
+}
+
+.contactForm {
+  width: 100%;
+  background: #161616;
+  padding: 160px 0 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+
+  @media screen and (max-width: 768px) {
+    padding: 190px 0 60px 0;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 160px 0 60px 0;
+  }
+
+
+  .containerForm {
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    padding: 0 30px;
+
+
+    @media screen and (max-width: 550px) {
+      padding: 0 20px;
+    }
+
+    .formWrapper {
+      display: grid;
+      grid-template-columns: 6fr 6fr;
+      align-items: center;
+      gap: 93px;
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: 12fr;
+        gap: 104px;
+      }
+
+      .formTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 118px;
+        position: relative;
+
+        @media screen and (max-width: 768px) {
+          gap: 67px;
+
+        }
+
+        img {
+          position: absolute;
+          width: 403px;
+          height: 470px;
+          left: 0;
+          top: -120px;
+
+          @media screen and (max-width: 768px) {
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, 0);
+            width: 321.369px;
+            height: 374px;
+          }
+        }
+
+
+        .title {
+          color: var(--white, #FFF);
+          font-size: 60px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: capitalize;
+
+          @media screen and (max-width: 768px) {
+            font-size: 40px;
+          }
+
+          h4 {
+            margin: 0 0 0 37px;
+          }
+
+          h5 {
+            margin: 0;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 20px;
+
+            span {
+              width: 150px;
+              height: 3px;
+              background: var(--white, #FFF);
+
+              @media screen and (max-width: 768px) {
+                width: 100px;
+                height: 1px;
+              }
+
+            }
+          }
+        }
+
+        p {
+          color: var(--gray, #F0F0F0);
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          margin: 0 0 0 11px;
+          opacity: 0.7;
+          max-width: 341px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 16px;
+            margin: 0;
+            width: 233px;
+          }
+
+        }
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .formInput {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          @media screen and (max-width: 768px) {
+            gap: 6px;
+          }
+
+          label {
+            color: var(--gray, #F0F0F0);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: uppercase;
+
+            @media screen and (max-width: 768px) {
+              font-size: 14px;
+            }
+
+          }
+
+          input {
+            padding: 10px 0px;
+            background: #161616;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.20);
+            color: #fff;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            @media screen and (max-width: 768px) {
+              font-size: 13px;
+            }
+
+            &::placeholder {
+              color: var(--gray, #F0F0F0);
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              opacity: 0.5;
+
+              @media screen and (max-width: 768px) {
+                font-size: 13px;
+              }
+            }
+
+            &:focus {
+              border-bottom: 2px solid #2E9537;
+            }
+
+          }
+
+
+        }
+
+      }
+    }
   }
 }
