@@ -10,6 +10,8 @@ import { newsCardData } from "@/data";
 import NewsCards from "@/components/Cards/MainNewsCards/NewsCards";
 import MainFrom from "@/components/Forms/MainFrom/MainFrom";
 export default function Home() {
+
+
   return (
     <div className={`${manrope.className} ${s.container}`}>
       <Haeder />
@@ -29,8 +31,17 @@ export default function Home() {
           <div className={s.BgDiv}></div>
           <div className={s.BgDiv1}></div>
           <div className={s.mainBgImage}>
-            <Image
+
+            <Image className={s.mainBgImage1}
               src="/mainBgImage1.png"
+              alt="mainImage"
+              fill
+              objectPosition="top"
+              objectFit="cover"
+            />
+            <Image
+              className={s.mainBgImageTablel1}
+              src="/mainBgImageTablel1.png"
               alt="mainImage"
               fill
               objectPosition="top"
@@ -62,12 +73,12 @@ export default function Home() {
           </div>
           <p>Лидерство включает в себя искусство мотивации и направления группы, с акцентом на эффективное принятие решений, с тем, чтобы достичь общих целей и задач.</p>
         </div>
+
         <div className={s.CardListBlock4}>
           <span className={s.CardListBlock4Titel}>
             <h2>Инновации</h2>
             <p>Инновация – это создание и внедрение новых идей или технологий с целью улучшения текущих условий и решения проблем. Она характеризуется новизной, применимостью и эффективностью.</p>
           </span>
-
           <div className={s.CardListBlock4TitelBg}>
             <Image src={'/04.svg'} alt="mainImage" objectFit="contain" layout="fill" />
           </div>
@@ -75,8 +86,13 @@ export default function Home() {
             <Image src={'/mainImageCardList3.png'} alt="mainImage" objectFit="contain" layout="fill" />
           </div>
         </div>
-      </div>
-      <div className={s.Block3}>
+        <div className={s.CardListBlock4Mobal}>
+          <h3>Инновации</h3>
+          <div> <Image src={'/mainImageCardList3.png'} alt="mainImage" objectFit="contain" layout="fill" />
+          </div>
+          <p>Инновация – это создание и внедрение новых идей или технологий с целью улучшения текущих условий и решения проблем. Она характеризуется новизной, применимостью и эффективностью.</p>
+        </div>
+      </div><div className={s.Block3}>
         <div className={s.Block3Titel}>
           <div className={s.Block3TitelText}>
             <p>Как открыть свой бизнес</p>
@@ -92,7 +108,6 @@ export default function Home() {
                 Подробнее<BsArrowRight />
               </button>
             </span>
-
             <div className={s.Block3Cards}>
               <div>
                 <div>
@@ -100,7 +115,6 @@ export default function Home() {
                     <Image src={'/Card3Image1.svg'} alt="mainImage" objectFit="contain" layout="fill" />
                   </span>
                   <p>Идея исследование</p>
-
                 </div>
                 <p>От идеи до бизнес-плана, наш обзор поможет вам освоить основы старта, сократив риски и повысив шансы на успех.”</p>
               </div>
@@ -110,7 +124,6 @@ export default function Home() {
                     <Image src={'/Card3Image2.svg'} alt="mainImage" objectFit="contain" layout="fill" />
                   </span>
                   <p>Рынок анализ</p>
-
                 </div>
                 <p>От идеи до бизнес-плана, наш обзор поможет вам освоить основы старта, сократив риски и повысив шансы на успех.”</p>
               </div>
@@ -120,7 +133,6 @@ export default function Home() {
                     <Image src={'/Card3Image3.svg'} alt="mainImage" objectFit="contain" layout="fill" />
                   </span>
                   <p>Бизнес-план создание</p>
-
                 </div>
                 <p>От идеи до бизнес-плана, наш обзор поможет вам освоить основы старта, сократив риски и повысив шансы на успех.”</p>
               </div>
@@ -153,8 +165,14 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+
       <div className={s.LastNews}></div>
       <Footer />
     </div>
   );
 }
+
+
+
+

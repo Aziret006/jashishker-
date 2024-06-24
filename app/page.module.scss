@@ -18,6 +18,8 @@
     padding-top: 38px;
     position: relative;
     z-index: 11;
+    padding-left: var(--pageP);
+    padding-right: var(--pageP);
 
     h1 {
       font-size: 82px;
@@ -228,8 +230,9 @@
       .mainImageBlock2 {
         position: relative;
         height: 418px;
+        width: 418px;
         top: 35px;
-        left: -100px;
+        left: -205px;
       }
     }
   }
@@ -349,7 +352,7 @@
   margin: 0 auto;
   padding: 0;
   padding-bottom: 120px;
-  padding-top: 120px;
+  padding-top: 40px;
   .Block4Titel {
     max-width: var(--maxWidth);
     padding-left: var(--pageP);
@@ -391,17 +394,16 @@
 
   .Block5Titel {
     margin: 0 auto;
-    width: var(--maxWidth);
-    padding-left: var(--pageP);
-    padding-right: var(--pageP);
+    max-width: var(--maxWidth);
+    width: 90% !important ;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 100px;
 
     .Block5TitelBloc1 {
       text-align: left;
       padding: 100px 0px;
       display: grid;
-      padding-right: 100px;
       gap: 68px;
       h3 {
         color: var(--gray, #f0f0f0);
@@ -432,7 +434,6 @@
     }
 
     .Block5TitelBloc2 {
-      padding-left: 100px;
       display: flex;
       padding-top: 73px;
       flex-direction: column;
@@ -443,6 +444,89 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1454px) {
+    .Block5Titel {
+      overflow: hidden;
+      max-width: var(--maxWidth);
+      width: 100%;
+    }
+    @media screen and (max-width: 1440px) {
+      .Block5Titel {
+        .Block5TitelBloc1 {
+          padding: 50px 0px;
+        }
+
+        .Block5TitelBloc2 {
+          padding: 50px 0px;
+        }
+      }
+
+      @media screen and (max-width: 1110px) {
+        background: rgb(22, 22, 22);
+        display: grid;
+        background: linear-gradient(
+          180deg,
+          rgba(22, 22, 22, 1) 50%,
+          rgba(233, 233, 233, 1) 50%
+        );
+        .Block5Titel {
+          grid-template-columns: 1fr;
+          gap: 0px;
+          height: 100%;
+          grid-template-rows: 1fr 1fr;
+          gap: 121px;
+          .Block5TitelBloc1 {
+            gap: 20px;
+            padding: 0;
+            padding-bottom: 0px;
+            padding-top: 60px;
+            h3 {
+              display: flex;
+              text-align: center;
+              margin: 0 auto;
+              font-size: 40px;
+            }
+            .Block5TitelImage {
+              height: 430px;
+              padding: 0;
+            }
+          }
+          .Block5TitelBloc2 {
+            padding: 0;
+            gap: 40px;
+            h3 {
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .Block5Titel {
+            gap: 80px;
+            .Block5TitelBloc1 {
+              padding-top: 30px;
+              h3 {
+                font-size: 34px;
+              }
+              .Block5TitelImage {
+                height: 330px;
+              }
+            }
+
+            .Block5TitelBloc2 {
+              padding-bottom: 40px;
+              gap: 40px;
+              h3 {
+                font-size: 24px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -458,4 +542,351 @@
   padding: 16px 100px;
   justify-content: space-between;
   align-items: center;
+}
+
+.CardListBlock4Mobal {
+  display: none !important;
+}
+
+.mainBgImageTablel1 {
+  display: none;
+}
+
+@media screen and (max-width: 1322px) {
+}
+
+@media screen and (max-width: 1040px) {
+  .mainBlock {
+    .mainBlockTitel {
+      h1 {
+        color: var(--black, #161616);
+        text-align: center;
+        font-size: 62px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        br {
+          display: none;
+        }
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .mainImage {
+      @media screen and (max-width: 740px) {
+        .mainBgImage {
+          height: 280px;
+        }
+
+        @media screen and (max-width: 530px) {
+          .mainBgImage1 {
+            display: none;
+          }
+
+          .mainBgImageTablel1 {
+            display: block;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 530px) {
+      .mainBlockTitel {
+        h1 {
+          font-size: 42px;
+          br {
+            display: none;
+          }
+        }
+        p {
+          color: var(--black, #161616);
+          text-align: center;
+          font-family: Manrope;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+      .mainImage {
+        .BgDiv1 {
+          width: 300px;
+          height: 300px;
+
+          margin-top: 90px;
+        }
+        .BgDiv {
+          width: 300px;
+          height: 300px;
+          margin-top: 90px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1208px) {
+  .CardListBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    div {
+      align-items: center;
+      padding: 25px 10px;
+      h3 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 15.015px;
+      }
+      div {
+        width: 260px !important;
+        height: 260px !important;
+
+        position: relative;
+        margin: 0;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .CardListBlock4 {
+      grid-column: 2;
+      display: none;
+    }
+    .CardListBlock4Mobal {
+      display: flex !important;
+    }
+  }
+
+  @media screen and (max-width: 672px) {
+    .CardListBlock {
+      div {
+        div {
+          width: 100% !important;
+          display: flex;
+          height: 215px !important;
+          justify-content: center;
+          img {
+            width: 260px !important;
+            height: 260px !important;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .CardListBlock {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        .CardListBlock4Mobal {
+          display: none !important;
+        }
+
+        div {
+          border-radius: 7px;
+          h3 {
+            font-size: 20px;
+          }
+          p {
+            font-size: 13px;
+          }
+          div {
+            height: 200px !important;
+            img {
+              width: 250px !important;
+              height: 250px !important;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .Block3 {
+    .mainImageBlock2 {
+      display: none !important;
+    }
+
+    .Block3Titel {
+      display: flex !important;
+      flex-direction: column;
+      padding-top: 80px;
+      gap: 16px;
+      padding-bottom: 80px;
+      .Block3TitelText {
+        p {
+          font-size: 15px;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .Block3TitelTextMain {
+        gap: 20px;
+        p {
+          font-size: 40px;
+        }
+        span {
+          display: grid;
+          grid-template-columns: 384px 248px;
+          justify-content: space-between;
+          p {
+            font-size: 17px;
+          }
+          button {
+            display: flex;
+            width: 178px;
+            height: 44px;
+            padding: 5.197px 17.323px 5.197px 25.984px;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #161616;
+            flex-shrink: 0;
+            font-size: 15.59px;
+          }
+        }
+        .Block3Cards {
+          div {
+            padding: 30px;
+            p {
+              font-size: 15px;
+            }
+            div {
+              padding: 0px;
+              span {
+                width: 61.495px;
+                height: 60.629px;
+              }
+              p {
+                font-size: 22px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .Block3Titel {
+        .Block3TitelTextMain {
+          span {
+            display: flex !important;
+            flex-direction: column;
+          }
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .Block3Titel {
+          gap: 0px;
+          padding-top: 40px;
+          padding-bottom: 40px;
+
+          .Block3TitelText {
+            p {
+              font-size: 14px;
+            }
+          }
+
+          .Block3TitelTextMain {
+            gap: 10px;
+            p {
+              font-size: 34px;
+            }
+            span {
+              p {
+                font-size: 14px;
+              }
+            }
+            .Block3Cards {
+              div {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px 0px;
+                gap: 10px;
+                div {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  span {
+                    width: 32.457px;
+                    height: 32px;
+                  }
+                  p {
+                    font-size: 18px;
+                    margin: 0;
+                    padding: 0;
+                  }
+                }
+                p {
+                  max-width: 100% !important;
+                  padding-left: 43px;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Block4 {
+    padding-top: 0px;
+    padding-bottom: 60px;
+
+    .Block4Titel {
+      gap: 30px;
+
+      .Block4TitelText {
+        font-size: 40px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1060px) {
+    .Block4 {
+      .Block4Titel {
+        .Block4Cards {
+          max-width: 1000px;
+          overflow: scroll;
+          grid-template-columns: 350px 350px 350px;
+        }
+        .Block4Cards::-webkit-scrollbar {
+          width: 0px;
+        }
+
+        .Block4Cards::-webkit-scrollbar-track {
+          background-color: #ffffff00;
+        }
+
+        .Block4Cards::-webkit-scrollbar-thumb {
+          background: #ffffff00;
+          border-radius: 1px;
+          bottom: 3px solid #d4d4d400;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .Block4Titel {
+          gap: 20px;
+          .Block4Cards {
+            grid-template-columns: 300px 300px 300px;
+          }
+        }
+        .Block4TitelText {
+          font-size: 34px !important;
+          button {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
 }

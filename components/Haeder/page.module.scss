@@ -35,6 +35,10 @@
       display: flex;
       gap: 26px;
       li {
+        display: flex;
+        gap: 10px;
+        list-style: none;
+        align-items: center;
         font-size: 16px;
         font-weight: 600;
         line-height: 21.86px;
@@ -42,6 +46,19 @@
         list-style: none;
         color: #fff;
         cursor: pointer;
+        text-decoration: none;
+        list-style: none;
+      }
+      .Link {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 21.86px;
+        text-align: center;
+        list-style: none;
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none;
+        list-style: none;
       }
     }
   }
@@ -98,25 +115,103 @@
       }
     }
     @media screen and (max-width: 460px) {
+      padding-top: 10px;
+      padding-bottom: 10px;
       .logo {
+        gap: 5px;
         p {
           color: var(--white, #fff);
-          font-size: 14px;
+          font-size: 10px;
           font-style: normal;
-          font-weight: 800;
+          font-weight: 700;
           line-height: normal;
           text-transform: uppercase;
         }
         img {
-          width: 39.2px;
-          height: 40px;
+          width: 29.4px;
+          height: 30px;
         }
       }
-      .ButtonList{
+
+      .ButtonList {
+        gap: 10px;
+        p {
+          color: var(--white, #fff);
+          text-align: center;
+          font-size: 12px;
+          font-style: normal;
+          text-transform: uppercase;
+          font-weight: 500;
+          line-height: normal;
+        }
         button {
           padding: 0 !important;
           width: 90px;
+          display: flex;
+          width: 100px;
+          height: 30px;
+          padding: 6px 30px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          color: var(--white, #fff);
+          text-align: center;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          svg {
+            width: 24px;
+            height: 24px;
+          }
         }
+      }
+    }
+  }
+}
+
+.NavProductBlock {
+  z-index: 111;
+  display: flex;
+  position: absolute;
+  width: -webkit-fill-available;
+  background: rgba(22, 22, 22, 0.95);
+}
+
+.NavProduct {
+  display: flex;
+
+  gap: 100px;
+  position: relative;
+  display: flex;
+  padding: 0px;
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 30px;
+
+  ul {
+    margin: 0;
+    gap: 18px !important;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    li {
+      text-align: left !important;
+      color: #000 !important;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      a {
+        color: var(--white, #fff);
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
       }
     }
   }

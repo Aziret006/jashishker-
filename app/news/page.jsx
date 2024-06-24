@@ -42,7 +42,6 @@ const page = () => {
                     fill objectFit="cover"
                   />
                 </div>
-
                 <div className={s.mainTitel}>
                   <div className={s.mainTitelBlock1}>
                     <div className={s.mainTitelBlock1ButtonList}>
@@ -64,7 +63,6 @@ const page = () => {
                       <p>2 month ago</p>
                     </div>
                   </div>
-
                 </div>
               </div>
               <div className={s.newsBloc1MainCards}>

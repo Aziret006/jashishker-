@@ -89,4 +89,37 @@
       }
     }
   }
+
+  @media screen and (max-width: 1060px) {
+    .NewsCardsImage {
+      height: 220px;
+    }
+
+    .NewsCardsTitel {
+      gap: 0px;
+      .NewsCardsTitelBlock2 {
+        font-size: 20px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .NewsCardsImage {
+        height: 190px;
+      }
+      .NewsCardsTitel {
+        .NewsCardsTitelBlock1 {
+          button {
+            font-size: 13px;
+          }
+        }
+      }
+      .NewsCardsTitelBlock3 {
+        .NewsCardsTime {
+          p {
+            font-size: 13px !important;
+          }
+        }
+      }
+    }
+  }
 }

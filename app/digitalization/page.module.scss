@@ -2,9 +2,22 @@
   background: #fff;
   padding: 90px 0 100px;
 
+  @media screen and (max-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 40px 0;
+  }
+
   .container {
     max-width: var(--maxWidth);
     margin: 0 auto;
+    padding: 0 30px;
+
+    @media screen and (max-width: 768px) {
+      padding: 0 20px;
+    }
 
     h2 {
       color: var(--Text-color, #222);
@@ -13,6 +26,19 @@
       font-weight: 900;
       line-height: 66px;
       margin: 0;
+
+      @media screen and (max-width: 768px) {
+        font-size: 62px;
+        line-height: 66px;
+      }
+
+      @media screen and (max-width: 600px) {
+        font-size: 42px;
+        line-height: normal;
+
+      }
+
+
     }
 
     .border {
@@ -21,6 +47,14 @@
       margin: 64px 0;
       background: #161616;
       opacity: 0.3;
+
+      @media screen and (max-width: 768px) {
+        margin: 34px 0 60px;
+      }
+
+      @media screen and (max-width: 600px) {
+        margin: 18px 0 40px;
+      }
     }
 
     .hero {
@@ -29,10 +63,31 @@
       flex-direction: column;
       gap: 50px;
 
+      @media screen and (max-width: 768px) {
+        gap: 20px;
+      }
+
+
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
       .heroText {
         display: grid;
         grid-template-columns: 4.5fr 7.5fr;
         align-items: end;
+
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 5.5fr 6.5fr;
+        }
+
+        @media screen and (max-width: 600px) {
+          grid-template-columns: 12fr;
+          gap: 10px;
+        }
 
         h5 {
           color: var(--Text-color, #222);
@@ -42,6 +97,20 @@
           line-height: normal;
           text-transform: uppercase;
           margin: 0;
+          max-width: 434px;
+          padding-bottom: 40px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 26px;
+            padding-bottom: 60px;
+          }
+
+          @media screen and (max-width: 600px) {
+            font-size: 22px;
+            padding-bottom: 0px;
+            width: 100%;
+
+          }
         }
 
         p {
@@ -51,6 +120,16 @@
           line-height: normal;
           opacity: 0.7;
           margin: 0;
+
+          @media screen and (max-width: 600px) {
+            font-size: 16px;
+          }
+
+          @media screen and (max-width: 768px) {
+            font-size: 14px;
+          }
+
+
         }
       }
     }
@@ -58,10 +137,28 @@
     .content {
       margin: 80px 0 100px;
 
+      @media screen and (max-width: 768px) {
+        margin: 60px 0 60px;
+      }
+
+
+      @media screen and (max-width: 600px) {
+        margin: 40px 0 40px;
+      }
+
       .contentText {
         display: flex;
         flex-direction: column;
         gap: 30px;
+
+        @media screen and (max-width: 768px) {
+          gap: 12px;
+        }
+
+
+        @media screen and (max-width: 600px) {
+          gap: 10px;
+        }
 
         h4 {
           color: var(--Text-color, #222);
@@ -71,12 +168,30 @@
           line-height: normal;
           text-transform: uppercase;
           margin: 0;
+
+          @media screen and (max-width: 768px) {
+            font-size: 26px;
+          }
+
+          @media screen and (max-width: 600px) {
+            font-size: 22px;
+          }
         }
 
         .contentTextBlock {
           display: grid;
           grid-template-columns: 4.2fr 7.8fr;
           gap: 10px;
+
+          @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr 11fr;
+          }
+
+
+          @media screen and (max-width: 600px) {
+            grid-template-columns: 12fr;
+            gap: 0px;
+          }
 
           p {
             color: var(--Text-color, #222);
@@ -86,6 +201,10 @@
             line-height: normal;
             margin: 0;
             opacity: 0.7;
+
+            @media screen and (max-width: 768px) {
+              font-size: 14px;
+            }
           }
         }
       }
@@ -94,10 +213,28 @@
     .contentBlock {
       margin: 80px 0 100px;
 
+      @media screen and (max-width: 768px) {
+        margin: 60px 0;
+      }
+
+      @media screen and (max-width: 600px) {
+        margin: 40px 0;
+      }
+
       .contentText {
         display: flex;
         flex-direction: column;
         gap: 30px;
+
+        @media screen and (max-width: 768px) {
+          gap: 20px;
+        }
+
+
+        @media screen and (max-width: 600px) {
+          gap: 10px;
+        }
+
 
         h4 {
           color: var(--Text-color, #222);
@@ -108,6 +245,16 @@
           text-transform: uppercase;
           margin: 0;
           max-width: 1017px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 44px;
+            max-width: 684px;
+          }
+
+          @media screen and (max-width: 600px) {
+            font-size: 30px;
+            max-width: 100%;
+          }
         }
 
         .contentTextBlock {
@@ -115,10 +262,42 @@
           grid-template-columns: 4.2fr 7.8fr;
           gap: 10px;
 
+          @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr 11fr;
+          }
+
+          @media screen and (max-width: 600px) {
+            grid-template-columns: 12fr;
+            gap: 0px;
+          }
+
+          span {
+            color: var(--Text-color, #222);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin: 0;
+            opacity: 0.7;
+
+            @media screen and (max-width: 600px) {
+              display: none;
+            }
+          }
+
           .contentTextBlockList {
             display: flex;
             flex-direction: column;
             gap: 20px;
+
+            @media screen and (max-width: 768px) {
+              gap: 16px;
+            }
+
+
+            @media screen and (max-width: 600px) {
+              gap: 10px;
+            }
 
             p {
               color: var(--Text-color, #222);
@@ -128,14 +307,10 @@
               line-height: normal;
               margin: 0;
               opacity: 0.7;
-            }
 
-            .textBold {
-              color: #191a1b;
-              font-size: 34px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: normal;
+              @media screen and (max-width: 768px) {
+                font-size: 14px;
+              }
             }
           }
         }
@@ -145,10 +320,26 @@
     .contentBlock3 {
       margin: 80px 0 0;
 
+      @media screen and (max-width: 768px) {
+        margin: 60px 0 0;
+      }
+
+      @media screen and (max-width: 600px) {
+        margin: 40px 0 0;
+      }
+
       .contentText {
         display: flex;
         flex-direction: column;
         gap: 30px;
+
+        @media screen and (max-width: 768px) {
+          gap: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+          gap: 10px;
+        }
 
         h4 {
           color: var(--Text-color, #222);
@@ -159,6 +350,15 @@
           text-transform: uppercase;
           margin: 0;
           max-width: 1017px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 44px;
+          }
+
+          @media screen and (max-width: 600px) {
+            font-size: 30px;
+            max-width: 100%;
+          }
         }
 
         .contentTextBlock {
@@ -166,10 +366,28 @@
           grid-template-columns: 4.2fr 7.8fr;
           gap: 10px;
 
+          @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr 11fr;
+          }
+
+          @media screen and (max-width: 600px) {
+            grid-template-columns: 12fr;
+            gap: 0px;
+          }
+
           .contentTextBlockList {
             display: flex;
             flex-direction: column;
             gap: 20px;
+
+            @media screen and (max-width: 768px) {
+              gap: 16px;
+            }
+
+
+            @media screen and (max-width: 600px) {
+              gap: 10px;
+            }
 
             p {
               color: var(--Text-color, #222);
@@ -179,6 +397,10 @@
               line-height: normal;
               margin: 0;
               opacity: 0.7;
+
+              @media screen and (max-width: 768px) {
+                font-size: 14px;
+              }
             }
 
             .textBold {
@@ -187,6 +409,11 @@
               font-style: normal;
               font-weight: 400;
               line-height: normal;
+
+              @media screen and (max-width: 768px) {
+                font-size: 24px;
+              }
+
             }
           }
         }
