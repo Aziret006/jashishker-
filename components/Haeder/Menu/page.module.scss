@@ -5,8 +5,8 @@
   width: -webkit-fill-available;
   overflow: scroll;
   background: rgba(22, 22, 22, 0.95);
-height: 100vh;
-padding-bottom: 30px;
+  height: 100vh;
+  padding-bottom: 30px;
 
   .Call {
     position: absolute;
@@ -58,13 +58,11 @@ padding-bottom: 30px;
         gap: 20px;
         margin-top: 20px;
         li {
-          font-family: Manrope;
           font-size: 18px;
           font-weight: 500;
           line-height: 24.59px;
           text-align: left;
           a {
-            font-family: Manrope;
             font-size: 18px;
             font-weight: 500;
             line-height: 24.59px;

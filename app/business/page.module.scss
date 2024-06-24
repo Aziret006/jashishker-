@@ -1,265 +1,55 @@
-.business {
+.economyall {
   width: 100%;
   background: #fff;
-  padding: 90px 0 100px 0;
-
-  @media screen and (max-width: 768px) {
-    padding: 60px 0 66px 0;
-  }
-
-  @media screen and (max-width: 550px) {
-    padding: 40px 0 45px 0;
-  }
-
-  .container {
-    max-width: var(--maxWidth);
-    margin: 0 auto;
-    padding: 0 30px;
-
-
-    @media screen and (max-width: 550px) {
-      padding: 0 20px;
-    }
-
-    .businessText {
-      position: relative;
-
-      h1 {
-        margin: 0;
-        color: var(--Text-color, #222);
-        font-size: 80px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: normal;
-        max-width: 682px;
-
-        @media screen and (max-width: 768px) {
-          font-size: 62px;
-          line-height: 66px;
-        }
-
-        @media screen and (max-width: 610px) {
-          font-size: 42px;
-          line-height: 66px;
-        }
-      }
-
-      h5 {
-        position: absolute;
-        top: 125px;
-        left: 480px;
-        color: var(--black, #161616);
-        font-size: 38px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        opacity: 0.3;
-
-        @media screen and (max-width: 768px) {
-          left: 150px;
-          top: 60px;
-        }
-
-        @media screen and (max-width: 610px) {
-          font-size: 28px;
-          right: 0;
-          left: inherit;
-          top: 70px;
-
-        }
-      }
-    }
-
-    .businessBorder {
-      height: 1px;
-      width: 100%;
-      opacity: 0.3;
-      background: #161616;
-      margin-top: 64px;
-
-      @media screen and (max-width: 768px) {
-        margin-top: 74px;
-      }
-
-      @media screen and (max-width: 550px) {
-        margin-top: 45px;
-      }
-    }
-
-    .businessContent {
-      display: flex;
-      flex-direction: column;
-      gap: 100px;
-      margin-top: 45px;
-
-      @media screen and (max-width: 768px) {
-        gap: 60px;
-      }
-
-      .businessWrap {
-        display: grid;
-        grid-template-columns: 7fr 5fr;
-        align-items: center;
-        gap: 30px;
-
-        @media screen and (max-width: 768px) {
-          grid-template-columns: 12fr;
-          display: flex;
-          flex-direction: column-reverse;
-        }
-
-        img {
+  padding: 0 0 100px 0;
+  .economycontainer {
+      max-width: var(--maxWidth);
+      margin: 0 auto;
+      width: 90%;
+      .leadershiptitle {
           width: 100%;
-          height: 348px;
-
-          @media screen and (max-width: 768px) {
-            height: auto;
-          }
-        }
-
-        .businessItem {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-
-
-          p {
-            color: #191A1B;
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            opacity: 0.7;
-            margin: 0;
-
-            @media screen and (max-width: 768px) {
-              font-size: 16px;
-            }
-
-            @media screen and (max-width: 600px) {
-              font-size: 14px;
-            }
-
-          }
-
-          .businessLink {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-
-            p {
-              color: var(--black, #222);
-              font-size: 16px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 19.028px;
-              text-transform: uppercase;
-              opacity: 0.7;
-              margin: 0;
-
-              @media screen and (max-width: 600px) {
-                font-size: 14px;
+          display: grid;
+          align-items: center;
+          height: 360px;
+          @media (max-width: 768px) {
+              height: 171px;
+              @media screen and (max-width: 500px) {
+                  // height: 90px;
               }
-            }
-
-            a {
-              color: var(--black, #161616);
-              font-size: 18px;
+          }
+          .etext {
+              display: flex;
+              justify-content: end;
+              p {
+                  width: 614px;
+                  color: var(--Text-color, #222);
+                  font-family: Manrope;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: normal;
+                  margin: 0;
+                  opacity: 0.7;
+              }
+          }
+          h1 {
+              color: var(--Text-color, #222);
+              // font-family: "Be Vietnam Pro";
+              font-size: 80px;
               font-style: normal;
-              font-weight: 400;
+              font-weight: 900;
               line-height: normal;
               margin: 0;
-              text-decoration: none;
-
-              @media screen and (max-width: 768px) {
-                font-size: 16px;
-              }
-
-              @media screen and (max-width: 600px) {
-                font-size: 10px;
-              }
-            }
           }
-
-
-        }
       }
-
-      .businessList {
-
-
-        .businessListBlock {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 10px;
-          padding: 30px 0px;
-          border-top: 1px solid rgba(22, 22, 22, 0.10);
-          border-bottom: 1px solid rgba(22, 22, 22, 0.10);
-
-          @media screen and (max-width: 768px) {
-            padding: 20px 0px;
-            gap: 20px;
-          }
-
-
-          p {
-            color: var(--black, #161616);
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-            margin: 0;
-
-            @media screen and (max-width: 768px) {
-              font-size: 18px;
-            }
-
-            @media screen and (max-width: 600px) {
-              font-size: 14px;
-            }
-          }
-
-          .icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-width: 60px;
-            min-height: 60px;
-            border-radius: 100%;
-            border: 1.586px solid var(--black, #222);
-            background: var(--black, #222);
-            margin: 0;
-            cursor: pointer;
-
-            @media screen and (max-width: 768px) {
-              min-width: 50px;
-              min-height: 50px;
-            }
-
-            @media screen and (max-width: 600px) {
-              min-width: 42px;
-              min-height: 42px;
-            }
-
-
-            svg {
-              width: 24px;
-              height: 24px;
-              color: #fff;
-              margin: 0;
-
-            }
-          }
-        }
-
-
+      hr {
+          margin: 0;
+          height: 1px;
+          opacity: 0.3;
+          background: #161616;
       }
-
-    }
-
-
+      .bisnesstext {
+          
+      }
   }
-
-
 }
