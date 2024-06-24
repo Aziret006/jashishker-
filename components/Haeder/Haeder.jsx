@@ -48,7 +48,8 @@ const Haeder = () => {
               О проекте <IoIosArrowDown />
             </li>
             <li><Link className={s.Link} href={'/news'}>Новости</Link></li>
-            <li><Link className={s.Link} href={'/leadership'}>База знаний  <IoIosArrowDown /></Link></li>
+            <li>База знаний  <IoIosArrowDown />
+              </li>
             <li><Link className={s.Link} href={'/Economy'}>История успеха</Link></li>
             <li><Link className={s.Link} href={'/digitalization'} >Справочная</Link></li>
             <li><Link className={s.Link} href={'/news'} >Enactus</Link></li>
