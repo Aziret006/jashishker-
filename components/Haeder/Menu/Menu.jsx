@@ -43,7 +43,6 @@ const Menu = ({ isMenu, setMenu }) => {
                     О проекте <IoIosArrowDown />
                     {navPage == 1 && (
                         <motion.ul
-
                             initial="hidden"
                             animate="visible"
                             exit="exit"
