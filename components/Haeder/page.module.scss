@@ -169,7 +169,6 @@
     }
   }
 }
-
 .NavProductBlock {
   z-index: 111;
   display: flex;
@@ -177,7 +176,6 @@
   width: -webkit-fill-available;
   background: rgba(22, 22, 22, 0.95);
 }
-
 .NavProduct {
   display: flex;
 
@@ -215,4 +213,15 @@
       }
     }
   }
+}
+.NavKnowledgeBlock {
+  z-index: 111;
+  display: flex;
+  position: absolute;
+  width: -webkit-fill-available;
+  background: rgba(22, 22, 22, 0.95);
+}
+
+.NavKnowledgeBlockVisible {
+  display: none;
 }
