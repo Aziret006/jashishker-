@@ -14,16 +14,16 @@ const Menu = ({ isMenu, setMenu }) => {
     };
 
 
-    useEffect(() => {
-        if (isMenu) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
-    }, [isMenu])
+    // useEffect(() => {
+    //     if (isMenu) {
+    //         document.body.style.overflow = 'hidden';
+    //     } else {
+    //         document.body.style.overflow = 'auto';
+    //     }
+    //     return () => {
+    //         document.body.style.overflow = 'auto';
+    //     };
+    // }, [isMenu])
     const handlerPageIndex = (e) => {
         setPage(e === navPage ? false : e);
     }
