@@ -93,7 +93,11 @@
         margin: 0;
         font-size: 16px;
         font-style: normal;
-
+        svg {
+          position: absolute;
+          margin-top: 4px;
+          margin-left: 5px;
+        }
         cursor: pointer;
         font-weight: 400;
         line-height: normal;
@@ -171,5 +175,34 @@
   @media screen and (max-width: 530px) {
     width: 87.681px;
     height: 50px;
+  }
+}
+
+.NavProductBlock {
+  display: none;
+}
+
+.NavProductBlockVisible {
+  z-index: 111;
+  display: flex;
+  position: absolute;
+  width: -webkit-fill-available;
+  background: rgba(22, 22, 22, 0.95);
+}
+
+.accMenu {
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  padding-left: 20px;
+  background: rgba(22, 22, 22, 0.95);
+  position: absolute;
+  z-index: 111;
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 996px) {
+  .accMenu {
+    padding-top: 30px !important;
   }
 }
