@@ -348,7 +348,7 @@ const page = () => {
               потенциальных инвесторов и партнеров.
             </h4>
           </nav>
-            <div className={s.foottop}>
+          <div className={s.foottop}>
             <h1>План готов – что с ним делать далее</h1>
             <nav>
               <Image
@@ -384,7 +384,7 @@ const page = () => {
                 </li>
               </ul>
             </nav>
-          </div> 
+          </div>
         </div>
       </div>
       <Footer />
