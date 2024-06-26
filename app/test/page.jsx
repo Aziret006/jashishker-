@@ -34,6 +34,22 @@ const page = () => {
           </div>
         </div>
       </div>
+      <div className={s.AccordionSvg}>
+        <div className={s.AccordionSvgTitel}>
+          <span>
+            <h3>Кто может <br /> быть ИП?</h3>
+            <p>Индивидуальными предпринимателями могут быть как кыргызстанцы, так и иностранцы, которые постоянно или временно проживают в нашей стране.  </p>
+          </span>
+          <div className={s.AccordionSvgTitel2}>
+            <h2>Как зарегистрироваться?</h2>
+            <p>Если вы решили стать ИП, то надо:</p>
+            <div className={s.AccordionSvgTitel2}>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

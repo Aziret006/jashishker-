@@ -125,14 +125,132 @@
           font-size: 14px;
         }
 
+        h3 {
+          font-size: 18px !important;
+        }
 
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.AccordionSvg {
+  background-color: #fff;
+  .AccordionSvgTitel {
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    padding: var(--pageP);
+    color: #000;
+    span {
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        color: #191a1b;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      p {
+        color: var(--Text-color, #222);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-left: 30%;
+        max-width: 600px;
+      }
+    }
+  }
+
+  .AccordionSvgTitel2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 100px;
+    text-align: center;
+    gap: 17px;
+    h2 {
+      color: #191a1b;
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      color: var(--black, #161616);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+      line-height: normal;
+    }
+  }
+  @media screen and (max-width: 940px) {
+    .AccordionSvgTitel {
+      padding-top: 30px;
+      span {
+        h3 {
+          font-size: 46px;
+          br {
+            display: none;
+          }
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .AccordionSvgTitel2 {
+      margin-top: 30px;
+      gap: 0px;
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+
+    @media screen and (max-width: 656px) {
+      .AccordionSvgTitel {
+        span {
           h3 {
-            font-size: 18px !important;
+            font-size: 36px;
+            br {
+              display: none;
+            }
           }
-        
-          a {
+          p {
             font-size: 14px;
+            margin: 0;
+            padding: 0;
+            padding-top: 10px;
           }
+        }
+      }
+
+      .AccordionSvgTitel2 {
+        margin-top: 20px;
+        h2 {
+          font-size: 22px;
+        }
+        p {
+          font-size: 18px;
+        }
       }
     }
   }
