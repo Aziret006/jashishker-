@@ -49,7 +49,7 @@ const data = [
     title: "За что вам будут платить?",
   }
 ]
-const page = () => {
+const page =  () => {
 
   return (
     <div>
@@ -145,7 +145,7 @@ const page = () => {
                     </div>
                     <p className={FontManrope.className}>Постоянные затраты: какие платежи вам нужно будет вносить постоянно, вне зависимости от объемов продаж (например, оплата аренды)?</p>
                   </div>
-                   <div className={s.startCard}>
+                  <div className={s.startCard}>
                     <div className={s.icon}>
                       <span>
                         05
@@ -157,7 +157,7 @@ const page = () => {
               </div>
             </div>
             <Start03 />
-            <Start04/>
+            <Start04 />
           </div>
         </div>
       </div>

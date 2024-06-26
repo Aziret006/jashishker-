@@ -1,6 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+'use client'
+
 import Footer from "@/components/Footer/Footer";
 import Haeder from "@/components/Haeder/Haeder";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import s from "./page.module.scss";
 import { Alex_Brush, Be_Vietnam_Pro, Manrope } from "next/font/google";
@@ -9,6 +12,9 @@ import { GoArrowUpRight } from "react-icons/go";
 import { FiShare2 } from "react-icons/fi";
 import { newsCardData, newsCardDataPage } from "@/data";
 import NewsCard from "@/components/Cards/NewsCard/NewsCard";
+import axios from "axios";
+import { Api } from "@/api";
+import Link from "next/link";
 
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
@@ -18,7 +24,55 @@ const BeVietnamPro = Be_Vietnam_Pro({
 const manrope = Manrope({ subsets: ["latin"] });
 
 const page = () => {
-  return (
+
+  const [topNews, setTopNews] = useState()
+  const [newsPopular, setPopular] = useState()
+  const [filterPage, setFilterPage] = useState("popular")
+  const [loding, setLoding] = useState(true)
+
+  console.log(topNews, newsPopular, 'datatest');
+
+  const getData = async () => {
+    try {
+      const topNews = await axios.get(`${Api}api/news/?category=top_news`)
+      const newsPopular = await axios.get(`${Api}api/news/?status=${filterPage}`)
+      setLoding(false)
+      return {
+        topNews: topNews.data,
+        newsPopular: newsPopular.data
+      }
+    } catch (error) {
+      alert("error")
+    }
+  }
+  useEffect(() => {
+    getData().then((data) => {
+      setTopNews(data.topNews.results)
+      setPopular(data.newsPopular.results)
+    })
+  }, [])
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const newsPopular = await axios.get(`${Api}api/news/?status=${filterPage}`)
+
+        return {
+          newsPopular: newsPopular.data
+        }
+      } catch (error) {
+      }
+    }
+
+    getData().then((data) => {
+      setPopular(data.newsPopular.results)
+    })
+
+  }, [filterPage])
+
+
+
+  return loding != true && (
     <div>
       <Haeder />
 
@@ -37,8 +91,7 @@ const page = () => {
               <div className={s.newsBloc1MainImage}>
                 <div className={s.mainImageBlock}>
                   <Image
-                    src="https://s3-alpha-sig.figma.com/img/90d0/edc5/2b85991cb4a43749952eb9cff5ff6916?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=V6NfyyNgqpxd2A2eOrEDb5ajyrlpCQRAKoqWPK7Q6IbiG3Ec-RV~owRNWIc2Fnq8vMWGZ1gywpg2wQJQ-HGjGTJ3dRZFWhPvZYqi~29d4wlqxTHh8gZ5OeOgaTHrBNhXvmWqNsFrK4xwScz54FZRevi1i0NwnWjnBIkEjIaFbn0S6gKFK6ssveawA93GGEBsY59DZ5XMRWrXMVAdfwoVd~jKaBVhcr5NWWn3LdRIuh5Pf7F0bkwLgQZQdNqpZ-hTNOnTDSUtJ~tciuChUBR1YOycCRaEbwI30ZcLuxJPwDANuP73dEJXeUK3RqQr0gRoTPfhaaZN1gySRnj1XKUIGg__"
-                    alt="image"
+                    src={topNews[0].images[0].image} alt="image"
                     fill objectFit="cover"
                   />
                 </div>
@@ -46,44 +99,53 @@ const page = () => {
                   <div className={s.mainTitelBlock1}>
                     <div className={s.mainTitelBlock1ButtonList}>
                       <ul>
-                        <li>Politic</li>
-                        <li>Top news</li>
+                        <li>{topNews[0].category}</li>
+                        <li>{topNews[0].status}</li>
                       </ul>
                       <FiShare2 />
                     </div>
                     <div className={s.mainTitelBlock1Text}>
-                      <h2>Конкурс на вакансию эксперта по реализации стратегий</h2>
-                      <button><GoArrowUpRight /></button>
+                      <h2>  {topNews[0].title}</h2>
+                      <Link href={`/news/${topNews[0].id}`}> <button><GoArrowUpRight /></button> </Link>
                     </div>
                     <div className={s.mianTitelWiews}>
-                      <p>2.k views</p>
+                      <p>{topNews[0].views} views</p>
                       <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4" fill="none">
                         <circle cx="2" cy="2" r="2" fill="#161616" />
                       </svg>
-                      <p>2 month ago</p>
+                      <p>{topNews[0].time_since_created}</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className={s.newsBloc1MainCards}>
-                {newsCardData.slice(0, 2).map((item, key) => (
+                {topNews.slice(1, 3).map((item, key) => (
                   <NewsCard data={item} key={key} />
                 ))}
+
               </div>
             </div>
           </div>
           <div className={s.Tap}>
-            <p>Последние</p>
+            <p onClick={() => setFilterPage("new")} style={{
+              color: filterPage == "new" ? "#DA4E38" : "#222",
+              cursor: "pointer"
+            }}> Последние</p>
             <div className={s.TopBorder}>
             </div>
-            <p>Популярные</p>
+            <p onClick={() => setFilterPage("popular")} style={{
+              color: filterPage == "popular" ? "#DA4E38" : "#222",
+              cursor: "pointer"
+            }}>Популярные</p>
           </div>
           <div className={s.borderBootm}>
           </div>
-          <div className={s.newsCards}>
-            {newsCardDataPage.map((item, key) => (
+          <div className={s.newsCards}>{newsPopular.length > 0 ?
+            newsPopular.map((item, key) => (
               <NewsCard data={item} key={key} />
-            ))}
+            ))
+            : <p>Ничего не найдено</p>
+          }
           </div>
         </div>
 
@@ -95,3 +157,4 @@ const page = () => {
 
 export default page;
 
+//1 

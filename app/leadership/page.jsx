@@ -21,8 +21,6 @@ const manrope = Manrope({ subsets: ["latin"] });
 
 const page = () => {
 
-
-
   return (
     <div className={`${manrope.tet} ${s.tet}`}>
       <Haeder />

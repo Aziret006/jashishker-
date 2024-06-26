@@ -11,61 +11,57 @@ import axios from 'axios';
 import SwiperNewsIda from '@/components/Swipers/SwiperNewsIda/SwiperNewsIda';
 import { Api } from '@/api';
 
-const page = async ({ id }) => {
+const page = async ({ params }) => {
 
+  const { data } = await axios.get(`${Api}api/news/${params.id}/`)
+  const CardList = await axios.get(`${Api}api/news/`)
 
-    const data = await axios.get(`${Api}api/news/${id}/`).then(res => res.data).catch(err => console.log(err , 'asdasd'))
-    console.log(data, 'data');
+  console.log(data, CardList.data, 'CardList');
 
-    return (
-      <div className={s.news}>
-        <Haeder />
-        <div className={s.newsHaeder}>
-          <div className={s.newsContend}>
-            <div className={s.newsNav}>
+  return (
+    <div className={s.news}>
+      <Haeder />
+      <div className={s.newsHaeder}>
+        <div className={s.newsContend}>
+          <div className={s.newsNav}>
 
-              <ul>
-                <li>Politic</li>
-                <li>Top news</li>
-              </ul>
-              <FiShare2 />
+            <ul>
+              <li>{data.status}</li>
+              <li>{data.category}</li>
+            </ul>
+            <FiShare2 />
+          </div>
+          <h1>{data.title}</h1>
+
+          <div className={s.Cards}>
+            <div className={s.SwiperCards}>
+              <div className={s.Swiper}>
+                <SwiperNewsIda data={data.images} />
+              </div>
+              <p>
+                {data.description}</p>
+              <span>
+                <p>{data.views} views</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="5" viewBox="0 0 4 5" fill="none">
+                  <circle cx="2" cy="2.5" r="2" fill="#161616" />
+                </svg>
+                <p>{data.time_since_created}</p>
+              </span>
             </div>
-            <h1>Конкурс на вакансию эксперта по реализации стратегий</h1>
-
-            <div className={s.Cards}>
-              <div className={s.SwiperCards}>
-                <div className={s.Swiper}>
-                  <SwiperNewsIda data />
-                </div>
-                <p>
-                  В рамках проекта «Молодежь за цифровизацию, лидерство и зеленые навыки», Энактас Кыргызстан объявляет конкурс на вакансию эксперта по реализации стратегий
-                  Требования и техническое задание по ссылке:
-                  Процедура подачи заявок и отбора:
-                  Всем соискателям, соответствующим квалификационным требованиям, предлагается отправить свои  заявки по следующему электронному адресу – enactuskyrgyzstan@gmail.com  до 20 мая  2024 года, до  17.00 часов, указав в теме письма «на эксперта по реализации стратегии хабов»
-                  Соискатели, включенные в список кандидатов на должность, будут приглашены на собеседование.
-                  Примечание: Вакансия будет закрыта, как только будет найден подходящий кандидат.</p>
-                <span>
-                  <p>2.k views</p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="4" height="5" viewBox="0 0 4 5" fill="none">
-                    <circle cx="2" cy="2.5" r="2" fill="#161616" />
-                  </svg>
-                  <p>2 month ago</p>
-                </span>
-              </div>
-              <div className={s.CardList}>
-                {newsCardData.slice(0, 2).map((item, key) => (
-                  <NewsCard data={item} key={key} />
-                ))}
-              </div>
+            <div className={s.CardList}>
+              {CardList.data.results.slice(0, 2).map((item, key) => (
+                <NewsCard data={item} key={key} />
+              ))}
             </div>
           </div>
         </div>
-        <Footer />
       </div>
-    )
-  }
+      <Footer />
+    </div>
+  )
+}
 
-  export default page
+export default page
 
 
 

@@ -47,4 +47,30 @@
       }
     }
   }
+
+  @media screen and (max-width: 662px) {
+    .accordionCard {
+      .accordionCardTitle {
+        p {
+          font-size: 18px;
+        }
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+      .accordionCardText {
+        ul {
+          margin-top: 10px;
+          gap: 8px !important;
+          display:flex ;
+          flex-direction: column;
+          padding-left: 10%;
+          li {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
 }

@@ -87,10 +87,47 @@
       }
     }
   }
+
+  @media screen and (max-width: 1080px) {
+    .AccordionTitel {
+      .AccordionTitelBlock1 {
+        h1 {
+          color: var(--white, #fff);
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        .AccordionTitelBlock1Image {
+          width: 152.452px;
+          height: 119.103px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 662px) {
+      .AccordionTitel {
+        .AccordionTitelBlock1 {
+          h1 {
+            font-size: 26px;
+            br {
+              display: none !important;
+            }
+          }
+          .AccordionTitelBlock1Image {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 
 .BgSvg {
   position: absolute;
   right: 3px;
   top: -304px;
+  @media screen and (max-width: 662px) {
+    display: none;
+  }
 }
