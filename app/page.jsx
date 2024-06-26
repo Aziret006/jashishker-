@@ -9,8 +9,11 @@ import { BsArrowRight } from "react-icons/bs";
 import { newsCardData } from "@/data";
 import NewsCards from "@/components/Cards/MainNewsCards/NewsCards";
 import MainFrom from "@/components/Forms/MainFrom/MainFrom";
-export default function Home() {
-
+import axios from "axios";
+import { Api } from "@/api";
+export default async function Home() {
+  const { data } = await axios.get(`${Api}api/news/?status=new`)
+  console.log(data.count, 'datatest');
 
   return (
     <div className={`${manrope.className} ${s.container}`}>
@@ -140,14 +143,15 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={s.Block4}>
+      {data.count > 0 && <div className={s.Block4}>
         <div className={s.Block4Titel}>
           <p className={s.Block4TitelText}>Последние новости</p>
           <div className={s.Block4Cards}>
-            {newsCardData.map((res) => <NewsCards data={res} key={res.id} />)}
+            {data.results.slice(0, 3).map((res) => <div key={res.id}><NewsCards data={res} /></div>)}
           </div>
         </div>
-      </div>
+      </div>}
+
       <div className={s.Block5}>
         <div className={s.Block5Titel}>
           <div className={s.Block5TitelBloc1}>

@@ -1,29 +1,80 @@
-import React from 'react'
+"use client"
+
+
+import React, { useState } from 'react'
 import s from './page.module.scss'
 import Image from 'next/image'
 import { Manrope } from 'next/font/google';
+import Link from 'next/link';
+import { IoIosArrowDown } from 'react-icons/io';
+import cm from 'classnames'
+import { motion } from "framer-motion";
 const manrope = Manrope({ subsets: ["latin"] });
 const Footer = () => {
+    const [pageIndexNav, setPageIndexNav] = useState(null)
+    const handlerNavPage = (e) => {
+        setPageIndexNav(e == pageIndexNav ? null : e)
+    }
+    const menuVariants = {
+        hidden: { opacity: 0, y: -10 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeInOut" } },
+        exit: { opacity: 0, y: -10, transition: { duration: 0.3, ease: "easeInOut" } },
+    };
     return (
         <footer className={s.footer}>
-
             <div className={s.NavLink}>
                 <div className={s.LoogFooter}>
-                    <div className={s.logo}>
+                    <Link href='/' className={s.logo}>
                         <Image src="/logo.svg" alt="logo" width={50} height={50} />
                         <p >ЖАШ <br />ИШКЕР</p>
-                    </div>
+                    </Link>
                     <p>Энактас Кыргызстан при финансовой поддержке Европейского  Союза в Кыргызской Республике с декабря 2022 года начал реализацию проекта «Молодежь за цифровизацию, лидерство и зеленые навыки».</p>
                     <img src="/Logo.png" alt="vk" className={s.LogoCopyn} />
                 </div>
                 <div className={s.NavFooter}>
                     <ul>
                         <li><p>Страницы</p></li>
-                        <li>Главная</li>
-                        <li>О нас</li>
-                        <li>Услуги</li>
-                        <li>Политика аукциона</li>
-                        <li>Правила пользования</li>
+                        <li onClick={() => handlerNavPage(1)}>О проекте <IoIosArrowDown />
+                            {pageIndexNav == 1 && (
+                                <motion.ul
+                                    initial="hidden"
+                                    animate="visible"
+                                    exit="exit"
+                                    variants={menuVariants}
+                                    className={s.accMenu}
+                                >
+                                    <li><Link className={s.Link} href={'/about'}>О проекте</Link></li>
+                                    <li><Link className={s.Link} href={'/Economy'}>Зеленая экономика</Link></li>
+                                    <li><Link className={s.Link} href={'/digitalization'}>Цифровизация</Link></li>
+                                    <li><Link className={s.Link} href={'/leadership'} >Лидерство</Link></li>
+                                    <li><Link className={s.Link} href={'/innovation'} >Инновация</Link></li>
+                                    <li><Link className={s.Link} href={'/news'}>Как стать ментором</Link></li>
+                                    <li><Link className={s.Link} href={'/parther'}>Партнеры</Link></li>
+                                    <li><Link className={s.Link} href={'/digitalization'}>Цифровизация</Link></li>
+                                    <li><Link className={s.Link} href={'/contact'} >Контакты</Link></li>
+                                </motion.ul>
+                            )}
+                        </li>
+                        <li>Новости</li>
+                        <li onClick={() => handlerNavPage(2)}>База знаний <IoIosArrowDown />
+
+                            {pageIndexNav == 2 && (
+                                <motion.ul
+                                    initial="hidden"
+                                    animate="visible"
+                                    exit="exit"
+                                    variants={menuVariants}
+                                    className={s.accMenu}
+                                >
+                                    <li><Link className={s.Link} href={'/where-to-start-a-business'}>С чего начать бизнес</Link></li>
+                                    <li><Link className={s.Link} href={'/business'}>Как составить бизнес-план</Link></li>
+                                    <li><Link className={s.Link} href={'/Economy'}>Шаблоны бизнес-планов</Link></li>
+                                    <li><Link className={s.Link} href={'/digitalization'} >Оценка проекта</Link></li>
+                                </motion.ul>
+                            )}
+                        </li>
+                        <li>История успеха</li>
+                        <li>Enactus</li>
                     </ul>
                     <ul>
                         <li>

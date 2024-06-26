@@ -1,0 +1,568 @@
+.startBusiness {
+  .heroStart {
+    background-image: url("../../public/business.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .heroContainer {
+      max-width: var(--maxWidth);
+      margin: 0 auto;
+      padding: 0 30px;
+
+      @media screen and (max-width: 600px) {
+        padding: 0 20px;
+      }
+    }
+
+    .heroStartText {
+      position: relative;
+      padding: 100px 0 134px;
+
+      @media screen and (max-width: 1024px) {
+        padding: 60px 0 114px;
+      }
+
+      @media screen and (max-width: 600px) {
+        padding: 40px 0 80px;
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--Text-color, #f0f0f0);
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 66px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 62px;
+          line-height: 66px;
+        }
+
+        @media screen and (max-width: 600px) {
+          font-size: 42px;
+          line-height: 66px;
+        }
+      }
+
+      h5 {
+        position: absolute;
+        top: 100px;
+        left: 650px;
+        color: var(--black, #ffffff);
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        opacity: 0.3;
+
+        @media screen and (max-width: 1024px) {
+          top: 60px;
+          right: 0;
+          left: inherit;
+        }
+
+        @media screen and (max-width: 600px) {
+          font-size: 28px;
+          top: 115px;
+          right: 0;
+          left: inherit;
+        }
+      }
+    }
+  }
+
+  .startMain {
+    width: 100%;
+    background: #fff;
+    padding: 90px 0 100px 0;
+
+    @media screen and (max-width: 1024px) {
+      padding: 60px 0 60px 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      padding: 40px 0 40px 0;
+    }
+
+    .container {
+      max-width: var(--maxWidth);
+      margin: 0 auto;
+      padding: 0 30px;
+
+      @media screen and (max-width: 600px) {
+        padding: 0 20px;
+      }
+    }
+
+    .startTitle {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 54px;
+
+      @media screen and (max-width: 1024px) {
+        gap: 20px;
+        margin-bottom: 119px;
+      }
+
+      @media screen and (max-width: 600px) {
+        gap: 5px;
+        margin-bottom: 40px;
+      }
+
+      h3 {
+        color: var(--Text-color, #222);
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 66px;
+        margin: 0;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 46px;
+          line-height: 38.684px;
+          /* 84.095% */
+        }
+
+        @media screen and (max-width: 600px) {
+          font-size: 36px;
+          line-height: normal;
+        }
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        span {
+          color: var(--Text-color, #222);
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          opacity: 0.7;
+          margin: 0;
+          max-width: 600px;
+
+          @media screen and (max-width: 1024px) {
+            font-size: 14px;
+            max-width: 452px;
+          }
+
+          @media screen and (max-width: 600px) {
+            max-width: 296px;
+          }
+        }
+      }
+    }
+
+    .startBlock {
+      display: grid;
+      grid-template-columns: 5.5fr 6.5fr;
+      gap: 40px;
+
+      @media screen and (max-width: 1024px) {
+        grid-template-columns: 12fr;
+        gap: 30px;
+      }
+
+      .startBlockImage {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p {
+          color: var(--black, #161616);
+          text-align: right;
+          font-size: 80px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          margin: 0;
+
+          @media screen and (max-width: 1024px) {
+            display: none;
+          }
+        }
+
+        ul {
+          margin: 0;
+          padding: 0;
+
+          li {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(34, 34, 34, 0.3);
+
+            @media screen and (max-width: 600px) {
+              gap: 20px;
+            }
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            span {
+              color: var(--Text-color, #222);
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+
+              @media screen and (max-width: 1024px) {
+                font-size: 16px;
+              }
+            }
+
+            .icon {
+              display: flex;
+              min-width: 60px;
+              min-height: 60px;
+              justify-content: center;
+              align-items: center;
+              border-radius: 30px;
+              border: 1.586px solid var(--black, #222);
+              background: var(--black, #222);
+
+              @media screen and (max-width: 1024px) {
+                min-width: 50px;
+                min-height: 50px;
+              }
+
+              @media screen and (max-width: 600px) {
+                min-width: 40px;
+                min-height: 40px;
+              }
+
+              svg {
+                min-width: 24px;
+                min-height: 24px;
+              }
+            }
+          }
+        }
+      }
+
+      .startBlockText {
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+
+        @media screen and (max-width: 1024px) {
+          gap: 20px;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          margin-right: 20px;
+
+          @media screen and (max-width: 1024px) {
+            margin-right: 0px;
+          }
+        }
+
+        .startBlockTextTitle {
+          display: flex;
+          justify-content: space-between;
+          align-items: start;
+          gap: 10px;
+
+          span {
+            color: var(--black, #161616);
+            text-align: center;
+            font-size: 50px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin: 0px;
+            display: none;
+
+            @media screen and (max-width: 1024px) {
+              display: block;
+            }
+
+            @media screen and (max-width: 600px) {
+              font-size: 36px;
+            }
+          }
+
+          h5 {
+            color: #191a1b;
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+            margin: 0;
+            max-width: 600px;
+
+            @media screen and (max-width: 1024px) {
+              font-size: 26px;
+            }
+
+            @media screen and (max-width: 600px) {
+              font-size: 22px;
+            }
+          }
+        }
+
+        p {
+          color: var(--Text-color, #222);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          opacity: 0.7;
+          margin: 0;
+
+          @media screen and (max-width: 600px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .startBlock2 {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      @media screen and (max-width: 1024px) {
+          gap: 20px;
+          margin-top: 60px;
+
+        }
+      
+        @media screen and (max-width: 600px) {
+          margin-top: 40px;
+          gap: 10px;
+
+        }
+
+      .startBlock2Title {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 10px;
+
+        span {
+          color: var(--black, #161616);
+          text-align: center;
+          font-size: 80px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          margin: 0px;
+
+          @media screen and (max-width: 1024px) {
+            font-size: 50px;
+          }
+
+          @media screen and (max-width: 600px) {
+            font-size: 36px;
+          }
+        }
+
+        h5 {
+          color: #191a1b;
+          font-size: 34px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: uppercase;
+          margin: 0;
+          max-width: 680px;
+
+          @media screen and (max-width: 1024px) {
+            font-size: 26px;
+          }
+
+          @media screen and (max-width: 600px) {
+            font-size: 22px;
+          }
+        }
+      }
+
+      .startBlock2Text {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @media screen and (max-width: 600px) {
+          gap: 20px;
+
+        }
+
+        p {
+          color: var(--Text-color, #222);
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          margin: 0;
+          max-width: 530px;
+
+          @media screen and (max-width: 1024px) {
+            max-width: 408px;
+            font-size: 14px;
+          }
+          @media screen and (max-width: 600px) {
+            max-width: 100%;
+          }
+        }
+
+        span {
+          color: var(--black, #161616);
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          margin: 0;
+          max-width: 399px;
+
+          @media screen and (max-width: 1024px) {
+            max-width: 307px;
+            font-size: 20px;
+          }
+
+          @media screen and (max-width: 600px) {
+            max-width: 100%;
+            font-size: 18px;
+          }
+        }
+      }
+
+      .startBlock2Wrap {
+        display: grid;
+        grid-template-columns: 5.5fr 6.5fr;
+        gap: 35px;
+        align-items: end;
+        margin-top: -180px;
+
+        @media screen and (max-width: 1024px) {
+          margin-top: -150px;
+        }
+
+        @media screen and (max-width: 1024px) {
+          margin-top: -100px;
+        }
+
+        @media screen and (max-width: 600px) {
+          grid-template-columns: 12fr;
+          gap: 0px;
+          margin-top: 0px;
+        }
+
+        .startBlock2Left {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          @media screen and (max-width: 1024px) {
+            gap: 7px;
+          }
+
+          .startCard {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px 0;
+
+            @media screen and (max-width: 1024px) {
+              gap: 10px;
+              padding: 12px 0;
+            }
+
+            @media screen and (max-width: 600px) {
+              gap: 20px;
+              padding: 22px 0;
+            }
+
+            &:last-child {
+              .icon::before {
+                height: 120px;
+
+                @media screen and (max-width: 1024px) {
+                  height: 80px;
+                }
+
+                @media screen and (max-width: 600px) {
+                  height: 100px;
+                }
+              }
+            }
+
+            p {
+              color: var(--black, #161616);
+              font-size: 22px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+              margin: 0;
+
+              @media screen and (max-width: 1024px) {
+                font-size: 14px;
+              }
+            }
+
+            .icon {
+              display: flex;
+              min-width: 70px;
+              min-height: 70px;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              background: var(--black, #161616);
+              position: relative;
+
+              @media screen and (max-width: 1024px) {
+                min-width: 38px;
+                min-height: 38px;
+              }
+
+              @media screen and (max-width: 600px) {
+                min-width: 40px;
+                min-height: 40px;
+              }
+
+              &::before {
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 180px;
+                background: var(--black, #161616);
+                top: -20px;
+
+                @media screen and (max-width: 1024px) {
+                  height: 140px;
+                }
+              }
+
+              span {
+                color: var(--White, #fefefe);
+                font-family: Gilroy-SemiBold;
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: -0.32px;
+                text-transform: uppercase;
+
+                @media screen and (max-width: 1024px) {
+                  font-size: 16.522px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
