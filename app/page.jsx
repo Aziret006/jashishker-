@@ -11,6 +11,14 @@ import NewsCards from "@/components/Cards/MainNewsCards/NewsCards";
 import MainFrom from "@/components/Forms/MainFrom/MainFrom";
 import axios from "axios";
 import { Api } from "@/api";
+export const metadata = {
+  title: "ЖАШ ИШКЕР",
+  description: "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
+  icons: {
+    icon: "/logo.svg",
+  },
+};
+
 export default async function Home() {
   const { data } = await axios.get(`${Api}api/news/?status=new`)
   console.log(data.count, 'datatest');

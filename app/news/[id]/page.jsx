@@ -11,6 +11,24 @@ import axios from 'axios';
 import SwiperNewsIda from '@/components/Swipers/SwiperNewsIda/SwiperNewsIda';
 import { Api } from '@/api';
 import { notFound } from 'next/navigation';
+export async function generateMetadata({ params, searchParams }) {
+  const newsResponse = await axios.get(`${Api}api/news/${params.id}/`);
+
+  const data = newsResponse.data;
+
+  return {
+    title: data.title,
+    description: data.description,
+    icons: {
+      icon: "/logo.svg",
+    },
+    openGraph: {
+      images: [
+        `${data.images[0].image}`,
+      ],
+    },
+  };
+}
 
 const page = async ({ params }) => {
 
