@@ -30,8 +30,6 @@ const page = () => {
   const [filterPage, setFilterPage] = useState("popular")
   const [loding, setLoding] = useState(true)
 
-  console.log(topNews, newsPopular, 'datatest');
-
   const getData = async () => {
     try {
       const topNews = await axios.get(`${Api}api/news/?category=top_news`)
@@ -42,7 +40,6 @@ const page = () => {
         newsPopular: newsPopular.data
       }
     } catch (error) {
-      alert("error")
     }
   }
   useEffect(() => {

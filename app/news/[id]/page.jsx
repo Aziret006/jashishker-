@@ -16,7 +16,6 @@ const page = async ({ params }) => {
   const { data } = await axios.get(`${Api}api/news/${params.id}/`)
   const CardList = await axios.get(`${Api}api/news/`)
 
-  console.log(data, CardList.data, 'CardList');
 
   return (
     <div className={s.news}>
