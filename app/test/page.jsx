@@ -30,13 +30,6 @@ const page = () => {
   ];
   return (
     <div className={s.testPage}>
-      <div
-        style={{
-          height: "400px",
-        }}
-      >
-        1
-      </div>
       <div className={s.Accordion}>
         <div className={s.AccordionTitel}>
           <img src="/05.png" className={s.BgSvg} />
