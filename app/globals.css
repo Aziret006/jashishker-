@@ -32,5 +32,9 @@ a {
 }
 
 .JDKLASJDKLAD {
-  height: 100vh;
+  background-color: #fff;
+  min-height: 120vh;
+}
+button {
+  cursor: pointer;
 }

@@ -15,6 +15,7 @@ import NewsCard from "@/components/Cards/NewsCard/NewsCard";
 import axios from "axios";
 import { Api } from "@/api";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
@@ -40,6 +41,8 @@ const page = () => {
         newsPopular: newsPopular.data
       }
     } catch (error) {
+      notFound()
+
     }
   }
   useEffect(() => {

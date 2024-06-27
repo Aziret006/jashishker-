@@ -5,7 +5,6 @@ import { FiShare2 } from 'react-icons/fi'
 import Link from 'next/link'
 import { GoArrowUpRight } from 'react-icons/go'
 const NewsCard = ({ data }) => {
-  console.log(data, 'data11');
   return (
     <div className={s.NewsCards}>
       <div className={s.NewsCardsImage}>
