@@ -42,7 +42,6 @@ const page = () => {
       }
     } catch (error) {
       notFound()
-
     }
   }
   useEffect(() => {
