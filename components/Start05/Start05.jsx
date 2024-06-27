@@ -14,6 +14,16 @@ const FontMansalva = Mansalva({
 });
 export default function Start05() {
   return (
-    <div>Start05</div>
+    <div className={s.start05}>
+      <div className={s.start05Content}>
+        <div className={s.start05ContentTitle}>
+          <span className={FontManrope.className}>05</span>
+          <h2 className={FontManrope.className}>Определитесь с местом ведения бизнеса</h2>
+        </div>
+        <p className={FontManrope.className}>Тут все зависит от масштабов вашего проекта и от того, чем вы планируете заниматься. Дешевле всего начинать с работы из дома, но этот вариант применим не ко всем видам деятельности.</p>
+      </div>
+      <Image className={s.desktop} src="./starto5.svg" alt="" width={1260} height={909} />
+      <Image className={s.mobile} src="./start05.svg" alt="" width={417} height={561} />      
+    </div>
   )
 }
