@@ -69,7 +69,7 @@ const Menu = ({ isMenu, setMenu }) => {
                             exit="exit"
                             variants={menuVariants}
                         >
-                            <li><Link className={s.Link} href={'/where-to-start-a-business'}>С чего начать бизнес</Link></li>
+                            <li><Link className={s.Link} href={'/start-business'}>С чего начать бизнес</Link></li>
                             <li><Link className={s.Link} href={'/business'}>Как составить бизнес-план</Link></li>
                             <li><Link className={s.Link} href={'/Economy'}>Шаблоны бизнес-планов</Link></li>
                             <li><Link className={s.Link} href={'/digitalization'} >Оценка проекта</Link></li>

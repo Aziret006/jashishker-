@@ -895,8 +895,15 @@
         margin: 0;
         @media screen and (max-width: 862px) {
           font-size: 16px;
+          @media screen and (max-width: 634px) {
+            position: relative;
+            top: 30px;
+          }
           @media screen and (max-width: 562px) {
             font-size: 14px;
+            @media screen and (max-width: 392px) {
+              top: 60px;
+            }
           }
         }
       }
@@ -914,9 +921,6 @@
           font-size: 16px;
           @media screen and (max-width: 562px) {
             font-size: 14px;
-            @media screen and (max-width: 492px) {
-              top: 220px;
-            }
           }
         }
       }
@@ -947,6 +951,10 @@
           font-size: 16px;
           @media screen and (max-width: 562px) {
             font-size: 14px;
+            top: 195px;
+            @media screen and (max-width: 406px) {
+              top: 170px;
+            }
           }
         }
       }
@@ -1149,7 +1157,7 @@
     height: 100%;
     padding: 40px 0 40px 0;
     @media screen and (max-width: 1254px) {
-      padding: 140px  0 40px 0;
+      padding: 140px 0 40px 0;
     }
     @media screen and (max-width: 930px) {
       padding: 90px 0 40px 0;
