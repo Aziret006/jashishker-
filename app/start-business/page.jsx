@@ -6,6 +6,8 @@ import { Alex_Brush, Be_Vietnam_Pro, Manrope } from "next/font/google";
 import Image from "next/image";
 import Start03 from "@/components/Start03/Start03";
 import Start04 from "@/components/Start04/Start04";
+import Start05 from "@/components/Start05/Start05";
+import Start06 from "@/components/Start06/Start06";
 
 
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
@@ -158,6 +160,8 @@ const page = () => {
             </div>
             <Start03 />
             <Start04/>
+            {/* <Start05/> */}
+            <Start06/>
           </div>
         </div>
       </div>
