@@ -1,5 +1,8 @@
 import React from "react";
-
+import s from "./page.module.scss";
+import Haeder from "@/components/Haeder/Haeder";
+import Footer from "@/components/Footer/Footer";
+import Image from "next/image";
 const page = () => {
   let item = [
     {
@@ -21,68 +24,71 @@ const page = () => {
   ];
   return (
     <div>
-      <div className={s.container}>
-        <div className={s.mainRight}>
-          <h1>Кому не подходит работа по патенту?</h1>
-          <nav>
-            <ul>
+      <Haeder />
+      <div className={s.sectionBack}>
+        <div className={s.container}>
+          <div className={s.mainRight}>
+            <h1>Кому не подходит работа по патенту?</h1>
+            <nav>
+              <ul>
+                <li>
+                  С 1 января 2024 года не будут выдавать патенты на торговую
+                  деятельность. Если вы собираетесь заниматься этим видом
+                  деятельности, лучше выбрать работу по единому налогу.
+                </li>
+                <li>
+                  Ставка налога составит 0,5 процента при годовом обороте до 30
+                  миллионов сомов, 1 процент — при обороте от 30 до 50 миллионов
+                  сомов.
+                </li>
+              </ul>
+              <img
+                className={s.image16}
+                src="/image16.svg"
+                alt="image15"
+                width={525}
+                height={250}
+              />
+            </nav>
+          </div>
+          <div className={s.sectionBlackall}>
+            {item.map((item, index) => (
+              <div key={index} className={s.sectionBlack}>
+                <nav>
+                  <p>{item.title}</p>
+                  <ul>
+                    <li>{item.text}</li>
+                  </ul>
+                </nav>
+              </div>
+            ))}
+          </div>
+          <div className={s.indexMain}>
+            <h3>Открываем банковский счет</h3>
+            <div className={s.flexMain}>
+              <img
+                src="/image17.svg"
+                alt="image15"
+              
+              />
               <li>
-                С 1 января 2024 года не будут выдавать патенты на торговую
-                деятельность. Если вы собираетесь заниматься этим видом
-                деятельности, лучше выбрать работу по единому налогу.
+                После регистрации у ИП возникает обязанность декларировать
+                доходы и расходы. Поэтому надо открыть в банке отдельный
+                бизнес-счет.
+                <br />
+                <br />
+                Именно на него будут поступать деньги, которые индивидуальный
+                предприниматель получает от основной деятельности.
+                <br />
+                <br />
+                Отдельный счет нужен потому, что налог считается от полученного
+                дохода.
               </li>
-              <li>
-                Ставка налога составит 0,5 процента при годовом обороте до 30
-                миллионов сомов, 1 процент — при обороте от 30 до 50 миллионов
-                сомов.
-              </li>
-            </ul>
-            <img
-              className={s.image16}
-              src="/image16.svg"
-              alt="image15"
-              width={525}
-              height={250}
-            />
-          </nav>
-        </div>
-        <div className={s.sectionBlackall}>
-          {item.map((item, index) => (
-            <div key={index} className={s.sectionBlack}>
-              <nav>
-                <p>{item.title}</p>
-                <ul>
-                  <li>{item.text}</li>
-                </ul>
-              </nav>
             </div>
-          ))}
+          </div>
         </div>
-        {/*  <div className={s.indexMain}>
-               <h3>Открываем банковский счет</h3>
-               <div className={s.flexMain}>
-                 <Image
-                   src="/image17.svg"
-                   alt="image15"
-                   width={510}
-                   height={200}
-                 />
-                 <li>
-                   После регистрации у ИП возникает обязанность декларировать
-                   доходы и расходы. Поэтому надо открыть в банке отдельный
-                   бизнес-счет.
-                   <br />
-                   <br />
-                   Именно на него будут поступать деньги, которые индивидуальный
-                   предприниматель получает от основной деятельности.
-                   <br />
-                   <br />
-                   Отдельный счет нужен потому, что налог считается от
-                   полученного дохода.
-                 </li>
-               </div>
-             </div> */}
       </div>
+      <Footer />
     </div>
   );
 };
