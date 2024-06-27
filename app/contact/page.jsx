@@ -12,6 +12,13 @@ import { LiaTelegramPlane } from "react-icons/lia";
 import { TbBrandYoutube } from "react-icons/tb";
 import { FaLinkedinIn } from "react-icons/fa";
 
+export const metadata = {
+  title: "ЖАШ ИШКЕР",
+  description: "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
+  icons: {
+    icon: "/logo.svg",
+  },
+};
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],

@@ -11,6 +11,14 @@ import {
 } from "next/font/google";
 import Haeder from "@/components/Haeder/Haeder";
 import Image from "next/image";
+
+export const metadata = {
+  title: "ЖАШ ИШКЕР",
+  description: "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
+  icons: {
+    icon: "/logo.svg",
+  },
+};
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"], // specify the desired weight here

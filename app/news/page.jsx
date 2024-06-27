@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 'use client'
-
 import Footer from "@/components/Footer/Footer";
 import Haeder from "@/components/Haeder/Haeder";
 import React, { useEffect, useState } from "react";

@@ -5,6 +5,14 @@ import { Alex_Brush, Be_Vietnam_Pro } from "next/font/google";
 import React from "react";
 import Image from "next/image";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
+
+export const metadata = {
+  title: "ЖАШ ИШКЕР",
+  description: "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
+  icons: {
+    icon: "/logo.svg",
+  },
+};
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"], // specify the desired weight here
@@ -27,7 +35,7 @@ const page = () => {
                 эффективности процессов или качества продукции.{" "}
               </h2>
               <p>
-                 Является результатом интеллектуальной и творческой деятельности
+                Является результатом интеллектуальной и творческой деятельности
                 человека.
               </p>
               <h4>

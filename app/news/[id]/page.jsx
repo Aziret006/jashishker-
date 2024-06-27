@@ -11,7 +11,7 @@ import axios from 'axios';
 import SwiperNewsIda from '@/components/Swipers/SwiperNewsIda/SwiperNewsIda';
 import { Api } from '@/api';
 import { notFound } from 'next/navigation';
-export async function generateMetadata({ params, searchParams }) {
+export async function generateMetadata({ params,  }) {
   const newsResponse = await axios.get(`${Api}api/news/${params.id}/`);
 
   const data = newsResponse.data;
