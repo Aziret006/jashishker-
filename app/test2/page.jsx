@@ -64,13 +64,11 @@ const page = () => {
             ))}
           </div>
           <div className={s.indexMain}>
-            <h3>Открываем банковский счет</h3>
+            <h3>
+              Открываем банковский <br /> счет
+            </h3>
             <div className={s.flexMain}>
-              <img
-                src="/image17.svg"
-                alt="image15"
-              
-              />
+              <img src="/image17.svg" alt="image15" width={510} height={200} />
               <li>
                 После регистрации у ИП возникает обязанность декларировать
                 доходы и расходы. Поэтому надо открыть в банке отдельный
