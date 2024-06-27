@@ -48,6 +48,7 @@ const data = [
     title: "За что вам будут платить?",
   },
 ];
+
 const page = () => {
   return (
     <div>
@@ -56,6 +57,7 @@ const page = () => {
         <div className={s.heroStart}>
           <div className={s.heroContainer}>
             <div className={s.heroStartText}>
+              + {/* Render the hero title */}
               <h1 className={BeVietnamPro.className}>С чего начать бизнес</h1>
               <h5 className={Alex.className}>Lorem ipsum dolor sit amet</h5>
             </div>
@@ -64,6 +66,7 @@ const page = () => {
         <div className={s.startMain}>
           <div className={s.container}>
             <div className={s.startTitle}>
+              + {/* Render the title */}
               <h3 className={FontManrope.className}>
                 Как открыть свой бизнес. 
               </h3>
@@ -77,6 +80,7 @@ const page = () => {
             <div className={s.startBlock}>
               <div className={s.startBlockText}>
                 <div className={s.startBlockTextTitle}>
+                  + {/* Render the title */}
                   <h5 className={FontManrope.className}>
                     Любой бизнес начинается с идеи. Максимально честно ответьте
                     сами себе на следующие вопросы:
@@ -97,6 +101,7 @@ const page = () => {
               <div className={s.startBlockImage}>
                 <p className={FontManrope.className}>01</p>
                 <ul>
+                  + {/* Render the questions */}
                   {data.map((item) => (
                     <li key={item.id}>
                       <div className={s.icon}>
@@ -194,57 +199,7 @@ const page = () => {
             <Start03 />
             <Start04 />
           </div>
-          <div className={s.container}>
-            <div className={s.mainRight}>
-              <h1>Кому не подходит работа по патенту?</h1>
-              <nav>
-                <ul>
-                  <li>
-                    С 1 января 2024 года не будут выдавать патенты на торговую
-                    деятельность. Если вы собираетесь заниматься этим видом
-                    деятельности, лучше выбрать работу по единому налогу.
-                  </li>
-                  <li>
-                    С 1 января 2024 года не будут выдавать патенты на торговую
-                    деятельность. Если вы собираетесь заниматься этим видом
-                    деятельности, лучше выбрать работу по единому налогу.
-                  </li>
-                </ul>
-                <Image
-                  src="/image16.svg"
-                  alt="image15"
-                  width={525}
-                  height={250}
-                />
-              </nav>
-            </div>
-            <div>
-              {[1, 2, 3].map((i) => (
-                <div key={i} className={s.sectionBlack}>
-                  <nav>
-                    <p>
-                      Есть особые условия уплаты налогов для тех, кто работает
-                      на крупных рынках.
-                    </p>
-                    <li>
-                      Если вы будете реализовывать товары только населению и не
-                      собираетесь заниматься экспортно-импортными операциями, то
-                      ставка налога и вовсе будет нулевой при годовом обороте до
-                      8 миллионов сомов.
-                    </li>
-                  </nav>
-                </div>
-              ))}
-            </div>
-            <div className={s.indexMain}>
-              <h3>Открываем банковский счет</h3>
-              <div>
-                <Image src='/image17' alt="image15"/>
-              </div>
-            </div>
-          </div>
         </div>
-        <div></div>
       </div>
       <Footer />
     </div>
