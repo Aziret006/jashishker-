@@ -11,7 +11,7 @@ import axios from 'axios';
 import SwiperNewsIda from '@/components/Swipers/SwiperNewsIda/SwiperNewsIda';
 import { Api } from '@/api';
 import { notFound } from 'next/navigation';
-export async function generateMetadata({ params,  }) {
+export async function generateMetadata({ params, }) {
   const newsResponse = await axios.get(`${Api}api/news/${params.id}/`);
 
   const data = newsResponse.data;
@@ -58,7 +58,6 @@ const page = async ({ params }) => {
         <div className={s.newsHaeder}>
           <div className={s.newsContend}>
             <div className={s.newsNav}>
-
               <ul>
                 <li>{data.status}</li>
                 <li>{data.category}</li>
