@@ -23,7 +23,7 @@
         p {
           width: 614px;
           color: var(--Text-color, #222);
-          font-family: Manrope;
+
           font-size: 18px;
           font-weight: 500;
           margin: 0;
@@ -83,7 +83,7 @@
       }
       h2 {
         color: #191a1b;
-        font-family: Manrope;
+
         font-size: 64px;
         font-style: normal;
         font-weight: 600;
@@ -119,7 +119,7 @@
         li {
           width: 500px;
           color: var(--Text-color, #222);
-          font-family: Manrope;
+
           font-size: 18px;
           font-weight: 400;
           list-style: none;
@@ -140,7 +140,7 @@
         max-width: 776px;
         width: 100%;
         color: #191a1b;
-        font-family: Manrope;
+
         font-size: 34px;
         font-weight: 600;
         text-transform: uppercase;
@@ -170,7 +170,7 @@
         }
         p {
           color: var(--Text-color, #222);
-          font-family: Manrope;
+
           font-size: 18px;
           font-weight: 400;
           opacity: 0.7;
@@ -212,7 +212,7 @@
             li {
               list-style: none;
               color: #222;
-              font-family: Manrope;
+
               font-size: 30px;
               font-weight: 300;
               opacity: 0.7;
@@ -220,7 +220,7 @@
             p {
               width: 100%;
               color: #222;
-              font-family: Manrope;
+
               font-size: 20px;
               font-weight: 500;
               text-align: end;
@@ -255,7 +255,7 @@
         h2 {
           margin: 0;
           color: #191a1b;
-          font-family: Manrope;
+
           font-size: 64px;
           font-weight: 600;
           text-transform: uppercase;
@@ -328,7 +328,7 @@
           li {
             list-style: none;
             color: #222;
-            font-family: Manrope;
+
             font-size: 26px;
             font-weight: 300;
             opacity: 0.7;
@@ -341,198 +341,198 @@
           padding: 0;
           margin: 0;
 
-                    p {
-                        margin: 0;
-                        width: 700px;
-                        flex-shrink: 0;
-                        color: #222;
-                        font-family: Manrope;
-                        font-size: 18px;
-                        font-weight: 400;
-                        @media screen and (max-width: 1300px) {
-                            width: 100%;
-                            @media screen and (max-width: 830px) {
-                                font-size: 14px;
-                            }
-                        }
-                    }
-                }
+          p {
+            margin: 0;
+            width: 700px;
+            flex-shrink: 0;
+            color: #222;
+
+            font-size: 18px;
+            font-weight: 400;
+            @media screen and (max-width: 1300px) {
+              width: 100%;
+              @media screen and (max-width: 830px) {
+                font-size: 14px;
+              }
             }
-            .navlist {
-                display: flex;
-                justify-content: end;
-                margin: 20px 0 0 0;
-                padding: 0;
-                @media screen and (max-width: 1300px) {
-                    display: none;
-                }
-                li {
-                    width: 739px;
-                    list-style: none;
-                    color: #222;
-                    font-family: Manrope;
-                    font-size: 18px;
-                    font-weight: 300;
-                    opacity: 0.7;
-                }
-            }
+          }
         }
-        .navmenuall {
-            .menuul {
-                padding: 0;
-                h1 {
-                    color: #191a1b;
-                    font-family: Manrope;
-                    font-size: 64px;
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    margin: 0;
-                    @media screen and (max-width: 930px) {
-                        font-size: 44px;
-                        @media screen and (max-width: 530px) {
-                            font-size: 30px;
-                        }
-                    }
-                }
-            }
-            .menuul2 {
-                display: flex;
-                justify-content: end;
-                padding: 0;
-                margin: 0;
-                p {
-                    color: var(--Text-color, #222);
-                    font-family: Manrope;
-                    font-size: 18px;
-                    font-weight: 400;
-                    margin: 0;
-                    @media screen and (max-width: 930px) {
-                        font-size: 14px;
-                    }
-                }
-            }
+      }
+      .navlist {
+        display: flex;
+        justify-content: end;
+        margin: 20px 0 0 0;
+        padding: 0;
+        @media screen and (max-width: 1300px) {
+          display: none;
         }
-        .gridtempalatyall {
-            margin: 30px 0 0 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            width: 100%;
-            @media screen and (max-width: 900px) {
-                display: flex;
-                flex-direction: column;
+        li {
+          width: 739px;
+          list-style: none;
+          color: #222;
+
+          font-size: 18px;
+          font-weight: 300;
+          opacity: 0.7;
+        }
+      }
+    }
+    .navmenuall {
+      .menuul {
+        padding: 0;
+        h1 {
+          color: #191a1b;
+
+          font-size: 64px;
+          font-weight: 600;
+          text-transform: uppercase;
+          margin: 0;
+          @media screen and (max-width: 930px) {
+            font-size: 44px;
+            @media screen and (max-width: 530px) {
+              font-size: 30px;
             }
-            .cartblockimg {
-                border-top: 1px solid rgba(22, 22, 22, 0.3);
-                display: grid;
-                grid-column: 1 / span 2;
-                grid-row: 1 / span 2;
-                min-height: 300px;
-                row-gap: 20px;
-                margin-top: 10px;
-                .imagewidht {
-                    width: 100%;
-                    object-fit: cover;
-                }
-                h4 {
-                    padding-top: 10px;
-                    color: #222;
-                    font-family: Manrope;
-                    font-size: 26px;
-                    font-weight: 300;
-                    text-transform: uppercase;
-                    opacity: 0.7;
-                    max-width: 800px;
-                    margin: 0;
-                    @media screen and (max-width: 900px) {
-                        font-size: 20px;
-                        @media screen and (max-width: 500px) {
-                            font-size: 18px;
-                        }
-                    }
-                }
+          }
+        }
+      }
+      .menuul2 {
+        display: flex;
+        justify-content: end;
+        padding: 0;
+        margin: 0;
+        p {
+          color: var(--Text-color, #222);
+
+          font-size: 18px;
+          font-weight: 400;
+          margin: 0;
+          @media screen and (max-width: 930px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .gridtempalatyall {
+      margin: 30px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 100%;
+      @media screen and (max-width: 900px) {
+        display: flex;
+        flex-direction: column;
+      }
+      .cartblockimg {
+        border-top: 1px solid rgba(22, 22, 22, 0.3);
+        display: grid;
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+        min-height: 300px;
+        row-gap: 20px;
+        margin-top: 10px;
+        .imagewidht {
+          width: 100%;
+          object-fit: cover;
+        }
+        h4 {
+          padding-top: 10px;
+          color: #222;
+
+          font-size: 26px;
+          font-weight: 300;
+          text-transform: uppercase;
+          opacity: 0.7;
+          max-width: 800px;
+          margin: 0;
+          @media screen and (max-width: 900px) {
+            font-size: 20px;
+            @media screen and (max-width: 500px) {
+              font-size: 18px;
             }
-            .cartblock {
-                display: flex;
-                flex-direction: column;
-                border-top: 1px solid rgba(22, 22, 22, 0.3);
-                border-left: 1px solid rgba(22, 22, 22, 0.3);
-                row-gap: 10px;
-                padding: 20px;
-                &:nth-child(4) {
-                    border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                }
-                &:nth-child(7) {
-                    border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                }
-                &:nth-child(10) {
-                    border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    border-right: 1px solid rgba(22, 22, 22, 0.3);
-                }
-                &:nth-child(8) {
-                    border-bottom: 1px solid rgba(22, 22, 22, 0.3) !important;
-                }
-                &:nth-child(9) {
-                    border-bottom: 1px solid rgba(22, 22, 22, 0.3) !important;
-                }
-                @media screen and (max-width: 900px) {
-                    padding: 16px 0 16px 0;
-                    &:nth-child(1) {
-                        border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
-                        border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                        border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    }
-                    &:nth-child(2) {
-                        border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
-                        border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                        border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    }
-                    &:nth-child(3) {
-                        border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
-                        border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                        border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    }
-                    &:nth-child(4) {
-                        border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
-                        border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                        border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    }
-                    &:nth-child(5) {
-                        border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
-                        border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                        border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    }
-                    &:nth-child(6) {
-                        border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
-                        border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                        border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    }
-                    &:nth-child(7) {
-                        border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
-                        border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                        border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    }
-                    &:nth-child(10) {
-                        border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                        border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    }
-                    &:nth-child(8) {
-                        border-bottom: 1px solid rgba(22, 22, 22, 0.3) !important;
-                        border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                        border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    }
-                    &:nth-child(9) {
-                        border-bottom: 1px solid rgba(22, 22, 22, 0.3) !important;
-                        border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
-                        border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
-                    }
-                }
+          }
+        }
+      }
+      .cartblock {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid rgba(22, 22, 22, 0.3);
+        border-left: 1px solid rgba(22, 22, 22, 0.3);
+        row-gap: 10px;
+        padding: 20px;
+        &:nth-child(4) {
+          border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+        }
+        &:nth-child(7) {
+          border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+        }
+        &:nth-child(10) {
+          border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+          border-right: 1px solid rgba(22, 22, 22, 0.3);
+        }
+        &:nth-child(8) {
+          border-bottom: 1px solid rgba(22, 22, 22, 0.3) !important;
+        }
+        &:nth-child(9) {
+          border-bottom: 1px solid rgba(22, 22, 22, 0.3) !important;
+        }
+        @media screen and (max-width: 900px) {
+          padding: 16px 0 16px 0;
+          &:nth-child(1) {
+            border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
+            border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+            border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
+          }
+          &:nth-child(2) {
+            border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
+            border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+            border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
+          }
+          &:nth-child(3) {
+            border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
+            border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+            border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
+          }
+          &:nth-child(4) {
+            border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
+            border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+            border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
+          }
+          &:nth-child(5) {
+            border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
+            border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+            border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
+          }
+          &:nth-child(6) {
+            border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
+            border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+            border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
+          }
+          &:nth-child(7) {
+            border-left: 1px solid rgba(22, 22, 22, 0.3) !important;
+            border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+            border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
+          }
+          &:nth-child(10) {
+            border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+            border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
+          }
+          &:nth-child(8) {
+            border-bottom: 1px solid rgba(22, 22, 22, 0.3) !important;
+            border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+            border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
+          }
+          &:nth-child(9) {
+            border-bottom: 1px solid rgba(22, 22, 22, 0.3) !important;
+            border-left: 0px solid rgba(22, 22, 22, 0.3) !important;
+            border-right: 0px solid rgba(22, 22, 22, 0.3) !important;
+          }
+        }
 
         h4 {
           margin: 0;
           max-width: 370px;
           width: 100%;
           color: #222;
-          font-family: Manrope;
+
           font-size: 24px;
           font-weight: 600;
           @media screen and (max-width: 1240px) {
@@ -543,7 +543,7 @@
           margin: 0;
           padding: 10px 0 0 0;
           color: var(--Text-color, #222);
-          font-family: Manrope;
+
           font-size: 18px;
           font-weight: 400;
           max-width: 370px;
@@ -568,7 +568,7 @@
           max-width: 815px;
           width: 100%;
           color: #191a1b;
-          font-family: Manrope;
+
           font-size: 34px;
           font-weight: 400;
           @media screen and (max-width: 900px) {
@@ -590,7 +590,7 @@
       }
       li {
         color: var(--Text-color, #222);
-        font-family: Manrope;
+
         font-size: 18px;
         font-weight: 400;
         width: 806px;
@@ -622,7 +622,7 @@
         height: 36px;
         color: var(--black, #161616);
         text-align: center;
-        font-family: Manrope;
+
         font-size: 16px;
         font-weight: 600;
         border-radius: 36px;
@@ -631,7 +631,7 @@
       li {
         list-style: none;
         color: var(--Text-color, #222);
-        font-family: Manrope;
+
         font-size: 18px;
         font-weight: 400;
         opacity: 0.7;
@@ -661,7 +661,7 @@
           max-width: 945px;
           width: 100%;
           color: #191a1b;
-          font-family: Manrope;
+
           font-size: 64px;
           font-weight: 600;
           text-transform: uppercase;
@@ -684,7 +684,7 @@
           width: 100%;
           margin: 0;
           color: var(--Text-color, #222);
-          font-family: Manrope;
+
           font-size: 18px;
           font-weight: 400;
           @media screen and (max-width: 1020px) {
@@ -717,7 +717,7 @@
         }
         h4 {
           color: #222;
-          font-family: Manrope;
+
           font-size: 20px;
           font-weight: 700;
           margin: 0;
@@ -731,7 +731,7 @@
           width: 100%;
           margin: 0;
           color: #222;
-          font-family: Manrope;
+
           font-size: 18px;
           font-weight: 400;
           @media screen and (max-width: 830px) {
@@ -753,7 +753,7 @@
       }
       h4 {
         color: #191a1b;
-        font-family: Manrope;
+
         font-size: 34px;
         font-weight: 400;
         width: 815px;
@@ -777,7 +777,7 @@
       }
       h1 {
         color: #191a1b;
-        font-family: Manrope;
+
         font-size: 64px;
         font-weight: 600;
         text-transform: uppercase;
@@ -832,4 +832,3 @@
     }
   }
 }
-            
