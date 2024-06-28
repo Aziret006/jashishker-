@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-'use client'
+
+'use client';
 import Footer from "@/components/Footer/Footer";
 import Haeder from "@/components/Haeder/Haeder";
 import React, { useEffect, useState } from "react";
@@ -9,68 +10,77 @@ import { Alex_Brush, Be_Vietnam_Pro, Manrope } from "next/font/google";
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
 import { FiShare2 } from "react-icons/fi";
-import { newsCardData, newsCardDataPage } from "@/data";
 import NewsCard from "@/components/Cards/NewsCard/NewsCard";
 import axios from "axios";
 import { Api } from "@/api";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
+import Loading from "@/components/Loading/Loading";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
-  weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"], // specify the desired weight here
+  weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
 });
 const manrope = Manrope({ subsets: ["latin"] });
 
-const page = () => {
 
-  const [topNews, setTopNews] = useState()
-  const [newsPopular, setPopular] = useState()
-  const [filterPage, setFilterPage] = useState("popular")
-  const [loding, setLoding] = useState(true)
+const page = () => {
+  const [topNews, setTopNews] = useState([]);
+  const [newsPopular, setPopular] = useState([]);
+  const [filterPage, setFilterPage] = useState("popular");
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const getData = async () => {
     try {
-      const topNews = await axios.get(`${Api}api/news/?category=top_news`)
-      const newsPopular = await axios.get(`${Api}api/news/?status=${filterPage}`)
-      setLoding(false)
+      const topNewsResponse = await axios.get(`${Api}api/news/?category=top_news`);
+      const newsPopularResponse = await axios.get(`${Api}api/news/?status=${filterPage}`);
       return {
-        topNews: topNews.data,
-        newsPopular: newsPopular.data
-      }
+        topNews: topNewsResponse.data.results,
+        newsPopular: newsPopularResponse.data.results,
+      };
     } catch (error) {
-      notFound()
+      setError(error.message);
     }
-  }
+  };
+
   useEffect(() => {
     getData().then((data) => {
-      setTopNews(data.topNews.results)
-      setPopular(data.newsPopular.results)
-    })
-  }, [])
+      if (data) {
+        setTopNews(data.topNews);
+        setPopular(data.newsPopular);
+      }
+      setLoading(false);
+    });
+  }, []);
 
   useEffect(() => {
     const getData = async () => {
       try {
         const newsPopular = await axios.get(`${Api}api/news/?status=${filterPage}`)
-
         return {
           newsPopular: newsPopular.data
         }
       } catch (error) {
       }
     }
-
     getData().then((data) => {
       setPopular(data.newsPopular.results)
     })
-
   }, [filterPage])
+  if (error) {
+    return notFound();
+  }
 
+  if (loading) {
+    return <Loading/>;
+  }
 
+  if (!newsPopular || newsPopular.length === 0) {
+    return <div>Новости не найдены</div>;
+  }
 
-  return loding != true && (
+  return (
     <div>
       <Haeder />
 
@@ -147,12 +157,9 @@ const page = () => {
           </div>
         </div>
 
-      </div>
-      <Footer />
+      </div><Footer />
     </div>
   );
 };
 
 export default page;
-
-//1 
