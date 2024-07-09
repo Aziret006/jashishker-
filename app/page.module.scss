@@ -101,6 +101,10 @@
     text-align: center;
     overflow: hidden;
     flex-direction: column;
+    &:hover {
+      transform: scale(1.03);
+      transition: 0.3s;
+    }
 
     h3 {
       color: #333;

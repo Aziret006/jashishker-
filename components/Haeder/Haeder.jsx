@@ -122,8 +122,8 @@ const Haeder = () => {
           </ul>
         </nav>
         <div className={s.ButtonList}>
-          <p>Ru</p>
-          <button>Войти</button>
+          <p style={{ cursor: "not-allowed" }}>Ru</p>
+          <button className="Login">Войти</button>
           <button className={s.burgerButton} onClick={() => setIsMenu(!isMenu)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
