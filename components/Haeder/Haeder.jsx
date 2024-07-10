@@ -82,7 +82,7 @@ const Haeder = () => {
   };
 
   return (
-    <div>
+    <div className={s.Div}>
       <haeder className={`${manrope.className}  ${s.haeder}`}>
         <a href="/" className={s.logo}>
           <Image src="/logo.svg" alt="logo" width={50} height={50} />

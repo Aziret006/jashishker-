@@ -7,6 +7,7 @@
   position: relative;
   background-color: #fff;
   overflow: hidden;
+  padding-top: 90px;
 
   .mainBlockTitel {
     max-width: var(--maxWidth);
@@ -91,6 +92,9 @@
   padding-top: 90px;
   padding-bottom: 90px;
   padding-right: var(--pageP);
+  a {
+    position: relative;
+  }
 
   div {
     background-color: red;
@@ -100,6 +104,7 @@
     display: flex;
     text-align: center;
     overflow: hidden;
+    height: fit-content;
     flex-direction: column;
     &:hover {
       transform: scale(1.03);

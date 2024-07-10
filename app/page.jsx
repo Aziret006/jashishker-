@@ -11,7 +11,8 @@ import NewsCards from "@/components/Cards/MainNewsCards/NewsCards";
 import MainFrom from "@/components/Forms/MainFrom/MainFrom";
 import axios from "axios";
 import { Api } from "@/api";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import Link from "next/link";
 export const metadata = {
   title: "ЖАШ ИШКЕР",
   description:
@@ -75,57 +76,62 @@ export default async function Home() {
         </div>
         <div></div>
         <div className={s.CardListBlock}>
-          <div>
-            <h3>Зеленая экономика</h3>
+          <Link href={"/Economy"}>
             <div>
-              <Image
-                src={"/mainImageCardList.png"}
-                alt="mainImage"
-                objectFit="contain"
-                layout="fill"
-              />
+              <h3>Зеленая экономика</h3>
+              <div>
+                <Image
+                  src={"/mainImageCardList.png"}
+                  alt="mainImage"
+                  objectFit="contain"
+                  layout="fill"
+                />
+              </div>
+              <p>
+                Устойчивая экономическая модель: ответственное использование
+                ресурсов, компромисс между ростом и сохранением природных
+                богатств.
+              </p>
             </div>
-            <p>
-              Устойчивая экономическая модель: ответственное использование
-              ресурсов, компромисс между ростом и сохранением природных
-              богатств.
-            </p>
-          </div>
-          <div>
-            <h3>Цифровизация</h3>
+          </Link>
+          <Link href={"/digitalization"}>
             <div>
-              {" "}
-              <Image
-                src={"/mainImageCardList1.png"}
-                alt="mainImage"
-                objectFit="contain"
-                layout="fill"
-              />
+              <h3>Цифровизация</h3>
+              <div>
+                {" "}
+                <Image
+                  src={"/mainImageCardList1.png"}
+                  alt="mainImage"
+                  objectFit="contain"
+                  layout="fill"
+                />
+              </div>
+              <p>
+                Цифровизация — внедрение цифровых технологий в бизнес для
+                повышения эффективности, качества продукции, сокращения издержек
+                и увеличения доходов.
+              </p>
             </div>
-            <p>
-              Цифровизация — внедрение цифровых технологий в бизнес для
-              повышения эффективности, качества продукции, сокращения издержек и
-              увеличения доходов.
-            </p>
-          </div>
-          <div>
-            <h3>Лидерство</h3>
+          </Link>
+          <Link href={"/leadership"}>
             <div>
-              {" "}
-              <Image
-                src={"/mainBgImage2.png"}
-                alt="mainImage"
-                objectFit="contain"
-                layout="fill"
-              />
+              <h3>Лидерство</h3>
+              <div>
+                {" "}
+                <Image
+                  src={"/mainBgImage2.png"}
+                  alt="mainImage"
+                  objectFit="contain"
+                  layout="fill"
+                />
+              </div>
+              <p>
+                Лидерство включает в себя искусство мотивации и направления
+                группы, с акцентом на эффективное принятие решений, с тем, чтобы
+                достичь общих целей и задач.
+              </p>
             </div>
-            <p>
-              Лидерство включает в себя искусство мотивации и направления
-              группы, с акцентом на эффективное принятие решений, с тем, чтобы
-              достичь общих целей и задач.
-            </p>
-          </div>
-
+          </Link>
           <div className={s.CardListBlock4}>
             <span className={s.CardListBlock4Titel}>
               <h2>Инновации</h2>
@@ -152,23 +158,25 @@ export default async function Home() {
               />
             </div>
           </div>
-          <div className={s.CardListBlock4Mobal}>
-            <h3>Инновации</h3>
-            <div>
-              {" "}
-              <Image
-                src={"/mainImageCardList3.png"}
-                alt="mainImage"
-                objectFit="contain"
-                layout="fill"
-              />
+          <Link href={"/innovations"}>
+            <div className={s.CardListBlock4Mobal}>
+              <h3>Инновации</h3>
+              <div>
+                {" "}
+                <Image
+                  src={"/mainImageCardList3.png"}
+                  alt="mainImage"
+                  objectFit="contain"
+                  layout="fill"
+                />
+              </div>
+              <p>
+                Инновация – это создание и внедрение новых идей или технологий с
+                целью улучшения текущих условий и решения проблем. Она
+                характеризуется новизной, применимостью и эффективностью.
+              </p>
             </div>
-            <p>
-              Инновация – это создание и внедрение новых идей или технологий с
-              целью улучшения текущих условий и решения проблем. Она
-              характеризуется новизной, применимостью и эффективностью.
-            </p>
-          </div>
+          </Link>
         </div>
         <div className={s.Block3}>
           <div className={s.Block3Titel}>
