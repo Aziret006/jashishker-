@@ -2,29 +2,21 @@
   width: 100%;
   background: #fff;
   padding: 90px 0 100px 0;
-
   @media screen and (max-width: 768px) {
     padding: 60px 0 66px 0;
   }
-
   @media screen and (max-width: 550px) {
-    padding: 40px 0 45px 0;
+    padding: 30px 0 35px 0;
   }
-
   .container {
     max-width: var(--maxWidth);
     margin: 0 auto;
     padding: 0 30px;
-
-
-
     @media screen and (max-width: 550px) {
-      padding: 0 20px;
+      padding: 0 10px;
     }
-
     .contactText {
       position: relative;
-
       h1 {
         margin: 0;
         color: var(--Text-color, #222);
@@ -32,18 +24,15 @@
         font-style: normal;
         font-weight: 900;
         line-height: 66px;
-
         @media screen and (max-width: 768px) {
           font-size: 62px;
           line-height: 66px;
         }
-
         @media screen and (max-width: 610px) {
           font-size: 42px;
           line-height: 66px;
         }
       }
-
       h5 {
         position: absolute;
         top: 0px;

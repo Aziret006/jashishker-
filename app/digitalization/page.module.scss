@@ -1,13 +1,9 @@
 .digitalization {
   background: #fff;
   padding: 90px 0 100px;
-
-  @media screen and (max-width: 768px) {
-    padding: 60px 0;
-  }
-
-  @media screen and (max-width: 600px) {
-    padding: 40px 0;
+  padding-top: 150px;
+  @media screen and (max-width:600px) {
+    padding-top: 100px;
   }
 
   .container {
@@ -35,10 +31,7 @@
       @media screen and (max-width: 600px) {
         font-size: 42px;
         line-height: normal;
-
       }
-
-
     }
 
     .border {
@@ -66,8 +59,6 @@
       @media screen and (max-width: 768px) {
         gap: 20px;
       }
-
-
 
       img {
         width: 100%;
@@ -109,7 +100,6 @@
             font-size: 22px;
             padding-bottom: 0px;
             width: 100%;
-
           }
         }
 
@@ -128,8 +118,6 @@
           @media screen and (max-width: 768px) {
             font-size: 14px;
           }
-
-
         }
       }
     }
@@ -140,7 +128,6 @@
       @media screen and (max-width: 768px) {
         margin: 60px 0 60px;
       }
-
 
       @media screen and (max-width: 600px) {
         margin: 40px 0 40px;
@@ -154,7 +141,6 @@
         @media screen and (max-width: 768px) {
           gap: 12px;
         }
-
 
         @media screen and (max-width: 600px) {
           gap: 10px;
@@ -186,7 +172,6 @@
           @media screen and (max-width: 768px) {
             grid-template-columns: 1fr 11fr;
           }
-
 
           @media screen and (max-width: 600px) {
             grid-template-columns: 12fr;
@@ -230,11 +215,9 @@
           gap: 20px;
         }
 
-
         @media screen and (max-width: 600px) {
           gap: 10px;
         }
-
 
         h4 {
           color: var(--Text-color, #222);
@@ -293,7 +276,6 @@
             @media screen and (max-width: 768px) {
               gap: 16px;
             }
-
 
             @media screen and (max-width: 600px) {
               gap: 10px;
@@ -384,7 +366,6 @@
               gap: 16px;
             }
 
-
             @media screen and (max-width: 600px) {
               gap: 10px;
             }
@@ -413,7 +394,6 @@
               @media screen and (max-width: 768px) {
                 font-size: 24px;
               }
-
             }
           }
         }

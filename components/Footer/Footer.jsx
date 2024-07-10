@@ -44,7 +44,7 @@ const Footer = () => {
                                     className={s.accMenu}
                                 >
                                     <li><Link className={s.Link} href={'/about'}>О проекте</Link></li>
-                                    <li><Link className={s.Link} href={'/Economy'}>Зеленая экономика</Link></li>
+                                    <li><Link className={s.Link} href={'/economy'}>Зеленая экономика</Link></li>
                                     <li><Link className={s.Link} href={'/digitalization'}>Цифровизация</Link></li>
                                     <li><Link className={s.Link} href={'/leadership'} >Лидерство</Link></li>
                                     <li><Link className={s.Link} href={'/innovation'} >Инновация</Link></li>
@@ -68,7 +68,7 @@ const Footer = () => {
                                 >
                                     <li><Link className={s.Link} href={'/start-business'}>С чего начать бизнес</Link></li>
                                     <li><Link className={s.Link} href={'/business'}>Как составить бизнес-план</Link></li>
-                                    <li><Link className={s.Link} href={'/Economy'}>Шаблоны бизнес-планов</Link></li>
+                                    <li><Link className={s.Link} href={'/economy'}>Шаблоны бизнес-планов</Link></li>
                                     <li><Link className={s.Link} href={'/digitalization'} >Оценка проекта</Link></li>
                                 </motion.ul>
                             )}

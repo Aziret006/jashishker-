@@ -22,7 +22,7 @@ const BeVietnamPro = Be_Vietnam_Pro({
 
 const FontManrope = Manrope({
   subsets: ["latin"],
-  weight: ["600", "400"], // specify the desired weight here
+  weight: ["600", "400"],
 });
 const page = () => {
 

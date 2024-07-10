@@ -76,12 +76,12 @@ export default async function Home() {
         </div>
         <div></div>
         <div className={s.CardListBlock}>
-          <Link href={"/Economy"}>
-            <div>
+          <Link href={"/economy"}>
+            <div style={{paddingBottom:'55px'}}>
               <h3>Зеленая экономика</h3>
               <div>
                 <Image
-                  src={"/mainImageCardList.png"}
+                  src={"/image18.svg"}
                   alt="mainImage"
                   objectFit="contain"
                   layout="fill"
@@ -100,7 +100,7 @@ export default async function Home() {
               <div>
                 {" "}
                 <Image
-                  src={"/mainImageCardList1.png"}
+                  src={"/image19.svg"}
                   alt="mainImage"
                   objectFit="contain"
                   layout="fill"
@@ -119,7 +119,7 @@ export default async function Home() {
               <div>
                 {" "}
                 <Image
-                  src={"/mainBgImage2.png"}
+                  src={"/image20.svg"}
                   alt="mainImage"
                   objectFit="contain"
                   layout="fill"
@@ -164,7 +164,7 @@ export default async function Home() {
               <div>
                 {" "}
                 <Image
-                  src={"/mainImageCardList3.png"}
+                  src={"/image22.svg"}
                   alt="mainImage"
                   objectFit="contain"
                   layout="fill"
