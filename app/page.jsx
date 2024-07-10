@@ -77,7 +77,7 @@ export default async function Home() {
         <div></div>
         <div className={s.CardListBlock}>
           <Link href={"/economy"}>
-            <div style={{paddingBottom:'55px'}}>
+            <div>
               <h3>Зеленая экономика</h3>
               <div>
                 <Image
@@ -95,7 +95,7 @@ export default async function Home() {
             </div>
           </Link>
           <Link href={"/digitalization"}>
-            <div>
+            <div className={s.blockpadding}>
               <h3>Цифровизация</h3>
               <div>
                 {" "}
