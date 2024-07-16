@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 
-'use client';
+"use client";
 import Footer from "@/components/Footer/Footer";
 import Haeder from "@/components/Haeder/Haeder";
 import React, { useEffect, useState } from "react";
@@ -23,7 +23,6 @@ const BeVietnamPro = Be_Vietnam_Pro({
 });
 const manrope = Manrope({ subsets: ["latin"] });
 
-
 const page = () => {
   const [topNews, setTopNews] = useState([]);
   const [newsPopular, setPopular] = useState([]);
@@ -33,8 +32,12 @@ const page = () => {
 
   const getData = async () => {
     try {
-      const topNewsResponse = await axios.get(`${Api}api/news/?category=top_news`);
-      const newsPopularResponse = await axios.get(`${Api}api/news/?status=${filterPage}`);
+      const topNewsResponse = await axios.get(
+        `${Api}api/news/?category=top_news`
+      );
+      const newsPopularResponse = await axios.get(
+        `${Api}api/news/?status=${filterPage}`
+      );
       return {
         topNews: topNewsResponse.data.results,
         newsPopular: newsPopularResponse.data.results,
@@ -57,23 +60,24 @@ const page = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const newsPopular = await axios.get(`${Api}api/news/?status=${filterPage}`)
+        const newsPopular = await axios.get(
+          `${Api}api/news/?status=${filterPage}`
+        );
         return {
-          newsPopular: newsPopular.data
-        }
-      } catch (error) {
-      }
-    }
+          newsPopular: newsPopular.data,
+        };
+      } catch (error) {}
+    };
     getData().then((data) => {
-      setPopular(data.newsPopular.results)
-    })
-  }, [filterPage])
+      setPopular(data.newsPopular.results);
+    });
+  }, [filterPage]);
   if (error) {
     return notFound();
   }
 
   if (loading) {
-    return <Loading/>;
+    return <Loading />;
   }
 
   if (!newsPopular || newsPopular.length === 0) {
@@ -87,20 +91,23 @@ const page = () => {
       <div className={s.news}>
         <div className={s.newsContend}>
           <div className={s.newsTitel}>
-            <h1 className={BeVietnamPro.className}>Последние <br />
-              новости</h1>
+            <h1 className={BeVietnamPro.className}>
+              Последние <br />
+              новости
+            </h1>
             <p className={Alex.className}>Lorem ipsum dolor sit amet</p>
           </div>
           <div className={` ${manrope.className} ${s.newsBloc1}`}>
             <p className={s.newsBloc1Titel}>топ новости</p>
-            <div className={s.borderBootm}>
-            </div>
+            <div className={s.borderBootm}></div>
             <div className={s.newsBloc1Main}>
               <div className={s.newsBloc1MainImage}>
                 <div className={s.mainImageBlock}>
                   <Image
-                    src={topNews[0].images[0].image} alt="image"
-                    fill objectFit="cover"
+                    src={topNews[0].images[0].image}
+                    alt="image"
+                    fill
+                    objectFit="cover"
                   />
                 </div>
                 <div className={s.mainTitel}>
@@ -113,12 +120,23 @@ const page = () => {
                       <FiShare2 />
                     </div>
                     <div className={s.mainTitelBlock1Text}>
-                      <h2>  {topNews[0].title}</h2>
-                      <Link href={`/news/${topNews[0].id}`}> <button><GoArrowUpRight /></button> </Link>
+                      <h2> {topNews[0].title}</h2>
+                      <Link href={`/news/${topNews[0].id}`}>
+                        {" "}
+                        <button>
+                          <GoArrowUpRight />
+                        </button>{" "}
+                      </Link>
                     </div>
                     <div className={s.mianTitelWiews}>
                       <p>{topNews[0].views} views</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4" fill="none">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="4"
+                        height="4"
+                        viewBox="0 0 4 4"
+                        fill="none"
+                      >
                         <circle cx="2" cy="2" r="2" fill="#161616" />
                       </svg>
                       <p>{topNews[0].time_since_created}</p>
@@ -130,34 +148,42 @@ const page = () => {
                 {topNews.slice(1, 3).map((item, key) => (
                   <NewsCard data={item} key={key} />
                 ))}
-
               </div>
             </div>
           </div>
           <div className={s.Tap}>
-            <p onClick={() => setFilterPage("new")} style={{
-              color: filterPage == "new" ? "#DA4E38" : "#222",
-              cursor: "pointer"
-            }}> Последние</p>
-            <div className={s.TopBorder}>
-            </div>
-            <p onClick={() => setFilterPage("popular")} style={{
-              color: filterPage == "popular" ? "#DA4E38" : "#222",
-              cursor: "pointer"
-            }}>Популярные</p>
+            <p
+              onClick={() => setFilterPage("new")}
+              style={{
+                color: filterPage == "new" ? "#DA4E38" : "#222",
+                cursor: "pointer",
+              }}
+            >
+              {" "}
+              Последние
+            </p>
+            <div className={s.TopBorder}></div>
+            <p
+              onClick={() => setFilterPage("popular")}
+              style={{
+                color: filterPage == "popular" ? "#DA4E38" : "#222",
+                cursor: "pointer",
+              }}
+            >
+              Популярные
+            </p>
           </div>
-          <div className={s.borderBootm}>
-          </div>
-          <div className={s.newsCards}>{newsPopular.length > 0 ?
-            newsPopular.map((item, key) => (
-              <NewsCard data={item} key={key} />
-            ))
-            : <p>Ничего не найдено</p>
-          }
+          <div className={s.borderBootm}></div>
+          <div className={s.newsCards}>
+            {newsPopular.length > 0 ? (
+              newsPopular.map((item, key) => <NewsCard data={item} key={key} />)
+            ) : (
+              <p>Ничего не найдено</p>
+            )}
           </div>
         </div>
-
-      </div><Footer />
+      </div>
+      <Footer />
     </div>
   );
 };

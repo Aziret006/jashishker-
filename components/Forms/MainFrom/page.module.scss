@@ -22,6 +22,7 @@
     opacity: 1 !important;
   }
 }
+
 .inputFroms {
   display: flex;
   flex-direction: column;
@@ -61,5 +62,23 @@
   }
   .inputFrom {
     gap: 10px !important;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--black, #161616);
+  color: #fff;
+  @media screen and (max-width: 1110px) {
+    padding: 5px 10px;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 10px 25px;
   }
 }

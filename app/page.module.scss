@@ -91,6 +91,7 @@
   margin: 0 auto;
   padding-left: var(--pageP);
   padding-top: 90px;
+  cursor: pointer;
   padding-bottom: 90px;
   padding-right: var(--pageP);
   a {
@@ -117,10 +118,6 @@
     overflow: hidden;
     height: 100%;
     flex-direction: column;
-    &:hover {
-      transform: scale(1.03);
-      transition: 0.3s;
-    }
 
     h3 {
       color: #333;
@@ -149,6 +146,10 @@
       position: relative;
       width: 297px;
       height: 297px;
+      &:hover {
+        transform: scale(1.03);
+        transition: 0.3s;
+      }
       margin: 0 auto;
     }
   }
@@ -309,6 +310,7 @@
         display: flex;
         gap: 20px;
         background-color: #00000000;
+        border: 1px solid #000;
         cursor: pointer;
 
         svg {
@@ -406,7 +408,11 @@
   justify-content: center;
   display: grid;
   background: rgb(22, 22, 22);
-  background: linear-gradient(90deg, rgba(22, 22, 22, 1) 50%, rgba(233, 233, 233, 1) 50%);
+  background: linear-gradient(
+    90deg,
+    rgba(22, 22, 22, 1) 50%,
+    rgba(233, 233, 233, 1) 50%
+  );
 
   .Block5Titel {
     margin: 0 auto;
@@ -484,7 +490,11 @@
       @media screen and (max-width: 1110px) {
         background: rgb(22, 22, 22);
         display: grid;
-        background: linear-gradient(180deg, rgba(22, 22, 22, 1) 50%, rgba(233, 233, 233, 1) 50%);
+        background: linear-gradient(
+          180deg,
+          rgba(22, 22, 22, 1) 50%,
+          rgba(233, 233, 233, 1) 50%
+        );
         .Block5Titel {
           grid-template-columns: 1fr;
           gap: 0px;

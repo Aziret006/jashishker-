@@ -1,6 +1,7 @@
 .economyall {
   width: 100%;
   background: #fff;
+  padding-top: 60px;
   .economycontainer {
     max-width: var(--maxWidth);
     margin: 0 auto;
@@ -57,9 +58,11 @@
         @media screen and (max-width: 920px) {
           font-size: 62px;
           padding: 30px 0 0 0;
+          line-height: 50px;
           @media screen and (max-width: 735px) {
             font-size: 42px;
             padding: 0;
+            line-height: 40px;
           }
         }
       }

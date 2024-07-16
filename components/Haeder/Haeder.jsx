@@ -161,7 +161,7 @@ const Haeder = () => {
                 </Link>
               </li>
               <li>
-                <Link className={s.Link} href={"/economy"}>
+                <Link className={s.Link} href={"/Economy"}>
                   Зеленая экономика
                 </Link>
               </li>
@@ -230,7 +230,7 @@ const Haeder = () => {
                 </Link>
               </li>
               <li>
-                <Link className={s.Link} href={"/economy"}>
+                <Link className={s.Link} href={"/Economy"}>
                   Шаблоны бизнес-планов
                 </Link>
               </li>

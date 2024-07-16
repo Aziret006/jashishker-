@@ -76,7 +76,7 @@ export default async function Home() {
         </div>
         <div></div>
         <div className={s.CardListBlock}>
-          <Link href={"/economy"}>
+          <Link href={"/Economy"}>
             <div>
               <h3>Зеленая экономика</h3>
               <div>
@@ -198,10 +198,12 @@ export default async function Home() {
                   От идеи до бизнес-плана, наш обзор поможет вам освоить основы
                   старта, сократив риски и повысив шансы на успех.”
                 </p>
-                <button>
-                  Подробнее
-                  <BsArrowRight />
-                </button>
+                <a href="/start-business">
+                  <button>
+                    Подробнее
+                    <BsArrowRight />
+                  </button>
+                </a>
               </span>
               <div className={s.Block3Cards}>
                 <div>
