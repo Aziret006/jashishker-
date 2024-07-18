@@ -105,7 +105,7 @@ const Haeder = () => {
               База знаний <IoIosArrowDown />
             </li>
             <li>
-              <Link className={s.Link} href={"/Economy"}>
+              <Link className={s.Link} href={"/economy"}>
                 История успеха
               </Link>
             </li>

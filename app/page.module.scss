@@ -1,3 +1,4 @@
+
 .container {
   margin: 0 auto;
 }
@@ -408,11 +409,7 @@
   justify-content: center;
   display: grid;
   background: rgb(22, 22, 22);
-  background: linear-gradient(
-    90deg,
-    rgba(22, 22, 22, 1) 50%,
-    rgba(233, 233, 233, 1) 50%
-  );
+  background: linear-gradient(90deg, rgba(22, 22, 22, 1) 50%, rgba(233, 233, 233, 1) 50%);
 
   .Block5Titel {
     margin: 0 auto;
@@ -490,11 +487,7 @@
       @media screen and (max-width: 1110px) {
         background: rgb(22, 22, 22);
         display: grid;
-        background: linear-gradient(
-          180deg,
-          rgba(22, 22, 22, 1) 50%,
-          rgba(233, 233, 233, 1) 50%
-        );
+        background: linear-gradient(180deg, rgba(22, 22, 22, 1) 50%, rgba(233, 233, 233, 1) 50%);
         .Block5Titel {
           grid-template-columns: 1fr;
           gap: 0px;

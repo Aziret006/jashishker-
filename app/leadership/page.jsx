@@ -14,7 +14,8 @@ import Image from "next/image";
 
 export const metadata = {
   title: "ЖАШ ИШКЕР",
-  description: "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
+  description:
+    "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
   icons: {
     icon: "/logo.svg",
   },
@@ -28,7 +29,6 @@ const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const manrope = Manrope({ subsets: ["latin"] });
 
 const page = () => {
-
   return (
     <div className={`${manrope.tet} ${s.tet}`}>
       <Haeder />
