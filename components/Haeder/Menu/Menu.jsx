@@ -51,7 +51,7 @@ const Menu = ({ isMenu, setMenu }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link className={s.Link} href={"/Economy"}>
+                  <Link className={s.Link} href={"/economy"}>
                     Зеленая экономика
                   </Link>
                 </li>
@@ -118,7 +118,7 @@ const Menu = ({ isMenu, setMenu }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link className={s.Link} href={"/Economy"}>
+                  <Link className={s.Link} href={"/economy"}>
                     Шаблоны бизнес-планов
                   </Link>
                 </li>
@@ -131,7 +131,7 @@ const Menu = ({ isMenu, setMenu }) => {
             )}
           </li>
           <li>
-            <Link className={s.Link} href={"/Economy"}>
+            <Link className={s.Link} href={"/economy"}>
               История успеха
             </Link>
           </li>
