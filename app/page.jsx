@@ -37,7 +37,7 @@ export default async function Home() {
     return <div>News article not found</div>;
   } else {
     return (
-      <div className={`${manrope.className} ${s.container}`}>
+      <div className={` ${s.container}`}>
         <Haeder />
         <div className={s.mainBlock}>
           <div className={s.mainBlockTitel}>
