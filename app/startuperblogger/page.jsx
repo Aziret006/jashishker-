@@ -44,7 +44,7 @@ const page = () => {
                 </li>
               </ul>
             </nav>
-            <div>
+            <div className={s.imgall}>
               <img src="/image23.svg" alt="" />
             </div>
             <div className={s.contextFoot}>
