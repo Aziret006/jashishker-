@@ -120,7 +120,7 @@ const Haeder = () => {
               </Link>
             </li>
             <li>
-              <Link className={s.Link} href={"/contacts"}>
+              <Link className={s.Link} href={"/contact"}>
                 Контакты
               </Link>
             </li>
