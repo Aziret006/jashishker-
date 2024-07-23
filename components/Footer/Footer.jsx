@@ -143,7 +143,16 @@ const Footer = () => {
               )}
             </li>
             <li>История успеха</li>
-            <li>Enactus</li>
+            <li>
+              <a
+                className={s.Link}
+                href="https://enactus.kg/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Enactus
+              </a>
+            </li>
           </ul>
           <ul>
             <li>

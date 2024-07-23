@@ -17,7 +17,7 @@
   background-color: var(--bg);
   align-items: center;
   display: flex;
-  justify-content: space-between ;
+  justify-content: space-between;
   .logo {
     height: 49px;
     width: 50px;
@@ -100,7 +100,7 @@
     display: none;
   }
 
-  @media screen and (max-width: 1039px) {
+  @media screen and (max-width: 1322px) {
     .nav {
       display: none;
     }

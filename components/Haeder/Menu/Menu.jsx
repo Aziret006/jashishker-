@@ -140,11 +140,7 @@ const Menu = ({ isMenu, setMenu }) => {
               Справочная
             </Link>
           </li>
-          <li>
-            <Link className={s.Link} href={"/news"}>
-              Enactus
-            </Link>
-          </li>
+          <li></li>
         </ul>
       </motion.div>
     )
