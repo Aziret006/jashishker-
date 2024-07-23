@@ -119,6 +119,11 @@ const Haeder = () => {
                 Enactus
               </Link>
             </li>
+            <li>
+              <Link className={s.Link} href={"/contacts"}>
+                Контакты
+              </Link>
+            </li>
           </ul>
         </nav>
         <div className={s.ButtonList}>
@@ -193,10 +198,12 @@ const Haeder = () => {
                 </Link>
               </li>
               <li>
-                <Link className={s.Link} href={"/digitalization"}>
-                  Цифровизация
+                <Link className={s.Link} href={"/contact"}>
+                  Контакты
                 </Link>
               </li>
+            </ul>
+            <ul>
               <li>
                 <Link className={s.Link} href={"/contact"}>
                   Контакты
