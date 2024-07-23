@@ -115,9 +115,15 @@ const Haeder = () => {
               </Link>
             </li>
             <li>
-              <Link className={s.Link} href={"/enactus"}>
+              <a
+                className={s.Link}
+                F
+                href="https://enactus.kg/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Enactus
-              </Link>
+              </a>
             </li>
             <li>
               <Link className={s.Link} href={"/contacts"}>
