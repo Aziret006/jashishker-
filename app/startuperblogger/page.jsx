@@ -3,12 +3,14 @@ import s from "./page.module.scss";
 import Haeder from "@/components/Haeder/Haeder";
 import Footer from "@/components/Footer/Footer";
 import { Manrope } from "next/font/google";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 const manrope = Manrope({ subsets: ["latin"] });
 const page = () => {
   return (
     <div>
       <Haeder />
       <div className={s.backStore}>
+        <SocialSidebar />
         <div className={s.heroContainer}>
           <div className={s.container}>
             <div>

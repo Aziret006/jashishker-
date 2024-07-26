@@ -4,12 +4,14 @@ import React from "react";
 import s from "./page.module.scss";
 import { Alex_Brush, Be_Vietnam_Pro } from "next/font/google";
 import Image from "next/image";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
   title: "ЖАШ ИШКЕР",
-  description: "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
+  description:
+    "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
   icons: {
     icon: "/logo.svg",
   },
@@ -23,6 +25,7 @@ const page = () => {
     <div>
       <Haeder />
       <div className={s.economyall}>
+        <SocialSidebar />
         <div className={s.economycontainer}>
           <div className={s.leadershiptitle}>
             <h1 className={BeVietnamPro.className}>Зеленая экономика</h1>

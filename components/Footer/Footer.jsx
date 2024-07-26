@@ -8,6 +8,7 @@ import Link from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
 import cm from "classnames";
 import { motion } from "framer-motion";
+import SocialSidebar from "../SocialSidebar/SocialSidebar";
 const manrope = Manrope({ subsets: ["latin"] });
 const Footer = () => {
   const [pageIndexNav, setPageIndexNav] = useState(null);
@@ -96,11 +97,6 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className={s.Link} href={"/digitalization"}>
-                      Цифровизация
-                    </Link>
-                  </li>
-                  <li>
                     <Link className={s.Link} href={"/contact"}>
                       Контакты
                     </Link>
@@ -143,6 +139,7 @@ const Footer = () => {
               )}
             </li>
             <li>История успеха</li>
+            <li>База данныха</li>
             <li>
               <a
                 className={s.Link}

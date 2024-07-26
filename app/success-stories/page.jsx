@@ -3,12 +3,14 @@ import s from "./page.module.scss";
 import Haeder from "@/components/Haeder/Haeder";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 
 const page = () => {
   return (
     <div>
       <Haeder />
       <div className={s.storeBack}>
+        <SocialSidebar />
         <div className={s.heroContainer}>
           <div className={s.historyAll}>
             <div className={s.stories}>

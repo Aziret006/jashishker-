@@ -4,6 +4,7 @@ import Footer from "@/components/Footer/Footer";
 import { Alex_Brush, Be_Vietnam_Pro } from "next/font/google";
 import Image from "next/image";
 import s from "./page.module.scss";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 
 const data = [
   {
@@ -25,7 +26,8 @@ const data = [
 
 export const metadata = {
   title: "ЖАШ ИШКЕР",
-  description: "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
+  description:
+    "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
   icons: {
     icon: "/logo.svg",
   },
@@ -42,6 +44,7 @@ const Page = () => {
     <>
       <Haeder />
       <div className={s.aboutAll}>
+        <SocialSidebar />
         <div className={s.aboutContainer}>
           <div className={s.aboutTitle}>
             <h1 className={BeVietnamPro.className}>О проекте</h1>

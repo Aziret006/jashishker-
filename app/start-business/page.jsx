@@ -9,6 +9,7 @@ import Start04 from "@/components/Start04/Start04";
 import Start05 from "@/components/Start05/Start05";
 import Start06 from "@/components/Start06/Start06";
 import AccordionWhere from "@/components/Accordions/AccordionWhere/AccordionWhere";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 
@@ -101,6 +102,7 @@ const page = () => {
     <div>
       <Haeder />
       <div className={s.startBusiness}>
+      <SocialSidebar />
         <div className={s.heroStart}>
           <div className={s.heroContainer}>
             <div className={s.heroStartText}>

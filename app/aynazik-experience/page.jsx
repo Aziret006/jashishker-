@@ -3,6 +3,7 @@ import s from "./page.module.scss";
 import Haeder from "@/components/Haeder/Haeder";
 import Footer from "@/components/Footer/Footer";
 import Image from "next/image";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 
 const data = [
   {
@@ -32,6 +33,7 @@ const page = () => {
     <div>
       <Haeder />
       <div className={s.storeBack}>
+        <SocialSidebar />
         <div className={s.heroContainer}>
           <div className={s.experienceAll}>
             <h1>

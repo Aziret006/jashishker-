@@ -6,6 +6,7 @@ import { Alex_Brush, Be_Vietnam_Pro, Manrope } from "next/font/google";
 import Image from "next/image";
 import Accordion from "@/components/Accordion/Accordion";
 import Digitalization from "@/components/Digitalization/Digitalization";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
@@ -30,6 +31,7 @@ const page = () => {
     <div>
       <Haeder />
       <div className={s.digitalization}>
+        <SocialSidebar />
         <div className={s.container}>
           <h2 className={BeVietnamPro.className}>Цифровизация</h2>
           <div className={s.border} />

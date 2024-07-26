@@ -13,6 +13,7 @@ import axios from "axios";
 import { Api } from "@/api";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 export const metadata = {
   title: "ЖАШ ИШКЕР",
   description:
@@ -40,6 +41,7 @@ export default async function Home() {
       <div className={` ${s.container}`}>
         <Haeder />
         <div className={s.mainBlock}>
+          <SocialSidebar />
           <div className={s.mainBlockTitel}>
             <h1 className={bebasNeue.className}>
               {" "}

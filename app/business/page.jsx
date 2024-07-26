@@ -4,6 +4,7 @@ import s from "./page.module.scss";
 import { Alex_Brush, Be_Vietnam_Pro } from "next/font/google";
 import React from "react";
 import Image from "next/image";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
@@ -131,6 +132,7 @@ const page = () => {
     <div>
       <Haeder />
       <div className={s.economyall}>
+        <SocialSidebar />
         <div className={s.economycontainer}>
           <div className={s.leadershiptitle}>
             <h1 className={BeVietnamPro.className}>

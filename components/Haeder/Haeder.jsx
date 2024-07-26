@@ -110,8 +110,8 @@ const Haeder = () => {
               </Link>
             </li>
             <li>
-              <Link className={s.Link} href={"/digitalization"}>
-                Справочная
+              <Link className={s.Link} href={"/database"}>
+                База данных
               </Link>
             </li>
             <li>
@@ -201,11 +201,6 @@ const Haeder = () => {
               <li>
                 <Link className={s.Link} href={"/partner"}>
                   Партнеры
-                </Link>
-              </li>
-              <li>
-                <Link className={s.Link} href={"/contact"}>
-                  Контакты
                 </Link>
               </li>
             </ul>

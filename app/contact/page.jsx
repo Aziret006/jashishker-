@@ -11,6 +11,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { LiaTelegramPlane } from "react-icons/lia";
 import { TbBrandYoutube } from "react-icons/tb";
 import { FaLinkedinIn } from "react-icons/fa";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 
 export const metadata = {
   title: "ЖАШ ИШКЕР",
@@ -35,6 +36,7 @@ const page = () => {
     <div>
       <Haeder />
       <div className={s.contact}>
+        <SocialSidebar />
         <div className={s.container}>
           <div className={s.contactText}>
             <h1 className={BeVietnamPro.className}>Контакты</h1>

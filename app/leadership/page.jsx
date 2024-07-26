@@ -11,6 +11,7 @@ import {
 } from "next/font/google";
 import Haeder from "@/components/Haeder/Haeder";
 import Image from "next/image";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 
 export const metadata = {
   title: "ЖАШ ИШКЕР",
@@ -33,6 +34,7 @@ const page = () => {
     <div className={`${manrope.tet} ${s.tet}`}>
       <Haeder />
       <div className={s.leadership}>
+        <SocialSidebar />
         <div className={s.leadershipTitel}>
           <div className={s.leadershiptitle}>
             <h1 className={BeVietnamPro.className}>Лидерство</h1>

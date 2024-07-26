@@ -16,6 +16,7 @@ import { Api } from "@/api";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Loading from "@/components/Loading/Loading";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -87,8 +88,8 @@ const page = () => {
   return (
     <div>
       <Haeder />
-
       <div className={s.news}>
+        <SocialSidebar />
         <div className={s.newsContend}>
           <div className={s.newsTitel}>
             <h1 className={BeVietnamPro.className}>

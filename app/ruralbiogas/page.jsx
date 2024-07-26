@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "./page.module.scss";
 import Haeder from "@/components/Haeder/Haeder";
 import Footer from "@/components/Footer/Footer";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 
 let data = [
   {
@@ -59,6 +60,7 @@ export default function page() {
     <div>
       <Haeder />
       <div className={styles.backStore}>
+        <SocialSidebar />
         <div className={styles.container}>
           <div className={styles.startAll}>
             <h1>
