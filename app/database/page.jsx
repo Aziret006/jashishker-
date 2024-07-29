@@ -7,6 +7,7 @@ import Image from "next/image";
 import { AiOutlineAppstore } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import PersonalDataForm from "@/components/Modal/page";
+import cm from "classnames";
 import AboutMe from "@/components/AboutMe/page";
 // import PersonalDataForm from "@/components/Modal/page";
 
@@ -17,7 +18,7 @@ const contacts = [
     service: "Консультативные услуги",
     email: "testemail1@gmail.com",
     phone: "+996 550 123 456",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "20 лет",
     services: "Консультационные услуги",
@@ -32,7 +33,7 @@ const contacts = [
     service: "Услуги по доставке еды",
     email: "sample.account10@gmail.com",
     phone: "+996 700 654 321",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "25 лет",
     services: "Delivery services",
@@ -46,7 +47,7 @@ const contacts = [
     service: "Управление помещениями",
     email: "testemail2023@gmail.com",
     phone: "+996 770 987 654",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "30 лет",
     services: "Property Management",
@@ -60,7 +61,7 @@ const contacts = [
     service: "Консалтинговые услуги",
     email: "sample.account03@gmail.com",
     phone: "+996 555 321 789",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "35 лет",
     services: "Consulting services",
@@ -74,7 +75,7 @@ const contacts = [
     service: "Фотограф",
     email: "fakename2023@gmail.com",
     phone: "+996 770 123 456",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "35 лет",
     services: "Photography",
@@ -88,7 +89,7 @@ const contacts = [
     service: "Тестовые услуги",
     email: "testaccount1@gmail.com",
     phone: "+996 555 789 456",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "40 лет",
     services: "Test services",
@@ -102,7 +103,7 @@ const contacts = [
     service: "Преподаватель русского языка",
     email: "example55.user@gmail.com",
     phone: "+996 770 654 321",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "45 лет",
     services: "Russian language teaching",
@@ -116,7 +117,7 @@ const contacts = [
     service: "Консультативные услуги",
     email: "unused.email789@gmail.com",
     phone: "+996 555 876 543",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "20 лет",
     services: "Consulting services",
@@ -130,7 +131,7 @@ const contacts = [
     service: "Консультативные услуги",
     email: "unused.email789@gmail.com",
     phone: "+996 555 876 543",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "20 лет",
     services: "Consulting services",
@@ -144,7 +145,7 @@ const contacts = [
     service: "Консультативные услуги",
     email: "unused.email789@gmail.com",
     phone: "+996 555 876 543",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "20 лет",
     services: "Consulting services",
@@ -158,7 +159,7 @@ const contacts = [
     service: "Консультативные услуги",
     email: "unused.email789@gmail.com",
     phone: "+996 555 876 543",
-    photo: "user.svg",
+    photo: "image26.svg",
     city: "Бишкек",
     age: "20 лет",
     services: "Consulting services",
@@ -184,7 +185,7 @@ const Page = () => {
     if (filterBy === "favorites") return contact.isFavorite;
     if (filterBy === "active") return contact.isActive;
   });
-  const [page, setPage] = useState("");
+  const [page, setPage] = useState("favorites");
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
@@ -217,35 +218,49 @@ const Page = () => {
                   <option value="oldest">Oldest First</option>
                   <option value="alphabetical">Alphabetical</option>
                 </select>
-                <button onClick={() => handlePageChange("favorites")}>
+                <button
+                  onClick={() => handlePageChange("favorites")}
+                  className={cm("button", {
+                    [styles.active]: page === "favorites",
+                  })}
+                >
+                  {" "}
                   <AiOutlineAppstore size={24} />
                 </button>
-                <button onClick={() => handlePageChange("active")}>
+                <button
+                  onClick={() => handlePageChange("active")}
+                  className={cm("button", {
+                    [styles.active]: page === "active",
+                  })}
+                >
                   <IoIosMenu size={24} />
                 </button>
               </div>
             </div>
             <div className={styles.container}>
-              <div className={styles.contactList}>
+              <div
+                className={cm(styles.contactList, {
+                  [styles.cardFavoritesList]: page === "favorites",
+                })}
+              >
                 {page === "favorites"
                   ? filteredContacts.map((contact) => (
                       <div
                         key={contact.id}
-                        className={styles.contactItem}
+                        className={styles.cardFavorites}
                         onClick={() => setSelectedContact(contact)}
                       >
-                        <img
-                          src={contact.photo}
-                          alt={contact.name}
-                          className={styles.photo}
-                        />
-                        <div className={styles.details}>
-                          <div>
-                            <h3>{contact.name}</h3>
-                            <p>{contact.service}</p>
-                          </div>
-                          <p>{contact.email}</p>
-                          <p>{contact.phone}</p>
+                        <div className={styles.cardPhoto}>
+                          <Image
+                            fill
+                            objectFit="cover"
+                            src={contact.photo}
+                            alt={contact.name}
+                          />
+                        </div>
+                        <div className={styles.favoriteTitel}>
+                          <h3>{contact.name}</h3>
+                          <p>{contact.service}</p>
                         </div>
                       </div>
                     ))
