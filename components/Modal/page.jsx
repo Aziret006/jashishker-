@@ -21,38 +21,66 @@ const PersonalDataForm = ({ setData }) => {
           </div>
           <form className={styles.form}>
             <div className={styles.row}>
-              <input
-                type="text"
-                placeholder="Введите ФИО"
-                className={styles.input}
-              />
-              <input type="date" className={styles.input} />
+              <div className={styles.blockGrid}>
+                <h4>ФИО</h4>
+                <input
+                  type="text"
+                  placeholder="Введите ФИО"
+                  className={styles.input}
+                />
+              </div>
+              <div className={styles.blockGrid}>
+                <h4>DD/MM/YY</h4>
+                <input type="date" className={styles.input} />
+              </div>
             </div>
             <div className={styles.row}>
-              <input
-                type="tel"
-                placeholder="Введите номер телефона"
-                className={styles.input}
-              />
-              <input
-                type="email"
-                placeholder="example@gmail.com"
-                className={styles.input}
-              />
+              <div className={styles.blockGrid}>
+                <h4>Номер телефона</h4>
+                <input
+                  type="tel"
+                  placeholder="Введите номер телефона"
+                  className={styles.input}
+                />
+              </div>
+              <div className={styles.blockGrid}>
+                <h4>E-Mail</h4>
+                <input
+                  type="email"
+                  placeholder="example@gmail.com"
+                  className={styles.input}
+                />
+              </div>
             </div>
             <div className={styles.row}>
-              <select className={styles.input}>
-                <option>Местоположение</option>
-              </select>
-              <input type="file" className={styles.input} />
+              <div className={styles.blockGrid}>
+                <h4>Регион</h4>
+                <select className={styles.input}>
+                  <option>Местоположение</option>
+                </select> 
+              </div>
+              <div className={styles.blockGrid}>
+                <h4>Приложить удостоверение личности</h4>
+                <input type="file" className={styles.input} />
+              </div>
             </div>
             <div className={styles.row}>
-              <input type="text" placeholder="ИП" className={styles.input} />
-              <input
-                type="text"
-                placeholder="Вид деятельности"
-                className={styles.input}
-              />
+              <div className={styles.blockGrid}>
+                <h4>ИП</h4>
+                <input
+                  type="text"
+                  placeholder="Вид деятельности"
+                  className={styles.input}
+                />
+              </div>
+              <div className={styles.blockGrid}>
+                <h4>Вид деятельности</h4>
+                <input
+                  type="text"
+                  placeholder="Вид деятельности"
+                  className={styles.input}
+                />
+              </div>
             </div>
             <button type="submit" className={styles.submitButton}>
               Отправить

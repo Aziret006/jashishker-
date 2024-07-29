@@ -19,7 +19,7 @@
     z-index: 9999;
     width: 100%;
     height: 100%;
-    top: 2%;
+    top: 1%;
     .formContainer {
         width: 100%;
         max-width: 994px;
@@ -70,13 +70,30 @@
     }
 
     .input {
-        width: 100%;
+        width: 93%;
         padding: 14px 16px;
         border: 1px solid #a0a0a04d;
         border-radius: 5px;
         outline: none;
+        &:nth-child(2) {
+            text-transform: uppercase;
+            font-family: Manrope;
+        }
+        &::placeholder {
+            font-family: Manrope;
+            font-size: 15.85px;
+            font-weight: 400;
+            line-height: 19.03px;
+            text-align: left;
+            color: #222222;
+            opacity: 0.7;
+        }
     }
-
+    .blockGrid {
+        width: 100%;
+        display: grid;
+        row-gap: 5px;
+    }
     .submitButton {
         width: 100%;
         padding: 10px;
@@ -87,4 +104,34 @@
         cursor: pointer;
         font-size: 16px;
     }
+    .fileInputContainer {
+        position: relative;
+        display: inline-block;
+    }
+
+    .fileInput {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .customIcon {
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1;
+    }
+    h4 {
+        margin: 0;
+        font-family: Manrope;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.59px;
+        text-align: left;
+        color: #222222;
+        opacity: 0.7;
+    }
+
+    /* Additional styling for the icon and container if needed */
 }
