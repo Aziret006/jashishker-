@@ -186,6 +186,9 @@ const Page = () => {
   });
   const [page, setPage] = useState("");
 
+  const handlePageChange = (newPage) => {
+    setPage(newPage);
+  };
   return (
     <>
       <div>
@@ -214,37 +217,59 @@ const Page = () => {
                   <option value="oldest">Oldest First</option>
                   <option value="alphabetical">Alphabetical</option>
                 </select>
-                <button onClick={handleAddToBaseClick}>
+                <button onClick={() => handlePageChange("favorites")}>
                   <AiOutlineAppstore size={24} />
                 </button>
-                <button onClick={handleNewestFirstClick}>
+                <button onClick={() => handlePageChange("active")}>
                   <IoIosMenu size={24} />
                 </button>
               </div>
             </div>
             <div className={styles.container}>
               <div className={styles.contactList}>
-                {filteredContacts.map((contact) => (
-                  <div
-                    key={contact.id}
-                    className={styles.contactItem}
-                    onClick={() => setSelectedContact(contact)}
-                  >
-                    <img
-                      src={contact.photo}
-                      alt={contact.name}
-                      className={styles.photo}
-                    />
-                    <div className={styles.details}>
-                      <div>
-                        <h3>{contact.name}</h3>
-                        <p>{contact.service}</p>
+                {page === "favorites"
+                  ? filteredContacts.map((contact) => (
+                      <div
+                        key={contact.id}
+                        className={styles.contactItem}
+                        onClick={() => setSelectedContact(contact)}
+                      >
+                        <img
+                          src={contact.photo}
+                          alt={contact.name}
+                          className={styles.photo}
+                        />
+                        <div className={styles.details}>
+                          <div>
+                            <h3>{contact.name}</h3>
+                            <p>{contact.service}</p>
+                          </div>
+                          <p>{contact.email}</p>
+                          <p>{contact.phone}</p>
+                        </div>
                       </div>
-                      <p>{contact.email}</p>
-                      <p>{contact.phone}</p>
-                    </div>
-                  </div>
-                ))}
+                    ))
+                  : filteredContacts.map((contact) => (
+                      <div
+                        key={contact.id}
+                        className={styles.contactItem}
+                        onClick={() => setSelectedContact(contact)}
+                      >
+                        <img
+                          src={contact.photo}
+                          alt={contact.name}
+                          className={styles.photo}
+                        />
+                        <div className={styles.details}>
+                          <div>
+                            <h3>{contact.name} tet200</h3>
+                            <p>{contact.service}</p>
+                          </div>
+                          <p>{contact.email}</p>
+                          <p>{contact.phone}</p>
+                        </div>
+                      </div>
+                    ))}
               </div>
               {selectedContact && (
                 <div className={styles.contactDetail}>
@@ -311,9 +336,9 @@ const Page = () => {
         <Footer />
       </div>
       {data && <PersonalDataForm setData={setData} />}
-      {message && <AboutMe />}
     </>
   );
 };
 
 export default Page;
+// {message && <AboutMe />}
