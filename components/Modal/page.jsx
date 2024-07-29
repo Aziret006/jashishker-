@@ -1,8 +1,17 @@
 // components/PersonalDataForm.js
-import React from "react";
+import React, { useState } from "react";
 import styles from "./page.module.scss";
 import { IoIosArrowBack } from "react-icons/io";
 const PersonalDataForm = ({ setData }) => {
+  const [showMap, setShowMap] = useState(false);
+  const [profilePhoto, setProfilePhoto] = useState();
+  const [isAccepted, setIsAccepted] = useState(false);
+
+  const handleAccept = () => {
+    setIsAccepted(true);
+  };
+
+  const [photoSelected, setPhotoSelected] = useState(false);
   return (
     <>
       <div onClick={() => setData(false)} className={styles.modal}></div>
@@ -12,9 +21,29 @@ const PersonalDataForm = ({ setData }) => {
             <h1>Личные данные</h1>
           </div>
           <h2 className={styles.title}>Личные данные</h2>
-          <div className={styles.photoSection}>
-            <div className={styles.photoPlaceholder}></div>
-            <button className={styles.photoButton}>Добавить фото</button>
+          <div className={styles.photo}>
+            <img
+              className={styles.userPhoto}
+              src={profilePhoto}
+              alt="Profile"
+            />
+            {!photoSelected && (
+              <div
+                className={styles.userAdd}
+                onClick={() =>
+                  document.getElementById("upload-profile-photo").click()
+                }
+              >
+                <img src={elements} alt="Add" />
+                <p>Фото</p>
+                <input
+                  type="file"
+                  id="upload-profile-photo"
+                  style={{ display: "none" }}
+                  onChange={handlePhotoUpload1}
+                />
+              </div>
+            )}
           </div>
           <form className={styles.form}>
             <div className={styles.row}>
