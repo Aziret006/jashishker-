@@ -15,7 +15,7 @@
     h1 {
       margin: 20px 0 40px 0;
       font-size: 80px;
-      font-weight: 900; 
+      font-weight: 900;
       line-height: 101.2px;
       text-align: left;
       color: #222222;
@@ -346,6 +346,45 @@
         line-height: 23.78px;
         font-size: 14px;
       }
+    }
+  }
+  .baseTitle h1 {
+    margin-bottom: 30px !important;
+    margin-top: 30px !important;
+    font-size: 50px !important;
+    font-weight: 900;
+    line-height: 63.25px !important;
+    text-align: left;
+  }
+  .mainDataBase hr {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .filterOptions {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    z-index: 111;
+    .filterButton {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .sortOptions {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: 4fr 56px 56px;
+    select {
+      padding-left: 0px !important;
+      padding-top: 0px !important;
+      padding-bottom: 0px !important ;
+      width: fit-content !important;
+    }
+    button {
+      padding: 6px 16px 6px 16px !important;
+      justify-self: center;
     }
   }
 }
