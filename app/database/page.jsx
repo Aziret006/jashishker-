@@ -336,7 +336,6 @@ const Page = () => {
                         <strong>ИП:</strong> {selectedContact.services}
                       </p>
                     </div>
-                    F
                     <div>
                       <div className={styles.icon}>
                         <img src="/brifecase-tick.svg" alt="" />

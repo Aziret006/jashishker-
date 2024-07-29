@@ -25,7 +25,7 @@ const PersonalDataForm = ({ setData }) => {
             <h1>Личные данные</h1>
           </div>
           <IoIosArrowBack
-            className={styles.back}
+            className={styles.backArrow}
             size={22}
             onClick={() => setData(false)}
           />
@@ -88,13 +88,17 @@ const PersonalDataForm = ({ setData }) => {
             <div className={styles.row}>
               <div className={styles.blockGrid}>
                 <h4>Регион</h4>
-                <select className={styles.input}>
+                <select style={{ width: "100%" }} className={styles.input}>
                   <option>Местоположение</option>
                 </select>
               </div>
               <div className={styles.blockGrid}>
                 <h4>Приложить удостоверение личности</h4>
-                <input type="file" className={styles.input} />
+                <input
+                  type="text"
+                  placeholder="Приложить документ"
+                  className={styles.input}
+                />
               </div>
             </div>
             <div className={styles.row}>

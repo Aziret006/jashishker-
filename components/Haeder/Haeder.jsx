@@ -232,6 +232,7 @@ const Haeder = () => {
                   С чего начать бизнес
                 </Link>
               </li>
+
               <li>
                 <Link className={s.Link} href={"/business"}>
                   Как составить бизнес-план
@@ -242,9 +243,15 @@ const Haeder = () => {
                   Шаблоны бизнес-планов
                 </Link>
               </li>
+
               <li>
                 <Link className={s.Link} href={"/digitalization"}>
                   Оценка проекта
+                </Link>
+              </li>
+              <li>
+                <Link className={s.Link} href={"/database"}>
+                  База данных
                 </Link>
               </li>
             </ul>
