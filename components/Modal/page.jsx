@@ -3,47 +3,54 @@ import React, { useState } from "react";
 import styles from "./page.module.scss";
 import { IoIosArrowBack } from "react-icons/io";
 const PersonalDataForm = ({ setData }) => {
-  const [showMap, setShowMap] = useState(false);
-  const [profilePhoto, setProfilePhoto] = useState();
-  const [isAccepted, setIsAccepted] = useState(false);
+  const [photo, setPhoto] = useState(null);
 
-  const handleAccept = () => {
-    setIsAccepted(true);
+  const handlePhotoChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPhoto(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
-
-  const [photoSelected, setPhotoSelected] = useState(false);
   return (
     <>
-      <div onClick={() => setData(false)} className={styles.modal}></div>
+      <div className={styles.modal}></div>
       <div className={styles.formWrap}>
         <div className={styles.formContainer}>
-          <div>
+          <div className={styles.titleFlex}>
+            <IoIosArrowBack size={22} onClick={() => setData(false)} />
             <h1>Личные данные</h1>
           </div>
+          <IoIosArrowBack
+            className={styles.back}
+            size={22}
+            onClick={() => setData(false)}
+          />
+
           <h2 className={styles.title}>Личные данные</h2>
           <div className={styles.photo}>
-            <img
-              className={styles.userPhoto}
-              src={profilePhoto}
-              alt="Profile"
-            />
-            {!photoSelected && (
-              <div
-                className={styles.userAdd}
-                onClick={() =>
-                  document.getElementById("upload-profile-photo").click()
-                }
-              >
-                <img src={elements} alt="Add" />
-                <p>Фото</p>
-                <input
-                  type="file"
-                  id="upload-profile-photo"
-                  style={{ display: "none" }}
-                  onChange={handlePhotoUpload1}
-                />
-              </div>
-            )}
+            <div className={styles.photoBorder}>
+              {photo ? (
+                <img className={styles.img} src={photo} alt="Uploaded" />
+              ) : (
+                <img src="/profile.svg" alt="Default" />
+              )}
+            </div>
+            <h4>
+              <label htmlFor="photoUpload" style={{ cursor: "pointer" }}>
+                Добавить фото
+              </label>
+              <input
+                id="photoUpload"
+                type="file"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={handlePhotoChange}
+              />
+            </h4>
           </div>
           <form className={styles.form}>
             <div className={styles.row}>
