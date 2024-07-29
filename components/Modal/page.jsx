@@ -1,19 +1,16 @@
 // components/PersonalDataForm.js
 import React from "react";
 import styles from "./page.module.scss";
-
+import { IoIosArrowBack } from "react-icons/io";
 const PersonalDataForm = ({ setData }) => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Здесь можно обработать отправку формы
-    setData(false);
-  };
-
   return (
     <>
       <div onClick={() => setData(false)} className={styles.modal}></div>
       <div className={styles.formWrap}>
         <div className={styles.formContainer}>
+          <div>
+            <h1>Личные данные</h1>
+          </div>
           <h2 className={styles.title}>Личные данные</h2>
           <div className={styles.photoSection}>
             <div className={styles.photoPlaceholder}></div>
@@ -57,7 +54,7 @@ const PersonalDataForm = ({ setData }) => {
                 <h4>Регион</h4>
                 <select className={styles.input}>
                   <option>Местоположение</option>
-                </select> 
+                </select>
               </div>
               <div className={styles.blockGrid}>
                 <h4>Приложить удостоверение личности</h4>
