@@ -9,8 +9,12 @@ import { IoIosMenu } from "react-icons/io";
 import PersonalDataForm from "@/components/Modal/page";
 import cm from "classnames";
 import AboutMe from "@/components/AboutMe/page";
+import { Be_Vietnam_Pro } from "next/font/google";
 // import PersonalDataForm from "@/components/Modal/page";
-
+const BeVietnamPro = Be_Vietnam_Pro({
+  subsets: ["latin"],
+  weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
+});
 const contacts = [
   {
     id: 1,
@@ -197,7 +201,7 @@ const Page = () => {
         <div className={styles.mainDataBase}>
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
-              <h1>База данных</h1>
+              <h1 className={BeVietnamPro.className}>База данных</h1>
             </div>
             <hr />
             <div className={styles.topBar}>
@@ -277,7 +281,7 @@ const Page = () => {
                         />
                         <div className={styles.details}>
                           <div>
-                            <h3>{contact.name} tet200</h3>
+                            <h3>{contact.name} </h3>
                             <p>{contact.service}</p>
                           </div>
                           <p>{contact.email}</p>
