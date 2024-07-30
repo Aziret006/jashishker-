@@ -114,7 +114,9 @@
       box-shadow: 0px 15px 9px 0px #7070700d;
       box-shadow: 0px 27px 11px 0px #70707003;
       box-shadow: 0px 42px 12px 0px #70707000;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
       &:hover {
         transform: scale(1.02);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

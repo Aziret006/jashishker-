@@ -9,9 +9,6 @@ import { IoIosMenu } from "react-icons/io";
 import PersonalDataForm from "@/components/Modal/page";
 import cm from "classnames";
 import { Be_Vietnam_Pro } from "next/font/google";
-import ChatBot from "@/components/ChatBotList/ChatBot";
-import ChatbotWidget from "@/components/ChatBotList/ChatBot";
-
 
 
 // import PersonalDataForm from "@/components/Modal/page";
@@ -197,7 +194,6 @@ const Page = () => {
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
-    
   };
   return (
     <>
