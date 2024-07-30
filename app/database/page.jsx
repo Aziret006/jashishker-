@@ -9,12 +9,7 @@ import { IoIosMenu } from "react-icons/io";
 import PersonalDataForm from "@/components/Modal/page";
 import cm from "classnames";
 import { Be_Vietnam_Pro } from "next/font/google";
-import ChatBot from "@/components/ChatBotList/ChatBot";
-import ChatbotWidget from "@/components/ChatBotList/ChatBot";
 
-
-
-// import PersonalDataForm from "@/components/Modal/page";
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
@@ -197,14 +192,12 @@ const Page = () => {
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
-    
   };
   return (
     <>
       <div>
         <Haeder />
         <div className={styles.mainDataBase}>
-          {/* <ChatbotWidget /> */}
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
               <h1 className={BeVietnamPro.className}>База данных</h1>
