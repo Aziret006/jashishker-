@@ -24,7 +24,6 @@
   hr {
     margin-bottom: 60px;
     width: 100%;
-    height: 1px;
     border: 1px solid var(--STROKE, #1616164d);
   }
 
@@ -115,9 +114,7 @@
       box-shadow: 0px 15px 9px 0px #7070700d;
       box-shadow: 0px 27px 11px 0px #70707003;
       box-shadow: 0px 42px 12px 0px #70707000;
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       &:hover {
         transform: scale(1.02);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -390,5 +387,36 @@
       padding: 6px 16px 6px 16px !important;
       justify-self: center;
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cardFavorites {
+    .cardPhoto {
+      height: 300px;
+    }
+  }
+  .cardFavoritesList {
+    grid-template-columns: 1fr !important;
+  }
+  .baseTitle h1 {
+    font-size: 42px !important;
+    font-weight: 900 !important;
+    margin-top: 20px !important;
+    margin-bottom: 12px !important;
+    line-height: 53.13px !important;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .mainDataBase {
+    padding-top: 70px !important;
+    .dataBaseCont {
+      padding-left: 20px !important
+      ;
+      padding-right: 20px !important;
+    }
+  }
+  .mainDataBase hr {
   }
 }
