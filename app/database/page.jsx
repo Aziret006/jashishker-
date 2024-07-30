@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "@/components/Footer/Footer";
 import Haeder from "@/components/Haeder/Haeder";
 import styles from "./page.module.scss";
@@ -8,8 +8,12 @@ import { AiOutlineAppstore } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import PersonalDataForm from "@/components/Modal/page";
 import cm from "classnames";
-import AboutMe from "@/components/AboutMe/page";
 import { Be_Vietnam_Pro } from "next/font/google";
+import ChatBot from "@/components/ChatBotList/ChatBot";
+import ChatbotWidget from "@/components/ChatBotList/ChatBot";
+
+
+
 // import PersonalDataForm from "@/components/Modal/page";
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -193,12 +197,14 @@ const Page = () => {
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
+    
   };
   return (
     <>
       <div>
         <Haeder />
         <div className={styles.mainDataBase}>
+          {/* <ChatbotWidget /> */}
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
               <h1 className={BeVietnamPro.className}>База данных</h1>
@@ -359,4 +365,3 @@ const Page = () => {
 };
 
 export default Page;
-// {message && <AboutMe />}
