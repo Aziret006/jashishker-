@@ -1,6 +1,6 @@
-import ChatBot from "react-simple-chatbot";
 import React from "react";
-// @ts-ignore
+import Chatbot from "react-chatbot-kit";
+import "react-chatbot-kit/build/main.css";
 const chatContainerStyle = {
   maxWidth: "500px",
   margin: "0 auto",
@@ -10,16 +10,12 @@ const chatContainerStyle = {
   boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
 };
 
-const SimpleForm = () => {
+const ChatBotCustom = () => {
   return (
     <div style={chatContainerStyle}>
-      <ChatBot
+      <Chatbot
         steps={[
-          {
-            id: "1",
-            message: "Какие у вас вопросы?",
-            trigger: "question",
-          },
+          { id: "1", message: "Какие у вас вопросы?", trigger: "question" },
           {
             id: "question",
             options: [
@@ -67,15 +63,11 @@ const SimpleForm = () => {
               { value: "no", label: "Нет", trigger: "end-message" },
             ],
           },
-          {
-            id: "end-message",
-            message: "Спасибо за ваши вопросы!",
-            end: true,
-          },
+          { id: "end-message", message: "Спасибо за ваши вопросы!", end: true },
         ]}
       />
     </div>
   );
 };
 
-export default SimpleForm;
+export default ChatBotCustom;
