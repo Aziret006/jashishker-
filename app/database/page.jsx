@@ -207,6 +207,10 @@ const Page = () => {
       setSelectedContact(e);
     }
   };
+  useEffect(() => {
+    const data = contacts[0];
+    setSelectedContact(data);
+  }, []);
 
   return (
     <>
