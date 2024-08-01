@@ -8,7 +8,7 @@ import { AiOutlineAppstore } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import PersonalDataForm from "@/components/Modal/page";
 import cm from "classnames";
-F;
+
 import { Be_Vietnam_Pro } from "next/font/google";
 import { IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
