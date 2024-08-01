@@ -5,6 +5,14 @@
   padding-top: 100px;
   padding-bottom: 100px;
 
+  @media screen and (max-width: 800px) {
+    padding-top: 80px;
+    padding-bottom: 70px;
+    @media screen and (max-width: 500px) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
   .dataBaseCont {
     max-width: var(--maxWidth);
     margin: 0 auto;
@@ -23,12 +31,34 @@
       line-height: 101.2px;
       text-align: left;
       color: #222222;
+      @media screen and (max-width: 750px) {
+        font-family: Be Vietnam Pro;
+        font-size: 50px;
+        font-weight: 900;
+        line-height: 63.25px;
+        text-align: left;
+        margin: 10px 0 20px 0;
+        @media screen and (max-width: 400px) {
+          font-family: Be Vietnam Pro;
+          font-size: 42px;
+          font-weight: 900;
+          line-height: 53.13px;
+          text-align: left;
+          margin: 0;
+        }
+      }
     }
   }
   hr {
     margin-bottom: 60px;
     width: 100%;
     border: 1px solid var(--STROKE, #1616164d);
+    @media screen and (max-width: 700px) {
+      margin-bottom: 40px;
+      @media screen and (max-width: 500px) {
+        margin-bottom: 20px;
+      }
+    }
   }
 
   .topBar {
