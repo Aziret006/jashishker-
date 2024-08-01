@@ -1,5 +1,6 @@
-import React from "react";
 import ChatBot from "react-simple-chatbot";
+import React from "react";
+// @ts-ignore
 const chatContainerStyle = {
   maxWidth: "500px",
   margin: "0 auto",
