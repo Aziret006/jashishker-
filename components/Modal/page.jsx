@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import styles from "./page.module.scss";
 import { IoIosArrowBack } from "react-icons/io";
+import { CgClose } from "react-icons/cg";
 const PersonalDataForm = ({ setData }) => {
   const [photo, setPhoto] = useState(null);
-
   const handlePhotoChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -24,12 +24,13 @@ const PersonalDataForm = ({ setData }) => {
             <IoIosArrowBack size={22} onClick={() => setData(false)} />
             <h1>Личные данные</h1>
           </div>
-          <IoIosArrowBack
-            className={styles.backArrow}
-            size={22}
-            onClick={() => setData(false)}
-          />
-
+          <div className={styles.iconClose}>
+            <CgClose
+              className={styles.backArrow}
+              size={24}
+              onClick={() => setData(false)}
+            />
+          </div>
           <h2 className={styles.title}>Личные данные</h2>
           <div className={styles.photo}>
             <div className={styles.photoBorder}>

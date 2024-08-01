@@ -9,8 +9,9 @@ import { IoIosMenu } from "react-icons/io";
 import PersonalDataForm from "@/components/Modal/page";
 import cm from "classnames";
 import { Be_Vietnam_Pro } from "next/font/google";
-
-
+import { IoIosArrowForward } from "react-icons/io";
+import { motion } from "framer-motion";
+import { Dialog, DialogContent, DialogTitle, Button } from "@mui/material";
 // import PersonalDataForm from "@/components/Modal/page";
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -178,13 +179,11 @@ const Page = () => {
   const [data, setData] = useState(false);
   const [sortBy, setSortBy] = useState("newest");
   const [filterBy, setFilterBy] = useState("all");
-  const [selectedContact, setSelectedContact] = useState(null);
   const sortedContacts = [...contacts].sort((a, b) => {
     if (sortBy === "newest") return b.id - a.id;
     if (sortBy === "oldest") return a.id - b.id;
     if (sortBy === "alphabetical") return a.name.localeCompare(b.name);
   });
-
   const filteredContacts = sortedContacts.filter((contact) => {
     if (filterBy === "all") return true;
     if (filterBy === "favorites") return contact.isFavorite;
@@ -195,12 +194,23 @@ const Page = () => {
   const handlePageChange = (newPage) => {
     setPage(newPage);
   };
+
+  const [selectedContact, setSelectedContact] = useState(false);
+
+  const handlerIsModal = (e) => {
+    const w = window.innerWidth;
+    if (w < 600) {
+      setSelectedContact(e);
+    } else {
+      setSelectedContact(e);
+    }
+  };
+
   return (
     <>
       <div>
         <Haeder />
         <div className={styles.mainDataBase}>
-          {/* <ChatbotWidget /> */}
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
               <h1 className={BeVietnamPro.className}>База данных</h1>
@@ -220,6 +230,7 @@ const Page = () => {
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                 >
+                  <div>Sort by</div>
                   <option value="newest">Newest First</option>
                   <option value="oldest">Oldest First</option>
                   <option value="alphabetical">Alphabetical</option>
@@ -230,7 +241,6 @@ const Page = () => {
                     [styles.active]: page === "favorites",
                   })}
                 >
-                  {" "}
                   <AiOutlineAppstore size={24} />
                 </button>
                 <button
@@ -286,68 +296,83 @@ const Page = () => {
                             <h3>{contact.name} </h3>
                             <p>{contact.service}</p>
                           </div>
-                          <p>{contact.email}</p>
-                          <p>{contact.phone}</p>
+                          <IoIosArrowForward
+                            className={styles.arrow}
+                            size={24}
+                            onClick={() => handlerIsModal(contact)}
+                          />
+                          <p className={styles.email}>{contact.email}</p>
+                          <p className={styles.phone}>{contact.phone}</p>
                         </div>
                       </div>
                     ))}
               </div>
               {selectedContact && (
-                <div className={styles.contactDetail}>
-                  <div className={styles.baseBack}>
-                    <img
-                      src={selectedContact.photo}
-                      alt={selectedContact.name}
-                      className={styles.photo}
-                    />
-                    <div className={styles.flexCenter}>
-                      <h2>{selectedContact.name}</h2>
-                      <p>{selectedContact.age}</p>
-                    </div>
-                  </div>
-                  <div className={styles.info}>
-                    <div>
-                      <div className={styles.icon}>
-                        <img src="/location.svg" alt="" />
+                <div
+                  className={styles.modal}
+                  onClick={() => setSelectedContact(false)}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={styles.contactDetail}
+                  >
+                    <div className={styles.baseBack}>
+                      <img
+                        src={selectedContact.photo}
+                        alt={selectedContact.name}
+                        className={styles.photo}
+                      />
+                      <div className={styles.flexCenter}>
+                        <h2>{selectedContact.name}</h2>
+                        <p>{selectedContact.age}</p>
                       </div>
-                      <p>
-                        <strong>Город:</strong> {selectedContact.city}
-                      </p>
                     </div>
-                    <div>
-                      <div className={styles.icon}>
-                        <img src="/phone.svg" alt="" />
+                    <div className={styles.info}>
+                      <div>
+                        <div className={styles.icon}>
+                          <img src="/location.svg" alt="" />
+                        </div>
+                        <p>
+                          <strong>Город:</strong> {selectedContact.city}
+                        </p>
                       </div>
-                      <p>
-                        <strong>Номер телефона:</strong> {selectedContact.phone}
-                      </p>
-                    </div>
-                    <div>
-                      <div className={styles.icon}>
-                        <img src="/mail.svg" alt="" />
+                      <div>
+                        <div className={styles.icon}>
+                          <img src="/phone.svg" alt="" />
+                        </div>
+                        <p>
+                          <strong>Номер телефона:</strong>{" "}
+                          {selectedContact.phone}
+                        </p>
                       </div>
-                      <p>
-                        <strong>E-mail:</strong> {selectedContact.email}
-                      </p>
-                    </div>
-                    <div>
-                      <div className={styles.icon}>
-                        <img src="/user-octagon.svg" alt="" />
+                      <div>
+                        <div className={styles.icon}>
+                          <img src="/mail.svg" alt="" />
+                        </div>
+                        <p>
+                          <strong>E-mail:</strong> {selectedContact.email}
+                        </p>
                       </div>
-                      <p>
-                        <strong>ИП:</strong> {selectedContact.services}
-                      </p>
-                    </div>
-                    <div>
-                      <div className={styles.icon}>
-                        <img src="/brifecase-tick.svg" alt="" />
+                      <div>
+                        <div className={styles.icon}>
+                          <img src="/user-octagon.svg" alt="" />
+                        </div>
+                        <p>
+                          <strong>ИП:</strong> {selectedContact.services}
+                        </p>
                       </div>
-                      <p>
-                        <strong>Вид деятельности:</strong>{" "}
-                        {selectedContact.activity}
-                      </p>
+                      <div>
+                        <div className={styles.icon}>
+                          <img src="/brifecase-tick.svg" alt="" />
+                        </div>
+                        <p>
+                          <strong>Вид деятельности:</strong>{" "}
+                          {selectedContact.activity}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               )}
             </div>

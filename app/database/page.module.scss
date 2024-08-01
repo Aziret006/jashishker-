@@ -62,12 +62,12 @@
       }
     }
     .filterButton {
-      width: 211px;
-      height: 44px;
+      min-width: 231px;
+      width: 90%;
+      padding: 6px 20px 6px 20px;
       border-radius: 36px;
       border: 1px solid var(--black, #161616);
       background: var(--black, #161616);
-      font-family: Manrope;
       font-size: 16px;
       font-weight: 600;
       line-height: 21.86px;
@@ -75,6 +75,7 @@
       color: #ffffff;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
   }
 
@@ -120,12 +121,18 @@
       &:hover {
         transform: scale(1.02);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        @media screen and (max-width: 500px) {
+          padding: 10px;
+        }
+      }
+      @media screen and (max-width: 1300px) {
+        max-width: 100%;
       }
     }
     .photo {
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       margin-right: 1rem;
     }
 
@@ -152,6 +159,186 @@
       }
     }
   }
+
+  .active {
+    padding: 6px 20px 6px 20px;
+    border-radius: 36px;
+    border: 1px solid var(--black, #282424) !important;
+    display: flex;
+    background: var(--black, #1f1919);
+    &.active {
+      background-color: #000;
+      color: #fff;
+    }
+
+    &.inactive {
+      background-color: #e5e5e5;
+    }
+  }
+  .cardFavoritesList {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    row-gap: 20px !important;
+  }
+
+  .cardFavorites {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.01);
+      transition: 0.5s;
+    }
+    .cardPhoto {
+      position: relative;
+      width: 100%;
+      height: 460px;
+    }
+    .favoriteTitel {
+      padding: 20px;
+      border-width: 0px 0.48px 0.48px 0.48px;
+      border-style: solid;
+      border-color: rgba(160, 160, 160, 0.3);
+      display: flex;
+      gap: 2px;
+      flex-direction: column;
+      h3 {
+        padding: 0;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32.78px;
+        color: rgba(34, 34, 34, 1);
+        text-align: left;
+      }
+      p {
+        padding: 0;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.59px;
+        text-align: left;
+        color: rgba(28, 28, 28, 1);
+        margin: 0;
+      }
+    }
+  }
+  .arrow {
+    display: none;
+    @media screen and (max-width: 735px) {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 1300px) {
+    .container {
+      grid-template-columns: 1fr !important;
+      width: 95% !important;
+      .contactItem {
+        display: flex;
+        .email,
+        .phone {
+          @media screen and (max-width: 735px) {
+            display: none;
+          }
+        }
+      }
+      .contactList {
+        max-width: 100% !important;
+        width: 100% !important        ;
+      }
+    }
+    .topBar {
+      max-width: 100% !important;
+    }
+    .cardFavorites {
+      .cardPhoto {
+        height: 350px;
+      }
+      .favoriteTitel {
+        padding: 10px 15px;
+        h3 {
+          font-size: 16px;
+          line-height: 23.78px;
+        }
+        p {
+          line-height: 23.78px;
+          font-size: 14px;
+        }
+      }
+    }
+    .baseTitle h1 {
+      margin-bottom: 30px !important;
+      margin-top: 30px !important;
+      font-size: 50px !important;
+      font-weight: 900;
+      line-height: 63.25px !important;
+      text-align: left;
+    }
+    .mainDataBase hr {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .filterOptions {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      z-index: 111;
+      .filterButton {
+        width: 90%;
+        min-width: 200px;
+      }
+    }
+    .sortOptions {
+      width: 100%;
+      display: grid !important;
+      grid-template-columns: 4fr 56px 56px;
+      select {
+        padding-left: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important ;
+        width: fit-content !important;
+      }
+      button {
+        padding: 6px 16px 6px 16px !important;
+        justify-self: center;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .cardFavorites {
+        .cardPhoto {
+          height: 300px;
+        }
+      }
+      .cardFavoritesList {
+        grid-template-columns: 1fr !important;
+      }
+      .baseTitle h1 {
+        font-size: 42px !important;
+        font-weight: 900 !important;
+        margin-top: 20px !important;
+        margin-bottom: 12px !important;
+        line-height: 53.13px !important;
+      }
+    }
+
+    @media screen and (max-width: 460px) {
+      .mainDataBase {
+        padding-top: 70px !important;
+        .dataBaseCont {
+          padding-left: 20px !important
+        ;
+          padding-right: 20px !important;
+        }
+      }
+      .mainDataBase hr {
+      }
+    }
+  }
+
   .contactDetail {
     display: flex;
     flex-direction: column;
@@ -164,15 +351,18 @@
     width: 89%;
     height: 690px;
     position: sticky;
+    z-index: 11111;
     top: 50px;
     left: 40px;
     bottom: 50px;
     z-index: 999;
+
     .baseBack {
       display: grid;
       justify-content: center;
       margin-bottom: 30px;
-      width: 390px;
+      min-width: 390px;
+      width: 100%;
       padding-bottom: 18px;
       background: #f9f9f9;
       margin-top: 25px;
@@ -209,6 +399,7 @@
       display: grid;
       row-gap: 30px;
       width: 100%;
+      padding-bottom: 30px;
       div {
         display: flex;
         align-items: center;
@@ -220,9 +411,9 @@
           background: #222222;
         }
       }
+
       strong {
         margin: 0;
-        font-family: Manrope;
         font-size: 16px;
         font-weight: 400;
         line-height: 19.03px;
@@ -236,7 +427,6 @@
         height: 47px;
         display: grid;
         margin: 0;
-        font-family: Manrope;
         font-size: 18px;
         font-weight: 600;
         line-height: 24.59px;
@@ -245,180 +435,44 @@
         opacity: 0.9;
       }
     }
-  }
-}
 
-.active {
-  padding: 6px 20px 6px 20px;
-  border-radius: 36px;
-  border: 1px solid var(--black, #282424) !important;
-  display: flex;
-  background: var(--black, #1f1919);
-  &.active {
-    background-color: #000;
-    color: #fff;
-  }
-
-  &.inactive {
-    background-color: #e5e5e5;
-  }
-}
-.cardFavoritesList {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  row-gap: 20px !important;
-}
-
-.cardFavorites {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.01);
-    transition: 0.5s;
-  }
-  .cardPhoto {
-    position: relative;
-    width: 100%;
-    height: 460px;
-  }
-  .favoriteTitel {
-    padding: 20px;
-    border-width: 0px 0.48px 0.48px 0.48px;
-
-    border-style: solid;
-
-    border-color: rgba(160, 160, 160, 0.3);
-    display: flex;
-    gap: 2px;
-    flex-direction: column;
-    h3 {
-      padding: 0;
-      margin: 0;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 32.78px;
-      color: rgba(34, 34, 34, 1);
-      text-align: left;
-    }
-    p {
-      padding: 0;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 24.59px;
-      text-align: left;
-      color: rgba(28, 28, 28, 1);
-
-      margin: 0;
-    }
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .container {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    .contactItem {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      row-gap: 10px;
-    }
-    .contactList {
+    @media screen and (max-width: 1150px) {
+      position: fixed !important;
+      left: 0 !important;
+      right: 0 !important;
+      top: 35% !important;
+      bottom: 0 !important;
+      width: 95% !important;
+      height: 65% !important;
+      max-height: 1000px;
       max-width: 100% !important;
-      width: 100% !important        ;
-    }
-  }
-  .topBar {
-    max-width: 100% !important;
-  }
-  .cardFavorites {
-    .cardPhoto {
-      height: 350px;
-    }
-    .favoriteTitel {
-      padding: 10px 15px;
-      h3 {
-        font-size: 16px;
-        line-height: 23.78px;
-      }
-      p {
-        line-height: 23.78px;
-        font-size: 14px;
+      margin: 0 auto !important;
+      background-color: #fff !important;
+      overflow: auto !important;
+      border-top-left-radius: 30px !important;
+      border-top-right-radius: 30px !important;
+      padding-top: 30px !important;
+      @media screen and (max-width: 550px) {
+        padding: 10px;
+        border-radius: 20px;
       }
     }
   }
-  .baseTitle h1 {
-    margin-bottom: 30px !important;
-    margin-top: 30px !important;
-    font-size: 50px !important;
-    font-weight: 900;
-    line-height: 63.25px !important;
-    text-align: left;
-  }
-  .mainDataBase hr {
-    margin-bottom: 30px;
-  }
 }
 
-@media screen and (max-width: 600px) {
-  .filterOptions {
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-    z-index: 111;
-    .filterButton {
-      width: 100%;
-      max-width: 100%;
-    }
-  }
-  .sortOptions {
-    width: 100%;
-    display: grid !important;
-    grid-template-columns: 4fr 56px 56px;
-    select {
-      padding-left: 0px !important;
-      padding-top: 0px !important;
-      padding-bottom: 0px !important ;
-      width: fit-content !important;
-    }
-    button {
-      padding: 6px 16px 6px 16px !important;
-      justify-self: center;
-    }
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .cardFavorites {
-    .cardPhoto {
-      height: 300px;
-    }
-  }
-  .cardFavoritesList {
-    grid-template-columns: 1fr !important;
-  }
-  .baseTitle h1 {
-    font-size: 42px !important;
-    font-weight: 900 !important;
-    margin-top: 20px !important;
-    margin-bottom: 12px !important;
-    line-height: 53.13px !important;
-  }
-}
-
-@media screen and (max-width: 460px) {
-  .mainDataBase {
-    padding-top: 70px !important;
-    .dataBaseCont {
-      padding-left: 20px !important
-      ;
-      padding-right: 20px !important;
-    }
-  }
-  .mainDataBase hr {
+@media screen and (max-width: 1150px) {
+  .modal {
+    background: #9999994d;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: 0 !important;
+    max-height: 100% !important;
+    min-width: 100% !important;
+    z-index: 111111111 !important;
+    position: fixed !important;
   }
 }
