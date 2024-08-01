@@ -9,7 +9,7 @@
     padding-top: 80px;
     padding-bottom: 70px;
     @media screen and (max-width: 500px) {
-      padding-top: 60px;
+      padding-top: 80px !important;
       padding-bottom: 60px;
     }
   }
@@ -26,25 +26,23 @@
   .baseTitle {
     h1 {
       margin: 20px 0 40px 0;
-      font-size: 80px;
-      font-weight: 900;
-      line-height: 101.2px;
+      font-size: 67px;
+      font-weight: 700;
+      line-height: 77.2px;
       text-align: left;
       color: #222222;
       @media screen and (max-width: 750px) {
-        font-family: Be Vietnam Pro;
-        font-size: 50px;
-        font-weight: 900;
-        line-height: 63.25px;
+        font-size: 47px;
+        font-weight: 700;
+        line-height: 53.25px;
         text-align: left;
-        margin: 10px 0 20px 0;
-        @media screen and (max-width: 400px) {
-          font-family: Be Vietnam Pro;
-          font-size: 42px;
-          font-weight: 900;
-          line-height: 53.13px;
+        margin: 30px 0 30px 0;
+        @media screen and (max-width: 500px) {
+          font-size: 32px !important;
+          width: 100%;
+          font-weight: 600;
+          line-height: 43.13px;
           text-align: left;
-          margin: 0;
         }
       }
     }
@@ -305,14 +303,6 @@
         }
       }
     }
-    .baseTitle h1 {
-      margin-bottom: 30px !important;
-      margin-top: 30px !important;
-      font-size: 50px !important;
-      font-weight: 900;
-      line-height: 63.25px !important;
-      text-align: left;
-    }
     .mainDataBase hr {
       margin-bottom: 30px;
     }
@@ -353,16 +343,9 @@
       .cardFavoritesList {
         grid-template-columns: 1fr !important;
       }
-      .baseTitle h1 {
-        font-size: 42px !important;
-        font-weight: 900 !important;
-        margin-top: 20px !important;
-        margin-bottom: 12px !important;
-        line-height: 53.13px !important;
-      }
     }
 
-    @media screen and (max-width: 460px) {
+    @media screen and (max-width: 500px) {
       .mainDataBase {
         padding-top: 70px !important;
         .dataBaseCont {

@@ -13,6 +13,7 @@ import { Be_Vietnam_Pro } from "next/font/google";
 import { IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogTitle, Button } from "@mui/material";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 // import PersonalDataForm from "@/components/Modal/page";
 
 const BeVietnamPro = Be_Vietnam_Pro({
@@ -188,10 +189,10 @@ const Page = () => {
   });
   const filteredContacts = sortedContacts.filter((contact) => {
     if (filterBy === "all") return true;
-    if (filterBy === "favorites") return contact.isFavorite;
     if (filterBy === "active") return contact.isActive;
+    if (filterBy === "favorites") return contact.isFavorite;
   });
-  const [page, setPage] = useState("favorites");
+  const [page, setPage] = useState("active");
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
@@ -207,9 +208,12 @@ const Page = () => {
       setSelectedContact(e);
     }
   };
+
   useEffect(() => {
-    const data = contacts[0];
-    setSelectedContact(data);
+    if (window.innerWidth > 1300) {
+      const data = contacts[1];
+      setSelectedContact(data);
+    }
   }, []);
 
   return (
@@ -217,9 +221,13 @@ const Page = () => {
       <div>
         <Haeder />
         <div className={styles.mainDataBase}>
+          <SocialSidebar />
+
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
-              <h1 className={BeVietnamPro.className}>База данных</h1>
+              <h1 className={BeVietnamPro.className}>
+                База данных предпринимателей
+              </h1>
             </div>
             <hr />
             <div className={styles.topBar}>
@@ -242,20 +250,20 @@ const Page = () => {
                   <option value="alphabetical">Alphabetical</option>
                 </select>
                 <button
-                  onClick={() => handlePageChange("favorites")}
-                  className={cm("button", {
-                    [styles.active]: page === "favorites",
-                  })}
-                >
-                  <AiOutlineAppstore size={24} />
-                </button>
-                <button
                   onClick={() => handlePageChange("active")}
                   className={cm("button", {
                     [styles.active]: page === "active",
                   })}
                 >
                   <IoIosMenu size={24} />
+                </button>
+                <button
+                  onClick={() => handlePageChange("favorites")}
+                  className={cm("button", {
+                    [styles.active]: page === "favorites",
+                  })}
+                >
+                  <AiOutlineAppstore size={24} />
                 </button>
               </div>
             </div>
