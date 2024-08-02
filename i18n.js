@@ -15,4 +15,9 @@ export default getRequestConfig(async ({ locale }) => {
       messages: (await import(`./messages/en.json`)).default,
     };
   }
+  if (locale === "ky") {
+    return {
+      messages: (await import(`./messages/ky.json`)).default,
+    };
+  }
 });
