@@ -47,3 +47,60 @@ button {
 .Login {
   cursor: not-allowed !important;
 }
+
+#pulse-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Установите z-index в зависимости от ваших потребностей */
+}
+
+/* Стилизация кнопки открытия чата */
+.pulse-chat-btn {
+  background-color: #007bff; /* Цвет фона кнопки */
+  color: #fff; /* Цвет текста кнопки */
+  border: none;
+  border-radius: 5px; /* Закругление углов */
+  padding: 10px 20px; /* Отступы */
+  cursor: pointer;
+}
+
+/* Стилизация окна чата */
+.pulse-chat-window {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 300px; /* Максимальная ширина чата */
+  max-height: 400px; /* Максимальная высота чата */
+  overflow-y: auto; /* Включение прокрутки по вертикали, если контент больше размеров окна */
+}
+
+/* Стилизация заголовка чата */
+.pulse-chat-title {
+  background-color: #007bff; /* Цвет фона заголовка */
+  color: #fff; /* Цвет текста заголовка */
+  padding: 10px;
+  font-weight: bold;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Стилизация сообщений чата */
+.pulse-chat-message {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Стилизация формы ввода сообщения */
+.pulse-chat-input {
+  width: calc(100% - 20px); /* Ширина поля ввода сообщения */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+a[type="button"] {
+  width: 40px !important;
+  height: 40px !important;
+}

@@ -18,6 +18,7 @@ import { notFound } from "next/navigation";
 import Loading from "@/components/Loading/Loading";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import ChatBotCustom from "@/components/ChatBot/ChatBotCostom";
+import ChatWidget from "@/components/ChatWidget/ChatWidget";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -90,7 +91,7 @@ const page = () => {
     <div>
       <Haeder />
       <div className={s.news}>
-        <ChatBotCustom />
+        <ChatWidget />
 
         <SocialSidebar />
         <div className={s.newsContend}>

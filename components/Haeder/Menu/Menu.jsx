@@ -51,7 +51,7 @@ const Menu = ({ isMenu, setMenu }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link className={s.Link} href={"/economy"}>
+                  <Link className={s.Link} href={"/Economy"}>
                     Зеленая экономика
                   </Link>
                 </li>
@@ -70,11 +70,7 @@ const Menu = ({ isMenu, setMenu }) => {
                     Инновация
                   </Link>
                 </li>
-                <li>
-                  <Link className={s.Link} href={"/news"}>
-                    Как стать ментором
-                  </Link>
-                </li>
+
                 <li>
                   <Link className={s.Link} href={"/parther"}>
                     Партнеры
@@ -118,7 +114,7 @@ const Menu = ({ isMenu, setMenu }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link className={s.Link} href={"/economy"}>
+                  <Link className={s.Link} href={"/Economy"}>
                     Шаблоны бизнес-планов
                   </Link>
                 </li>
@@ -131,7 +127,7 @@ const Menu = ({ isMenu, setMenu }) => {
             )}
           </li>
           <li>
-            <Link className={s.Link} href={"/economy"}>
+            <Link className={s.Link} href={"/Economy"}>
               История успеха
             </Link>
           </li>
@@ -148,3 +144,9 @@ const Menu = ({ isMenu, setMenu }) => {
 };
 
 export default Menu;
+
+// <li>
+//   <Link className={s.Link} href={"/news"}>
+//     Как стать ментором
+//   </Link>
+// </li>;

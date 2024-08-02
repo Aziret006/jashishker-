@@ -172,7 +172,7 @@ const Haeder = () => {
                 </Link>
               </li>
               <li>
-                <Link className={s.Link} href={"/economy"}>
+                <Link className={s.Link} href={"/Economy"}>
                   Зеленая экономика
                 </Link>
               </li>
@@ -193,11 +193,6 @@ const Haeder = () => {
               </li>
             </ul>
             <ul>
-              <li>
-                <Link className={s.Link} href={"/news"}>
-                  Как стать ментором
-                </Link>
-              </li>
               <li>
                 <Link className={s.Link} href={"/partner"}>
                   Партнеры
@@ -239,7 +234,7 @@ const Haeder = () => {
                 </Link>
               </li>
               <li>
-                <Link className={s.Link} href={"/economy"}>
+                <Link className={s.Link} href={"/Economy"}>
                   Шаблоны бизнес-планов
                 </Link>
               </li>
@@ -265,3 +260,8 @@ const Haeder = () => {
 };
 
 export default Haeder;
+// <li>
+//   <Link className={s.Link} href={"/news"}>
+//     Как стать ментором
+//   </Link>
+// </li>

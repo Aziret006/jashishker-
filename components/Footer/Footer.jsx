@@ -67,7 +67,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className={s.Link} href={"/economy"}>
+                    <Link className={s.Link} href={"/Economy"}>
                       Зеленая экономика
                     </Link>
                   </li>
@@ -86,11 +86,7 @@ const Footer = () => {
                       Инновация
                     </Link>
                   </li>
-                  <li>
-                    <Link className={s.Link} href={"/news"}>
-                      Как стать ментором
-                    </Link>
-                  </li>
+
                   <li>
                     <Link className={s.Link} href={"/parther"}>
                       Партнеры
@@ -126,7 +122,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className={s.Link} href={"/economy"}>
+                    <Link className={s.Link} href={"/Economy"}>
                       Шаблоны бизнес-планов
                     </Link>
                   </li>
@@ -184,3 +180,9 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// <li>
+// <Link className={s.Link} href={"/news"}>
+//   Как стать ментором
+// </Link>
+// </li>
