@@ -20,6 +20,7 @@ const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
 });
+
 const contacts = [
   {
     id: 1,
@@ -243,7 +244,6 @@ const Page = () => {
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                 >
-                  <div>Sort by</div>
                   <option value="newest">Newest First</option>
                   <option value="oldest">Oldest First</option>
                   <option value="alphabetical">Alphabetical</option>
