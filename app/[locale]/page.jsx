@@ -33,6 +33,7 @@ export default async function Home() {
   } catch (error) {
     notFound();
   }
+
   if (error) {
     return <div>Error loading data: {error}</div>;
   } else if (!data) {
