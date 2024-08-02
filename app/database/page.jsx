@@ -222,7 +222,6 @@ const Page = () => {
         <Haeder />
         <div className={styles.mainDataBase}>
           <SocialSidebar />
-
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
               <h1 className={BeVietnamPro.className}>
