@@ -1,5 +1,6 @@
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -12,10 +13,13 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, params: { locale } }) {
+  const messages = useMessages();
   return (
     <html lang="en">
-      <body className={manrope.className}>{children}</body>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <body className={manrope.className}>{children}</body>
+      </NextIntlClientProvider>
     </html>
   );
 }
