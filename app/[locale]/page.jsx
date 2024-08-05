@@ -3,7 +3,6 @@ import s from "./page.module.scss";
 import Haeder from "@/components/Haeder/Haeder";
 import { Bebas_Neue, Manrope } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
-const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
 import { BsArrowRight } from "react-icons/bs";
 import { newsCardData } from "@/data";
@@ -15,6 +14,8 @@ import { notFound, redirect } from "next/navigation";
 import { ChatBotWidget } from "chatbot-widget-ui";
 import Link from "next/link";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
+
+import TrText from "@/components/TrText/TrText";
 export const metadata = {
   title: "ЖАШ ИШКЕР",
   description:
@@ -46,9 +47,8 @@ export default async function Home() {
           <SocialSidebar />
 
           <div className={s.mainBlockTitel}>
-            <h1 className={bebasNeue.className}>
-              {" "}
-              Managerial optimization for <br /> your companies
+            <h1 className={manrope.className}>
+              <TrText />
             </h1>
             <p className={manrope.className}>
               Проект «Молодежь за цифровизацию, лидерство и зеленые навыки»
