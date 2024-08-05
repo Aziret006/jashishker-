@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import cm from "classnames";
 import { IoIosArrowDown } from "react-icons/io";
 import Menu from "./Menu/Menu";
+import LocalSwitcher from "../LocalSwitcher/LocalSwitcher";
 const manrope = Manrope({ subsets: ["latin"] });
 const Haeder = () => {
   const [navProduct, setNavProduct] = useState(false);
@@ -117,7 +118,6 @@ const Haeder = () => {
             <li>
               <a
                 className={s.Link}
-                F
                 href="https://enactus.kg/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -133,7 +133,7 @@ const Haeder = () => {
           </ul>
         </nav>
         <div className={s.ButtonList}>
-          <p style={{ cursor: "not-allowed" }}>Ru</p>
+          <LocalSwitcher />
           <button className="Login">Войти</button>
           <button className={s.burgerButton} onClick={() => setIsMenu(!isMenu)}>
             <svg
