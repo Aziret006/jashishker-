@@ -2,31 +2,40 @@
 
 import { useState } from "react";
 import styles from "./page.module.scss";
-import facebook from "../../public/img/facebook.svg";
-import { FiFacebook } from "react-icons/fi";
-import { PiTelegramLogoBold } from "react-icons/pi";
-import { ImWhatsapp } from "react-icons/im";
+import { FiFacebook, FiTwitter } from "react-icons/fi";
+import { PiTelegramLogoBold, PiLinkedinLogoBold } from "react-icons/pi";
+import { ImWhatsapp, ImInstagram } from "react-icons/im";
+import { GoPlus, GoDash } from "react-icons/go";
+
 const SocialSidebar = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isFirstSet, setIsFirstSet] = useState(true);
 
   const toggleIcons = () => {
     setIsVisible(!isVisible);
+    setIsFirstSet(!isFirstSet);
   };
 
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.container}>
         <button onClick={toggleIcons} className={styles.toggleButton}>
-          <img src="/menu-icon.png" alt="Toggle Menu" />
+          {isVisible ? (
+            <GoDash color="#fff" size={24} />
+          ) : (
+            <GoPlus color="#fff" size={24} />
+          )} 
         </button>
         {isVisible && (
           <div className={styles.icons}>
-            <FiFacebook size={24} />
-            <a>
-              <PiTelegramLogoBold size={24} />
+            <a target="_blank" href="https://t.me/StartUpBlogger">
+              <FiFacebook color="#000" size={24} />
             </a>
-            <a>
-              <ImWhatsapp size={24} />
+            <a target="_blank" href="https://t.me/StartUpBlogger">
+              <PiTelegramLogoBold color="#000" size={24} />
+            </a>
+            <a target="_blank" href="https://t.me/StartUpBlogger">
+              <ImWhatsapp color="#000" size={24} />
             </a>
           </div>
         )}
