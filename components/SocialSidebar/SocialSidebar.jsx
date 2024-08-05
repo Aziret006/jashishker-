@@ -6,6 +6,7 @@ import { FiFacebook, FiTwitter } from "react-icons/fi";
 import { PiTelegramLogoBold, PiLinkedinLogoBold } from "react-icons/pi";
 import { ImWhatsapp, ImInstagram } from "react-icons/im";
 import { GoPlus, GoDash } from "react-icons/go";
+import { IoClose } from "react-icons/io5";
 
 const SocialSidebar = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,10 +22,10 @@ const SocialSidebar = () => {
       <div className={styles.container}>
         <button onClick={toggleIcons} className={styles.toggleButton}>
           {isVisible ? (
-            <GoDash color="#fff" size={24} />
+            <IoClose color="#fff" size={24} />
           ) : (
             <GoPlus color="#fff" size={24} />
-          )} 
+          )}
         </button>
         {isVisible && (
           <div className={styles.icons}>
