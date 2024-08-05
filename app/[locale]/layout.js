@@ -18,6 +18,7 @@ export default function RootLayout({ children, params: { locale } }) {
   const messages = useMessages();
   return (
     <html lang="en">
+      <LiveChatScript />
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={manrope.className}>{children}</body>
       </NextIntlClientProvider>
