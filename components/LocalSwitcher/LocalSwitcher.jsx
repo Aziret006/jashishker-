@@ -23,6 +23,7 @@ const LocalSwitcher = () => {
   return (
     <div className={s.LocalSwitcher}>
       <select
+        label="Language"
         value={locale}
         onChange={(e) => handleLocale(e)}
         className={`${s.select} ${s.manrope} `}

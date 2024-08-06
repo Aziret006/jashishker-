@@ -1,73 +1,129 @@
+"use client";
+
 import React from "react";
 import Chatbot from "react-chatbot-kit";
-import "react-chatbot-kit/build/main.css";
-const chatContainerStyle = {
-  maxWidth: "500px",
-  margin: "0 auto",
-  background: "#f9f9f9",
-  padding: "20px",
-  borderRadius: "10px",
-  boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-};
+import { createChatBotMessage } from "react-chatbot-kit";
 
-const ChatBotCustom = () => {
+import s from "./page.module.scss";
+import "./Chat.css";
+const FAQOptions = ({ actionProvider }) => {
+  const faqs = [
+    { question: "Как создать аккаунт?", id: 1 },
+    { question: "Как восстановить пароль?", id: 2 },
+  ];
+
   return (
-    <div style={chatContainerStyle}>
-      <Chatbot
-        steps={[
-          { id: "1", message: "Какие у вас вопросы?", trigger: "question" },
-          {
-            id: "question",
-            options: [
-              {
-                value: "faq1",
-                label: "Часто задаваемый вопрос 1",
-                trigger: "faq1",
-              },
-              {
-                value: "faq2",
-                label: "Часто задаваемый вопрос 2",
-                trigger: "faq2",
-              },
-              {
-                value: "faq3",
-                label: "Часто задаваемый вопрос 3",
-                trigger: "faq3",
-              },
-            ],
-          },
-          {
-            id: "faq1",
-            message: "Ответ на часто задаваемый вопрос 1.",
-            trigger: "moreQuestions",
-          },
-          {
-            id: "faq2",
-            message: "Ответ на часто задаваемый вопрос 2.",
-            trigger: "moreQuestions",
-          },
-          {
-            id: "faq3",
-            message: "Ответ на часто задаваемый вопрос 3.",
-            trigger: "moreQuestions",
-          },
-          {
-            id: "moreQuestions",
-            message: "Есть ли у вас еще вопросы?",
-            trigger: "moreQuestionsResponse",
-          },
-          {
-            id: "moreQuestionsResponse",
-            options: [
-              { value: "yes", label: "Да", trigger: "question" },
-              { value: "no", label: "Нет", trigger: "end-message" },
-            ],
-          },
-          { id: "end-message", message: "Спасибо за ваши вопросы!", end: true },
-        ]}
-      />
+    <div>
+      {faqs.map((faq) => (
+        <button key={faq.id} onClick={() => actionProvider.handleFAQ(faq.id)}>
+          {faq.question}
+        </button>
+      ))}
     </div>
   );
 };
 
-export default ChatBotCustom;
+const YesNoOptions = ({ actionProvider }) => (
+  <div>
+    <button onClick={() => actionProvider.handleYes()}>Да</button>
+    <button onClick={() => actionProvider.handleNo()}>Нет</button>
+  </div>
+);
+
+const config = {
+  botName: "FAQBot",
+  initialMessages: [
+    createChatBotMessage("Привет! Какие у вас есть вопросы?", {
+      widget: "faqOptions",
+    }),
+  ],
+  widgets: [
+    {
+      widgetName: "faqOptions",
+      widgetFunc: (props) => <FAQOptions {...props} />,
+    },
+    {
+      widgetName: "yesNoOptions",
+      widgetFunc: (props) => <YesNoOptions {...props} />,
+    },
+  ],
+};
+
+class MessageParser {
+  constructor(actionProvider) {
+    this.actionProvider = actionProvider;
+  }
+
+  parse(message) {}
+}
+
+class ActionProvider {
+  constructor(createChatBotMessage, setStateFunc) {
+    this.createChatBotMessage = createChatBotMessage;
+    this.setState = setStateFunc;
+  }
+
+  handleFAQ = (id) => {
+    const answers = {
+      1: "Для создания аккаунта следуйте инструкциям на странице регистрации.",
+      2: "Для восстановления пароля используйте функцию 'Забыли пароль' на странице входа.",
+    };
+
+    const message = this.createChatBotMessage(answers[id]);
+    this.setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }));
+
+    setTimeout(() => {
+      const followUpMessage = this.createChatBotMessage(
+        "Есть ли у вас какие-то еще вопросы?",
+        { widget: "yesNoOptions" }
+      );
+      this.setState((prev) => ({
+        ...prev,
+        messages: [...prev.messages, followUpMessage],
+      }));
+    }, 1000);
+  };
+
+  handleYes = () => {
+    const message = this.createChatBotMessage("Какие у вас есть вопросы?", {
+      widget: "faqOptions",
+    });
+    this.setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }));
+  };
+
+  handleNo = () => {
+    const message = this.createChatBotMessage(
+      "Спасибо за обращение! Если у вас появятся вопросы, не стесняйтесь обращаться."
+    );
+    this.setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }));
+  };
+}
+
+const ChatbotComponent = () => {
+  return (
+    <Chatbot
+      config={config}
+      messageParser={MessageParser}
+      actionProvider={ActionProvider}
+    />
+  );
+};
+
+const ChatBotCostom = () => {
+  return (
+    <div className={s.ChatBotCostom}>
+      <ChatbotComponent />
+    </div>
+  );
+};
+
+export default ChatBotCostom;
