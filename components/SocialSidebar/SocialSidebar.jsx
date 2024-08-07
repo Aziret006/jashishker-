@@ -20,7 +20,11 @@ const SocialSidebar = () => {
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.container}>
-        <button onClick={toggleIcons} className={styles.toggleButton}>
+        <button
+          onClick={toggleIcons}
+          className={styles.toggleButton}
+          aria-label="Name"
+        >
           {isVisible ? (
             <IoClose color="#fff" size={24} />
           ) : (

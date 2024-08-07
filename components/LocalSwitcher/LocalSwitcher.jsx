@@ -22,11 +22,12 @@ const LocalSwitcher = () => {
 
   return (
     <div className={s.LocalSwitcher}>
+      <label htmlFor="state"></label>{" "}
       <select
-        label="Language"
+        id="state"
         value={locale}
         onChange={(e) => handleLocale(e)}
-        className={`${s.select} ${s.manrope} `}
+        className={`${s.select} ${s.manrope}`}
       >
         <option value="ru">Ру</option>
         <option value="ky">Ку</option>
