@@ -7,7 +7,7 @@ import { PiTelegramLogoBold, PiLinkedinLogoBold } from "react-icons/pi";
 import { ImWhatsapp, ImInstagram } from "react-icons/im";
 import { GoPlus, GoDash } from "react-icons/go";
 import { IoClose } from "react-icons/io5";
-
+import chat from "../../public/chat.svg";
 const SocialSidebar = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isFirstSet, setIsFirstSet] = useState(true);
@@ -20,17 +20,7 @@ const SocialSidebar = () => {
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.container}>
-        <button
-          onClick={toggleIcons}
-          className={styles.toggleButton}
-          aria-label="Name"
-        >
-          {isVisible ? (
-            <IoClose color="#fff" size={24} />
-          ) : (
-            <GoPlus color="#fff" size={24} />
-          )}
-        </button>
+        <img src={chat} alt="" />
         {isVisible && (
           <div className={styles.icons}>
             <a target="_blank" href="https://t.me/StartUpBlogger">
