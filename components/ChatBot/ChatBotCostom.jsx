@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Chatbot from "react-chatbot-kit";
 import { createChatBotMessage } from "react-chatbot-kit";
 
 import s from "./page.module.scss";
 import "./Chat.css";
+
 const FAQOptions = ({ actionProvider }) => {
   const faqs = [
     { question: "Как создать аккаунт?", id: 1 },
@@ -13,9 +14,13 @@ const FAQOptions = ({ actionProvider }) => {
   ];
 
   return (
-    <div>
+    <div className={s.buttonFlex}>
       {faqs.map((faq) => (
-        <button key={faq.id} onClick={() => actionProvider.handleFAQ(faq.id)}>
+        <button
+          className={s.botName}
+          key={faq.id}
+          onClick={() => actionProvider.handleFAQ(faq.id)}
+        >
           {faq.question}
         </button>
       ))}
@@ -24,9 +29,26 @@ const FAQOptions = ({ actionProvider }) => {
 };
 
 const YesNoOptions = ({ actionProvider }) => (
-  <div>
-    <button onClick={() => actionProvider.handleYes()}>Да</button>
-    <button onClick={() => actionProvider.handleNo()}>Нет</button>
+  <div className={s.btnFlex}>
+    <button className={s.botName} onClick={actionProvider.handleYes}>
+      Да
+    </button>
+    <button className={s.botName} onClick={actionProvider.handleNo}>
+      Нет
+    </button>
+  </div>
+);
+
+const AskQuestionButton = ({ actionProvider }) => (
+  <div className={s.btnFlex}>
+    <button className={s.botName} onClick={actionProvider.handleYes}>
+      Задать вопрос
+    </button>
+    <a href="mailto:ernisLoh@example.com" target="_blank">
+      <button className={s.botName} onClick={actionProvider.handleNo}>
+        Забылиадать вопрос оператору
+      </button>
+    </a>
   </div>
 );
 
@@ -46,6 +68,10 @@ const config = {
       widgetName: "yesNoOptions",
       widgetFunc: (props) => <YesNoOptions {...props} />,
     },
+    {
+      widgetName: "askQuestionButton",
+      widgetFunc: (props) => <AskQuestionButton {...props} />,
+    },
   ],
 };
 
@@ -54,7 +80,9 @@ class MessageParser {
     this.actionProvider = actionProvider;
   }
 
-  parse(message) {}
+  parse(message) {
+    // You can implement message parsing logic here to handle user inputs dynamically
+  }
 }
 
 class ActionProvider {
@@ -99,8 +127,10 @@ class ActionProvider {
 
   handleNo = () => {
     const message = this.createChatBotMessage(
-      "Спасибо за обращение! Если у вас появятся вопросы, не стесняйтесь обращаться."
+      "Спасибо за обращение! Если у вас появятся вопросы, не стесняйтесь обращаться.",
+      { widget: "askQuestionButton" }
     );
+
     this.setState((prev) => ({
       ...prev,
       messages: [...prev.messages, message],
@@ -118,12 +148,33 @@ const ChatbotComponent = () => {
   );
 };
 
-const ChatBotCostom = () => {
+const ChatBotCustom = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   return (
-    <div className={s.ChatBotCostom}>
-      <ChatbotComponent />
+    <div className={s.ChatBotCustom}>
+      <button className={s.botName} onClick={openModal}>
+        Open Chatbot
+      </button>
+      {isModalOpen && (
+        <div className={s.overlay}>
+          <div className={s.backdrop}>
+            <h3>chatbot</h3>
+            <button onClick={closeModal} className={s.closeButton}>
+              ×
+            </button>
+          </div>
+          <div className={s.modal}>
+            <div>
+              <ChatbotComponent />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default ChatBotCostom;
+export default ChatBotCustom;
