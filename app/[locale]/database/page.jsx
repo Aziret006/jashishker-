@@ -236,7 +236,7 @@ const Page = () => {
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
               <h1 className={BeVietnamPro.className}>
-                База данных предпринимателей
+                F База данных предпринимателей
               </h1>
             </div>
             <hr />
@@ -254,9 +254,9 @@ const Page = () => {
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                 >
-                  <option value="newest">Newest First</option>
-                  <option value="oldest">Oldest First</option>
-                  <option value="alphabetical">Alphabetical</option>
+                  <option value="newest">Сначала новые</option>
+                  <option value="oldest">Сначала старые</option>
+                  <option value="alphabetical">По алфавиту</option>
                 </select>
                 <button
                   onClick={() => handlePageChange("active")}

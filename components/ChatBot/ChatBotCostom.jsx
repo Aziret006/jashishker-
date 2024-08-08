@@ -6,6 +6,7 @@ import { createChatBotMessage } from "react-chatbot-kit";
 
 import s from "./page.module.scss";
 import "./Chat.css";
+import Image from "next/image";
 
 const FAQOptions = ({ actionProvider }) => {
   const faqs = [
@@ -155,9 +156,13 @@ const ChatBotCustom = () => {
   const closeModal = () => setIsModalOpen(false);
   return (
     <div className={s.ChatBotCustom}>
-      <button className={s.botName} onClick={openModal}>
-        Open Chatbot
-      </button>
+      <Image
+        onClick={openModal}
+        src="/chat.svg"
+        width={32}
+        height={32}
+        alt=""
+      />
       {isModalOpen && (
         <div className={s.overlay}>
           <div className={s.backdrop}>
