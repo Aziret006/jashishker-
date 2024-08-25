@@ -134,7 +134,8 @@ const Page = () => {
         });
         console.log("Success:", data);
       } catch (error) {
-        console.error("Error:", error);
+        console.error("Error:", error.response.data);
+        setErrors(error.response.data);
       }
     }
   };
