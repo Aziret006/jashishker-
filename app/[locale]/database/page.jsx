@@ -14,6 +14,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogTitle, Button } from "@mui/material";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
+import { Api } from "@/api";
+import axios from "axios";
 // import PersonalDataForm from "@/components/Modal/page";
 
 const BeVietnamPro = Be_Vietnam_Pro({
@@ -178,6 +180,10 @@ const contacts = [
     isActive: true,
   },
 ];
+const getUserData = async () => {
+  const data = await axios.get(`${Api}api/user/`);
+  return data.data;
+};
 
 const Page = () => {
   const [data, setData] = useState(false);
@@ -216,7 +222,11 @@ const Page = () => {
       setSelectedContact(data);
     }
   }, []);
+  useEffect(() => {
+    const data = getUserData();
 
+    console.log(data);
+  }, []);
   return (
     <>
       <div>
@@ -226,7 +236,7 @@ const Page = () => {
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
               <h1 className={BeVietnamPro.className}>
-                База данных предпринимателей
+                F База данных предпринимателей
               </h1>
             </div>
             <hr />
@@ -244,9 +254,9 @@ const Page = () => {
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                 >
-                  <option value="newest">Newest First</option>
-                  <option value="oldest">Oldest First</option>
-                  <option value="alphabetical">Alphabetical</option>
+                  <option value="newest">Сначала новые</option>
+                  <option value="oldest">Сначала старые</option>
+                  <option value="alphabetical">По алфавиту</option>
                 </select>
                 <button
                   onClick={() => handlePageChange("active")}

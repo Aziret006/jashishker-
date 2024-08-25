@@ -132,6 +132,11 @@ const Menu = ({ isMenu, setMenu }) => {
             </Link>
           </li>
           <li>
+            <Link className={s.Link} href={"/database"}>
+              База знанных
+            </Link>
+          </li>
+          <li>
             <Link className={s.Link} href={"/digitalization"}>
               Справочная
             </Link>
@@ -144,9 +149,3 @@ const Menu = ({ isMenu, setMenu }) => {
 };
 
 export default Menu;
-
-// <li>
-//   <Link className={s.Link} href={"/news"}>
-//     Как стать ментором
-//   </Link>
-// </li>;
