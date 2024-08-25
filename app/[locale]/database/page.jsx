@@ -181,7 +181,7 @@ const contacts = [
   },
 ];
 const getUserData = async () => {
-  const data = await axios.get(`${Api}api/user/`);
+  const data = await axios.get(`${Api}api/v1/user/`);
   return data.data;
 };
 

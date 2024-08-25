@@ -29,7 +29,7 @@ export default async function Home() {
   let data = null;
   let error = null;
   try {
-    const card = await axios.get(`${Api}api/news/?status=new`);
+    const card = await axios.get(`${Api}api/v1/news/?status=new`);
     data = card.data;
   } catch (error) {
     notFound();

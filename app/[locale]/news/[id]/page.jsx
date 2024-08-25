@@ -11,7 +11,7 @@ import SwiperNewsIda from "@/components/Swipers/SwiperNewsIda/SwiperNewsIda";
 import { Api } from "@/api";
 import { notFound } from "next/navigation";
 export async function generateMetadata({ params }) {
-  const newsResponse = await axios.get(`${Api}api/news/${params.id}/`);
+  const newsResponse = await axios.get(`${Api}api/v1/news/${params.id}/`);
 
   const data = newsResponse.data;
 
@@ -33,10 +33,10 @@ const page = async ({ params }) => {
   let error = null;
 
   try {
-    const newsResponse = await axios.get(`${Api}api/news/${params.id}/`);
+    const newsResponse = await axios.get(`${Api}api/v1/news/${params.id}/`);
     data = newsResponse.data;
 
-    const cardListResponse = await axios.get(`${Api}api/news/`);
+    const cardListResponse = await axios.get(`${Api}api/v1/news/`);
     cardListData = cardListResponse.data;
   } catch (err) {
     notFound();
