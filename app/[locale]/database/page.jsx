@@ -14,6 +14,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogTitle, Button } from "@mui/material";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
+import TrText from "@/components/TrText/TrText";
 // import PersonalDataForm from "@/components/Modal/page";
 
 const BeVietnamPro = Be_Vietnam_Pro({
@@ -217,6 +218,10 @@ const Page = () => {
     }
   }, []);
 
+  const Text = ({ name }) => {
+    return <TrText root={"other"} name={name} />;
+  };
+
   return (
     <>
       <div>
@@ -226,7 +231,7 @@ const Page = () => {
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
               <h1 className={BeVietnamPro.className}>
-                База данных предпринимателей
+                <Text name={"A1"} />
               </h1>
             </div>
             <hr />
@@ -236,7 +241,7 @@ const Page = () => {
                   onClick={() => setData(true)}
                   className={styles.filterButton}
                 >
-                  Добавить в базу себя
+                  <Text name={"A2"} />
                 </button>
               </div>
               <div className={styles.sortOptions}>

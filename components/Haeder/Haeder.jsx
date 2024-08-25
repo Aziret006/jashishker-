@@ -11,6 +11,9 @@ import cm from "classnames";
 import { IoIosArrowDown } from "react-icons/io";
 import Menu from "./Menu/Menu";
 import LocalSwitcher from "../LocalSwitcher/LocalSwitcher";
+import TrText from "../TrText/TrText";
+import { useTranslations } from "next-intl";
+
 const manrope = Manrope({ subsets: ["latin"] });
 const Haeder = () => {
   const [navProduct, setNavProduct] = useState(false);
@@ -82,6 +85,8 @@ const Haeder = () => {
     },
   };
 
+  const t = useTranslations("navbar");
+
   return (
     <div className={s.Div}>
       <haeder className={`${manrope.className}  ${s.haeder}`}>
@@ -95,24 +100,26 @@ const Haeder = () => {
         <nav className={s.nav}>
           <ul>
             <li onClick={() => setNavProduct(true)}>
-              О проекте <IoIosArrowDown />
+              <TrText root={"navbar"} name={"navbar_about"} />{" "}
+              <IoIosArrowDown />
             </li>
             <li>
               <Link className={s.Link} href={"/news"}>
-                Новости
+                <TrText root={"navbar"} name={"navbar_news"} />
               </Link>
             </li>
             <li onClick={() => setNavKnowledge(true)}>
-              База знаний <IoIosArrowDown />
+              <TrText root={"navbar"} name={"navbar_knowBase"} />
+              <IoIosArrowDown />
             </li>
             <li>
               <Link className={s.Link} href={"/success-stories"}>
-                История успеха
+                <TrText root={"navbar"} name={"navbar_success_history"} />
               </Link>
             </li>
             <li>
               <Link className={s.Link} href={"/database"}>
-                База данных
+                <TrText root={"navbar"} name={"navbar_knowBase_baseData"} />
               </Link>
             </li>
             <li>
@@ -127,14 +134,16 @@ const Haeder = () => {
             </li>
             <li>
               <Link className={s.Link} href={"/contact"}>
-                Контакты
+                <TrText root={"navbar"} name={"navbar_about_contacts"} />
               </Link>
             </li>
           </ul>
         </nav>
         <div className={s.ButtonList}>
           <LocalSwitcher />
-          <button className="Login">Войти</button>
+          <button className="Login">
+            <TrText root={"navbar"} name={"login"} />
+          </button>
           <button className={s.burgerButton} onClick={() => setIsMenu(!isMenu)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -168,41 +177,41 @@ const Haeder = () => {
             <ul>
               <li>
                 <Link className={s.Link} href={"/about"}>
-                  О проекте
+                  {t("navbar_about")}
                 </Link>
               </li>
               <li>
                 <Link className={s.Link} href={"/Economy"}>
-                  Зеленая экономика
+                  {t("navbar_about_green_economy")}
                 </Link>
               </li>
               <li>
                 <Link className={s.Link} href={"/digitalization"}>
-                  Цифровизация
+                  {t("navbar_about_digital")}
                 </Link>
               </li>
               <li>
                 <Link className={s.Link} href={"/leadership"}>
-                  Лидерство
+                  {t("navbar_about_lider")}
                 </Link>
               </li>
               <li>
                 <Link className={s.Link} href={"/innovation"}>
-                  Инновация
+                  {t("navbar_about_innovate")}
                 </Link>
               </li>
             </ul>
             <ul>
               <li>
                 <Link className={s.Link} href={"/partner"}>
-                  Партнеры
+                  {t("navbar_about_partners")}
                 </Link>
               </li>
             </ul>
             <ul>
               <li>
                 <Link className={s.Link} href={"/contact"}>
-                  Контакты
+                  {t("navbar_about_contacts")}
                 </Link>
               </li>
             </ul>
@@ -224,29 +233,29 @@ const Haeder = () => {
             <ul>
               <li>
                 <Link className={s.Link} href={"/start-business"}>
-                  С чего начать бизнес
+                  {t("navbar_knowBase_begin")}
                 </Link>
               </li>
 
               <li>
                 <Link className={s.Link} href={"/business"}>
-                  Как составить бизнес-план
+                  {t("navbar_knowBase_makePlan")}
                 </Link>
               </li>
               <li>
                 <Link className={s.Link} href={"/Economy"}>
-                  Шаблоны бизнес-планов
+                  {t("navbar_knowBase_temBussiness")}
                 </Link>
               </li>
 
               <li>
                 <Link className={s.Link} href={"/digitalization"}>
-                  Оценка проекта
+                  {t("navbar_knowBase_projEvaluat")}
                 </Link>
               </li>
               <li>
                 <Link className={s.Link} href={"/database"}>
-                  База данных
+                  {t("navbar_knowBase_baseData")}
                 </Link>
               </li>
             </ul>

@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+
 import { useTranslations } from "next-intl";
 
-const TrText = () => {
-  const t = useTranslations("Home");
-  return <>{t("title")}</>;
-};
+function TrText({ root, name }) {
+  const t = useTranslations(root);
+
+  return t(name);
+}
 
 export default TrText;
