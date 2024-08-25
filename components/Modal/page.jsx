@@ -1,10 +1,21 @@
-// components/PersonalDataForm.js
 import React, { useState } from "react";
 import styles from "./page.module.scss";
 import { IoIosArrowBack } from "react-icons/io";
 import { CgClose } from "react-icons/cg";
+
 const PersonalDataForm = ({ setData }) => {
   const [photo, setPhoto] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    dateOfBirth: "",
+    phone: "",
+    email: "",
+    region: "",
+    idDocument: "",
+    ip: "",
+    activityType: "",
+  });
+
   const handlePhotoChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -15,6 +26,45 @@ const PersonalDataForm = ({ setData }) => {
       reader.readAsDataURL(file);
     }
   };
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const dataToSubmit = {
+      ...formData,
+      photo,
+    };
+
+    try {
+      const response = await fetch(
+        "http://141.8.195.214:8081/api/v1/application-form/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSubmit),
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Success:", result);
+      } else {
+        console.error("Failed to submit:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <>
       <div className={styles.modal}></div>
@@ -53,7 +103,7 @@ const PersonalDataForm = ({ setData }) => {
               />
             </h4>
           </div>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
               <div className={styles.blockGrid}>
                 <h4>ФИО</h4>
@@ -61,11 +111,20 @@ const PersonalDataForm = ({ setData }) => {
                   type="text"
                   placeholder="Введите ФИО"
                   className={styles.input}
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
               <div className={styles.blockGrid}>
                 <h4>DD/MM/YY</h4>
-                <input type="date" className={styles.input} />
+                <input
+                  type="date"
+                  className={styles.input}
+                  name="dateOfBirth"
+                  value={formData.dateOfBirth}
+                  onChange={handleChange}
+                />
               </div>
             </div>
             <div className={styles.row}>
@@ -75,6 +134,9 @@ const PersonalDataForm = ({ setData }) => {
                   type="tel"
                   placeholder="Введите номер телефона"
                   className={styles.input}
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                 />
               </div>
               <div className={styles.blockGrid}>
@@ -83,13 +145,22 @@ const PersonalDataForm = ({ setData }) => {
                   type="email"
                   placeholder="example@gmail.com"
                   className={styles.input}
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
             <div className={styles.row}>
               <div className={styles.blockGrid}>
                 <h4>Регион</h4>
-                <select style={{ width: "100%" }} className={styles.input}>
+                <select
+                  style={{ width: "100%" }}
+                  className={styles.input}
+                  name="region"
+                  value={formData.region}
+                  onChange={handleChange}
+                >
                   <option>Местоположение</option>
                 </select>
               </div>
@@ -99,6 +170,9 @@ const PersonalDataForm = ({ setData }) => {
                   type="text"
                   placeholder="Приложить документ"
                   className={styles.input}
+                  name="idDocument"
+                  value={formData.idDocument}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -109,6 +183,9 @@ const PersonalDataForm = ({ setData }) => {
                   type="text"
                   placeholder="Вид деятельности"
                   className={styles.input}
+                  name="ip"
+                  value={formData.ip}
+                  onChange={handleChange}
                 />
               </div>
               <div className={styles.blockGrid}>
@@ -117,6 +194,9 @@ const PersonalDataForm = ({ setData }) => {
                   type="text"
                   placeholder="Вид деятельности"
                   className={styles.input}
+                  name="activityType"
+                  value={formData.activityType}
+                  onChange={handleChange}
                 />
               </div>
             </div>

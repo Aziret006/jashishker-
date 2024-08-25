@@ -15,6 +15,8 @@ import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogTitle, Button } from "@mui/material";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import TrText from "@/components/TrText/TrText";
+import { Api } from "@/api";
+import axios from "axios";
 // import PersonalDataForm from "@/components/Modal/page";
 
 const BeVietnamPro = Be_Vietnam_Pro({
@@ -179,6 +181,10 @@ const contacts = [
     isActive: true,
   },
 ];
+const getUserData = async () => {
+  const data = await axios.get(`${Api}api/user/`);
+  return data.data;
+};
 
 const Page = () => {
   const [data, setData] = useState(false);
@@ -217,9 +223,18 @@ const Page = () => {
       setSelectedContact(data);
     }
   }, []);
+  useEffect(() => {
+    const data = getUserData();
+
+    const Text = ({ name }) => {
+      return <TrText root={"other"} name={name} />;
+    };
+
+    console.log(data);
+  }, []);
 
   const Text = ({ name }) => {
-    return <TrText root={"other"} name={name} />;
+    return <TrText name={name} root={"alpha"} />;
   };
 
   return (
@@ -231,7 +246,7 @@ const Page = () => {
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
               <h1 className={BeVietnamPro.className}>
-                <Text name={"A1"} />
+                <Text name={"A1"} />F База данных предпринимателей
               </h1>
             </div>
             <hr />
@@ -249,9 +264,9 @@ const Page = () => {
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                 >
-                  <option value="newest">Newest First</option>
-                  <option value="oldest">Oldest First</option>
-                  <option value="alphabetical">Alphabetical</option>
+                  <option value="newest">Сначала новые</option>
+                  <option value="oldest">Сначала старые</option>
+                  <option value="alphabetical">По алфавиту</option>
                 </select>
                 <button
                   onClick={() => handlePageChange("active")}

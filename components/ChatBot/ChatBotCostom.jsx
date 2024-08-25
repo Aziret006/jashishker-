@@ -1,71 +1,183 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Chatbot from "react-chatbot-kit";
-import "react-chatbot-kit/build/main.css";
-const chatContainerStyle = {
-  maxWidth: "500px",
-  margin: "0 auto",
-  background: "#f9f9f9",
-  padding: "20px",
-  borderRadius: "10px",
-  boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+import { createChatBotMessage } from "react-chatbot-kit";
+
+import s from "./page.module.scss";
+import "./Chat.css";
+import Image from "next/image";
+
+const FAQOptions = ({ actionProvider }) => {
+  const faqs = [
+    { question: "Как создать аккаунт?", id: 1 },
+    { question: "Как восстановить пароль?", id: 2 },
+  ];
+
+  return (
+    <div className={s.buttonFlex}>
+      {faqs.map((faq) => (
+        <button
+          className={s.botName}
+          key={faq.id}
+          onClick={() => actionProvider.handleFAQ(faq.id)}
+        >
+          {faq.question}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+const YesNoOptions = ({ actionProvider }) => (
+  <div className={s.btnFlex}>
+    <button className={s.botName} onClick={actionProvider.handleYes}>
+      Да
+    </button>
+    <button className={s.botName} onClick={actionProvider.handleNo}>
+      Нет
+    </button>
+  </div>
+);
+
+const AskQuestionButton = ({ actionProvider }) => (
+  <div className={s.btnFlex}>
+    <button className={s.botName} onClick={actionProvider.handleYes}>
+      Задать вопрос
+    </button>
+    <a href="mailto:ernisLoh@example.com" target="_blank">
+      <button className={s.botName} onClick={actionProvider.handleNo}>
+        Забылиадать вопрос оператору
+      </button>
+    </a>
+  </div>
+);
+
+const config = {
+  botName: "FAQBot",
+  initialMessages: [
+    createChatBotMessage("Привет! Какие у вас есть вопросы?", {
+      widget: "faqOptions",
+    }),
+  ],
+  widgets: [
+    {
+      widgetName: "faqOptions",
+      widgetFunc: (props) => <FAQOptions {...props} />,
+    },
+    {
+      widgetName: "yesNoOptions",
+      widgetFunc: (props) => <YesNoOptions {...props} />,
+    },
+    {
+      widgetName: "askQuestionButton",
+      widgetFunc: (props) => <AskQuestionButton {...props} />,
+    },
+  ],
+};
+
+class MessageParser {
+  constructor(actionProvider) {
+    this.actionProvider = actionProvider;
+  }
+
+  parse(message) {
+    // You can implement message parsing logic here to handle user inputs dynamically
+  }
+}
+
+class ActionProvider {
+  constructor(createChatBotMessage, setStateFunc) {
+    this.createChatBotMessage = createChatBotMessage;
+    this.setState = setStateFunc;
+  }
+
+  handleFAQ = (id) => {
+    const answers = {
+      1: "Для создания аккаунта следуйте инструкциям на странице регистрации.",
+      2: "Для восстановления пароля используйте функцию 'Забыли пароль' на странице входа.",
+    };
+
+    const message = this.createChatBotMessage(answers[id]);
+    this.setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }));
+
+    setTimeout(() => {
+      const followUpMessage = this.createChatBotMessage(
+        "Есть ли у вас какие-то еще вопросы?",
+        { widget: "yesNoOptions" }
+      );
+      this.setState((prev) => ({
+        ...prev,
+        messages: [...prev.messages, followUpMessage],
+      }));
+    }, 1000);
+  };
+
+  handleYes = () => {
+    const message = this.createChatBotMessage("Какие у вас есть вопросы?", {
+      widget: "faqOptions",
+    });
+    this.setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }));
+  };
+
+  handleNo = () => {
+    const message = this.createChatBotMessage(
+      "Спасибо за обращение! Если у вас появятся вопросы, не стесняйтесь обращаться.",
+      { widget: "askQuestionButton" }
+    );
+
+    this.setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }));
+  };
+}
+
+const ChatbotComponent = () => {
+  return (
+    <Chatbot
+      config={config}
+      messageParser={MessageParser}
+      actionProvider={ActionProvider}
+    />
+  );
 };
 
 const ChatBotCustom = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   return (
-    <div style={chatContainerStyle}>
-      <Chatbot
-        steps={[
-          { id: "1", message: "Какие у вас вопросы?", trigger: "question" },
-          {
-            id: "question",
-            options: [
-              {
-                value: "faq1",
-                label: "Часто задаваемый вопрос 1",
-                trigger: "faq1",
-              },
-              {
-                value: "faq2",
-                label: "Часто задаваемый вопрос 2",
-                trigger: "faq2",
-              },
-              {
-                value: "faq3",
-                label: "Часто задаваемый вопрос 3",
-                trigger: "faq3",
-              },
-            ],
-          },
-          {
-            id: "faq1",
-            message: "Ответ на часто задаваемый вопрос 1.",
-            trigger: "moreQuestions",
-          },
-          {
-            id: "faq2",
-            message: "Ответ на часто задаваемый вопрос 2.",
-            trigger: "moreQuestions",
-          },
-          {
-            id: "faq3",
-            message: "Ответ на часто задаваемый вопрос 3.",
-            trigger: "moreQuestions",
-          },
-          {
-            id: "moreQuestions",
-            message: "Есть ли у вас еще вопросы?",
-            trigger: "moreQuestionsResponse",
-          },
-          {
-            id: "moreQuestionsResponse",
-            options: [
-              { value: "yes", label: "Да", trigger: "question" },
-              { value: "no", label: "Нет", trigger: "end-message" },
-            ],
-          },
-          { id: "end-message", message: "Спасибо за ваши вопросы!", end: true },
-        ]}
+    <div className={s.ChatBotCustom}>
+      <Image
+        onClick={openModal}
+        src="/chat.svg"
+        width={32}
+        height={32}
+        alt=""
       />
+      {isModalOpen && (
+        <div className={s.overlay}>
+          <div className={s.backdrop}>
+            <h3>chatbot</h3>
+            <button onClick={closeModal} className={s.closeButton}>
+              ×
+            </button>
+          </div>
+          <div className={s.modal}>
+            <div>
+              <ChatbotComponent />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
