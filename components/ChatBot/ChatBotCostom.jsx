@@ -156,13 +156,16 @@ const ChatBotCustom = () => {
   const closeModal = () => setIsModalOpen(false);
   return (
     <div className={s.ChatBotCustom}>
-      <Image
-        onClick={openModal}
-        src="/chat.svg"
-        width={32}
-        height={32}
-        alt=""
-      />
+      <div className={s.button}>
+        <Image
+          className={s.btnImage}
+          onClick={openModal}
+          src="/chat.svg"
+          width={32}
+          height={32}
+          alt=""
+        />
+      </div>
       {isModalOpen && (
         <div className={s.overlay}>
           <div className={s.backdrop}>

@@ -236,7 +236,7 @@ const Page = () => {
           <div className={styles.dataBaseCont}>
             <div className={styles.baseTitle}>
               <h1 className={BeVietnamPro.className}>
-                F База данных предпринимателей
+                База данных предпринимателей
               </h1>
             </div>
             <hr />
