@@ -33,9 +33,6 @@ const page = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
- 
-
   const log = console.log;
   useEffect(() => {
     const getData = async () => {
@@ -46,15 +43,13 @@ const page = () => {
         // console.log(topNewsResponse.data.results ,newsPopularResponse.data.results , 'asdasdasd' );
         setTopNews(topNewsResponse.data);
         setPopular(newsPopularResponse.data);
-        
-        
       } catch (error) {
         setError(error.message);
-      }finally {
-        setLoading(false)
+      } finally {
+        setLoading(false);
       }
     };
-   getData()
+    getData();
   }, []);
 
   useEffect(() => {
@@ -84,103 +79,102 @@ const page = () => {
     <div>
       <Haeder />
       <div className={s.news}>
-        <ChatWidget />
-
         <SocialSidebar />
-        {topNews &&   <div className={s.newsContend}>
-          <div className={s.newsTitel}>
-            <h1 className={BeVietnamPro.className}>
-              Последние <br />
-              новости
-            </h1>
-            <p className={Alex.className}>Lorem ipsum dolor sit amet</p>
-          </div>
-          <div className={` ${manrope.className} ${s.newsBloc1}`}>
-            <p className={s.newsBloc1Titel}>топ новости</p>
-            <div className={s.borderBootm}></div>
-            <div className={s.newsBloc1Main}>
-              <div className={s.newsBloc1MainImage}>
-                <div className={s.mainImageBlock}>
-                  <Image
-                    src={topNews[0]?.images[0]?.image}
-                    alt="image"
-                    fill
-                    objectFit="cover"
-                  />
-                </div>
-                <div className={s.mainTitel}>
-                  <div className={s.mainTitelBlock1}>
-                    <div className={s.mainTitelBlock1ButtonList}>
-                      <ul>
-                        <li>{topNews[0]?.category}</li>
-                        <li>{topNews[0]?.status}</li>
-                      </ul>
-                      <FiShare2 />
-                    </div>
-                    <div className={s.mainTitelBlock1Text}>
-                      <h2> {topNews[0].title}</h2>
-                      <Link href={`/news/${topNews[0].id}`}>
-                        {" "}
-                        <button>
-                          <GoArrowUpRight />
-                        </button>{" "}
-                      </Link>
-                    </div>
-                    <div className={s.mianTitelWiews}>
-                      <p>{topNews[0].views} views</p>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="4"
-                        height="4"
-                        viewBox="0 0 4 4"
-                        fill="none"
-                      >
-                        <circle cx="2" cy="2" r="2" fill="#161616" />
-                      </svg>
-                      <p>{topNews[0].time_since_created}</p>
+        {topNews && (
+          <div className={s.newsContend}>
+            <div className={s.newsTitel}>
+              <h1 className={BeVietnamPro.className}>
+                Последние <br />
+                новости
+              </h1>
+              <p className={Alex.className}>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div className={` ${manrope.className} ${s.newsBloc1}`}>
+              <p className={s.newsBloc1Titel}>топ новости</p>
+              <div className={s.borderBootm}></div>
+              <div className={s.newsBloc1Main}>
+                <div className={s.newsBloc1MainImage}>
+                  <div className={s.mainImageBlock}>
+                    <Image
+                      src={topNews[0]?.images[0]?.image}
+                      alt="image"
+                      fill
+                      objectFit="cover"
+                    />
+                  </div>
+                  <div className={s.mainTitel}>
+                    <div className={s.mainTitelBlock1}>
+                      <div className={s.mainTitelBlock1ButtonList}>
+                        <ul>
+                          <li>{topNews[0]?.category}</li>
+                          <li>{topNews[0]?.status}</li>
+                        </ul>
+                        <FiShare2 />
+                      </div>
+                      <div className={s.mainTitelBlock1Text}>
+                        <h2> {topNews[0].title}</h2>
+                        <Link href={`/news/${topNews[0].id}`}>
+                          {" "}
+                          <button>
+                            <GoArrowUpRight />
+                          </button>{" "}
+                        </Link>
+                      </div>
+                      <div className={s.mianTitelWiews}>
+                        <p>{topNews[0].views} views</p>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="4"
+                          height="4"
+                          viewBox="0 0 4 4"
+                          fill="none"
+                        >
+                          <circle cx="2" cy="2" r="2" fill="#161616" />
+                        </svg>
+                        <p>{topNews[0].time_since_created}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className={s.newsBloc1MainCards}>
-                {topNews?.slice(1, 3).map((item, key) => (
-                  <NewsCard data={item} key={key} />
-                ))}
+                <div className={s.newsBloc1MainCards}>
+                  {topNews?.slice(1, 3).map((item, key) => (
+                    <NewsCard data={item} key={key} />
+                  ))}
+                </div>
               </div>
             </div>
+            <div className={s.Tap}>
+              <p
+                style={{
+                  color: filterPage == "new" ? "#DA4E38" : "#222",
+                  cursor: "pointer",
+                }}
+              >
+                {" "}
+                Последние
+              </p>
+              <div className={s.TopBorder}></div>
+              <p
+                style={{
+                  color: filterPage == "popular" ? "#DA4E38" : "#222",
+                  cursor: "pointer",
+                }}
+              >
+                Популярные
+              </p>
+            </div>
+            <div className={s.borderBootm}></div>
+            <div className={s.newsCards}>
+              {newsPopular.length > 0 ? (
+                newsPopular.map((item, key) => (
+                  <NewsCard data={item} key={key} />
+                ))
+              ) : (
+                <p>Ничего не найдено</p>
+              )}
+            </div>
           </div>
-          <div className={s.Tap}>
-            <p
-              onClick={() => setFilterPage("new")}
-              style={{
-                color: filterPage == "new" ? "#DA4E38" : "#222",
-                cursor: "pointer",
-              }}
-            >
-              {" "}
-              Последние
-            </p>
-            <div className={s.TopBorder}></div>
-            <p
-              onClick={() => setFilterPage("popular")}
-              style={{
-                color: filterPage == "popular" ? "#DA4E38" : "#222",
-                cursor: "pointer",
-              }}
-            >
-              Популярные
-            </p>
-          </div>
-          <div className={s.borderBootm}></div>
-          <div className={s.newsCards}>
-            {newsPopular.length > 0 ? (
-              newsPopular.map((item, key) => <NewsCard data={item} key={key} />)
-            ) : (
-              <p>Ничего не найдено</p>
-            )}
-          </div>
-        </div>}
-      
+        )}
       </div>
       <Footer />
     </div>

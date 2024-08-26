@@ -10,6 +10,8 @@ import Start05 from "@/components/Start05/Start05";
 import Start06 from "@/components/Start06/Start06";
 import AccordionWhere from "@/components/Accordions/AccordionWhere/AccordionWhere";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
+import TrText from "@/components/TrText/TrText";
+import SetHtml from "@/components/TrText/SetHtml";
 
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 
@@ -31,34 +33,38 @@ const FontManrope = Manrope({
   weight: ["600", "400"],
 });
 
+const Text = ({ name }) => {
+  return <TrText root={"alpha"} name={name} />;
+};
+
 const data = [
   {
     id: 1,
-    title: "Что вы умеете делать хорошо?",
+    title: <Text name="C1" />,
   },
   {
     id: 2,
-    title: "Что вас вдохновляет?",
+    title: <Text name="C2" />,
   },
   {
     id: 3,
-    title: "Чего вам и вашим окружающим не хватает?",
+    title: <Text name="C3" />,
   },
   {
     id: 4,
-    title: "Что бы вы могли сделать лучше, чем другие делают сейчас?",
+    title: <Text name="C4" />,
   },
   {
     id: 5,
-    title: "Какой продукт или услугу вы будете предлагать?",
+    title: <Text name="C5" />,
   },
   {
     id: 6,
-    title: "Кто ваш клиент?",
+    title: <Text name="C6" />,
   },
   {
     id: 7,
-    title: "За что вам будут платить?",
+    title: <Text name="C7" />,
   },
 ];
 const date = [
@@ -82,32 +88,36 @@ const date = [
 let item = [
   {
     id: 1,
-    title:
-      "Есть особые условия уплаты налогов для тех, кто работает на крупных рынках.",
-    text: "Если вы будете реализовывать товары только населению и не собираетесь заниматься экспортно-импортными операциями, то ставка налога и вовсе будет нулевой при годовом обороте до 8 миллионов сомов.",
+    title: <Text name={"K27"} />,
+    text: <Text name={"K28"} />,
   },
   {
     id: 2,
-    title: " ККМ и электронные счета-фактуры",
-    text: "Когда начнете работать, вам придется выписывать электронные счета-фактуры и приобретать ККМ.",
+    title: <Text name={"K29"} />,
+    text: <Text name={"K30"} />,
   },
   {
     id: 3,
-    title: "Важный момент:",
-    text: "  если предоставляете услуги населению, надо приобретать контрольно-кассовую машину;если предоставляете услуги юридическим лицам, достаточно зарегистрироваться в системе электронных счетов-фактур и выписывать их.",
+    title: <Text name={"K31"} />,
+    text: <Text name={"K33"} />,
   },
 ];
+
 const page = () => {
   return (
     <div>
       <Haeder />
       <div className={s.startBusiness}>
-      <SocialSidebar />
+        <SocialSidebar />
         <div className={s.heroStart}>
           <div className={s.heroContainer}>
             <div className={s.heroStartText}>
-              <h1 className={BeVietnamPro.className}>С чего начать бизнес</h1>
-              <h5 className={Alex.className}>Lorem ipsum dolor sit amet</h5>
+              <h1 className={BeVietnamPro.className}>
+                <Text name={"A1"} />
+              </h1>
+              <h5 className={Alex.className}>
+                <Text name={"A2"} />
+              </h5>
             </div>
           </div>
         </div>
@@ -115,12 +125,11 @@ const page = () => {
           <div className={s.container}>
             <div className={s.startTitle}>
               <h3 className={FontManrope.className}>
-                Как открыть свой бизнес. 
+                <Text name={"B1"} />
               </h3>
               <p className={FontManrope.className}>
                 <span>
-                  Данная инструкция для тех, кто начинает путь предпринимателя. 
-                  Чтобы начать свой бизнес вам нужно пройти нижеследующие шаги.
+                  <Text name={"B2"} />
                 </span>
               </p>
             </div>
@@ -128,8 +137,7 @@ const page = () => {
               <div className={s.startBlockText}>
                 <div className={s.startBlockTextTitle}>
                   <h5 className={FontManrope.className}>
-                    Любой бизнес начинается с идеи. Максимально честно ответьте
-                    сами себе на следующие вопросы:
+                    <Text name={"B3"} />
                   </h5>
                   <span className={FontManrope.className}>01</span>
                 </div>
@@ -140,8 +148,7 @@ const page = () => {
                   height={400}
                 />
                 <p className={FontManrope.className}>
-                  Таким образом вы сможете примерно определить свою сферу
-                  деятельности.
+                  <Text name={"C8"} />
                 </p>
               </div>
               <div className={s.startBlockImage}>
@@ -175,18 +182,16 @@ const page = () => {
             <div className={s.startBlock2}>
               <div className={s.startBlock2Title}>
                 <h5 className={FontManrope.className}>
-                  Составьте финансовую модель, чтобы начать бизнес
+                  <Text name={"D1"} />
                 </h5>
                 <span className={FontManrope.className}>02</span>
               </div>
               <div className={s.startBlock2Text}>
                 <p className={FontManrope.className}>
-                  Как ваш бизнес будет приносить доход? Финансовая модель – это
-                  учет и расчет текущих и будущих денежных потоков компании,
-                  т.е. экономика вашего предприятия.
+                  <Text name={"D2"} />
                 </p>
                 <span className={FontManrope.className}>
-                  Распишите для себя следующие показатели:
+                  <Text name={"D3"} />
                 </span>
               </div>
               <div className={s.startBlock2Wrap}>
@@ -196,8 +201,7 @@ const page = () => {
                       <span>01</span>
                     </div>
                     <p className={FontManrope.className}>
-                      Цена продукта: за сколько вы будете продавать
-                      продукт/услугу?
+                      <Text name={"D4"} />
                     </p>
                   </div>
                   <div className={s.startCard}>
@@ -205,8 +209,7 @@ const page = () => {
                       <span>02</span>
                     </div>
                     <p className={FontManrope.className}>
-                      Спрос: какое количество товаров/услуг у вас будут покупать
-                      в месяц? 
+                      <Text name={"D5"} />
                     </p>
                   </div>
                 </div>
@@ -216,8 +219,7 @@ const page = () => {
                       <span>03</span>
                     </div>
                     <p className={FontManrope.className}>
-                      Затраты на производство: сколько вы будете тратить на
-                      создание одного продукта/услуги? 
+                      <Text name={"D6"} />
                     </p>
                   </div>
                   <div className={s.startCard}>
@@ -225,9 +227,7 @@ const page = () => {
                       <span>04</span>
                     </div>
                     <p className={FontManrope.className}>
-                      Постоянные затраты: какие платежи вам нужно будет вносить
-                      постоянно, вне зависимости от объемов продаж (например,
-                      оплата аренды)?
+                      <Text name={"D7"} />
                     </p>
                   </div>
                   <div className={s.startCard}>
@@ -235,7 +235,7 @@ const page = () => {
                       <span>05</span>
                     </div>
                     <p className={FontManrope.className}>
-                      Это основа для вашего будущего бизнес-плана.
+                      <Text name={"D8"} />
                     </p>
                   </div>
                 </div>
@@ -253,7 +253,7 @@ const page = () => {
               <img src="/05.png" className={s.BgSvg} />
               <div className={s.AccordionTitelBlock1}>
                 <h1>
-                  Как зарегистрировать <br /> бизнес в <br /> Кыргызстане?
+                  <SetHtml root={"alpha"} name={"J1"} />
                 </h1>
                 <img
                   src="/group123.png"
@@ -265,22 +265,25 @@ const page = () => {
               <AccordionWhere />
               <div className={s.AccordionTitel1}>
                 <p>
-                  ПИН можно получить в любом центре обслуживания <br />{" "}
-                  населения, кроме мини-цонов.
+                  <Text name={"J26"} />
                 </p>
                 <div>
-                  <p>Важно</p>
+                  <p>
+                    <Text name={"J27"} />
+                  </p>
                   <h3>
-                    Все документы, кроме составленных на государственном или
+                    {/* Все документы, кроме составленных на государственном или
                     официальном <br /> языке Кыргызской Республики, должны
                     сопровождаться нотариально <br /> засвидетельствованным
-                    переводом
+                    переводом */}
+
+                    <Text name={"J28"} />
                   </h3>
                 </div>
                 <p>
-                  Развернутый перечень документов доступен на сайте :
+                  <Text name={"K1"} />
+
                   <a href="https://mineconom.gov.kg/ru" target="_black">
-                    {" "}
                     https://mineconom.gov.kg/ru
                   </a>
                 </p>
@@ -291,26 +294,28 @@ const page = () => {
             <div className={s.AccordionSvgTitel}>
               <span>
                 <h3>
-                  Кто может <br /> быть ИП?
+                  <SetHtml name={"K2"} root={"alpha"} />
                 </h3>
                 <p>
-                  Индивидуальными предпринимателями могут быть как кыргызстанцы,
-                  так и иностранцы, которые постоянно или временно проживают в
-                  нашей стране.
+                  <Text name={"K3"} />
                 </p>
               </span>
               <div className={s.AccordionSvgTitel2}>
-                <h2>Как зарегистрироваться?</h2>
-                <p>Если вы решили стать ИП, то надо:</p>
+                <h2>
+                  <Text name={"F11"} />
+                </h2>
+                <p>
+                  <Text name={"K5"} />
+                </p>
                 <div className={s.AccordionSvgTitel2}></div>
               </div>
               <div className={s.gridtemplatecolump}>
                 <div className={s.centerText}>
-                  <p>заполнить заявление по форме 163;</p>
+                  <p>
+                    <Text name={"K10"} />
+                  </p>
                   <li>
-                    подтверждение регистрации по месту жительства (выдают в
-                    ЦОН). Можно зарегистрироваться онлайн через сервисы НС, но
-                    для этого нужна электронная цифровая подпись.
+                    <Text name={"K13"} />
                   </li>
                 </div>
                 <div className={s.raduisAll}>
@@ -322,8 +327,12 @@ const page = () => {
                   <div className={s.panHeight}></div>
                 </div>
                 <div className={s.mainLeft}>
-                  <p>-обратиться в Налоговую службу;</p>
-                  <p className={s.p}>предоставить копию паспорта;</p>
+                  <p>
+                    <Text name={"K6"} />
+                  </p>
+                  <p className={s.p}>
+                    <Text name={"K11"} />
+                  </p>
                 </div>
               </div>
             </div>
@@ -332,18 +341,16 @@ const page = () => {
         <div className={s.sectionBack}>
           <div className={s.container}>
             <div className={s.mainRight}>
-              <h1>Кому не подходит работа по патенту?</h1>
+              <h1>
+                <Text name={"K15"} />
+              </h1>
               <nav>
                 <ul>
                   <li>
-                    С 1 января 2024 года не будут выдавать патенты на торговую
-                    деятельность. Если вы собираетесь заниматься этим видом
-                    деятельности, лучше выбрать работу по единому налогу.
+                    <Text name={"K25"} />
                   </li>
                   <li>
-                    Ставка налога составит 0,5 процента при годовом обороте до
-                    30 миллионов сомов, 1 процент — при обороте от 30 до 50
-                    миллионов сомов.
+                    <Text name={"K26"} />
                   </li>
                 </ul>
                 <img
@@ -369,7 +376,7 @@ const page = () => {
             </div>
             <div className={s.indexMain}>
               <h3>
-                Открываем банковский <br /> счет
+                <Text name={"K40"} />
               </h3>
               <div className={s.flexMain}>
                 <img
@@ -379,17 +386,13 @@ const page = () => {
                   height={200}
                 />
                 <li>
-                  После регистрации у ИП возникает обязанность декларировать
-                  доходы и расходы. Поэтому надо открыть в банке отдельный
-                  бизнес-счет.
+                  <Text name={"K41"} />
                   <br />
                   <br />
-                  Именно на него будут поступать деньги, которые индивидуальный
-                  предприниматель получает от основной деятельности.
+                  <Text name={"K42"} />
                   <br />
                   <br />
-                  Отдельный счет нужен потому, что налог считается от
-                  полученного дохода.
+                  <Text name={"K44"} />
                 </li>
               </div>
             </div>

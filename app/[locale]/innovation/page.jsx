@@ -5,6 +5,8 @@ import { Alex_Brush, Be_Vietnam_Pro } from "next/font/google";
 import React from "react";
 import Image from "next/image";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
+import SetHtml from "@/components/TrText/SetHtml";
+import TrText from "@/components/TrText/TrText";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
@@ -27,29 +29,24 @@ const page = () => {
         <SocialSidebar />
         <div className={s.economycontainer}>
           <div className={s.leadershiptitle}>
-            <h1 className={BeVietnamPro.className}>Инновация</h1>
-            <h5 className={Alex.className}>Lorem ipsum dolor sit amet</h5>
+            <h1 className={BeVietnamPro.className}>
+              <TrText root={"innovate"} name={"innovate_title"} />
+            </h1>
+            <h5 className={Alex.className}>
+              <TrText root={"innovate"} name={"innovate_subtitle"} />
+            </h5>
           </div>
           <hr />
           <div className={s.innovtext}>
             <div>
               <h2>
-                Инновация — это внедренное новшество, которое обеспечило рост
-                эффективности процессов или качества продукции.{" "}
+                <TrText root={"innovate"} name={"innovate_box1_title"} />
               </h2>
               <p>
-                Является результатом интеллектуальной и творческой деятельности
-                человека.
+                <TrText root={"innovate"} name={"innovate_box1_topDesc"} />
               </p>
               <h4>
-                <span>Инновационное предпринимательство</span> – это вид
-                коммерческой деятельности целью, которого является получения
-                прибыли за счет создания технико-технологических нововведений и
-                распространение инноваций во всех сферах народного хозяйства.
-                Оно отличается от простого предпринимательства тем, что
-                использует новые пути развития предприятия, такие как создание
-                новых технологий, использование новых форм управления, создание
-                новых продуктов и др.
+                <TrText root={"innovate"} name={"innovate_box1_descBottom"} />
               </h4>
             </div>
             <Image
@@ -63,21 +60,10 @@ const page = () => {
           <img className={s.imgs} src="/leadership.svg" />
           <nav className={s.listcontext}>
             <li>
-              В настоящее время на рынке существует огромная конкуренция, в
-              которой выживают только самые сильные предприятия. Именно
-              инновационно-ориентированное предприятие сумеет выжить в этой
-              борьбе. Инновации помогают выйти на новые рынки, удовлетворить
-              новые потребности покупателей.
+              <SetHtml root={"innovate"} name={"innovate_box2_desc"} />
             </li>
-            <li>
-              Задачей предпринимателя-новатора является путем освоения новых
-              технологических возможностей производства создать продукт, который
-              будет отличаться от других. Например, благодаря открытию нового
-              источника сырья или разработке нового технического средства. Таким
-              образом, предприниматель-новатор постоянно находиться в поиске
-              новых возможностей.
-            </li>
-            <ul>
+
+            {/* <ul>
               <li>
                 Инновационное предпринимательство готово брать на себя риски
                 связанные с финансовой деятельностью предприятия. Ведь не каждый
@@ -95,7 +81,7 @@ const page = () => {
                 полупроводники, лекарственные средства и медицинское
                 оборудование, средства связи и системы коммуникаций.
               </li>
-            </ul>
+            </ul> */}
             {/* <div className={s.blockimg}>
               <Image
                 className={s.img11}
@@ -131,20 +117,10 @@ const page = () => {
           <nav className={s.listendtext}>
             <ul>
               <p>
-                Инновационная деятельность требует осуществления передовых
-                управленческих решений для создания многоуровневой системы
-                подготовки кадров и создания предпосылок для формирования
-                устойчивой системы инновационных разработок внутри предприятий
-                (образовательная деятельность, фискальные меры, стимулирование
-                обмена опытом и т.п.).
+                <TrText root={"innovate"} name={"innovate_box2_left_desc"} />
               </p>
               <li>
-                Инновационная деятельность требует системности в проведении
-                указанных мер в жизнь и должна быть не только продиктована
-                реалиями и требованиями времени, но и осознана на уровне
-                управленческих кадров, устремленных к реализации основной миссии
-                инновационного предпринимательства – создание нового на
-                постоянной основе
+                <TrText root={"innovate"} name={"innovate_box2_bottom_desc"} />
               </li>
             </ul>
           </nav>

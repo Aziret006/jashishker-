@@ -1,7 +1,15 @@
-import React from 'react'
-import s from './page.module.scss'
-import { Alex_Brush, Be_Vietnam_Pro, Manrope, Mansalva } from "next/font/google";
-import Image from 'next/image';
+import React from "react";
+import s from "./page.module.scss";
+import {
+  Alex_Brush,
+  Be_Vietnam_Pro,
+  Manrope,
+  Mansalva,
+} from "next/font/google";
+import Image from "next/image";
+import TrText from "../TrText/TrText";
+import dynamic from "next/dynamic";
+import SetHtml from "../TrText/SetHtml";
 
 const FontManrope = Manrope({
   subsets: ["latin"],
@@ -12,70 +20,124 @@ const FontMansalva = Mansalva({
   subsets: ["latin"],
   weight: ["400"],
 });
+
+const Text = ({ name }) => {
+  return <TrText root={"digital"} name={name} />;
+};
+
 export default function Digitalization() {
   return (
     <div className={s.digitalization}>
       <div className={s.container}>
         <div className={s.digitalizationTitle}>
           <h5 className={FontManrope.className}>
-            Какие цифровые навыки бывают?
+            <Text name={"digital_box3_title"} />
           </h5>
           <p className={FontManrope.className}>
-            Выделим три ключевые группы навыков:
+            <Text name={"digital_box3_desc"} />
           </p>
           <div className={s.digitalizationImg}>
-            <Image src="/digitalization1.svg" width={1200} height={900} alt="" />
+            <Image
+              src="/digitalization1.svg"
+              width={1200}
+              height={900}
+              alt=""
+            />
           </div>
         </div>
         <div className={s.digitalizationContent}>
           <div className={s.digitalizationWrapper}>
             <div className={s.digitalizationLeft}>
-              <h2 className={FontMansalva.className}>[Базовые <br /> навыки]</h2>
+              <h2 className={FontMansalva.className}>
+                <SetHtml root={"digital"} name={"digital_box4_title"} />
+              </h2>
             </div>
             <div className={s.digitalizationRight}>
-              <p className={FontManrope.className}>К таким навыкам можно отнести:</p>
+              <p className={FontManrope.className}>
+                <Text name={"digital_box4_listTitle"} />
+              </p>
               <ul className={FontManrope.className}>
-                <li>умение пользоваться электронной почтой, интернетом и социальными сетями;</li>
-                <li>коммуницировать через мессенджеры;</li>
-                <li>редактировать и обрабатывать тексты;</li>
-                <li>защищать информацию;</li>
-                <li>умение печатать на клавиатуре и работать с сенсорными экранами.</li>
+                <li>
+                  <Text name={"digital_box4_list_1"} />
+                </li>
+                <li>
+                  <Text name={"digital_box4_list_2"} />
+                </li>
+                <li>
+                  <Text name={"digital_box4_list_3"} />
+                </li>
+                <li>
+                  <Text name={"digital_box4_list_4"} />
+                </li>
+                <li>
+                  <Text name={"digital_box4_list_5"} />
+                </li>
               </ul>
-              <p className={FontManrope.className}>Эти навыки напрямую связаны с функциональной и цифровой грамотностью в использовании интернета, приложений и электронных устройств. Базовые цифровые компетенции помогают человеку эффективно общаться и реализовываться в учёбе и работе.</p>
+              <p className={FontManrope.className}>
+                <Text name={"digital_box4_desc"} />
+              </p>
             </div>
           </div>
           <div className={s.digitalizationWrapper}>
             <div className={s.digitalizationRight}>
-              <p className={FontManrope.className}>В эту группу навыков входит:</p>
+              <p className={FontManrope.className}>
+                <Text name={"digital_box5_listTitle"} />
+              </p>
               <ul className={FontManrope.className}>
-                <li>умение работать с Excel, 1С и другими специализированными программами;</li>
-                <li>владение популярными языками программирования, например Python и SQL;</li>
-                <li>знание инструментов цифрового маркетинга.</li>
+                <li>
+                  <Text name={"digital_box5_list_1"} />
+                </li>
+                <li>
+                  <Text name={"digital_box5_list_2"} />
+                </li>
+                <li>
+                  <Text name={"digital_box5_list_3"} />
+                </li>
               </ul>
-              <p className={FontManrope.className}>Эти профессиональные цифровые навыки помогают специалисту решать ежедневные сложные задачи в бизнес-среде. Они необходимы для того, чтобы иметь конкурентное преимущество, эффективно использовать цифровые инструменты для работы и личностного развития.</p>
+              <p className={FontManrope.className}>
+                <Text name={"digital_box5_list_4"} />
+              </p>
             </div>
             <div className={s.digitalizationLeft}>
-              <h2 className={FontMansalva.className}>[Средние <br /> навыки]</h2>
+              <h2 className={FontMansalva.className}>
+                <SetHtml root={"digital"} name={"digital_box5_title"} />
+              </h2>
             </div>
           </div>
           <div className={s.digitalizationWrapper}>
             <div className={s.digitalizationLeft}>
-              <h2 className={FontMansalva.className}>[Продвинутые <br /> навыки]</h2>
+              <h2 className={FontMansalva.className}>
+                <SetHtml root={"digital"} name={"digital_box6_title"} />
+              </h2>
             </div>
             <div className={s.digitalizationRight}>
-              <p className={FontManrope.className}>К таким навыкам можно отнести:</p>
+              <p className={FontManrope.className}>
+                <Text name={"digital_box6_listTitle"} />
+              </p>
               <ul className={FontManrope.className}>
-                <li>умение использовать возможности искусственного интеллекта;</li>
-                <li>анализ больших объёмов данных;</li>                <li>знание инструментов кибербезопасности;</li>
-                <li>разработка программного обеспечения;</li>
-                <li>знание основ машинного обучения.</li>
-
+                <li>
+                  <Text name={"digital_box6_list_1"} />
+                </li>
+                <li>
+                  <Text name={"digital_box6_list_2"} />
+                </li>
+                <li>
+                  <Text name={"digital_box6_list_3"} />
+                </li>
+                <li>
+                  <Text name={"digital_box6_list_4"} />
+                </li>
+                <li>
+                  <Text name={"digital_box6_list_5"} />
+                </li>
               </ul>
-              <p className={FontManrope.className}>Согласно опросу, проведённому британским Институтом обучения и работы (источник), работодатели заинтересованы в кандидатах, которые обладают продвинутыми цифровыми навыками. Дефицит таких кадров сдерживает инновации, производительность и рост бизнеса.</p>
+              <p className={FontManrope.className}>
+                <Text name={"digital_box6_desc"} />
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
