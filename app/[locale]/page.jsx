@@ -16,6 +16,7 @@ import Link from "next/link";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 
 import TrText from "@/components/TrText/TrText";
+import { ToastContainer } from "react-toastify";
 export const metadata = {
   title: "ЖАШ ИШКЕР",
   description:

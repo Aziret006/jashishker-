@@ -4,9 +4,9 @@ import s from "./page.module.scss";
 import Footer from "@/components/Footer/Footer";
 import { useRef, useState } from "react";
 import { InputMask } from "@react-input/mask";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-
-// Убедитесь, что нет других переменных или функций с именем axios
+import { toast, ToastContainer } from "react-toastify";
 
 const regions = ["Чуй", "Ош", "Ысык-Кол", "Жалал-Абад", "Нарын", "Баткен"];
 
@@ -87,6 +87,7 @@ const Page = () => {
     }
 
     if (Object.keys(newErrors).length > 0) {
+      toast.error("Поле обязательно для заполнения");
       setErrors(newErrors);
     } else {
       const From = new FormData();
@@ -132,15 +133,36 @@ const Page = () => {
           full_company_name: null,
           commercial_name: null,
         });
+
+        setPhotoUrl(null);
+        toast.success("Ваша заявка успешно отправлена");
         console.log("Success:", data);
+        setErrors({});
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       } catch (error) {
         console.error("Error:", error.response.data);
+        toast.error("Ваша заявка не была отправлена");
         setErrors(error.response.data);
       }
     }
   };
   return (
     <div>
+      <ToastContainer
+        autoClose={3000}
+        limit={1}
+        hideProgressBar
+        newestOnBottom={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        position="bottom-center"
+        theme="dark"
+      />
       <Haeder />
       <div className={s.content}>
         <div className={s.titelContent}>
@@ -153,7 +175,7 @@ const Page = () => {
                   {photoUrl ? (
                     <img src={photoUrl} alt="" />
                   ) : (
-                    <img src="/image25.svg" alt="" />
+                    <img src="/img/images.jpeg" alt="" />
                   )}
                 </span>
                 <p onClick={() => photoRef.current.click()}>Добавить фото</p>
@@ -275,18 +297,18 @@ const Page = () => {
                     категорию вида экономической деятельности вашей компании*
                   </p>
                   <span>
-                    Мисалы, "выращивание многолетних культур" - бул "сельское
-                    хозяйство, лесное хозяйство, охота и рыболовство"
+                    Мисалы, выращивание многолетних культур - бул сельское
+                    хозяйство, лесное хозяйство, охота и рыболовство
                     экономикалык ишмердүүлүктүн категорияларынын бири. Демек,
-                    бул суроого "выращивание многолетних культур" жооп болушу
+                    бул суроого выращивание многолетних культур жооп болушу
                     мүмкүн.
                   </span>
                   <span>
-                    Например, "выращивание многолетних культур" является одной
-                    из категорий вида экономической деятельности "сельское
-                    хозяйство, лесное хозяйство, охота и рыболовство". Таким
+                    Например, выращивание многолетних культур является одной из
+                    категорий вида экономической деятельности сельское
+                    хозяйство, лесное хозяйство, охота и рыболовство. Таким
                     образом, в ответе для этого вопроса можно написать
-                    "выращивание многолетних культур".
+                    выращивание многолетних культур.
                   </span>
                   <input
                     type="text"

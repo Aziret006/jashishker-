@@ -16,6 +16,7 @@ import { Dialog, DialogContent, DialogTitle, Button } from "@mui/material";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import { Api } from "@/api";
 import axios from "axios";
+import Link from "next/link";
 // import PersonalDataForm from "@/components/Modal/page";
 
 const BeVietnamPro = Be_Vietnam_Pro({
@@ -181,8 +182,8 @@ const contacts = [
   },
 ];
 const getUserData = async () => {
-  const data = await axios.get(`${Api}api/v1/user/`);
-  return data.data;
+  // const data = await axios.get(`${Api}api/v1/user/`);
+  // return data.data;
 };
 
 const Page = () => {
@@ -242,12 +243,11 @@ const Page = () => {
             <hr />
             <div className={styles.topBar}>
               <div className={styles.filterOptions}>
-                <button
-                  onClick={() => setData(true)}
-                  className={styles.filterButton}
-                >
-                  Добавить в базу себя
-                </button>
+                <Link href={"/database/add-to-your-vase"}>
+                  <button className={styles.filterButton}>
+                    Добавить в базу себя
+                  </button>
+                </Link>
               </div>
               <div className={styles.sortOptions}>
                 <select
