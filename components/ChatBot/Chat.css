@@ -12,7 +12,7 @@
   padding: 24px;
 }
 .react-chatbot-kit-chat-message-container {
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   max-height: 300px;
   overflow-y: auto;
   display: flex;
