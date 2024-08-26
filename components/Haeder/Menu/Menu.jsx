@@ -125,11 +125,7 @@ const Menu = ({ isMenu, setMenu }) => {
                     <Text name={"navbar_knowBase_temBussiness"} />
                   </Link>
                 </li>
-                <li>
-                  <Link className={s.Link} href={"/digitalization"}>
-                    <Text name={"navbar_knowBase_projEvaluat"} />
-                  </Link>
-                </li>
+                <li></li>
               </motion.ul>
             )}
           </li>

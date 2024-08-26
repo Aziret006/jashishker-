@@ -263,11 +263,6 @@ const Haeder = () => {
               </li>
 
               <li>
-                <Link className={s.Link} href={"/digitalization"}>
-                  {t("navbar_knowBase_projEvaluat")}
-                </Link>
-              </li>
-              <li>
                 <Link className={s.Link} href={"/database"}>
                   {t("navbar_knowBase_baseData")}
                 </Link>
