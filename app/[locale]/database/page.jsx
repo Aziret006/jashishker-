@@ -182,14 +182,16 @@ const contacts = [
   },
 ];
 const getUserData = async () => {
-  // const data = await axios.get(`${Api}api/v1/user/`);
-  // return data.data;
+  const data = await axios.get(`${Api}api/v1/application-forms/`);
+  return data.data;
 };
 
 const Page = () => {
   const [data, setData] = useState(false);
   const [sortBy, setSortBy] = useState("newest");
   const [filterBy, setFilterBy] = useState("all");
+  const [userList, setUserList] = useState([]);
+  const [lodingm, setLodingm] = useState(true);
   const sortedContacts = [...contacts].sort((a, b) => {
     if (sortBy === "newest") return b.id - a.id;
     if (sortBy === "oldest") return a.id - b.id;
@@ -224,187 +226,203 @@ const Page = () => {
     }
   }, []);
   useEffect(() => {
-    const data = getUserData();
+    getUserData().then((data) => {
+      console.log(data);
 
-    console.log(data);
+      setSelectedContact(data[0]);
+      setUserList(data);
+    });
   }, []);
+  useEffect(() => {
+    console.log(userList, "stdgahsdgashj");
+
+    setLodingm(false);
+  }, [userList]);
   return (
-    <>
-      <div>
-        <Haeder />
-        <div className={styles.mainDataBase}>
-          <SocialSidebar />
-          <div className={styles.dataBaseCont}>
-            <div className={styles.baseTitle}>
-              <h1 className={BeVietnamPro.className}>
-                База данных предпринимателей
-              </h1>
-            </div>
-            <hr />
-            <div className={styles.topBar}>
-              <div className={styles.filterOptions}>
-                <Link href={"/database/add-to-your-vase"}>
-                  <button className={styles.filterButton}>
-                    Добавить в базу себя
+    lodingm !== true && (
+      <>
+        <div>
+          <Haeder />
+          <div className={styles.mainDataBase}>
+            <SocialSidebar />
+            <div className={styles.dataBaseCont}>
+              <div className={styles.baseTitle}>
+                <h1 className={BeVietnamPro.className}>
+                  База данных предпринимателей
+                </h1>
+              </div>
+              <hr />
+              <div className={styles.topBar}>
+                <div className={styles.filterOptions}>
+                  <Link href={"/database/add-to-your-vase"}>
+                    <button
+                      className={styles.filterButton}
+                      style={{
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      Добавить в базу себя
+                    </button>
+                  </Link>
+                </div>
+                <div className={styles.sortOptions}>
+                  <div></div>
+                  <button
+                    onClick={() => handlePageChange("active")}
+                    className={cm("button", {
+                      [styles.active]: page === "active",
+                    })}
+                  >
+                    <IoIosMenu size={24} />
                   </button>
-                </Link>
+                  <button
+                    onClick={() => handlePageChange("favorites")}
+                    className={cm("button", {
+                      [styles.active]: page === "favorites",
+                    })}
+                  >
+                    <AiOutlineAppstore size={24} />
+                  </button>
+                </div>
               </div>
-              <div className={styles.sortOptions}>
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                >
-                  <option value="newest">Сначала новые</option>
-                  <option value="oldest">Сначала старые</option>
-                  <option value="alphabetical">По алфавиту</option>
-                </select>
-                <button
-                  onClick={() => handlePageChange("active")}
-                  className={cm("button", {
-                    [styles.active]: page === "active",
+              <div className={styles.container}>
+                <div
+                  className={cm(styles.contactList, {
+                    [styles.cardFavoritesList]: page === "favorites",
                   })}
                 >
-                  <IoIosMenu size={24} />
-                </button>
-                <button
-                  onClick={() => handlePageChange("favorites")}
-                  className={cm("button", {
-                    [styles.active]: page === "favorites",
-                  })}
-                >
-                  <AiOutlineAppstore size={24} />
-                </button>
-              </div>
-            </div>
-            <div className={styles.container}>
-              <div
-                className={cm(styles.contactList, {
-                  [styles.cardFavoritesList]: page === "favorites",
-                })}
-              >
-                {page === "favorites"
-                  ? filteredContacts.map((contact) => (
-                      <div
-                        key={contact.id}
-                        className={styles.cardFavorites}
-                        onClick={() => setSelectedContact(contact)}
-                      >
-                        <div className={styles.cardPhoto}>
-                          <Image
-                            fill
-                            objectFit="cover"
+                  {page === "favorites"
+                    ? userList.map((contact) => (
+                        <div
+                          key={contact.id}
+                          className={styles.cardFavorites}
+                          onClick={() => setSelectedContact(contact)}
+                        >
+                          <div className={styles.cardPhoto}>
+                            <Image
+                              fill
+                              objectFit="cover"
+                              src={contact.photo}
+                              alt={contact.name}
+                            />
+                          </div>
+                          <div className={styles.favoriteTitel}>
+                            <h3>{contact.full_name}</h3>
+                            <p>
+                              {" "}
+                              {contact.activity_type.length > 15
+                                ? contact.activity_type.slice(0, 25) + "..."
+                                : contact.activity_type}
+                            </p>
+                          </div>
+                        </div>
+                      ))
+                    : userList.map((contact) => (
+                        <div
+                          key={contact.id}
+                          className={styles.contactItem}
+                          onClick={() => setSelectedContact(contact)}
+                        >
+                          <img
                             src={contact.photo}
                             alt={contact.name}
+                            className={styles.photo}
                           />
+                          <div className={styles.details}>
+                            <div>
+                              <h3>{contact.email} </h3>
+
+                              <p>
+                                {contact.activity_type.length > 15
+                                  ? contact.activity_type.slice(0, 15) + "..."
+                                  : contact.activity_type}
+                              </p>
+                            </div>
+                            <IoIosArrowForward
+                              className={styles.arrow}
+                              size={24}
+                              onClick={() => handlerIsModal(contact)}
+                            />
+                            <p className={styles.email}>{contact.email}</p>
+                            <p className={styles.phone}>{contact.phone}</p>
+                          </div>
                         </div>
-                        <div className={styles.favoriteTitel}>
-                          <h3>{contact.name}</h3>
-                          <p>{contact.service}</p>
-                        </div>
-                      </div>
-                    ))
-                  : filteredContacts.map((contact) => (
-                      <div
-                        key={contact.id}
-                        className={styles.contactItem}
-                        onClick={() => setSelectedContact(contact)}
-                      >
+                      ))}
+                </div>
+                {selectedContact && (
+                  <div
+                    className={styles.modal}
+                    onClick={() => setSelectedContact(false)}
+                  >
+                    <motion.div
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={styles.contactDetail}
+                    >
+                      <div className={styles.baseBack}>
                         <img
-                          src={contact.photo}
-                          alt={contact.name}
+                          src={selectedContact.photo}
+                          alt={selectedContact.name}
                           className={styles.photo}
                         />
-                        <div className={styles.details}>
-                          <div>
-                            <h3>{contact.name} </h3>
-                            <p>{contact.service}</p>
+                        <div className={styles.flexCenter}>
+                          <h2>{selectedContact.name}</h2>
+                          <p>{selectedContact.age}</p>
+                        </div>
+                      </div>
+                      <div className={styles.info}>
+                        <div>
+                          <div className={styles.icon}>
+                            <img src="/location.svg" alt="" />
                           </div>
-                          <IoIosArrowForward
-                            className={styles.arrow}
-                            size={24}
-                            onClick={() => handlerIsModal(contact)}
-                          />
-                          <p className={styles.email}>{contact.email}</p>
-                          <p className={styles.phone}>{contact.phone}</p>
+                          <p>
+                            <strong>Город:</strong> {selectedContact.region}
+                          </p>
                         </div>
+                        <div>
+                          <div className={styles.icon}>
+                            <img src="/phone.svg" alt="" />
+                          </div>
+                          <p>
+                            <strong>Номер телефона:</strong>{" "}
+                            {selectedContact.phone}
+                          </p>
+                        </div>
+                        <div>
+                          <div className={styles.icon}>
+                            <img src="/mail.svg" alt="" />
+                          </div>
+                          <p>
+                            <strong>E-mail:</strong> {selectedContact.email}
+                          </p>
+                        </div>
+
+                        <div>
+                          <div className={styles.icon}>
+                            <img src="/brifecase-tick.svg" alt="" />
+                          </div>
+                          <p>
+                            <strong>Вид деятельности:</strong>{" "}
+                            {selectedContact.activity_type}
+                          </p>
+                        </div>
+                        <div
+                          style={{
+                            height: "30px",
+                          }}
+                        ></div>
                       </div>
-                    ))}
+                    </motion.div>
+                  </div>
+                )}
               </div>
-              {selectedContact && (
-                <div
-                  className={styles.modal}
-                  onClick={() => setSelectedContact(false)}
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={styles.contactDetail}
-                  >
-                    <div className={styles.baseBack}>
-                      <img
-                        src={selectedContact.photo}
-                        alt={selectedContact.name}
-                        className={styles.photo}
-                      />
-                      <div className={styles.flexCenter}>
-                        <h2>{selectedContact.name}</h2>
-                        <p>{selectedContact.age}</p>
-                      </div>
-                    </div>
-                    <div className={styles.info}>
-                      <div>
-                        <div className={styles.icon}>
-                          <img src="/location.svg" alt="" />
-                        </div>
-                        <p>
-                          <strong>Город:</strong> {selectedContact.city}
-                        </p>
-                      </div>
-                      <div>
-                        <div className={styles.icon}>
-                          <img src="/phone.svg" alt="" />
-                        </div>
-                        <p>
-                          <strong>Номер телефона:</strong>{" "}
-                          {selectedContact.phone}
-                        </p>
-                      </div>
-                      <div>
-                        <div className={styles.icon}>
-                          <img src="/mail.svg" alt="" />
-                        </div>
-                        <p>
-                          <strong>E-mail:</strong> {selectedContact.email}
-                        </p>
-                      </div>
-                      <div>
-                        <div className={styles.icon}>
-                          <img src="/user-octagon.svg" alt="" />
-                        </div>
-                        <p>
-                          <strong>ИП:</strong> {selectedContact.services}
-                        </p>
-                      </div>
-                      <div>
-                        <div className={styles.icon}>
-                          <img src="/brifecase-tick.svg" alt="" />
-                        </div>
-                        <p>
-                          <strong>Вид деятельности:</strong>{" "}
-                          {selectedContact.activity}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-              )}
             </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-      {data && <PersonalDataForm setData={setData} />}
-    </>
+        {data && <PersonalDataForm setData={setData} />}
+      </>
+    )
   );
 };
 
