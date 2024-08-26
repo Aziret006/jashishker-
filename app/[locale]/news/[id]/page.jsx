@@ -10,6 +10,7 @@ import axios from "axios";
 import SwiperNewsIda from "@/components/Swipers/SwiperNewsIda/SwiperNewsIda";
 import { Api } from "@/api";
 import { notFound } from "next/navigation";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 export async function generateMetadata({ params }) {
   const newsResponse = await axios.get(`${Api}api/v1/news/${params.id}/`);
 
@@ -40,9 +41,7 @@ const page = async ({ params }) => {
     cardListData = cardListResponse.data;
   } catch (err) {
     console.log(err);
-    
   }
-  
 
   if (error) {
     return <div>Error loading data: {error}</div>;
@@ -52,6 +51,7 @@ const page = async ({ params }) => {
     return (
       <div className={s.news}>
         <Haeder />
+        <SocialSidebar />
         <div className={s.newsHaeder}>
           <div className={s.newsContend}>
             <div className={s.newsNav}>
