@@ -19,7 +19,7 @@ const SocialSidebar = () => {
   };
 
   return (
-    <div className={styles.fixedContainer}>
+    <div className={styles.fixedContainerSlidebar}>
       <div className={styles.container}>
         <div className={styles.icons}>
           <a

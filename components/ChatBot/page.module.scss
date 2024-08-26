@@ -1,6 +1,6 @@
 .ChatBotCustom {
   position: fixed;
-  bottom: 70px;
+  bottom: 130px;
   right: 10px;
   z-index: 111111;
   cursor: pointer;
@@ -84,11 +84,11 @@
   }
 }
 
-.pagination{
+.pagination {
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
-  button{
+  button {
     padding: 5px 16px 5px 16px;
     border-radius: 36px;
     border: 1px solid #e3e3e3;
@@ -102,4 +102,3 @@
 .acc {
   background: rgba(255, 255, 255, 1) !important;
 }
-//f6f6f6    

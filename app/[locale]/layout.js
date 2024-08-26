@@ -21,8 +21,8 @@ export default function RootLayout({ children, params: { locale } }) {
     <html lang="en">
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={manrope.className}>
-          <ChatBotCostom />
           {children}
+          <ChatBotCostom />
         </body>
       </NextIntlClientProvider>
     </html>
