@@ -80,9 +80,9 @@
       text-align: center;
     }
     button {
-      width: 108px;
+      // width: 108px;
       height: 36px;
-      padding: 6px 30px 6px 30px;
+      // padding: 6px 30px 6px 30px;
       gap: 10px;
       border-radius: 36px;
       border: 1px;
@@ -92,14 +92,17 @@
       line-height: 21.86px;
       text-align: center;
       color: #fff;
-      border: 1px solid #fff;
+      // border: 1px solid #fff;
       background-color: #00000000;
     }
   }
   .burgerButton {
     display: none;
+
+   
   }
 
+  
   @media screen and (max-width: 1322px) {
     .nav {
       display: none;
@@ -115,6 +118,7 @@
       margin: 0 !important;
       border: none !important;
       cursor: pointer !important;
+      
       svg {
         width: 40px;
         height: 40px;

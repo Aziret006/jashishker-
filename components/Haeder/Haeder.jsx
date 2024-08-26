@@ -12,13 +12,15 @@ import { IoIosArrowDown } from "react-icons/io";
 import Menu from "./Menu/Menu";
 import LocalSwitcher from "../LocalSwitcher/LocalSwitcher";
 import TrText from "../TrText/TrText";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import useMedia from "@/hooks/useMediaQuery";
 
 const manrope = Manrope({ subsets: ["latin"] });
 const Haeder = () => {
   const [navProduct, setNavProduct] = useState(false);
   const [navKnowledge, setNavKnowledge] = useState(false);
   const previousActiveMenuRef = useRef(null);
+  const ref = useRef(null);
 
   const [isMenu, setIsMenu] = useState(false);
 
@@ -87,6 +89,11 @@ const Haeder = () => {
 
   const t = useTranslations("navbar");
 
+  const isMobile = useMedia("(max-width: 1322px)");
+
+  const locale = useLocale();
+  const isKy = isMenu || locale === "ky";
+
   return (
     <div className={s.Div}>
       <haeder className={`${manrope.className}  ${s.haeder}`}>
@@ -97,54 +104,61 @@ const Haeder = () => {
             ИШКЕР
           </p>
         </a>
-        <nav className={s.nav}>
-          <ul>
-            <li onClick={() => setNavProduct(true)}>
-              <TrText root={"navbar"} name={"navbar_about"} />{" "}
-              <IoIosArrowDown />
-            </li>
-            <li>
-              <Link className={s.Link} href={"/news"}>
-                <TrText root={"navbar"} name={"navbar_news"} />
-              </Link>
-            </li>
-            <li onClick={() => setNavKnowledge(true)}>
-              <TrText root={"navbar"} name={"navbar_knowBase"} />
-              <IoIosArrowDown />
-            </li>
-            <li>
-              <Link className={s.Link} href={"/success-stories"}>
-                <TrText root={"navbar"} name={"navbar_success_history"} />
-              </Link>
-            </li>
-            <li>
-              <Link className={s.Link} href={"/database"}>
-                <TrText root={"navbar"} name={"navbar_knowBase_baseData"} />
-              </Link>
-            </li>
-            <li>
-              <a
-                className={s.Link}
-                href="https://enactus.kg/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Enactus
-              </a>
-            </li>
-            <li>
-              <Link className={s.Link} href={"/contact"}>
-                <TrText root={"navbar"} name={"navbar_about_contacts"} />
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        {!isKy && (
+          <nav className={s.nav}>
+            <ul>
+              <li onClick={() => setNavProduct(true)}>
+                <TrText root={"navbar"} name={"navbar_about"} />{" "}
+                <IoIosArrowDown />
+              </li>
+              <li>
+                <Link className={s.Link} href={"/news"}>
+                  <TrText root={"navbar"} name={"navbar_news"} />
+                </Link>
+              </li>
+              <li onClick={() => setNavKnowledge(true)}>
+                <TrText root={"navbar"} name={"navbar_knowBase"} />
+                <IoIosArrowDown />
+              </li>
+              <li>
+                <Link className={s.Link} href={"/success-stories"}>
+                  <TrText root={"navbar"} name={"navbar_success_history"} />
+                </Link>
+              </li>
+              <li>
+                <Link className={s.Link} href={"/database"}>
+                  <TrText root={"navbar"} name={"navbar_knowBase_baseData"} />
+                </Link>
+              </li>
+              <li>
+                <a
+                  className={s.Link}
+                  href="https://enactus.kg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Enactus
+                </a>
+              </li>
+              <li>
+                <Link className={s.Link} href={"/contact"}>
+                  <TrText root={"navbar"} name={"navbar_about_contacts"} />
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        )}
+
         <div className={s.ButtonList}>
           <LocalSwitcher />
           <button className="Login">
             <TrText root={"navbar"} name={"login"} />
           </button>
-          <button className={s.burgerButton} onClick={() => setIsMenu(!isMenu)}>
+          <button
+            style={{ display: isKy || isMobile ? "block" : "none" }}
+            className={s.burgerButton}
+            onClick={() => setIsMenu(!isMenu)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

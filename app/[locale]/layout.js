@@ -3,6 +3,8 @@ import "./globals.css";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import LiveChatScript from "@/components/LiveChatScript/LiveChatScript";
 import ChatBotCostom from "@/components/ChatBot/ChatBotCostom";
+import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+import Providers from "@/components/ProgressProvider/ProgressProvider";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -23,7 +25,7 @@ export default function RootLayout({ children, params: { locale } }) {
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={manrope.className}>
           <ChatBotCostom />
-          {children}
+          <Providers>{children}</Providers>
         </body>
       </NextIntlClientProvider>
     </html>
