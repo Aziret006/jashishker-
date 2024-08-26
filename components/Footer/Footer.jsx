@@ -140,11 +140,6 @@ const Footer = () => {
                       <Text1 name={"navbar_knowBase_temBussiness"} />
                     </Link>
                   </li>
-                  <li>
-                    <Link className={s.Link} href={"/digitalization"}>
-                      <Text1 name={"navbar_knowBase_projEvaluat"} />
-                    </Link>
-                  </li>
                 </motion.ul>
               )}
             </li>
