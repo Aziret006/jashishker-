@@ -19,45 +19,30 @@ const SocialSidebar = () => {
   };
 
   return (
-    <div className={styles.fixedContainer}>
+    <div className={styles.fixedContainerSlidebar}>
       <div className={styles.container}>
-        <button
-          onClick={toggleIcons}
-          className={styles.toggleButton}
-          aria-label="Name"
-        >
-          <Image
-            className={styles.icon}
-            src="/chat.svg"
-            width={32}
-            height={32}
-            alt=""
-          />
-        </button>
-        {isVisible && (
-          <div className={styles.icons}>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/enactus_kyrgyzstan?igsh=MWFrOXh4bjRoZGllcw== "
-            >
-              <Image src="/image31.svg" alt="" width={30} height={30} />
-            </a>
-            <a target="_blank" href="https://t.me/StartUpBlogger">
-              <Image src="/whatsapp-icon.svg" alt="" width={30} height={30} />
-            </a>
-            <a target="_blank" href="https://t.me/StartUpBlogger">
-              <Image
-                src="/file-icons_telegram.svg"
-                alt=""
-                width={30}
-                height={30}
-              />
-            </a>
-            <a target="_blank" href="https://t.me/StartUpBlogger">
-              <Image src="/logos_facebook.svg" alt="" width={30} height={30} />
-            </a>
-          </div>
-        )}
+        <div className={styles.icons}>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/enactus_kyrgyzstan?igsh=MWFrOXh4bjRoZGllcw== "
+          >
+            <Image src="/image31.svg" alt="" width={30} height={30} />
+          </a>
+          <a target="_blank" href="https://t.me/StartUpBlogger">
+            <Image src="/whatsapp-icon.svg" alt="" width={30} height={30} />
+          </a>
+          <a target="_blank" href="https://t.me/StartUpBlogger">
+            <Image
+              src="/file-icons_telegram.svg"
+              alt=""
+              width={30}
+              height={30}
+            />
+          </a>
+          <a target="_blank" href="https://t.me/StartUpBlogger">
+            <Image src="/logos_facebook.svg" alt="" width={30} height={30} />
+          </a>
+        </div>
       </div>
     </div>
   );

@@ -33,14 +33,17 @@ const page = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  console.log(topNews);
+
   const getData = async () => {
     try {
       const topNewsResponse = await axios.get(
-        `${Api}api/news/?category=top_news`
+        `${Api}api/v1/news/?category=top_news`
       );
       const newsPopularResponse = await axios.get(
-        `${Api}api/news/?status=${filterPage}`
+        `${Api}api/v1/news/?status=${filterPage}`
       );
+
       return {
         topNews: topNewsResponse.data.results,
         newsPopular: newsPopularResponse.data.results,
@@ -50,11 +53,12 @@ const page = () => {
     }
   };
 
+  const log = console.log;
   useEffect(() => {
     getData().then((data) => {
       if (data) {
-        setTopNews(data.topNews);
-        setPopular(data.newsPopular);
+        setTopNews(data?.topNews);
+        setPopular(data?.newsPopular);
       }
       setLoading(false);
     });
@@ -64,7 +68,7 @@ const page = () => {
     const getData = async () => {
       try {
         const newsPopular = await axios.get(
-          `${Api}api/news/?status=${filterPage}`
+          `${Api}api/v1/news/?status=${filterPage}`
         );
         return {
           newsPopular: newsPopular.data,
@@ -72,7 +76,7 @@ const page = () => {
       } catch (error) {}
     };
     getData().then((data) => {
-      setPopular(data.newsPopular.results);
+      setPopular(data?.newsPopular.results);
     });
   }, [filterPage]);
   if (error) {
@@ -83,8 +87,8 @@ const page = () => {
     return <Loading />;
   }
 
-  if (!newsPopular || newsPopular.length === 0) {
-    return <div>Новости не найдены</div>;
+  if (!newsPopular || newsPopular.length <= 0) {
+    return notFound();
   }
 
   return (
@@ -150,7 +154,7 @@ const page = () => {
                 </div>
               </div>
               <div className={s.newsBloc1MainCards}>
-                {topNews.slice(1, 3).map((item, key) => (
+                {topNews?.slice(1, 3).map((item, key) => (
                   <NewsCard data={item} key={key} />
                 ))}
               </div>
