@@ -310,7 +310,6 @@ const Page = () => {
                           <div className={styles.favoriteTitel}>
                             <h3>{contact.full_name}</h3>
                             <p>
-                              {" "}
                               {contact.activity_type.length > 15
                                 ? contact.activity_type.slice(0, 25) + "..."
                                 : contact.activity_type}
