@@ -38,13 +38,16 @@
     gap: 15px;
     row-gap: 8px;
     button {
-      padding: 5px 16px 5px 16px;
-      border-radius: 36px;
-      border: 1px solid #e3e3e3;
+      width: 100%;
+      padding: 18px;
+      gap: 10px;
+      border-radius: 14px;
+      border: none;
       font-size: 15px;
-      font-weight: 400;
-      text-align: left;
-      color: #667085;
+      font-weight: 500;
+      line-height: 20.49px;
+      text-align: center;
+      color: #161616;
     }
   }
   .backdrop {
@@ -85,16 +88,205 @@
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
   button {
-    padding: 5px 16px 5px 16px;
-    border-radius: 36px;
-    border: 1px solid #e3e3e3;
-    font-size: 15px;
-    font-weight: 400;
-    text-align: left;
-    color: #667085;
+    gap: 10px;
+
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #a0a0a5;
+
+    border: none;
+    border-radius: 54px;
   }
 }
 .acc {
   background: rgba(255, 255, 255, 1) !important;
+}
+.overlay {
+  width: 100%;
+  background: #9999994d;
+
+  min-width: 100vh;
+  position: fixed;
+  top: 0px;
+  min-height: 100vh;
+
+  max-height: 100vh;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  right: 0px;
+  padding: 20px;
+}
+.BLockContent {
+  width: 400px;
+  max-width: 400px;
+  background: #fff;
+  min-height: fit-content;
+  max-height: 90vh;
+  min-height: 760px;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.Page1 {
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+  margin: 40px;
+  gap: 20px;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  .Logo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    p {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 35.52px;
+      letter-spacing: -0.02em;
+      text-align: center;
+
+      color: #212121;
+    }
+  }
+}
+
+.Bix {
+  display: flex;
+  width: -webkit-fill-available;
+  justify-content: right;
+  background-color: #00000000;
+  border: none;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 436px) {
+  .BLockContent {
+    width: 100% !important;
+    width: 320px !important;
+    max-width: 320px !important;
+
+    max-height: 90vh;
+    min-height: 500px;
+  }
+}
+
+.Generate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1.44px;
+  border: 1.44px solid #cccccc;
+}
+.NavBame {
+  display: flex;
+
+  gap: 10px;
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  align-items: center;
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 20px;
+  .NavBameLogo {
+    display: flex;
+
+    align-items: center;
+    svg {
+      min-width: 35px;
+      min-height: 35px;
+      width: 35px;
+      height: 35px;
+    }
+    p {
+      color: #212121;
+      stroke-width: none;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 21.86px;
+      white-space: nowrap;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.asdasdasd {
+  // display: "flex",
+  // flexDirection: "column",
+  // gap: "14px",\
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+}
+
+.PageId {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.BootPageID {
+  display: flex;
+
+  padding: 24px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  gap: 20px;
+  align-items: center;
+  img {
+    width: 37px;
+    height: 37px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+  p {
+    color: #2f2f2f;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.12px;
+    letter-spacing: 0.1477707028388977px;
+    text-align: left;
+  }
+}
+
+.FAqOT {
+  padding: 20px;
+  background-color: #f7f7f8;
+}
+
+.FAqOTLogoPg {
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.Generate1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  margin: 0 auto;
+  max-width: 220px;
+  border-radius: 8px;
+
+  border: 1.44px;
+  border: 1.44px solid #cccccc;
 }
