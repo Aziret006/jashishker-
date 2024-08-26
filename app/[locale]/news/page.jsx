@@ -145,7 +145,6 @@ const page = () => {
             </div>
             <div className={s.Tap}>
               <p
-                onClick={() => setFilterPage("new")}
                 style={{
                   color: filterPage == "new" ? "#DA4E38" : "#222",
                   cursor: "pointer",
@@ -156,7 +155,6 @@ const page = () => {
               </p>
               <div className={s.TopBorder}></div>
               <p
-                onClick={() => setFilterPage("popular")}
                 style={{
                   color: filterPage == "popular" ? "#DA4E38" : "#222",
                   cursor: "pointer",
