@@ -12,6 +12,8 @@ import { LiaTelegramPlane } from "react-icons/lia";
 import { TbBrandYoutube } from "react-icons/tb";
 import { FaLinkedinIn } from "react-icons/fa";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
+import TrText from "@/components/TrText/TrText";
+import FormContact from "@/components/FormContact/FormContact";
 
 export const metadata = {
   title: "ЖАШ ИШКЕР",
@@ -39,15 +41,18 @@ const page = () => {
         <SocialSidebar />
         <div className={s.container}>
           <div className={s.contactText}>
-            <h1 className={BeVietnamPro.className}>Контакты</h1>
-            <h5 className={Alex.className}>Lorem ipsum dolor sit amet</h5>
+            <h1 className={BeVietnamPro.className}>
+              <TrText root={"contact"} name="contact_title" />
+            </h1>
+            <h5 className={Alex.className}>
+              <TrText root={"contact"} name="contact_subtitle" />
+            </h5>
           </div>
           <div className={s.contactBorder} />
           <div className={s.contactWrap}>
             <div className={s.contactMap}>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <TrText root={"contact"} name="contact_box1_title" />
               </p>
               <div>
                 <iframe
@@ -86,7 +91,9 @@ const page = () => {
                     </svg>
                   </div>
                   <div className={s.contactTitle}>
-                    <p className={FontManrope.className}>Адрес:</p>
+                    <p className={FontManrope.className}>
+                      <TrText root={"partner"} name="partner_address" />
+                    </p>
                     <Link href="">
                       <span className={FontManrope.className}>
                         Кыргызская Республика Бишкек, <br /> 720001
@@ -114,7 +121,9 @@ const page = () => {
                     </svg>{" "}
                   </div>
                   <div className={s.contactTitle}>
-                    <p className={FontManrope.className}>Номер телефона:</p>
+                    <p className={FontManrope.className}>
+                      <TrText root={"partner"} name="partner_phoneNumber" />
+                    </p>
                     <Link href="">
                       <span className={FontManrope.className}>
                         +996 (312) 661 - 194
@@ -152,7 +161,9 @@ const page = () => {
                 </div>
               </div>
               <div className={s.contactSocial}>
-                <p className={FontManrope.className}>Социальные сети</p>
+                <p className={FontManrope.className}>
+                  <TrText root={"partner"} name="social_links" />
+                </p>
                 <div className={s.contactMedia}>
                   <Link href="" className={s.icon}>
                     <FaInstagram />
@@ -175,71 +186,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className={s.contactForm}>
-        <div className={s.containerForm}>
-          <div className={s.formWrapper}>
-            <div className={s.formTitle}>
-              <Image
-                src="/contact.svg"
-                alt="contact"
-                width={403.859}
-                height={470}
-              />
-              <div className={s.title}>
-                <h4 className={FontManrope.className}>Нужна </h4>
-                <h5 className={FontManrope.className}>
-                  <span></span> помощь?{" "}
-                </h5>
-              </div>
-              <p className={FontManrope.className}>
-                Наши специалисты ответят на ваши вопросы
-              </p>
-            </div>
-            <div className={s.form}>
-              <div className={s.formInput}>
-                <label className={FontManrope.className} htmlFor="">
-                  Ваше Имя
-                </label>
-                <input
-                  className={FontManrope.className}
-                  type="text"
-                  placeholder="Введите ваше имя"
-                />
-              </div>
-              <div className={s.formInput}>
-                <label className={FontManrope.className} htmlFor="">
-                  Ваше e-mail
-                </label>
-                <input
-                  className={FontManrope.className}
-                  type="text"
-                  placeholder="Введите ваш e-mail"
-                />
-              </div>
-              <div className={s.formInput}>
-                <label className={FontManrope.className} htmlFor="">
-                  Тема
-                </label>
-                <input
-                  className={FontManrope.className}
-                  type="text"
-                  placeholder="Введите тему"
-                />
-              </div>
-              <div className={s.formInput}>
-                <label className={FontManrope.className} htmlFor="">
-                  Сообщение
-                </label>
-                <input
-                  className={FontManrope.className}
-                  type="text"
-                  placeholder="Напишите сюда"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FormContact />
       <Footer />
     </div>
   );

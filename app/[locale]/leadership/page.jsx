@@ -12,6 +12,7 @@ import {
 import Haeder from "@/components/Haeder/Haeder";
 import Image from "next/image";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
+import TrText from "@/components/TrText/TrText";
 
 export const metadata = {
   title: "ЖАШ ИШКЕР",
@@ -29,6 +30,10 @@ const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 
 const manrope = Manrope({ subsets: ["latin"] });
 
+const Text = ({ name }) => {
+  return <TrText root={"lider"} name={name} />;
+};
+
 const page = () => {
   return (
     <div className={`${manrope.tet} ${s.tet}`}>
@@ -37,32 +42,30 @@ const page = () => {
         <SocialSidebar />
         <div className={s.leadershipTitel}>
           <div className={s.leadershiptitle}>
-            <h1 className={BeVietnamPro.className}>Лидерство</h1>
-            <h5 className={Alex.className}>Lorem ipsum dolor sit amet</h5>
+            <h1 className={BeVietnamPro.className}>
+              <Text name={"lider_title"} />
+            </h1>
+            <h5 className={Alex.className}>
+              <Text name={"lider_subtitle"} />
+            </h5>
           </div>
           <hr />
           <div className={s.leadershipText}>
             <h2>
-              Если взглянуть на все великолепие животного и растительного мира,
-              то становится понятно, что лидерство положено в саму основу жизни.
+              <Text name={"lider_box1_title"} />
             </h2>
             <div className={s.context}>
               <p>
-                Только у растений и животных оно проявляется в виде простого
-                доминирования. Но это не мешает отражать главную суть этого
-                явления преимущество одной или группы особей над другими.
+                <Text name={"lider_box1_topDesc"} />
               </p>
               <p>
-                В процессе формирования зачатков межличностных отношений вида
-                Ноmо Sapiens простое доминирование, присущее всему животному
-                миру трансформировалось,
+                <Text name={"lider_box1_desc"} />
               </p>
             </div>
           </div>
           <div className={s.contextEnd}>
             <p>
-              развивалось, и в конечном итоге в человеке, как в высшей форме
-              психоэмоциональной жизни преобразовалось в явление лидерства..
+              <Text name={"lider_box1_bottom_desc"} />
             </p>
           </div>
           <div className={s.img}>
@@ -76,30 +79,18 @@ const page = () => {
           <div className={s.getextall}>
             <div className={s.getextEnd}>
               <p>
-                Существует несколько значений термина лидерство. Но остановимся
-                на том, лидерство это особое качество, модель поведения человека
-                или организации, которое обеспечивает передовые позиции.
-                Развитие лидерских качеств происходит только в социуме и при
-                постоянном межличностном взаимодействии дома, на работе и т.д.
-                Люди, стремящиеся к лидерству, стараются найти способы,
-                позволяющие им максимально быстро добиться успеха и запять
-                лидерские позиции. Люди, идущие за лидером, хотят понять не
-                только, что заставляет их подчиняться его власти, но и как они
-                сами могут влиять на его действия. При этом любой человек
-                оказывается так или иначе вовлечен в отношения «лидер —
-                последователи» во всех сферах своей жизни: в профессиональной
-                деятельности, семье, дружбе, саморазвитии.{" "}
+                <Text name={"lider_box2_desc"} />
               </p>
             </div>
             <div className={s.getextEnd1}>
               <p>
-                Включаясь в политические, экономические, культурные процессы,
-                человек непременно сталкивается с проблемами лидерства.
-                Исследования лидерства сохраняют свою актуальность и потому, что
-                изменения, которые происходят в обществе на всех уровнях
+                <Text name={"lider_box2_title"} />
               </p>
             </div>
-            <h4 className={s.h4}>Например</h4>
+            <h4 className={s.h4}>
+              <Text name={"lider_box3_title"} />
+            </h4>
+
             <div>
               {[1, 2, 3].map((_, i) => {
                 return (
@@ -113,28 +104,25 @@ const page = () => {
                       />
                     </div>
                     <p>
-                      <span>На технологическом уровне</span> - разработка новых
-                      компьютерных устройств и развитие интернет-пространства;
+                      {/* <span>На технологическом уровне</span> - разработка новых
+                      компьютерных устройств и развитие интернет-пространства; */}
+
+                      <Text name={"lider_box3_item1"} />
                     </p>
                   </div>
                 );
               })}
               <h5 className={s.h5}>
-                не затрагивая основ лидерства, вызывают необходимость поиска
-                иных форм его проявления, новых способов его развития.
+                <Text name={"lider_box4_title"} />
               </h5>
             </div>
           </div>
           <div className={s.getfoottext}>
             <h4>
-              Но мы всегда должны задаваться вопросом зачем нам это будет нужно?
+              <Text name={"lider_box4_subtitle"} />
             </h4>
             <p>
-              Мнения людей всегда будут расходиться, но в одном они всегда будут
-              правы, именно развитая молодежь, которая будет выставлять своих
-              лидеров поднимет нашу страну на новый уровень, что и является
-              поставленной целью нашего елбасы. Как он говорил:” Будущее этой
-              страны- наша молодежь”.
+              <Text name={"lider_box4_desc"} />
             </p>
           </div>
         </div>

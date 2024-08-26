@@ -6,15 +6,20 @@ import { Collapse } from "react-collapse";
 import { FiArrowDownRight, FiArrowUpRight } from "react-icons/fi";
 import s from "./page.module.scss";
 import { Manrope } from "next/font/google";
+import TrText from "@/components/TrText/TrText";
 const FontManrope = Manrope({
   subsets: ["latin"],
   weight: ["600", "400"], // specify the desired weight here
 });
 
+const Text = ({ name }) => {
+  return <TrText root={"alpha"} name={name} />;
+};
+
 const AccordionWhere = () => {
   const data = [
     {
-      title: "Пин для физических лиц",
+      title: <Text name={"J21"} />,
       id: 1,
       text: {
         title: "Паспорт",
@@ -22,7 +27,7 @@ const AccordionWhere = () => {
       },
     },
     {
-      title: "Пин для юридических лиц",
+      title: <Text name={"J22"} />,
       id: 2,
       text: {
         title: "Паспорт",
@@ -30,7 +35,7 @@ const AccordionWhere = () => {
       },
     },
     {
-      title: "Регистрация в налоговых органах",
+      title: <Text name={"J23"} />,
       id: 3,
       text: {
         title: "Паспорт",
@@ -38,7 +43,7 @@ const AccordionWhere = () => {
       },
     },
     {
-      title: "Регистрация ОсОО",
+      title: <Text name={"J24"} />,
       id: 4,
       text: {
         title: "Паспорт",
@@ -46,7 +51,7 @@ const AccordionWhere = () => {
       },
     },
     {
-      title: "Регистрация ИП",
+      title: <Text name={"J25"} />,
       id: 5,
       text: {
         title: "Паспорт",

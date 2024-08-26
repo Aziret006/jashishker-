@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import { BiX } from "react-icons/bi";
 import Link from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
+import TrText from "@/components/TrText/TrText";
+
+const Text = ({ name }) => {
+  return <TrText root={"navbar"} name={name} />;
+};
+
 const Menu = ({ isMenu, setMenu }) => {
   const [navPage, setPage] = useState(false);
   const menuVariants = {
@@ -37,7 +43,7 @@ const Menu = ({ isMenu, setMenu }) => {
         </button>
         <ul className={s.menuNav}>
           <li onClick={() => handlerPageIndex(1)}>
-            О проекте <IoIosArrowDown />
+            <Text name={"navbar_about"} /> <IoIosArrowDown />
             {navPage == 1 && (
               <motion.ul
                 initial="hidden"
@@ -47,43 +53,43 @@ const Menu = ({ isMenu, setMenu }) => {
               >
                 <li>
                   <Link className={s.Link} href={"/about"}>
-                    О проекте
+                    <Text name={"navbar_about"} />{" "}
                   </Link>
                 </li>
                 <li>
                   <Link className={s.Link} href={"/Economy"}>
-                    Зеленая экономика
+                    <Text name={"navbar_about_green_economy"} />
                   </Link>
                 </li>
                 <li>
                   <Link className={s.Link} href={"/digitalization"}>
-                    Цифровизация
+                    <Text name={"navbar_about_digital"} />
                   </Link>
                 </li>
                 <li>
                   <Link className={s.Link} href={"/leadership"}>
-                    Лидерство
+                    <Text name={"navbar_about_lider"} />
                   </Link>
                 </li>
                 <li>
                   <Link className={s.Link} href={"/innovation"}>
-                    Инновация
+                    <Text name={"navbar_about_innovate"} />
                   </Link>
                 </li>
 
                 <li>
                   <Link className={s.Link} href={"/parther"}>
-                    Партнеры
+                    <Text name={"navbar_about_partners"} />
                   </Link>
                 </li>
                 <li>
                   <Link className={s.Link} href={"/digitalization"}>
-                    Цифровизация
+                    <Text name={"navbar_about_digital"} />
                   </Link>
                 </li>
                 <li>
                   <Link className={s.Link} href={"/contact"}>
-                    Контакты
+                    <Text name={"navbar_about_contacts"} />
                   </Link>
                 </li>
               </motion.ul>
@@ -91,11 +97,12 @@ const Menu = ({ isMenu, setMenu }) => {
           </li>
           <li>
             <Link className={s.Link} href={"/news"}>
-              Новости
+              <Text name={"navbar_news"} />
             </Link>
           </li>
           <li onClick={() => handlerPageIndex(2)}>
-            База знаний <IoIosArrowDown />
+            <Text name={"navbar_knowBase"} />
+            <IoIosArrowDown />
             {navPage == 2 && (
               <motion.ul
                 initial="hidden"
@@ -105,22 +112,22 @@ const Menu = ({ isMenu, setMenu }) => {
               >
                 <li>
                   <Link className={s.Link} href={"/start-business"}>
-                    С чего начать бизнес
+                    <Text name={"navbar_knowBase_begin"} />
                   </Link>
                 </li>
                 <li>
                   <Link className={s.Link} href={"/business"}>
-                    Как составить бизнес-план
+                    <Text name={"navbar_knowBase_makePlan"} />
                   </Link>
                 </li>
                 <li>
                   <Link className={s.Link} href={"/Economy"}>
-                    Шаблоны бизнес-планов
+                    <Text name={"navbar_knowBase_temBussiness"} />
                   </Link>
                 </li>
                 <li>
                   <Link className={s.Link} href={"/digitalization"}>
-                    Оценка проекта
+                    <Text name={"navbar_knowBase_projEvaluat"} />
                   </Link>
                 </li>
               </motion.ul>
@@ -128,17 +135,17 @@ const Menu = ({ isMenu, setMenu }) => {
           </li>
           <li>
             <Link className={s.Link} href={"/Economy"}>
-              История успеха
+              <Text name={"navbar_success_history"} />
             </Link>
           </li>
           <li>
             <Link className={s.Link} href={"/database"}>
-              База знанных
+              <Text name={"navbar_knowBase_baseData"} />
             </Link>
           </li>
           <li>
             <Link className={s.Link} href={"/digitalization"}>
-              Справочная
+              <Text name={"navbar_about_digital"} />
             </Link>
           </li>
           <li></li>

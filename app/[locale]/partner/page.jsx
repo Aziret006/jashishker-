@@ -7,6 +7,7 @@ import Image from "next/image";
 import { BiMap } from "react-icons/bi";
 import Link from "next/link";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
+import TrText from "@/components/TrText/TrText";
 
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
@@ -27,6 +28,11 @@ export const metadata = {
     icon: "/logo.svg",
   },
 };
+
+const Text = ({ name }) => {
+  return <TrText name={name} root={"partner"} />;
+};
+
 const page = () => {
   return (
     <div>
@@ -35,19 +41,18 @@ const page = () => {
         <SocialSidebar />
         <div className={s.container}>
           <div className={s.partnerText}>
-            <h1 className={BeVietnamPro.className}>Наш партнер</h1>
-            <h5 className={Alex.className}>Lorem ipsum dolor sit amet</h5>
+            <h1 className={BeVietnamPro.className}>
+              <Text name={"partner_title"} />
+            </h1>
+            <h5 className={Alex.className}>
+              <Text name={"partner_subtitle"} />
+            </h5>
           </div>
           <div className={s.partnerBorder} />
           <div className={s.partnerContent}>
             <Image src="/partner.svg" width={702} height={324} alt="partner" />
             <p className={FontManrope.className}>
-              Данный проект реализуется при содействии Управления молодежной
-              политики Министерства культуры, информации, спорта и молодежной
-              политики Кыргызской Республики (МКИСМП). Управление МКИСМП
-              является государственным органом исполнительной власти,
-              осуществляющим функции по разработке и реализации государственной
-              политики в сфере молодежной политики.
+              <Text name={"partner_box2_desc"} />
             </p>
             <div className={s.partnerContact}>
               <div className={s.contact}>
@@ -72,7 +77,9 @@ const page = () => {
                   </svg>{" "}
                 </div>
                 <div className={s.contactTitle}>
-                  <p class>Адрес:</p>
+                  <p class>
+                    <Text name={"partner_address"} />
+                  </p>
                   <Link href="">
                     <span className={FontManrope.className}>
                       Пушкина 78, <br />
@@ -100,7 +107,9 @@ const page = () => {
                   </svg>{" "}
                 </div>
                 <div className={s.contactTitle}>
-                  <p className={FontManrope.className}>Номер телефона:</p>
+                  <p className={FontManrope.className}>
+                    <Text name={"partner_phoneNumber"} />
+                  </p>
                   <Link href="">
                     <span className={FontManrope.className}>
                       +996 (312) 661 - 194
@@ -131,7 +140,9 @@ const page = () => {
                   </svg>{" "}
                 </div>
                 <div className={s.contactTitle}>
-                  <p className={FontManrope.className}>Ссылка на сайт</p>
+                  <p className={FontManrope.className}>
+                    <Text name={"partner_link_toSite"} />
+                  </p>
                   <Link href="">
                     <span className={FontManrope.className}>
                       www.jashtar.gov.kg

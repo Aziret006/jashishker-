@@ -9,7 +9,18 @@ import { IoIosArrowDown } from "react-icons/io";
 import cm from "classnames";
 import { motion } from "framer-motion";
 import SocialSidebar from "../SocialSidebar/SocialSidebar";
+import TrText from "../TrText/TrText";
+import { useTranslations } from "next-intl";
 const manrope = Manrope({ subsets: ["latin"] });
+
+const Text = ({ name }) => {
+  return <TrText root={"other"} name={name} />;
+};
+
+const Text1 = ({ name }) => {
+  return <TrText root={"navbar"} name={name} />;
+};
+
 const Footer = () => {
   const [pageIndexNav, setPageIndexNav] = useState(null);
   const handlerNavPage = (e) => {
@@ -28,6 +39,7 @@ const Footer = () => {
       transition: { duration: 0.3, ease: "easeInOut" },
     },
   };
+
   return (
     <footer className={s.footer}>
       <div className={s.NavLink}>
@@ -40,9 +52,7 @@ const Footer = () => {
             </p>
           </Link>
           <p>
-            Энактас Кыргызстан при финансовой поддержке Европейского  Союза в
-            Кыргызской Республике с декабря 2022 года начал реализацию проекта
-            «Молодежь за цифровизацию, лидерство и зеленые навыки».
+            <Text name={"F1"} />
           </p>
           <img src="/Logo.png" alt="vk" className={s.LogoCopyn} />
         </div>
@@ -52,7 +62,7 @@ const Footer = () => {
               <p>Страницы</p>
             </li>
             <li onClick={() => handlerNavPage(1)}>
-              О проекте <IoIosArrowDown />
+              <Text1 name={"navbar_about"} /> <IoIosArrowDown />
               {pageIndexNav == 1 && (
                 <motion.ul
                   initial="hidden"
@@ -64,45 +74,49 @@ const Footer = () => {
                   <li>
                     <Link className={s.Link} href={"/about"}>
                       О проекте
+                      <Text1 name={"navbar_about"} />
                     </Link>
                   </li>
                   <li>
                     <Link className={s.Link} href={"/Economy"}>
-                      Зеленая экономика
+                      <Text1 name={"navbar_about_green_economy"} />
                     </Link>
                   </li>
                   <li>
                     <Link className={s.Link} href={"/digitalization"}>
-                      Цифровизация
+                      <Text1 name={"navbar_about_digital"} />
                     </Link>
                   </li>
                   <li>
                     <Link className={s.Link} href={"/leadership"}>
-                      Лидерство
+                      <Text1 name={"navbar_about_lider"} />
                     </Link>
                   </li>
                   <li>
                     <Link className={s.Link} href={"/innovation"}>
-                      Инновация
+                      <Text1 name={"navbar_about_innovate"} />
                     </Link>
                   </li>
 
                   <li>
                     <Link className={s.Link} href={"/parther"}>
-                      Партнеры
+                      <Text1 name={"navbar_about_partners"} />
                     </Link>
                   </li>
                   <li>
                     <Link className={s.Link} href={"/contact"}>
-                      Контакты
+                      <Text1 name={"navbar_about_contacts"} />
                     </Link>
                   </li>
                 </motion.ul>
               )}
             </li>
-            <li>Новости</li>
+            <li>
+              <Text1 name={"navbar_news"} />
+            </li>
             <li onClick={() => handlerNavPage(2)}>
-              База знаний <IoIosArrowDown />
+              <Text1 name={"navbar_knowBase"} />
+              <IoIosArrowDown />
               {pageIndexNav == 2 && (
                 <motion.ul
                   initial="hidden"
@@ -113,29 +127,33 @@ const Footer = () => {
                 >
                   <li>
                     <Link className={s.Link} href={"/start-business"}>
-                      С чего начать бизнес
+                      <Text1 name={"navbar_knowBase_begin"} />
                     </Link>
                   </li>
                   <li>
                     <Link className={s.Link} href={"/business"}>
-                      Как составить бизнес-план
+                      <Text1 name={"navbar_knowBase_makePlan"} />
                     </Link>
                   </li>
                   <li>
                     <Link className={s.Link} href={"/Economy"}>
-                      Шаблоны бизнес-планов
+                      <Text1 name={"navbar_knowBase_temBussiness"} />
                     </Link>
                   </li>
                   <li>
                     <Link className={s.Link} href={"/digitalization"}>
-                      Оценка проекта
+                      <Text1 name={"navbar_knowBase_projEvaluat"} />
                     </Link>
                   </li>
                 </motion.ul>
               )}
             </li>
-            <li>История успеха</li>
-            <li>База данныха</li>
+            <li>
+              <Text1 name={"navbar_success_history"} />
+            </li>
+            <li>
+              <Text1 name={"navbar_knowBase_baseData"} />
+            </li>
             <li>
               <a
                 className={s.Link}

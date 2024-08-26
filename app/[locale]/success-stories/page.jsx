@@ -4,6 +4,12 @@ import Haeder from "@/components/Haeder/Haeder";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
+import SetHtml from "@/components/TrText/SetHtml";
+import TrText from "@/components/TrText/TrText";
+
+const Text = ({ name }) => {
+  return <TrText root={"other"} name={name} />;
+};
 
 const page = () => {
   return (
@@ -15,15 +21,11 @@ const page = () => {
           <div className={s.historyAll}>
             <div className={s.stories}>
               <h1>
-                Истории успеха людей,
-                <br /> начавших с нуля
+                <SetHtml root={"other"} name={"A6"} />
               </h1>
               <ul>
                 <li>
-                  Чтобы достичь определенных успехов, необходимо терпение,
-                  мужество и напряженная работа. За спиной каждого успешного
-                  человека стоит огромный опыт и своя удивительная вдохновляющая
-                  история.
+                  <Text name={"A7"} />
                 </li>
               </ul>
             </div>
