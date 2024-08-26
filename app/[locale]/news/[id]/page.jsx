@@ -39,8 +39,10 @@ const page = async ({ params }) => {
     const cardListResponse = await axios.get(`${Api}api/v1/news/`);
     cardListData = cardListResponse.data;
   } catch (err) {
-    notFound();
+    console.log(err);
+    
   }
+  
 
   if (error) {
     return <div>Error loading data: {error}</div>;
@@ -82,7 +84,7 @@ const page = async ({ params }) => {
                 </span>
               </div>
               <div className={s.CardList}>
-                {cardListData?.results.slice(0, 2).map((item, key) => (
+                {cardListData?.slice(0, 2).map((item, key) => (
                   <NewsCard data={item} key={key} />
                 ))}
               </div>
