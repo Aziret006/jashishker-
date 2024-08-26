@@ -93,9 +93,7 @@ const MainFrom = () => {
           <span className={s.error}>Это поле обязательно</span>
         )}
       </div>
-      <button className={s.button}>
-        Отправить
-      </button>
+      <button className={s.button}>Отправить</button>
     </form>
   );
 };

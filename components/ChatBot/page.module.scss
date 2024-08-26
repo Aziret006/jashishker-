@@ -1,6 +1,6 @@
 .ChatBotCustom {
   position: fixed;
-  bottom: 130px;
+  bottom: 163px;
   right: 10px;
   z-index: 111111;
   cursor: pointer;
@@ -10,7 +10,6 @@
     align-items: center;
     width: 60px;
     height: 60px;
-    // padding: 14px;
     border-radius: 145px 145px 0px 145px;
     border: 1px solid #1616161a;
     background: #ffffff;
@@ -73,7 +72,6 @@
       align-items: center;
       justify-content: center;
       border: none;
-
       background-color: #00000000;
       opacity: 0.7;
       svg {
@@ -83,7 +81,6 @@
     }
   }
 }
-
 .pagination {
   display: flex;
   gap: 5px;
@@ -98,7 +95,6 @@
     color: #667085;
   }
 }
-
 .acc {
   background: rgba(255, 255, 255, 1) !important;
 }

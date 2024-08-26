@@ -33,43 +33,34 @@ const page = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  console.log(topNews);
 
-  const getData = async () => {
-    try {
-      const topNewsResponse = await axios.get(
-        `${Api}api/v1/news/?category=top_news`
-      );
-      const newsPopularResponse = await axios.get(
-        `${Api}api/v1/news/?status=${filterPage}`
-      );
-
-      return {
-        topNews: topNewsResponse.data.results,
-        newsPopular: newsPopularResponse.data.results,
-      };
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+ 
 
   const log = console.log;
   useEffect(() => {
-    getData().then((data) => {
-      if (data) {
-        setTopNews(data?.topNews);
-        setPopular(data?.newsPopular);
+    const getData = async () => {
+      try {
+        const topNewsResponse = await axios.get(`${Api}api/v1/news/`);
+        const newsPopularResponse = await axios.get(`${Api}api/v1/news/`);
+
+        // console.log(topNewsResponse.data.results ,newsPopularResponse.data.results , 'asdasdasd' );
+        setTopNews(topNewsResponse.data);
+        setPopular(newsPopularResponse.data);
+        
+        
+      } catch (error) {
+        setError(error.message);
+      }finally {
+        setLoading(false)
       }
-      setLoading(false);
-    });
+    };
+   getData()
   }, []);
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const newsPopular = await axios.get(
-          `${Api}api/v1/news/?status=${filterPage}`
-        );
+        const newsPopular = await axios.get(`${Api}api/v1/news/`);
         return {
           newsPopular: newsPopular.data,
         };
@@ -87,9 +78,7 @@ const page = () => {
     return <Loading />;
   }
 
-  if (!newsPopular || newsPopular.length <= 0) {
-    return notFound();
-  }
+  console.log(topNews, "asdasd");
 
   return (
     <div>
@@ -98,7 +87,7 @@ const page = () => {
         <ChatWidget />
 
         <SocialSidebar />
-        <div className={s.newsContend}>
+        {topNews &&   <div className={s.newsContend}>
           <div className={s.newsTitel}>
             <h1 className={BeVietnamPro.className}>
               Последние <br />
@@ -113,7 +102,7 @@ const page = () => {
               <div className={s.newsBloc1MainImage}>
                 <div className={s.mainImageBlock}>
                   <Image
-                    src={topNews[0].images[0].image}
+                    src={topNews[0]?.images[0]?.image}
                     alt="image"
                     fill
                     objectFit="cover"
@@ -123,8 +112,8 @@ const page = () => {
                   <div className={s.mainTitelBlock1}>
                     <div className={s.mainTitelBlock1ButtonList}>
                       <ul>
-                        <li>{topNews[0].category}</li>
-                        <li>{topNews[0].status}</li>
+                        <li>{topNews[0]?.category}</li>
+                        <li>{topNews[0]?.status}</li>
                       </ul>
                       <FiShare2 />
                     </div>
@@ -190,7 +179,8 @@ const page = () => {
               <p>Ничего не найдено</p>
             )}
           </div>
-        </div>
+        </div>}
+      
       </div>
       <Footer />
     </div>

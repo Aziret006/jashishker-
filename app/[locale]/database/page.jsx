@@ -8,7 +8,6 @@ import { AiOutlineAppstore } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import PersonalDataForm from "@/components/Modal/page";
 import cm from "classnames";
-
 import { Be_Vietnam_Pro } from "next/font/google";
 import { IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
@@ -17,7 +16,6 @@ import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import { Api } from "@/api";
 import axios from "axios";
 import Link from "next/link";
-// import PersonalDataForm from "@/components/Modal/page";
 
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -181,6 +179,7 @@ const contacts = [
     isActive: true,
   },
 ];
+
 const getUserData = async () => {
   const data = await axios.get(`${Api}api/v1/application-forms/`);
   return data.data;
@@ -192,6 +191,7 @@ const Page = () => {
   const [filterBy, setFilterBy] = useState("all");
   const [userList, setUserList] = useState([]);
   const [lodingm, setLodingm] = useState(true);
+
   const sortedContacts = [...contacts].sort((a, b) => {
     if (sortBy === "newest") return b.id - a.id;
     if (sortBy === "oldest") return a.id - b.id;
@@ -202,6 +202,7 @@ const Page = () => {
     if (filterBy === "active") return contact.isActive;
     if (filterBy === "favorites") return contact.isFavorite;
   });
+
   const [page, setPage] = useState("active");
 
   const handlePageChange = (newPage) => {
