@@ -4,9 +4,11 @@ import Image from "next/image";
 import { FiShare2 } from "react-icons/fi";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
+import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 const NewsCard = ({ data }) => {
   return (
     <div className={s.NewsCards}>
+      <SocialSidebar />
       <div className={s.NewsCardsImage}>
         <Link href={`/news/${data.id}`}>
           <Image
