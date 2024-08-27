@@ -175,7 +175,31 @@ const Page = () => {
                   {photoUrl ? (
                     <img src={photoUrl} alt="" />
                   ) : (
-                    <img src="/img/images.jpeg" alt="" />
+                    <span>
+                      {" "}
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.3172 21.74C24.1172 21.72 23.8772 21.72 23.6572 21.74C18.8972 21.58 15.1172 17.68 15.1172 12.88C15.1172 7.98 19.0772 4 23.9972 4C28.8972 4 32.8772 7.98 32.8772 12.88C32.8572 17.68 29.0772 21.58 24.3172 21.74Z"
+                          stroke="#292D32"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M14.3175 29.12C9.4775 32.36 9.4775 37.64 14.3175 40.86C19.8175 44.54 28.8375 44.54 34.3375 40.86C39.1775 37.62 39.1775 32.34 34.3375 29.12C28.8575 25.46 19.8375 25.46 14.3175 29.12Z"
+                          stroke="#292D32"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
                   )}
                 </span>
                 <p onClick={() => photoRef.current.click()}>Добавить фото</p>
