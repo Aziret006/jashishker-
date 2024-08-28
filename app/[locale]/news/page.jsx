@@ -4,7 +4,6 @@
 import Footer from "@/components/Footer/Footer";
 import Haeder from "@/components/Haeder/Haeder";
 import React, { useEffect, useState } from "react";
-
 import s from "./page.module.scss";
 import { Alex_Brush, Be_Vietnam_Pro, Manrope } from "next/font/google";
 import Image from "next/image";
@@ -19,6 +18,7 @@ import Loading from "@/components/Loading/Loading";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import ChatBotCustom from "@/components/ChatBot/ChatBotCostom";
 import ChatWidget from "@/components/ChatWidget/ChatWidget";
+import TrText from "@/components/TrText/TrText";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -86,8 +86,7 @@ const page = () => {
           <div className={s.newsContend}>
             <div className={s.newsTitel}>
               <h1 className={BeVietnamPro.className}>
-                Последние <br />
-                новости
+                <TrText root={"news"} name="newsTitle" />
               </h1>
               <p className={Alex.className}>Lorem ipsum dolor sit amet</p>
             </div>

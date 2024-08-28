@@ -381,5 +381,8 @@
     "phoneNumber": "Номер телефона",
     "dob": "DD/MM/YY",
     "region": "Регион"
+  },
+  "news": {
+    "newsTitle": "Последние новости"
   }
 }
