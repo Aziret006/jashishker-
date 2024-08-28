@@ -284,7 +284,7 @@ const Page = () => {
                   <li className={styles.displayNone}>E-Mail</li>
                 </ul>
                 <ul className={styles.tableHeadList2}>
-                  <li>Номер телефона </li>
+                  <li className={styles.dispNumber}>Номер телефона </li>
                   <li className={styles.displayNone}>DD/MM/YY</li>
                   <li className={styles.displayNone}>Регион</li>
                 </ul>
