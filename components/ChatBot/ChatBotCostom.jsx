@@ -121,11 +121,6 @@ const FAQComponent = ({ setPageId, setFAqID }) => {
             />
           </svg>
         </button>
-        <div
-          style={{
-            height: "20px",
-          }}
-        ></div>
       </div>
     </div>
   );
@@ -217,6 +212,11 @@ const Page1 = ({ setPageId, setFAqID, FAqID }) => {
         {" "}
         <Generate /> Сгенерировать вопросы
       </button>
+      <div
+        style={{
+          height: "20px",
+        }}
+      ></div>
     </div>
   );
 };

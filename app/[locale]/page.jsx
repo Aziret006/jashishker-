@@ -17,7 +17,6 @@ import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import TrText from "@/components/TrText/TrText";
 
 import { ToastContainer } from "react-toastify";
-
 export const metadata = {
   title: "ЖАШ ИШКЕР",
   description:
@@ -31,7 +30,7 @@ export default async function Home() {
   let data = null;
   let error = null;
   try {
-    const card = await axios.get(`${Api}api/v1/news/?status=new`);
+    const card = await axios.get(`${Api}api/news/?status=new`);
     data = card.data;
   } catch (error) {
     console.log(error);
@@ -39,6 +38,11 @@ export default async function Home() {
     // notFound();
   }
 
+  // if (error) {
+  //   return <div>Error loading data: {error}</div>;
+  // } else if (!data) {
+  //   return <div>News article not found</div>;
+  // } else {
   return (
     <div className={` ${s.container}`}>
       <Haeder />
