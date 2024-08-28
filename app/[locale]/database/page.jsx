@@ -17,6 +17,7 @@ import { Api } from "@/api";
 import axios from "axios";
 import Link from "next/link";
 import { IoIosArrowBack } from "react-icons/io";
+import TrText from "@/components/TrText/TrText";
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
@@ -232,6 +233,7 @@ const Page = () => {
 
     setLodingm(false);
   }, [userList]);
+
   return (
     lodingm !== true && (
       <>
@@ -242,7 +244,7 @@ const Page = () => {
             <div className={styles.dataBaseCont}>
               <div className={styles.baseTitle}>
                 <h1 className={BeVietnamPro.className}>
-                  База данных предпринимателей
+                  <TrText root={"database"} name="databaseTitle" />
                 </h1>
               </div>
               <hr />
@@ -280,13 +282,22 @@ const Page = () => {
               </div>
               <div className={styles.tableHead}>
                 <ul className={styles.tableHeadList}>
-                  <li>ФИО/ИП</li>
-                  <li className={styles.displayNone}>E-Mail</li>
+                  <li>
+                    <TrText root={"database"} name="fullName" />
+                  </li>
+                  <li className={styles.displayNone}>
+                    <TrText root={"database"} name="email" />
+                  </li>
                 </ul>
                 <ul className={styles.tableHeadList2}>
-                  <li className={styles.dispNumber}>Номер телефона </li>
+                  <li className={styles.dispNumber}>
+                    <TrText root={"database"} name="phoneNumber" />
+                  </li>
                   <li className={styles.displayNone}>DD/MM/YY</li>
-                  <li className={styles.displayNone}>Регион</li>
+                  <li className={styles.displayNone}>
+                    {" "}
+                    <TrText root={"database"} name="region" />
+                  </li>
                 </ul>
               </div>
               <div className={styles.container}>
