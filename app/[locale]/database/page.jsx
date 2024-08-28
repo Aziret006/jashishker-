@@ -16,7 +16,7 @@ import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import { Api } from "@/api";
 import axios from "axios";
 import Link from "next/link";
-
+import { IoIosArrowBack } from "react-icons/io";
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
@@ -221,16 +221,9 @@ const Page = () => {
   };
 
   useEffect(() => {
-    if (window.innerWidth > 1300) {
-      const data = contacts[1];
-      setSelectedContact(data);
-    }
-  }, []);
-  useEffect(() => {
     getUserData().then((data) => {
       console.log(data);
-
-      setSelectedContact(data[0]);
+      setSelectedContact(data[false]);
       setUserList(data);
     });
   }, []);
@@ -267,7 +260,6 @@ const Page = () => {
                   </Link>
                 </div>
                 <div className={styles.sortOptions}>
-                  <div></div>
                   <button
                     onClick={() => handlePageChange("active")}
                     className={cm("button", {
@@ -285,6 +277,17 @@ const Page = () => {
                     <AiOutlineAppstore size={24} />
                   </button>
                 </div>
+              </div>
+              <div className={styles.tableHead}>
+                <ul className={styles.tableHeadList}>
+                  <li>ФИО/ИП</li>
+                  <li className={styles.displayNone}>E-Mail</li>
+                </ul>
+                <ul className={styles.tableHeadList2}>
+                  <li>Номер телефона </li>
+                  <li className={styles.displayNone}>DD/MM/YY</li>
+                  <li className={styles.displayNone}>Регион</li>
+                </ul>
               </div>
               <div className={styles.container}>
                 <div
@@ -310,7 +313,6 @@ const Page = () => {
                           <div className={styles.favoriteTitel}>
                             <h3>{contact.full_name}</h3>
                             <p>
-                              {" "}
                               {contact.activity_type.length > 15
                                 ? contact.activity_type.slice(0, 25) + "..."
                                 : contact.activity_type}
@@ -319,108 +321,138 @@ const Page = () => {
                         </div>
                       ))
                     : userList.map((contact) => (
-                        <div
-                          key={contact.id}
-                          className={styles.contactItem}
-                          onClick={() => setSelectedContact(contact)}
-                        >
-                          <img
-                            src={contact.photo}
-                            alt={contact.name}
-                            className={styles.photo}
-                          />
-                          <div className={styles.details}>
-                            <div>
-                              <h3>{contact.email} </h3>
-
-                              <p>
-                                {contact.activity_type.length > 15
-                                  ? contact.activity_type.slice(0, 15) + "..."
-                                  : contact.activity_type}
-                              </p>
-                            </div>
-                            <IoIosArrowForward
-                              className={styles.arrow}
-                              size={24}
-                              onClick={() => handlerIsModal(contact)}
+                        <>
+                          <div
+                            key={contact.id}
+                            className={styles.contactItem}
+                            onClick={() => setSelectedContact(contact)}
+                          >
+                            <img
+                              src={contact.photo}
+                              alt={contact.name}
+                              className={styles.photo}
                             />
-                            <p className={styles.email}>{contact.email}</p>
-                            <p className={styles.phone}>{contact.phone}</p>
+                            <div className={styles.details}>
+                              <div>
+                                <h3>{contact.email} </h3>
+                                <p>
+                                  {contact.activity_type.length > 15
+                                    ? contact.activity_type.slice(0, 15) + "..."
+                                    : contact.activity_type}
+                                </p>
+                              </div>
+                              <p className={styles.email}>{contact.email}</p>
+                              <p className={styles.phone}>{contact.phone}</p>
+                              <p className={styles.name}>
+                                {contact.date_of_birth}
+                              </p>
+                              <p className={styles.phone}>{contact.region}</p>
+                            </div>
                           </div>
-                        </div>
+                        </>
                       ))}
                 </div>
-                {selectedContact && (
-                  <div
-                    className={styles.modal}
-                    onClick={() => setSelectedContact(false)}
-                  >
-                    <motion.div
-                      initial={{ opacity: 0, y: 50 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className={styles.contactDetail}
-                    >
-                      <div className={styles.baseBack}>
-                        <img
-                          src={selectedContact.photo}
-                          alt={selectedContact.name}
-                          className={styles.photo}
-                        />
-                        <div className={styles.flexCenter}>
-                          <h2>{selectedContact.name}</h2>
-                          <p>{selectedContact.age}</p>
-                        </div>
-                      </div>
-                      <div className={styles.info}>
-                        <div>
-                          <div className={styles.icon}>
-                            <img src="/location.svg" alt="" />
-                          </div>
-                          <p>
-                            <strong>Город:</strong> {selectedContact.region}
-                          </p>
-                        </div>
-                        <div>
-                          <div className={styles.icon}>
-                            <img src="/phone.svg" alt="" />
-                          </div>
-                          <p>
-                            <strong>Номер телефона:</strong>{" "}
-                            {selectedContact.phone}
-                          </p>
-                        </div>
-                        <div>
-                          <div className={styles.icon}>
-                            <img src="/mail.svg" alt="" />
-                          </div>
-                          <p>
-                            <strong>E-mail:</strong> {selectedContact.email}
-                          </p>
-                        </div>
-
-                        <div>
-                          <div className={styles.icon}>
-                            <img src="/brifecase-tick.svg" alt="" />
-                          </div>
-                          <p>
-                            <strong>Вид деятельности:</strong>{" "}
-                            {selectedContact.activity_type}
-                          </p>
-                        </div>
-                        <div
-                          style={{
-                            height: "30px",
-                          }}
-                        ></div>
-                      </div>
-                    </motion.div>
-                  </div>
-                )}
               </div>
             </div>
           </div>
           <Footer />
         </div>
+        {selectedContact && (
+          <div
+            className={styles.modal}
+            onClick={() => setSelectedContact(false)}
+          >
+            <motion.div
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={styles.contactDetail}
+            >
+              <div
+                className={styles.backArrow}
+                onClick={() => setSelectedContact(false)}
+              >
+                <Image src="arrow.svg" alt="" width={8} height={12} />
+              </div>
+              <div className={styles.baseBack}>
+                <img
+                  src={selectedContact.photo}
+                  alt={selectedContact.name}
+                  className={styles.photo}
+                />
+                <div className={styles.flexCenter}>
+                  <h1>{selectedContact.full_name}</h1>
+                  <div className={styles.flexEmail}>
+                    <Image
+                      src="./sms-tracking.svg"
+                      alt=""
+                      width={24}
+                      height={24}
+                      className={styles.icon}
+                    />
+                    {selectedContact.email}
+                  </div>
+                  <div className={styles.flexNumber}>
+                    <Image
+                      src="./call-calling.svg"
+                      alt=""
+                      width={24}
+                      height={24}
+                      className={styles.icon}
+                    />
+                    {selectedContact.phone}
+                  </div>
+                </div>
+              </div>
+              <div className={styles.info}>
+                <div>
+                  <p>
+                    <strong>Регион</strong>
+                    {selectedContact.region}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>DD/MM/YY</strong>
+                    {selectedContact.email}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>Вид экономической деятельности</strong>{" "}
+                    {selectedContact.email}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>
+                      Категория вида экономической деятельности компании
+                    </strong>
+                    {selectedContact.activity_type}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>Юридическая регистрация компании</strong>{" "}
+                    {selectedContact.email}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>Полное фирменное наименование компании</strong>{" "}
+                    {selectedContact.email}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>Коммерческое определение компании</strong>{" "}
+                    {selectedContact.email}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
         {data && <PersonalDataForm setData={setData} />}
       </>
     )
