@@ -25,6 +25,9 @@
       line-height: 88.55px;
       color: #222222;
       text-align: left;
+      margin: 0px;
+      margin-bottom: 40px;
+      margin-top: 20px;
     }
     @media screen and (max-width: 909px) {
       h1 {
@@ -40,7 +43,7 @@
 .BlockFrom {
   display: flex;
   flex-direction: column;
-  border-top: 1px #161616 solid;
+  border-top: 1px #d3d3d3 solid;
 
   .BlockFromInputList {
     display: flex;
@@ -60,6 +63,14 @@
       text-align: center;
 
       margin: 0 auto;
+      span {
+        background-color: #f0f0f0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
       .Profil {
         width: 150px;
@@ -68,7 +79,7 @@
         position: relative;
         align-items: center;
         border-radius: 100%;
-        border: 1px #161616 solid;
+        border: 1px #d3d3d3 solid;
         overflow: hidden;
 
         img {
@@ -142,6 +153,10 @@
 
             cursor: pointer;
 
+            color: red !important;
+            background-clip: padding-box;
+            filter: grayscale(1);
+
             input:checked {
               background-color: #f3f3f3 !important;
               border: 1px solid #a0a0a04d !important;
@@ -171,6 +186,7 @@
           line-height: 24.59px;
           text-align: left;
           color: #222222 !important;
+          opacity: 1;
         }
         .error {
           color: red !important;
@@ -202,4 +218,83 @@
 }
 .error {
   color: red !important;
+}
+
+@media screen and (max-width: 909px) {
+  .content {
+    padding-top: 81px;
+    .titelContent h1 {
+      margin-bottom: 16px;
+    }
+  }
+  .BlockFrom {
+    border: none;
+    .BlockFromInputList {
+      padding-top: 30px;
+      .imageFroom {
+        span {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 460px) {
+    .content {
+      padding-top: 69px;
+      .titelContent {
+        text-align: center;
+        h1 {
+          margin-bottom: 16px;
+          text-align: center;
+        }
+      }
+    }
+    .BlockFrom {
+      .BlockFromInputList {
+        padding-top: 0px;
+        .imageFroom {
+          .Profil {
+            width: 100px;
+            height: 100px;
+          }
+          span {
+            width: 100px;
+            height: 100px;
+          }
+          p {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24.59px;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .labelList {
+      gap: 14px !important;
+      label {
+        text-align: left;
+        font-size: 15px;
+        input {
+          padding: 14px 16px 14px 16px;
+        }
+      }
+      button {
+        font-size: 16px !important;
+      }
+    }
+    .fromLabelTitle {
+      gap: 14px !important;
+      p {
+        font-size: 15px !important;
+      }
+      span {
+        font-size: 16px !important;
+      }
+    }
+    .error {
+      font-size: 15px !important;
+    }
+  }
 }

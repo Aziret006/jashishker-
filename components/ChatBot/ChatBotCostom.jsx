@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Chatbot from "react-chatbot-kit";
 import { createChatBotMessage } from "react-chatbot-kit";
 
@@ -38,9 +38,10 @@ const FAQComponent = ({ setPageId, setFAqID }) => {
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 7;
+  const [itemsPerPage, setItemsPerPage] = useState(5);
 
   const totalPages = Math.ceil(faqs.length / itemsPerPage);
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = faqs.slice(indexOfFirstItem, indexOfLastItem);
@@ -120,6 +121,11 @@ const FAQComponent = ({ setPageId, setFAqID }) => {
             />
           </svg>
         </button>
+        <div
+          style={{
+            height: "20px",
+          }}
+        ></div>
       </div>
     </div>
   );

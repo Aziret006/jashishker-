@@ -155,7 +155,10 @@ const Haeder = () => {
             <TrText root={"navbar"} name={"login"} />
           </button>
           <button
-            style={{ display: isKy || isMobile ? "block" : "none" }}
+            style={{
+              display: isKy || isMobile ? "flex" : "none",
+              alignItems: "center",
+            }}
             className={s.burgerButton}
             onClick={() => setIsMenu(!isMenu)}
           >
