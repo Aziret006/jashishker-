@@ -17,7 +17,6 @@ const SocialSidebar = () => {
   const toggleIcons = () => {
     setIsVisible(!isVisible);
   };
-
   return (
     <div className={styles.fixedContainerSlidebar}>
       <div className={styles.container}>
@@ -32,14 +31,9 @@ const SocialSidebar = () => {
             <Image src="/whatsapp-icon.svg" alt="" width={30} height={30} />
           </a>
           <a target="_blank" href="https://t.me/StartUpBlogger">
-            <Image
-              src="/file-icons_telegram.svg"
-              alt=""
-              width={30}
-              height={30}
-            />
+            <Image src="/file-icons_telegram.svg" width={30} height={30} />
           </a>
-          <a target="_blank" href="https://t.me/StartUpBlogger">
+          <a target="_blank" href="https://t.me/Blogger">
             <Image src="/logos_facebook.svg" alt="" width={30} height={30} />
           </a>
         </div>
