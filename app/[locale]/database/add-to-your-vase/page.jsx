@@ -136,7 +136,6 @@ const Page = () => {
 
         setPhotoUrl(null);
         toast.success("Ваша заявка успешно отправлена");
-        console.log("Success:", data);
         setErrors({});
         setTimeout(() => {
           window.location.reload();

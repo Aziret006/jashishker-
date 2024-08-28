@@ -17,18 +17,15 @@ app.prepare().then(() => {
   const io = socketio(server);
 
   io.on("connection", (socket) => {
-    console.log("New client connected");
     socket.on("message", (msg) => {
       io.emit("message", msg);
     });
     socket.on("disconnect", () => {
-      console.log("Client disconnected");
     });
   });
 
   const PORT = process.env.PORT || 3000;
   server.listen(PORT, (err) => {
     if (err) throw err;
-    console.log(`Server running on http://localhost:${PORT}`);
   });
 });

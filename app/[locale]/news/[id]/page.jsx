@@ -39,9 +39,7 @@ const page = async ({ params }) => {
 
     const cardListResponse = await axios.get(`${Api}api/v1/news/`);
     cardListData = cardListResponse.data;
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 
   if (error) {
     return <div>Error loading data: {error}</div>;

@@ -33,14 +33,16 @@ const page = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const log = console.log;
   useEffect(() => {
     const getData = async () => {
       try {
-        const topNewsResponse = await axios.get(`${Api}api/v1/news/`);
-        const newsPopularResponse = await axios.get(`${Api}api/v1/news/`);
+        const topNewsResponse = await axios.get(
+          `${Api}api/v1/news/?category=top_news`
+        );
+        const newsPopularResponse = await axios.get(
+          `${Api}api/v1/news/?status=${filterPage}`
+        );
 
-        // console.log(topNewsResponse.data.results ,newsPopularResponse.data.results , 'asdasdasd' );
         setTopNews(topNewsResponse.data);
         setPopular(newsPopularResponse.data);
       } catch (error) {
@@ -55,14 +57,16 @@ const page = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const newsPopular = await axios.get(`${Api}api/v1/news/`);
+        const newsPopular = await axios.get(
+          `${Api}api/v1/news/?status=${filterPage}`
+        );
         return {
-          newsPopular: newsPopular.data,
+          newsPopular: newsPopular?.data,
         };
       } catch (error) {}
     };
     getData().then((data) => {
-      setPopular(data?.newsPopular.results);
+      setPopular(data?.newsPopular);
     });
   }, [filterPage]);
   if (error) {
@@ -72,8 +76,6 @@ const page = () => {
   if (loading) {
     return <Loading />;
   }
-
-  console.log(topNews, "asdasd");
 
   return (
     <div>
@@ -145,6 +147,7 @@ const page = () => {
             </div>
             <div className={s.Tap}>
               <p
+                onClick={() => setFilterPage("new")}
                 style={{
                   color: filterPage == "new" ? "#DA4E38" : "#222",
                   cursor: "pointer",
@@ -155,6 +158,7 @@ const page = () => {
               </p>
               <div className={s.TopBorder}></div>
               <p
+                onClick={() => setFilterPage("popular")}
                 style={{
                   color: filterPage == "popular" ? "#DA4E38" : "#222",
                   cursor: "pointer",
@@ -165,7 +169,7 @@ const page = () => {
             </div>
             <div className={s.borderBootm}></div>
             <div className={s.newsCards}>
-              {newsPopular.length > 0 ? (
+              {newsPopular?.length > 0 ? (
                 newsPopular.map((item, key) => (
                   <NewsCard data={item} key={key} />
                 ))

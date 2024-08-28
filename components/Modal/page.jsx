@@ -56,13 +56,10 @@ const PersonalDataForm = ({ setData }) => {
 
       if (response.ok) {
         const result = await response.json();
-        console.log("Success:", result);
       } else {
         console.error("Failed to submit:", response.statusText);
       }
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    } catch (error) {}
   };
 
   return (

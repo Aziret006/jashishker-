@@ -36,12 +36,7 @@ const Haeder = () => {
       const isClickInsideKnowledgeMenu =
         event.target.closest(`.${s.NavKnowledgeBlock}`) ||
         event.target === menuTriggerKnowledge;
-      console.log(
-        isClickInsideProductMenu,
-        isClickInsideKnowledgeMenu,
-        previousActiveMenuRef.current,
-        "test1"
-      );
+
       if (navProduct && !isClickInsideProductMenu) {
         setNavProduct(false);
       }

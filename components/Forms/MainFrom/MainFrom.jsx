@@ -6,6 +6,7 @@ import s from "./page.module.scss";
 import { Api } from "@/api";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslations } from "next-intl";
 
 const MainFrom = () => {
   const {
@@ -28,6 +29,8 @@ const MainFrom = () => {
     }
   };
 
+  const t = useTranslations("home");
+
   const onSubmit = (data) => {
     handleSubmitPOst(data);
     reset();
@@ -49,40 +52,41 @@ const MainFrom = () => {
         theme="dark"
       />
       <div className={s.inputFroms}>
-        <p>Ваше Имя</p>
+        <p>{t("section_support_form_label_name")} </p>
         <input
           className={s.inputFrom}
           defaultValue={initialData?.name || ""}
           {...register("name", { required: true })}
-          placeholder="Введите ваше имя"
+          placeholder={t("section_support_form_placeholder_name")}
         />
         {errors.name && <span className={s.error}>Это поле обязательно</span>}
       </div>
       <div className={s.inputFroms}>
-        <p>Ваше e-mail</p>
+        <p>{t("section_support_form_label_email")} </p>
         <input
           className={s.inputFrom}
           defaultValue={initialData?.email || ""}
           {...register("email", { required: true })}
-          placeholder="Введите ваш e-mail"
+          placeholder={t("section_support_form_placeholder_email")}
           type="email"
         />
         {errors.email && <span className={s.error}>Это поле обязательно</span>}
       </div>
       <div className={s.inputFroms}>
-        <p>Тема</p>
+        <p>{t("section_5_form_label_theme")}</p>
+
         <input
           className={s.inputFrom}
           defaultValue={initialData?.subject || ""}
           {...register("subject", { required: true })}
-          placeholder="Введите тему"
+          placeholder={t("section_5_form_placeholder_theme")}
         />
         {errors.subject && (
           <span className={s.error}>Это поле обязательно</span>
         )}
       </div>
       <div className={s.inputFroms}>
-        <p>Сообщение</p>
+        <p>{t("section_support_form_label_message")}</p>
         <input
           className={s.inputFrom}
           defaultValue={initialData?.message || ""}
@@ -93,7 +97,7 @@ const MainFrom = () => {
           <span className={s.error}>Это поле обязательно</span>
         )}
       </div>
-      <button className={s.button}>Отправить</button>
+      <button className={s.button}>{t("section_5_form_button")}</button>
     </form>
   );
 };

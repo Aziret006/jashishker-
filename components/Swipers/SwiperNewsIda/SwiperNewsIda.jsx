@@ -9,7 +9,6 @@ import Image from 'next/image';
 
 
 const SwiperNewsIda = ({ data }) => {
-    console.log(data.map((res) => res), 'data');
 
     return (<Swiper pagination={true} modules={[Autoplay]}
         autoplay={{

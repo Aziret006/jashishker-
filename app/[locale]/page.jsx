@@ -15,15 +15,19 @@ import { ChatBotWidget } from "chatbot-widget-ui";
 import Link from "next/link";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import TrText from "@/components/TrText/TrText";
+import { getTranslations } from "next-intl/server";
 
 import { ToastContainer } from "react-toastify";
-export const metadata = {
-  title: "ЖАШ ИШКЕР",
-  description:
-    "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
-  icons: {
-    icon: "/logo.svg",
-  },
+export const generateMetadata = async () => {
+  const t = await getTranslations("home");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    icons: {
+      icon: "/logo.svg",
+    },
+  };
 };
 
 export default async function Home() {
