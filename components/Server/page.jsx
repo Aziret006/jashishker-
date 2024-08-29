@@ -20,8 +20,7 @@ app.prepare().then(() => {
     socket.on("message", (msg) => {
       io.emit("message", msg);
     });
-    socket.on("disconnect", () => {
-    });
+    socket.on("disconnect", () => {});
   });
 
   const PORT = process.env.PORT || 3000;

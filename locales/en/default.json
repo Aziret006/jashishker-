@@ -55,7 +55,8 @@
     "section_support_form_placeholder_email": "Enter your email",
     "section_support_form_placeholder_name": "Enter your name",
     "section_support_formt_title": "Our specialists will answer your questions",
-    "section_support_title": "Help is needed?"
+    "section_support_title": "Help is needed?",
+    "section_5_form_erorr": "This field is required"
   },
   "about": {
     "about_box8_unTitle": "As a result of the award, 10,000 € were received by:",
@@ -385,5 +386,4 @@
   "news": {
     "newsTitle": "Last news"
   }
-
 }

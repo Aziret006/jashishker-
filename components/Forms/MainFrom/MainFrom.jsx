@@ -7,6 +7,7 @@ import { Api } from "@/api";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslations } from "next-intl";
+import TrText from "@/components/TrText/TrText";
 
 const MainFrom = () => {
   const {
@@ -59,7 +60,11 @@ const MainFrom = () => {
           {...register("name", { required: true })}
           placeholder={t("section_support_form_placeholder_name")}
         />
-        {errors.name && <span className={s.error}>Это поле обязательно</span>}
+        {errors.name && (
+          <span className={s.error}>
+            <TrText root={"home"} name={"section_5_form_erorr"} />
+          </span>
+        )}
       </div>
       <div className={s.inputFroms}>
         <p>{t("section_support_form_label_email")} </p>
@@ -70,11 +75,14 @@ const MainFrom = () => {
           placeholder={t("section_support_form_placeholder_email")}
           type="email"
         />
-        {errors.email && <span className={s.error}>Это поле обязательно</span>}
+        {errors.email && (
+          <span className={s.error}>
+            <TrText root={"home"} name={"section_5_form_erorr"} />
+          </span>
+        )}
       </div>
       <div className={s.inputFroms}>
         <p>{t("section_5_form_label_theme")}</p>
-
         <input
           className={s.inputFrom}
           defaultValue={initialData?.subject || ""}
@@ -82,7 +90,9 @@ const MainFrom = () => {
           placeholder={t("section_5_form_placeholder_theme")}
         />
         {errors.subject && (
-          <span className={s.error}>Это поле обязательно</span>
+          <span className={s.error}>
+            <TrText root={"home"} name={"section_5_form_erorr"} />
+          </span>
         )}
       </div>
       <div className={s.inputFroms}>
@@ -94,7 +104,9 @@ const MainFrom = () => {
           placeholder="Напишите сюда"
         />
         {errors.message && (
-          <span className={s.error}>Это поле обязательно</span>
+          <span className={s.error}>
+            <TrText root={"home"} name={"section_5_form_erorr"} />
+          </span>
         )}
       </div>
       <button className={s.button}>{t("section_5_form_button")}</button>

@@ -55,7 +55,8 @@
     "section_support_form_placeholder_email": "Введите ваш e-mail",
     "section_support_form_placeholder_name": "Введите ваше имя",
     "section_support_formt_title": "Наши специалисты ответят на ваши вопросы",
-    "section_support_title": "Нужна помощь?"
+    "section_support_title": "Нужна помощь?",
+    "section_5_form_erorr": "Это поле обязательно"
   },
   "about": {
     "about_box8_unTitle": "По итогам вручения, по 10 000 € получили:",

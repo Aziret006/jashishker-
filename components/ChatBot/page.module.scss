@@ -4,6 +4,9 @@
   right: 10px;
   z-index: 111111;
   cursor: pointer;
+  @media screen and (max-width: 500px) {
+    bottom: 100px;
+  }
   .button {
     display: flex;
     justify-content: center;
