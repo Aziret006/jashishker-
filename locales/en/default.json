@@ -384,6 +384,16 @@
     "region": "Region"
   },
   "news": {
-    "newsTitle": "Last news"
+    "newsTitle": "Last news",
+    "button": "Add Yourself to the Database"
+  },
+  "modal": {
+    "region": "Region",
+    "dob": "DD/MM/YY",
+    "activity_type": "Type of Economic Activity",
+    "activity_category": "Category of Economic Activity",
+    "company_registration": "Company Legal Registration",
+    "full_company_name": "Full Company Name",
+    "commercial_name": "Commercial Name"
   }
 }

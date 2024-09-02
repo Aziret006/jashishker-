@@ -257,7 +257,7 @@ const Page = () => {
                         whiteSpace: "nowrap",
                       }}
                     >
-                      Добавить в базу себя
+                      <TrText root={"news"} name="button" />
                     </button>
                   </Link>
                 </div>
@@ -295,7 +295,6 @@ const Page = () => {
                   </li>
                   <li className={styles.displayNone}>DD/MM/YY</li>
                   <li className={styles.displayNone}>
-                    {" "}
                     <TrText root={"database"} name="region" />
                   </li>
                 </ul>
@@ -418,46 +417,59 @@ const Page = () => {
               <div className={styles.info}>
                 <div>
                   <p>
-                    <strong>Регион</strong>
+                    <strong>
+                      <TrText root={"modal"} name={"region"} />
+                    </strong>
                     {selectedContact.region}
                   </p>
                 </div>
                 <div>
                   <p>
-                    <strong>DD/MM/YY</strong>
-                    {selectedContact.email}
-                  </p>
-                </div>
-                <div>
-                  <p>
-                    <strong>Вид экономической деятельности</strong>{" "}
+                    <strong>
+                      <TrText root={"modal"} name={"dob"} />
+                    </strong>
                     {selectedContact.email}
                   </p>
                 </div>
                 <div>
                   <p>
                     <strong>
-                      Категория вида экономической деятельности компании
+                      {" "}
+                      <TrText root={"modal"} name={"activity_type"} />
                     </strong>
                     {selectedContact.activity_type}
                   </p>
                 </div>
                 <div>
                   <p>
-                    <strong>Юридическая регистрация компании</strong>{" "}
-                    {selectedContact.email}
+                    <strong>
+                      <TrText root={"modal"} name={"activity_category"} />
+                    </strong>
+                    {selectedContact.activity_category}
                   </p>
                 </div>
                 <div>
                   <p>
-                    <strong>Полное фирменное наименование компании</strong>{" "}
-                    {selectedContact.email}
+                    <strong>
+                      <TrText root={"modal"} name={"company_registration"} />
+                    </strong>
+                    {selectedContact.company_registration}
                   </p>
                 </div>
                 <div>
                   <p>
-                    <strong>Коммерческое определение компании</strong>{" "}
-                    {selectedContact.email}
+                    <strong>
+                      <TrText root={"modal"} name={"full_company_name"} />
+                    </strong>
+                    {selectedContact.full_company_name}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>
+                      <TrText root={"modal"} name={"commercial_name"} />
+                    </strong>
+                    {selectedContact.commercial_name}
                   </p>
                 </div>
               </div>
