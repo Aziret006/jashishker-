@@ -22,11 +22,9 @@ const BeVietnamPro = Be_Vietnam_Pro({
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"], // specify the desired weight here
 });
 
-
-
-const Text = ({name}) => {
-  return <TrText root={'green_eco'} name={name} />
-}
+const Text = ({ name }) => {
+  return <TrText root={"green_eco"} name={name} />;
+};
 
 const page = () => {
   return (
@@ -37,24 +35,21 @@ const page = () => {
         <div className={s.economycontainer}>
           <div className={s.leadershiptitle}>
             <h1 className={BeVietnamPro.className}>
-              <Text name={'greenEco_title'} />
+              <Text name={"greenEco_title"} />
             </h1>
-            <h5 className={Alex.className}>
-            <Text name={'greenEco_subtitle'} />
-            </h5>
           </div>
           <hr />
           <div className={s.econtext}>
             <h4>
-            <Text name={'greenEco_box1_title'} />
+              <Text name={"greenEco_box1_title"} />
             </h4>
             <p>
-            <Text name={'greenEco_box1_topDesc'} />
+              <Text name={"greenEco_box1_topDesc"} />
             </p>
           </div>
           <div className={s.etextend}>
             <p>
-            <Text name={'greenEco_box1_bottomDesc'} />
+              <Text name={"greenEco_box1_bottomDesc"} />
             </p>
           </div>
           <div className={s.eimg}>
@@ -67,10 +62,10 @@ const page = () => {
           </div>
           <div className={s.eimgend}>
             <p>
-            <Text name={'greenEco_box2_topDesc'} />
+              <Text name={"greenEco_box2_topDesc"} />
             </p>
             <p>
-            <Text name={'greenEco_box2_bottomDesc'} />
+              <Text name={"greenEco_box2_bottomDesc"} />
             </p>
           </div>
         </div>

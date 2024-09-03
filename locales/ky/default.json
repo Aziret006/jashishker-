@@ -1,20 +1,20 @@
 {
   "navbar": {
-    "navbar_about": "Долбоор жөнүндө ",
+    "navbar_about": "Долбоор ",
     "navbar_about_contacts": "Байланыштар",
     "navbar_about_digital": "Санариптештирүү",
     "navbar_about_green_economy": "Жашыл экономика",
     "navbar_about_innovate": "Инновация",
     "navbar_about_lider": "Лидерлик",
     "navbar_about_partners": "Партнерлор",
-    "navbar_knowBase": "Билим базасы",
-    "navbar_knowBase_baseData": "Маалымат базасы",
+    "navbar_knowBase": "Билим база",
+    "navbar_knowBase_baseData": "Маалымат база",
     "navbar_knowBase_begin": "Бизнести кайдан баштоо керек",
     "navbar_knowBase_makePlan": "Бизнес-план кантип жазуу керек",
     "navbar_knowBase_projEvaluat": "Долбоорду баалоо",
     "navbar_knowBase_temBussiness": "Бизнес пландын шаблондору",
     "navbar_news": "Жаңылыктар",
-    "navbar_success_history": "Ийгиликтин тарыхы",
+    "navbar_success_history": "Ийгиликтин ",
     "login": "Кируу"
   },
   "home": {
@@ -385,5 +385,11 @@
   },
   "news": {
     "newsTitle": "Маалыматтар"
+  },
+  "FOOTER": {
+    "Pages": "Беттер",
+    "Address": "Дарек",
+    "AddressID": "Кыргыз Республикасы Бишкек ш., 720001 Ибраимова көч., 103",
+    "Phone_Number": "Телефон номери"
   }
 }

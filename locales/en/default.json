@@ -385,5 +385,11 @@
   },
   "news": {
     "newsTitle": "Last news"
+  },
+  "FOOTER": {
+    "Pages": "Pages",
+    "Address": "Address",
+    "AddressID": "Kyrgyz Republic Bishkek, 720001 Ibraimova st. 103",
+    "Phone_Number": "Phone Number"
   }
 }

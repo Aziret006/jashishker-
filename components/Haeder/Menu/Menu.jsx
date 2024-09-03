@@ -121,7 +121,11 @@ const Menu = ({ isMenu, setMenu }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link className={s.Link} href={"/Economy"}>
+                  <Link
+                    className={s.Link}
+                    href={"https://mineconom.gov.kg/ru/direct/404"}
+                    target="_blank"
+                  >
                     <Text name={"navbar_knowBase_temBussiness"} />
                   </Link>
                 </li>

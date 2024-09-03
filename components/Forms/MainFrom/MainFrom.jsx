@@ -101,7 +101,7 @@ const MainFrom = () => {
           className={s.inputFrom}
           defaultValue={initialData?.message || ""}
           {...register("message", { required: true })}
-          placeholder="Напишите сюда"
+          placeholder={t("section_5_form_placeholder_message")}
         />
         {errors.message && (
           <span className={s.error}>

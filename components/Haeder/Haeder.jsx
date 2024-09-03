@@ -99,32 +99,33 @@ const Haeder = () => {
             ИШКЕР
           </p>
         </a>
-        {!isKy && (
-          <nav className={s.nav}>
-            <ul>
-              <li onClick={() => setNavProduct(true)}>
-                <TrText root={"navbar"} name={"navbar_about"} />{" "}
-                <IoIosArrowDown />
-              </li>
-              <li>
-                <Link className={s.Link} href={"/news"}>
-                  <TrText root={"navbar"} name={"navbar_news"} />
-                </Link>
-              </li>
-              <li onClick={() => setNavKnowledge(true)}>
-                <TrText root={"navbar"} name={"navbar_knowBase"} />
-                <IoIosArrowDown />
-              </li>
-              <li>
-                <Link className={s.Link} href={"/success-stories"}>
-                  <TrText root={"navbar"} name={"navbar_success_history"} />
-                </Link>
-              </li>
-              <li>
-                <Link className={s.Link} href={"/database"}>
-                  <TrText root={"navbar"} name={"navbar_knowBase_baseData"} />
-                </Link>
-              </li>
+
+        <nav className={s.nav}>
+          <ul>
+            <li onClick={() => setNavProduct(true)}>
+              <TrText root={"navbar"} name={"navbar_about"} />{" "}
+              <IoIosArrowDown />
+            </li>
+            <li>
+              <Link className={s.Link} href={"/news"}>
+                <TrText root={"navbar"} name={"navbar_news"} />
+              </Link>
+            </li>
+            <li onClick={() => setNavKnowledge(true)}>
+              <TrText root={"navbar"} name={"navbar_knowBase"} />
+              <IoIosArrowDown />
+            </li>
+            <li>
+              <Link className={s.Link} href={"/success-stories"}>
+                <TrText root={"navbar"} name={"navbar_success_history"} />
+              </Link>
+            </li>
+            <li>
+              <Link className={s.Link} href={"/database"}>
+                <TrText root={"navbar"} name={"navbar_knowBase_baseData"} />
+              </Link>
+            </li>
+            {!isKy && (
               <li>
                 <a
                   className={s.Link}
@@ -135,28 +136,21 @@ const Haeder = () => {
                   Enactus
                 </a>
               </li>
-              <li>
-                <Link className={s.Link} href={"/contact"}>
-                  <TrText root={"navbar"} name={"navbar_about_contacts"} />
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        )}
+            )}
+            <li>
+              <Link className={s.Link} href={"/contact"}>
+                <TrText root={"navbar"} name={"navbar_about_contacts"} />
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
         <div className={s.ButtonList}>
           <LocalSwitcher />
           <button className="Login">
             <TrText root={"navbar"} name={"login"} />
           </button>
-          <button
-            style={{
-              display: isKy || isMobile ? "flex" : "none",
-              alignItems: "center",
-            }}
-            className={s.burgerButton}
-            onClick={() => setIsMenu(!isMenu)}
-          >
+          <button className={s.burgerButton} onClick={() => setIsMenu(!isMenu)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -255,7 +249,11 @@ const Haeder = () => {
                 </Link>
               </li>
               <li>
-                <Link className={s.Link} href={"/Economy"}>
+                <Link
+                  className={s.Link}
+                  href={"https://mineconom.gov.kg/ru/direct/404"}
+                  target="_blank"
+                >
                   {t("navbar_knowBase_temBussiness")}
                 </Link>
               </li>

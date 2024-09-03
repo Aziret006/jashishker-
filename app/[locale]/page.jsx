@@ -38,15 +38,8 @@ export default async function Home() {
     data = card.data;
   } catch (error) {
     console.log(error);
-
-    // notFound();
   }
 
-  // if (error) {
-  //   return <div>Error loading data: {error}</div>;
-  // } else if (!data) {
-  //   return <div>News article not found</div>;
-  // } else {
   return (
     <div className={` ${s.container}`}>
       <Haeder />
