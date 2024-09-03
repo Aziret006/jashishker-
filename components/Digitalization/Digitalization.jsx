@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import s from "./page.module.scss";
 import {
@@ -10,6 +12,7 @@ import Image from "next/image";
 import TrText from "../TrText/TrText";
 import dynamic from "next/dynamic";
 import SetHtml from "../TrText/SetHtml";
+import { useParams } from "next/navigation";
 
 const FontManrope = Manrope({
   subsets: ["latin"],
@@ -26,6 +29,8 @@ const Text = ({ name }) => {
 };
 
 export default function Digitalization() {
+  const parms = useParams();
+  console.log(parms);
   return (
     <div className={s.digitalization}>
       <div className={s.container}>
@@ -38,7 +43,15 @@ export default function Digitalization() {
           </p>
           <div className={s.digitalizationImg}>
             <Image
-              src="/digitalization1.svg"
+              src={
+                parms.locale === "ru"
+                  ? "/digitalRu.svg"
+                  : parms.locale === "en"
+                  ? "/digitalEn.svg"
+                  : parms.locale === "ky"
+                  ? "/digitalKy.svg"
+                  : ""
+              }
               width={1200}
               height={900}
               alt=""
