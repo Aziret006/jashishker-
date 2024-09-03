@@ -71,7 +71,6 @@
         margin-top: 45px;
       }
     }
-
   }
 
   .contactWrap {
@@ -91,8 +90,6 @@
       gap: 20px;
     }
 
-
-
     .contactMap {
       display: flex;
       flex-direction: column;
@@ -103,7 +100,7 @@
       }
 
       p {
-        color: #191A1B;
+        color: #191a1b;
         font-size: 18px;
         font-style: normal;
         font-weight: 400;
@@ -149,7 +146,8 @@
           align-items: center;
           gap: 16px;
 
-          @media screen and (max-width: 768px) {}
+          @media screen and (max-width: 768px) {
+          }
 
           .icon {
             width: 50px;
@@ -209,16 +207,12 @@
               }
 
               &:hover {
-                color: #2E9537
+                color: #2e9537;
               }
             }
-
           }
-
         }
       }
-
-
     }
 
     .contactSocial {
@@ -255,7 +249,6 @@
           gap: 12px;
         }
 
-
         .icon {
           width: 50px;
           height: 50px;
@@ -275,9 +268,8 @@
 
           &:hover {
             transform: scale(1.1);
-            background-color: #2E9537;
-            border: 1.586px solid var(--black, #2E9537);
-
+            background-color: #2e9537;
+            border: 1.586px solid var(--black, #2e9537);
           }
 
           svg {
@@ -293,19 +285,14 @@
         }
       }
     }
-
-
-
   }
-
-
 }
 
 .contactForm {
   width: 100%;
   background: #161616;
   padding: 160px 0 60px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   @media screen and (max-width: 768px) {
     padding: 190px 0 60px 0;
@@ -315,12 +302,10 @@
     padding: 160px 0 60px 0;
   }
 
-
   .containerForm {
     max-width: var(--maxWidth);
     margin: 0 auto;
     padding: 0 30px;
-
 
     @media screen and (max-width: 550px) {
       padding: 0 20px;
@@ -346,7 +331,6 @@
 
         @media screen and (max-width: 768px) {
           gap: 67px;
-
         }
 
         img {
@@ -365,9 +349,8 @@
           }
         }
 
-
         .title {
-          color: var(--white, #FFF);
+          color: var(--white, #fff);
           font-size: 60px;
           font-style: normal;
           font-weight: 600;
@@ -392,19 +375,18 @@
             span {
               width: 150px;
               height: 3px;
-              background: var(--white, #FFF);
+              background: var(--white, #fff);
 
               @media screen and (max-width: 768px) {
                 width: 100px;
                 height: 1px;
               }
-
             }
           }
         }
 
         p {
-          color: var(--gray, #F0F0F0);
+          color: var(--gray, #f0f0f0);
           font-size: 20px;
           font-style: normal;
           font-weight: 400;
@@ -418,7 +400,6 @@
             margin: 0;
             width: 233px;
           }
-
         }
       }
 
@@ -435,9 +416,12 @@
           @media screen and (max-width: 768px) {
             gap: 6px;
           }
+          p {
+            color: red !important;
+          }
 
           label {
-            color: var(--gray, #F0F0F0);
+            color: var(--gray, #f0f0f0);
             font-size: 18px;
             font-style: normal;
             font-weight: 400;
@@ -447,7 +431,6 @@
             @media screen and (max-width: 768px) {
               font-size: 14px;
             }
-
           }
 
           input {
@@ -455,7 +438,7 @@
             background: #161616;
             outline: none;
             border: none;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.20);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
             color: #fff;
             font-size: 16px;
             font-style: normal;
@@ -467,7 +450,7 @@
             }
 
             &::placeholder {
-              color: var(--gray, #F0F0F0);
+              color: var(--gray, #f0f0f0);
               font-size: 16px;
               font-style: normal;
               font-weight: 400;
@@ -480,14 +463,22 @@
             }
 
             &:focus {
-              border-bottom: 2px solid #2E9537;
+              border-bottom: 2px solid #2e9537;
             }
-
           }
-
-
         }
+      }
+      button {
+        width: 100%;
+        background: #2e9537;
+        border: none;
 
+        border-radius: 10px;
+        padding: 10px;
+        color: #fff;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
       }
     }
   }
