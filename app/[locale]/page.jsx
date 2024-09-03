@@ -16,7 +16,6 @@ import Link from "next/link";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import TrText from "@/components/TrText/TrText";
 import { getTranslations } from "next-intl/server";
-
 import { ToastContainer } from "react-toastify";
 export const generateMetadata = async () => {
   const t = await getTranslations("home");

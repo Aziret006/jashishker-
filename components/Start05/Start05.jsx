@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import s from "./page.module.scss";
 import {
@@ -8,6 +10,7 @@ import {
 } from "next/font/google";
 import Image from "next/image";
 import TrText from "../TrText/TrText";
+import { useParams } from "next/navigation";
 
 const FontManrope = Manrope({
   subsets: ["latin"],
@@ -24,6 +27,8 @@ const Text = ({ name }) => {
 };
 
 export default function Start05() {
+  const parms = useParams();
+  console.log(parms);
   return (
     <div className={s.start05}>
       <div className={s.start05Content}>
@@ -39,14 +44,30 @@ export default function Start05() {
       </div>
       <Image
         className={s.desktop}
-        src="./starto5.svg"
+        src={
+          parms.locale === "ru"
+            ? "/bissinesRu.svg"
+            : parms.locale === "en"
+            ? "/bissinesEn.svg"
+            : parms.locale === "ky"
+            ? "/bissinesKy.svg"
+            : ""
+        }
         alt=""
         width={1260}
         height={909}
       />
       <Image
         className={s.mobile}
-        src="./start05.svg"
+        src={
+          parms.locale === "ru"
+            ? "/bissinesRu.svg"
+            : parms.locale === "en"
+            ? "/bissinesEn.svg"
+            : parms.locale === "ky"
+            ? "/bissinesKy.svg"
+            : ""
+        }
         alt=""
         width={417}
         height={561}

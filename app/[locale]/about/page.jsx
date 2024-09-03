@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Haeder from "@/components/Haeder/Haeder";
 import Footer from "@/components/Footer/Footer";
@@ -6,35 +7,26 @@ import Image from "next/image";
 import s from "./page.module.scss";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import TrText from "@/components/TrText/TrText";
+import { useParams } from "next/navigation";
 
-const Text = ({name}) => {
-  return <TrText root={'about'} name={name} />
-}
+const Text = ({ name }) => {
+  return <TrText root={"about"} name={name} />;
+};
 
 const data = [
   {
     id: 1,
-    content: Text({name: "about_box6_item1"})
-
+    content: Text({ name: "about_box6_item1" }),
   },
   {
     id: 2,
-    content:Text({ name: "about_box6_item2"})
+    content: Text({ name: "about_box6_item2" }),
   },
   {
     id: 3,
-    content: Text({ name: "about_box6_item3"})
+    content: Text({ name: "about_box6_item3" }),
   },
 ];
-
-export const metadata = {
-  title: "ЖАШ ИШКЕР",
-  description:
-    "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
-  icons: {
-    icon: "/logo.svg",
-  },
-};
 
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
@@ -42,9 +34,9 @@ const BeVietnamPro = Be_Vietnam_Pro({
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
 });
 
-
-
 const Page = () => {
+  const parms = useParams();
+  console.log(parms);
   return (
     <>
       <Haeder />
@@ -52,21 +44,23 @@ const Page = () => {
         <SocialSidebar />
         <div className={s.aboutContainer}>
           <div className={s.aboutTitle}>
-            <h1 className={BeVietnamPro.className}><Text  name={'about_title'}  /></h1>
+            <h1 className={BeVietnamPro.className}>
+              <Text name={"about_title"} />
+            </h1>
             <h5 className={Alex.className}>
-            <Text name={'about_subtitle'} />
+              <Text name={"about_subtitle"} />
             </h5>
           </div>
           <hr />
           <nav className={s.navflex}>
             <ul>
               <h4>
-                <Text name={'about_box1_title_top'} />
+                <Text name={"about_box1_title_top"} />
                 <br />
-                <Text name={'about_box1_title_bottom'} />
+                <Text name={"about_box1_title_bottom"} />
               </h4>
               <li>
-               <Text name={'about_box1_desc'} />
+                <Text name={"about_box1_desc"} />
               </li>
             </ul>
             <Image
@@ -79,19 +73,18 @@ const Page = () => {
           </nav>
           <div className={s.navblock}>
             <div className={s.ul}>
-              <h4>                
-                <Text name={'about_box2_title'} />
+              <h4>
+                <Text name={"about_box2_title"} />
               </h4>
               <ul className={s.list}>
                 <p>
-                <Text name={'about_box2_subtitle'} />
-
+                  <Text name={"about_box2_subtitle"} />
                 </p>
                 <li>
-                <Text name={'about_box2_desc_top'} />
+                  <Text name={"about_box2_desc_top"} />
                   <br />
                   <br />
-                <Text name={'about_box2_desc_bottom'} />
+                  <Text name={"about_box2_desc_bottom"} />
                 </li>
               </ul>
               <Image
@@ -108,14 +101,21 @@ const Page = () => {
           <div className={s.aboutContainer}>
             <div className={s.backtitle}>
               <h4>
-              <Text name={'about_box3_title'} />
-
+                <Text name={"about_box3_title"} />
               </h4>
             </div>
             <div className={s.transformborder}>
               <Image
                 className={s.transfrom}
-                src="./Group.svg"
+                src={
+                  parms.locale === "ru"
+                    ? "/groupRu.svg"
+                    : parms.locale === "en"
+                    ? "/groupEn.svg"
+                    : parms.locale === "ky"
+                    ? "/groupKy.svg"
+                    : ""
+                }
                 alt="Project illustration"
                 width={1247}
                 height={870}
@@ -123,15 +123,11 @@ const Page = () => {
             </div>
             <div className={s.abtitle}>
               <h4>
-              
-              <Text name={'about_box3_subtitle'} />
-
+                <Text name={"about_box3_subtitle"} />
               </h4>
               <ul>
                 <li>
-                
-              <Text name={'about_box3_desc'} />
-
+                  <Text name={"about_box3_desc"} />
                 </li>
               </ul>
             </div>
@@ -142,22 +138,19 @@ const Page = () => {
                 <span>10 НКО/НПО</span> подали заявки для участия в грантовом
                 конкурсе. Из них <span className={s.span}>более 30</span> прошли
                 обучение по усилению потенциала в агро и бизнес направлениях. */}
-                
-              <Text name={'about_box4_desc'} />
 
+                <Text name={"about_box4_desc"} />
               </h4>
             </div>
           </div>
         </div>
         <div className={s.aboutContainer}>
           <h4 className={s.ourteamtitle}>
-          <Text name={'about_box5_title'} />
+            <Text name={"about_box5_title"} />
           </h4>
           <div className={s.ourteamflex}>
             <p>
-              
-          <Text name={'about_box5_subtitle'} />
-
+              <Text name={"about_box5_subtitle"} />
             </p>
             <img
               className={s.ourimg}
@@ -169,26 +162,19 @@ const Page = () => {
           </div>
           <nav className={s.ourteamul}>
             <li className={s.ourteamli}>
-            
-          <Text name={'about_box5_desc_left'} />
-
+              <Text name={"about_box5_desc_left"} />
             </li>
             <li className={s.ourteamli2}>
-            
-          <Text name={'about_box5_desc_right'} />
-
+              <Text name={"about_box5_desc_right"} />
             </li>
           </nav>
           <div className={s.ourflex2}>
             <nav>
               <p>
-          <Text name={'about_box6_subtitle'} />
-
+                <Text name={"about_box6_subtitle"} />
               </p>
               <h4>
-              
-          <Text name={'about_box6_title'} />
-
+                <Text name={"about_box6_title"} />
               </h4>
             </nav>
             <img
@@ -225,31 +211,24 @@ const Page = () => {
           </div>
           <div className={s.ourtitle}>
             <p>
-          <Text name={'about_box7_subtitle'} />
-
+              <Text name={"about_box7_subtitle"} />
             </p>
             <h4>
-            
-          <Text name={'about_box7_title'} />
-
+              <Text name={"about_box7_title"} />
             </h4>
           </div>
           <div className={s.ourtextfleximg}>
             <nav>
               <p>
-              
-          <Text name={'about_box7_desc_top'} />
+                <Text name={"about_box7_desc_top"} />
 
                 <br />
                 <br />
-                <Text name={'about_box7_desc_bottom'} />
-
+                <Text name={"about_box7_desc_bottom"} />
               </p>
               <div className={s.ourtextimg2}>
                 <h5>
-                
-                <Text name={'about_box7_single_desc'} />
-
+                  <Text name={"about_box7_single_desc"} />
                 </h5>
               </div>
             </nav>
@@ -262,17 +241,17 @@ const Page = () => {
             />
           </div>
           <div className={s.footflex4}>
-            <p>Выдача грантов
-              <Text name={'about_box8_subtitle'} />
+            <p>
+              Выдача грантов
+              <Text name={"about_box8_subtitle"} />
             </p>
             <h4>
-            <Text name={'about_box8_title'} />
-
+              <Text name={"about_box8_title"} />
             </h4>
           </div>
           <div className={s.footborder}>
-            <h4>            
-              <Text name={'about_box8_unTitle'} />
+            <h4>
+              <Text name={"about_box8_unTitle"} />
             </h4>
             <div className={s.img4}>
               <img
@@ -286,11 +265,19 @@ const Page = () => {
           </div>
           <div className={s.footraduis}>
             <h4>
-            <Text name={'get_25'} />
+              <Text name={"get_25"} />
             </h4>
             <div className={s.img5}>
               <img
-                src="/image10.svg"
+                src={
+                  parms.locale === "ru"
+                    ? "/aboutRu.svg"
+                    : parms.locale === "en"
+                    ? "/aboutEn.svg"
+                    : parms.locale === "ky"
+                    ? "/aboutKy.svg"
+                    : ""
+                }
                 alt="Project illustration"
                 width={944}
                 height={683}
@@ -299,10 +286,10 @@ const Page = () => {
           </div>
           <div className={s.footend}>
             <p>
-            <Text name={'about_box9_desc'} />
+              <Text name={"about_box9_desc"} />
             </p>
             <h4>
-            <Text name={'about_box9_title'} />
+              <Text name={"about_box9_title"} />
             </h4>
           </div>
         </div>
@@ -310,6 +297,6 @@ const Page = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default Page;
