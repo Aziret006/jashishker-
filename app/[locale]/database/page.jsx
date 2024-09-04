@@ -18,7 +18,6 @@ import axios from "axios";
 import Link from "next/link";
 import { IoIosArrowBack } from "react-icons/io";
 import TrText from "@/components/TrText/TrText";
-import { FaDivide } from "react-icons/fa6";
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
@@ -308,7 +307,7 @@ const Page = () => {
                 >
                   {page === "favorites"
                     ? userList.map((contact) => (
-                        <FaDivide
+                        <div
                           key={contact.id}
                           className={styles.cardFavorites}
                           onClick={() => setSelectedContact(contact)}
@@ -329,7 +328,7 @@ const Page = () => {
                                 : contact.activity_type}
                             </p>
                           </div>
-                        </FaDivide>
+                        </div>
                       ))
                     : userList.map((contact) => (
                         <>
