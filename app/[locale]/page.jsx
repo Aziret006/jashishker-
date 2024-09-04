@@ -28,16 +28,18 @@ export const generateMetadata = async () => {
     },
   };
 };
+const getNews = async () => {
+  try {
+    const card = await axios.get(`${Api}api/v1/news/`);
+
+    return card;
+  } catch (error) {
+    return NotFound();
+  }
+};
 
 export default async function Home() {
-  let data = null;
-  let error = null;
-  try {
-    const card = await axios.get(`${Api}api/news/?status=new`);
-    data = card.data;
-  } catch (error) {
-    console.log(error);
-  }
+  const { data } = await getNews();
 
   return (
     <div className={` ${s.container}`}>
@@ -277,14 +279,14 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      {data?.count > 0 && (
+      {data?.length > 0 && (
         <div className={s.Block4}>
           <div className={s.Block4Titel}>
             <p className={s.Block4TitelText}>
               <TrText root={"home"} name={"section_5_title"} />
             </p>
             <div className={s.Block4Cards}>
-              {data.results.slice(0, 3).map((res) => (
+              {data.slice(0, 3).map((res) => (
                 <div key={res.id}>
                   <NewsCards data={res} />
                 </div>
