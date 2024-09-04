@@ -312,21 +312,23 @@ const Page = () => {
                           className={styles.cardFavorites}
                           onClick={() => setSelectedContact(contact)}
                         >
-                          <div className={styles.cardPhoto}>
-                            <Image
-                              fill
-                              objectFit="cover"
-                              src={contact.photo}
-                              alt={contact.name}
-                            />
-                          </div>
-                          <div className={styles.favoriteTitel}>
-                            <h3>{contact.full_name}</h3>
-                            <p>
-                              {contact.activity_type.length > 15
-                                ? contact.activity_type.slice(0, 25) + "..."
-                                : contact.activity_type}
-                            </p>
+                          <div>
+                            <div className={styles.cardPhoto}>
+                              <Image
+                                fill
+                                objectFit="cover"
+                                src={contact.photo}
+                                alt={contact.name}
+                              />
+                            </div>
+                            <div className={styles.favoriteTitel}>
+                              <h3>{contact.full_name}</h3>
+                              <p>
+                                {contact.activity_type.length > 15
+                                  ? contact.activity_type.slice(0, 25) + "..."
+                                  : contact.activity_type}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       ))

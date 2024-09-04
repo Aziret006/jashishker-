@@ -262,10 +262,10 @@
     }
   }
   .cardFavoritesList {
-    // display: grid !important;
-    // grid-template-columns: repeat(2, 1fr);
-    // gap: 20px;
-    // row-gap: 20px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    row-gap: 20px !important;
   }
 
   .cardFavorites {
