@@ -44,9 +44,6 @@ const page = () => {
             <h1 className={BeVietnamPro.className}>
               <TrText root={"contact"} name="contact_title" />
             </h1>
-            <h5 className={Alex.className}>
-              <TrText root={"contact"} name="contact_subtitle" />
-            </h5>
           </div>
           <div className={s.contactBorder} />
           <div className={s.contactWrap}>

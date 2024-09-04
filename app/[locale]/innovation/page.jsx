@@ -32,9 +32,6 @@ const page = () => {
             <h1 className={BeVietnamPro.className}>
               <TrText root={"innovate"} name={"innovate_title"} />
             </h1>
-            <h5 className={Alex.className}>
-              <TrText root={"innovate"} name={"innovate_subtitle"} />
-            </h5>
           </div>
           <hr />
           <div className={s.innovtext}>

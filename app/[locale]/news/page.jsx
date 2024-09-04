@@ -88,7 +88,6 @@ const page = () => {
               <h1 className={BeVietnamPro.className}>
                 <TrText root={"news"} name="newsTitle" />
               </h1>
-              <p className={Alex.className}>Lorem ipsum dolor sit amet</p>
             </div>
             <div className={` ${manrope.className} ${s.newsBloc1}`}>
               <p className={s.newsBloc1Titel}>топ новости</p>

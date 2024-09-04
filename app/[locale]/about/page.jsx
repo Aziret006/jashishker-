@@ -47,9 +47,6 @@ const Page = () => {
             <h1 className={BeVietnamPro.className}>
               <Text name={"about_title"} />
             </h1>
-            <h5 className={Alex.className}>
-              <Text name={"about_subtitle"} />
-            </h5>
           </div>
           <hr />
           <nav className={s.navflex}>
