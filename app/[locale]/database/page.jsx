@@ -188,10 +188,10 @@ const getUserData = async () => {
 
 const Page = () => {
   const [data, setData] = useState(false);
-  const [sortBy, setSortBy] = useState("newest");
-  const [filterBy, setFilterBy] = useState("all");
-  const [userList, setUserList] = useState([]);
-  const [lodingm, setLodingm] = useState(true);
+   const [sortBy, setSortBy] = useState("newest");
+   const [filterBy, setFilterBy] = useState("all");
+   const [userList, setUserList] = useState([]);
+   const [lodingm, setLodingm] = useState(true);
 
   const sortedContacts = [...contacts].sort((a, b) => {
     if (sortBy === "newest") return b.id - a.id;
