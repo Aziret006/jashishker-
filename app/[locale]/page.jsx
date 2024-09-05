@@ -34,7 +34,7 @@ const getNews = async () => {
 
     return card;
   } catch (error) {
-    return NotFound();
+    return notFound();
   }
 };
 

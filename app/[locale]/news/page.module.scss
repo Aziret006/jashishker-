@@ -344,3 +344,15 @@
     }
   }
 }
+
+.notFound {
+  background-color: #161616;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  p {
+    color: #fff;
+  }
+}

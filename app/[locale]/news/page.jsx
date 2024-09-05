@@ -82,7 +82,7 @@ const page = () => {
       <Haeder />
       <div className={s.news}>
         <SocialSidebar />
-        {topNews && (
+        {topNews.length > 0 ? (
           <div className={s.newsContend}>
             <div className={s.newsTitel}>
               <h1 className={BeVietnamPro.className}>
@@ -175,6 +175,10 @@ const page = () => {
                 <p>Ничего не найдено</p>
               )}
             </div>
+          </div>
+        ) : (
+          <div className={s.notFound}>
+            <p>Ничего не найдено</p>
           </div>
         )}
       </div>
