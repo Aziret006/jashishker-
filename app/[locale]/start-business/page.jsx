@@ -115,9 +115,6 @@ const page = () => {
               <h1 className={BeVietnamPro.className}>
                 <Text name={"A1"} />
               </h1>
-              <h5 className={Alex.className}>
-                <Text name={"A2"} />
-              </h5>
             </div>
           </div>
         </div>

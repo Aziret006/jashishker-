@@ -44,9 +44,6 @@ const page = () => {
             <h1 className={BeVietnamPro.className}>
               <Text name={"partner_title"} />
             </h1>
-            <h5 className={Alex.className}>
-              <Text name={"partner_subtitle"} />
-            </h5>
           </div>
           <div className={s.partnerBorder} />
           <div className={s.partnerContent}>

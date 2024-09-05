@@ -18,7 +18,6 @@ import axios from "axios";
 import Link from "next/link";
 import { IoIosArrowBack } from "react-icons/io";
 import TrText from "@/components/TrText/TrText";
-import { FaDivide } from "react-icons/fa6";
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
@@ -189,10 +188,10 @@ const getUserData = async () => {
 
 const Page = () => {
   const [data, setData] = useState(false);
-  const [sortBy, setSortBy] = useState("newest");
-  const [filterBy, setFilterBy] = useState("all");
-  const [userList, setUserList] = useState([]);
-  const [lodingm, setLodingm] = useState(true);
+   const [sortBy, setSortBy] = useState("newest");
+   const [filterBy, setFilterBy] = useState("all");
+   const [userList, setUserList] = useState([]);
+   const [lodingm, setLodingm] = useState(true);
 
   const sortedContacts = [...contacts].sort((a, b) => {
     if (sortBy === "newest") return b.id - a.id;
@@ -308,28 +307,30 @@ const Page = () => {
                 >
                   {page === "favorites"
                     ? userList.map((contact) => (
-                        <FaDivide
+                        <div
                           key={contact.id}
                           className={styles.cardFavorites}
                           onClick={() => setSelectedContact(contact)}
                         >
-                          <div className={styles.cardPhoto}>
-                            <Image
-                              fill
-                              objectFit="cover"
-                              src={contact.photo}
-                              alt={contact.name}
-                            />
+                          <div>
+                            <div className={styles.cardPhoto}>
+                              <Image
+                                fill
+                                objectFit="cover"
+                                src={contact.photo}
+                                alt={contact.name}
+                              />
+                            </div>
+                            <div className={styles.favoriteTitel}>
+                              <h3>{contact.full_name}</h3>
+                              <p>
+                                {contact.activity_type.length > 15
+                                  ? contact.activity_type.slice(0, 25) + "..."
+                                  : contact.activity_type}
+                              </p>
+                            </div>
                           </div>
-                          <div className={styles.favoriteTitel}>
-                            <h3>{contact.full_name}</h3>
-                            <p>
-                              {contact.activity_type.length > 15
-                                ? contact.activity_type.slice(0, 25) + "..."
-                                : contact.activity_type}
-                            </p>
-                          </div>
-                        </FaDivide>
+                        </div>
                       ))
                     : userList.map((contact) => (
                         <>

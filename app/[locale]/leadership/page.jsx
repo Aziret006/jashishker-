@@ -45,9 +45,6 @@ const page = () => {
             <h1 className={BeVietnamPro.className}>
               <Text name={"lider_title"} />
             </h1>
-            <h5 className={Alex.className}>
-              <Text name={"lider_subtitle"} />
-            </h5>
           </div>
           <hr />
           <div className={s.leadershipText}>
