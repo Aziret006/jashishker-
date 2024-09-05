@@ -83,7 +83,7 @@ const page = () => {
         await navigator.share({
           title: "My Website",
           text: "Check out this awesome website!",
-          url: window.location.href, // текущая ссылка
+          url: window.location.href,
         });
         console.log("Content shared successfully");
       } catch (error) {
@@ -93,7 +93,6 @@ const page = () => {
       alert("Web Share API is not supported in your browser.");
     }
   };
-
   return (
     <div>
       <Haeder />
@@ -106,7 +105,7 @@ const page = () => {
                 <TrText root={"news"} name="newsTitle" />
               </h1>
             </div>
-            <div className={` ${manrope.className} ${s.newsBloc1}`}>
+            <div className={`${manrope.className} ${s.newsBloc1}`}>
               <p className={s.newsBloc1Titel}>топ новости</p>
               <div className={s.borderBootm}></div>
               <div className={s.newsBloc1Main}>
@@ -126,15 +125,14 @@ const page = () => {
                           <li>{topNews[0]?.category}</li>
                           <li>{topNews[0]?.status}</li>
                         </ul>
-                        <FiShare2 onClick={handleShare} /> 
+                        <FiShare2 onClick={handleShare} />
                       </div>
                       <div className={s.mainTitelBlock1Text}>
                         <h2> {topNews[0].title}</h2>
                         <Link href={`/news/${topNews[0].id}`}>
-                          {" "}
                           <button>
                             <GoArrowUpRight />
-                          </button>{" "}
+                          </button>
                         </Link>
                       </div>
                       <div className={s.mianTitelWiews}>
