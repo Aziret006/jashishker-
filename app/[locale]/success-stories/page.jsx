@@ -6,12 +6,32 @@ import Link from "next/link";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import SetHtml from "@/components/TrText/SetHtml";
 import TrText from "@/components/TrText/TrText";
+import { Api } from "@/api";
+import axios from "axios";
+import { notFound } from "next/navigation";
 
 const Text = ({ name }) => {
   return <TrText root={"other"} name={name} />;
 };
 
-const page = () => {
+const getUserList = async () => {
+  try {
+    const response = await axios.get(
+      `https://api.jashishker.kg/api/v1/success-story/`
+    );
+
+    return response.data;
+  } catch (error) {
+    return "error";
+  }
+};
+
+const page = async () => {
+  const data = await getUserList();
+  if (data === "error") {
+    return notFound();
+  }
+
   return (
     <div>
       <Haeder />
@@ -31,42 +51,24 @@ const page = () => {
             </div>
             <hr />
             <div className={s.gridColump}>
-              <div className={s.cardsBlocks}>
-                <img className={s.podrobneye} src="/image24.svg" alt="" />
-                <div className={s.button}>
-                  <Link href={"/startuperblogger"}>
-                    <button>Подробнее</button>
-                  </Link>
+              {data.map((res) => (
+                <div className={s.cardsBlocks} key={res.id}>
+                  <img
+                    className={s.podrobneye}
+                    src={res.avatar}
+                    alt={res.avatar}
+                  />
+                  <div className={s.button}>
+                    <Link href={`/success-stories/${res.id}`}>
+                      <button>Подробнее</button>
+                    </Link>
+                  </div>
+                  <div className={s.backContext}>
+                    <h2>{res.full_name}</h2>
+                    <p>{res.occupation}</p>
+                  </div>
                 </div>
-                <div className={s.backContext}>
-                  <h2>Абдукадыр Абдушукуров</h2>
-                  <p>Стартапер и блогер</p>
-                </div>
-              </div>
-              <div className={s.cardsBlocks}>
-                <img className={s.podrobneye} src="/image25.svg" alt="" />
-                <div className={s.button}>
-                  <Link href={"/aynazik-experience"}>
-                    <button>Подробнее</button>
-                  </Link>
-                </div>
-                <div className={s.backContext}>
-                  <h2>Айназик Торогулова</h2>
-                  <p>Стартапер и блогер</p>
-                </div>
-              </div>
-              <div className={s.cardsBlocks}>
-                <img className={s.podrobneye} src="/image26.svg" alt="" />
-                <div className={s.button}>
-                  <Link href={"/ruralbiogas"}>
-                    <button>Подробнее</button>
-                  </Link>
-                </div>
-                <div className={s.backContext}>
-                  <h2>Бекжан Иманкулов</h2>
-                  <p>Стартапер и блогер</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -77,3 +79,16 @@ const page = () => {
 };
 
 export default page;
+
+//               <div className={s.cardsBlocks}>
+//                 <img className={s.podrobneye} src="/image26.svg" alt="" />
+//                 <div className={s.button}>
+//                   <Link href={"/ruralbiogas"}>
+//                     <button>Подробнее</button>
+//                   </Link>
+//                 </div>
+//                 <div className={s.backContext}>
+//                   <h2>Бекжан Иманкулов</h2>
+//                   <p>Стартапер и блогер</p>
+//                 </div>
+//               </div>
