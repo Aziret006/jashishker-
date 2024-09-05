@@ -26,12 +26,12 @@ export const metadata = {
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
-  weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"], // specify the desired weight here
+  weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
 });
 
 const FontManrope = Manrope({
   subsets: ["latin"],
-  weight: ["600", "400"], // specify the desired weight here
+  weight: ["600", "400"],
 });
 const page = () => {
   return (
@@ -53,11 +53,9 @@ const page = () => {
               </p>
               <div>
                 <iframe
-                  className={s.map}
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93561.74256997774!2d74.50946009379832!3d42.87697130626171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb7dc91b3c881%3A0x492ebaf57cdee27d!2z0JHQuNGI0LrQtdC6!5e0!3m2!1sru!2skg!4v1718860444344!5m2!1sru!2skg"
+                  src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1877.6116450619597!2d74.61784127380294!3d42.8795023258938!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDLCsDUyJzQ1LjMiTiA3NMKwMzcnMDUuNiJF!5e0!3m2!1sru!2sus!4v1725529591132!5m2!1sru!2sus"
                   width="600"
                   height="450"
-                  style={{ border: 0 }}
                   allowfullscreen=""
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
