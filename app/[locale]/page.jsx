@@ -47,7 +47,6 @@ export default async function Home() {
       <Haeder />
       <div className={s.mainBlock}>
         <SocialSidebar />
-
         <div className={s.mainBlockTitel}>
           <h1 className={manrope.className}>
             <TrText root={"home"} name={"hero_title"} />

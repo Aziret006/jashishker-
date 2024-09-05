@@ -63,7 +63,7 @@ const AccordionWhere = () => {
   const handlerPageIndex = (e) => {
     setPageIndex(e == pageIndex ? null : e);
   };
-
+  
   return (
     <div className={s.accordionWrap}>
       {data.map((item, index) => {

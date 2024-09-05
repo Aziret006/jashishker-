@@ -20,7 +20,6 @@ const NewsCard = ({ data }) => {
             fill
           />
         </Link>
-        A
       </div>
       <div className={s.NewsCardsTitel}>
         <span className={s.NewsCardsTitelBlock1}>
