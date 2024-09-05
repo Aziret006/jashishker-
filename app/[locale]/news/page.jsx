@@ -77,6 +77,23 @@ const page = () => {
     return <Loading />;
   }
 
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "My Website",
+          text: "Check out this awesome website!",
+          url: window.location.href, // текущая ссылка
+        });
+        console.log("Content shared successfully");
+      } catch (error) {
+        console.error("Error sharing the content:", error);
+      }
+    } else {
+      alert("Web Share API is not supported in your browser.");
+    }
+  };
+
   return (
     <div>
       <Haeder />
@@ -109,7 +126,7 @@ const page = () => {
                           <li>{topNews[0]?.category}</li>
                           <li>{topNews[0]?.status}</li>
                         </ul>
-                        <FiShare2 />
+                        <FiShare2 onClick={handleShare} /> 
                       </div>
                       <div className={s.mainTitelBlock1Text}>
                         <h2> {topNews[0].title}</h2>
