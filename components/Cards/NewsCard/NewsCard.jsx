@@ -6,6 +6,22 @@ import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 const NewsCard = ({ data }) => {
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "My Website",
+          text: "Check out this awesome website!",
+          url: window.location.href,
+        });
+        console.log("Content shared successfully");
+      } catch (error) {
+        console.error("Error sharing the content:", error);
+      }
+    } else {
+      alert("Web Share API is not supported in your browser.");
+    }
+  };
   return (
     <div className={s.NewsCards}>
       <SocialSidebar />
@@ -24,7 +40,7 @@ const NewsCard = ({ data }) => {
       <div className={s.NewsCardsTitel}>
         <span className={s.NewsCardsTitelBlock1}>
           <button>{data.status}</button>
-          <FiShare2 />
+          <FiShare2 onClick={handleShare} />
         </span>
         <p className={s.NewsCardsTitelBlock2}>{data.title}</p>
         <span className={s.NewsCardsTitelBlock3}>
