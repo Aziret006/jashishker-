@@ -26,12 +26,22 @@
     padding-top: 35px;
   }
 }
-
+.LogoCopyAll {
+  width: 100%;
+  border-bottom: 1px solid var(--white-40, rgba(255, 255, 255, 0.4));
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .ImageEvro {
+    width: 122px;
+    height: 70px;
+  }
+}
 .NavLink {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--white-40, rgba(255, 255, 255, 0.4));
-  padding-bottom: 60px;
+  padding-bottom: 38px;
 
   .LoogFooter {
     display: flex;

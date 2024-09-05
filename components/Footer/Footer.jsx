@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import s from "./page.module.scss";
 import Image from "next/image";
@@ -43,151 +42,164 @@ const Footer = () => {
 
   return (
     <footer className={s.footer}>
-      <div className={s.NavLink}>
-        <div className={s.LoogFooter}>
-          <Link href="/" className={s.logo}>
-            <Image src="/logo.svg" alt="logo" width={50} height={50} />
+      <div>
+        <div className={s.NavLink}>
+          <div className={s.LoogFooter}>
+            <Link href="/" className={s.logo}>
+              <Image src="/logo.svg" alt="logo" width={50} height={50} />
+              <p>
+                ЖАШ <br />
+                ИШКЕР
+              </p>
+            </Link>
             <p>
-              ЖАШ <br />
-              ИШКЕР
+              <Text name={"F1"} />
             </p>
-          </Link>
-          <p>
-            <Text name={"F1"} />
-          </p>
-          <img src="/Logo.png" alt="vk" className={s.LogoCopyn} />
-        </div>
-        <div className={s.NavFooter}>
-          <ul>
-            <li>
-              <p>{tFooter("Pages")}</p>
-            </li>
-            <li onClick={() => handlerNavPage(1)}>
-              <Text1 name={"navbar_about"} /> <IoIosArrowDown />
-              {pageIndexNav == 1 && (
-                <motion.ul
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  variants={menuVariants}
-                  className={s.accMenu}
-                >
-                  <li>
-                    <Link className={s.Link} href={"/about"}>
-                      О проекте
-                      <Text1 name={"navbar_about"} />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={s.Link} href={"/Economy"}>
-                      <Text1 name={"navbar_about_green_economy"} />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={s.Link} href={"/digitalization"}>
-                      <Text1 name={"navbar_about_digital"} />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={s.Link} href={"/leadership"}>
-                      <Text1 name={"navbar_about_lider"} />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={s.Link} href={"/innovation"}>
-                      <Text1 name={"navbar_about_innovate"} />
-                    </Link>
-                  </li>
+          </div>
+          <div className={s.NavFooter}>
+            <ul>
+              <li>
+                <p>{tFooter("Pages")}</p>
+              </li>
+              <li onClick={() => handlerNavPage(1)}>
+                <Text1 name={"navbar_about"} /> <IoIosArrowDown />
+                {pageIndexNav == 1 && (
+                  <motion.ul
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={menuVariants}
+                    className={s.accMenu}
+                  >
+                    <li>
+                      <Link className={s.Link} href={"/about"}>
+                        О проекте
+                        <Text1 name={"navbar_about"} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className={s.Link} href={"/Economy"}>
+                        <Text1 name={"navbar_about_green_economy"} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className={s.Link} href={"/digitalization"}>
+                        <Text1 name={"navbar_about_digital"} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className={s.Link} href={"/leadership"}>
+                        <Text1 name={"navbar_about_lider"} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className={s.Link} href={"/innovation"}>
+                        <Text1 name={"navbar_about_innovate"} />
+                      </Link>
+                    </li>
 
-                  <li>
-                    <Link className={s.Link} href={"/parther"}>
-                      <Text1 name={"navbar_about_partners"} />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={s.Link} href={"/contact"}>
-                      <Text1 name={"navbar_about_contacts"} />
-                    </Link>
-                  </li>
-                </motion.ul>
-              )}
-            </li>
-            <li>
-              <Text1 name={"navbar_news"} />
-            </li>
-            <li onClick={() => handlerNavPage(2)}>
-              <Text1 name={"navbar_knowBase"} />
-              <IoIosArrowDown />
-              {pageIndexNav == 2 && (
-                <motion.ul
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  variants={menuVariants}
-                  className={s.accMenu}
+                    <li>
+                      <Link className={s.Link} href={"/parther"}>
+                        <Text1 name={"navbar_about_partners"} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className={s.Link} href={"/contact"}>
+                        <Text1 name={"navbar_about_contacts"} />
+                      </Link>
+                    </li>
+                  </motion.ul>
+                )}
+              </li>
+              <li>
+                <Text1 name={"navbar_news"} />
+              </li>
+              <li onClick={() => handlerNavPage(2)}>
+                <Text1 name={"navbar_knowBase"} />
+                <IoIosArrowDown />
+                {pageIndexNav == 2 && (
+                  <motion.ul
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={menuVariants}
+                    className={s.accMenu}
+                  >
+                    <li>
+                      <Link className={s.Link} href={"/start-business"}>
+                        <Text1 name={"navbar_knowBase_begin"} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className={s.Link} href={"/business"}>
+                        <Text1 name={"navbar_knowBase_makePlan"} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={s.Link}
+                        href={"https://mineconom.gov.kg/ru/direct/404"}
+                        target="_blank"
+                      >
+                        <Text1 name={"navbar_knowBase_temBussiness"} />
+                      </Link>
+                    </li>
+                  </motion.ul>
+                )}
+              </li>
+              <li>
+                <Text1 name={"navbar_success_history"} />
+              </li>
+              <li>
+                <Text1 name={"navbar_knowBase_baseData"} />
+              </li>
+              <li>
+                <a
+                  className={s.Link}
+                  href="https://enactus.kg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <li>
-                    <Link className={s.Link} href={"/start-business"}>
-                      <Text1 name={"navbar_knowBase_begin"} />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={s.Link} href={"/business"}>
-                      <Text1 name={"navbar_knowBase_makePlan"} />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className={s.Link}
-                      href={"https://mineconom.gov.kg/ru/direct/404"}
-                      target="_blank"
-                    >
-                      <Text1 name={"navbar_knowBase_temBussiness"} />
-                    </Link>
-                  </li>
-                </motion.ul>
-              )}
-            </li>
-            <li>
-              <Text1 name={"navbar_success_history"} />
-            </li>
-            <li>
-              <Text1 name={"navbar_knowBase_baseData"} />
-            </li>
-            <li>
-              <a
-                className={s.Link}
-                href="https://enactus.kg/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Enactus
-              </a>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <p>{tFooter("Address")}</p>
-              <a
-                href="https://www.google.com/maps/place/103+%D1%83%D0%BB.+%D0%98%D0%B1%D1%80%D0%B0%D0%B8%D0%BC%D0%BE%D0%B2%D0%B0,+%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA/@42.8858381,74.616615,17z/data=!3m1!4b1!4m6!3m5!1s0x389eb7ecaaab58b5:0x44b73c5956bfe30e!8m2!3d42.8858381!4d74.616615!16s%2Fg%2F11ts_w3sy_?entry=ttu"
-                target="_blank"
-              >
-                Кыргызская Республика Бишкек, <br /> 720001 ул.Ибраимова, 103
-              </a>
-            </li>
-            <li>
-              <p>{tFooter("Phone_Number")}</p>
-              <a href="tel:+996555973001" target="_blank">
-                +996 (555) 973 - 001
-              </a>
-            </li>
-            <li>
-              <p>E-Mail</p>
-              <a href="mailto:enactuskyrgyzstan@gmail.com" target="_blank">
-                enactuskyrgyzstan@gmail.com
-              </a>
-            </li>
-          </ul>
+                  Enactus
+                </a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <p>{tFooter("Address")}</p>
+                <a
+                  href="https://www.google.com/maps/place/103+%D1%83%D0%BB.+%D0%98%D0%B1%D1%80%D0%B0%D0%B8%D0%BC%D0%BE%D0%B2%D0%B0,+%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA/@42.8858381,74.616615,17z/data=!3m1!4b1!4m6!3m5!1s0x389eb7ecaaab58b5:0x44b73c5956bfe30e!8m2!3d42.8858381!4d74.616615!16s%2Fg%2F11ts_w3sy_?entry=ttu"
+                  target="_blank"
+                >
+                  Кыргызская Республика Бишкек, <br /> 720001 ул.Ибраимова, 103
+                </a>
+              </li>
+              <li>
+                <p>{tFooter("Phone_Number")}</p>
+                <a href="tel:+996555973001" target="_blank">
+                  +996 (555) 973 - 001
+                </a>
+              </li>
+              <li>
+                <p>E-Mail</p>
+                <a href="mailto:enactuskyrgyzstan@gmail.com" target="_blank">
+                  enactuskyrgyzstan@gmail.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={s.LogoCopyAll}>
+          <a
+            target="_blank"
+            href="https://www.eeas.europa.eu/delegations/cooperation_kyr_ky?s=301"
+          >
+            <img src="/evro.png" alt="" className={s.ImageEvro} />
+          </a>
+          <a target="_blank"
+             href="https://enactus.kg/">
+            <img src="/Logo.png" alt="vk" className={s.LogoCopyn} />
+          </a>
         </div>
       </div>
       <p className={s.endP}>
