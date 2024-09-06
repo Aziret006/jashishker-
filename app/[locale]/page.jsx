@@ -21,8 +21,9 @@ export const generateMetadata = async () => {
   const t = await getTranslations("home");
 
   return {
-    title: t("title"),
-    description: t("description"),
+    title: "ЖАШ ИШКЕР",
+    description:
+      "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
     icons: {
       icon: "/logo.svg",
     },
