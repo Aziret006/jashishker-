@@ -1,6 +1,13 @@
 .economyall {
   width: 100%;
   background: #fff;
+  padding-top: 100px;
+  @media screen and (max-width: 986px) {
+    padding-top: 50px;
+    @media screen and (max-width: 500px) {
+      padding-top: 30px;
+    }
+  }
   .economycontainer {
     max-width: var(--maxWidth);
     margin: 0 auto;

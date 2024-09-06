@@ -293,7 +293,7 @@ const Page = () => {
                   <li className={styles.dispNumber}>
                     <TrText root={"database"} name="phoneNumber" />
                   </li>
-                  <li className={styles.displayNone}>DD/MM/YY</li>
+                  <li className={styles.displayNone}>Дата</li>
                   <li className={styles.displayNone}>
                     <TrText root={"database"} name="region" />
                   </li>

@@ -66,9 +66,10 @@ const page = async ({ params }) => {
                 <div className={s.Swiper}>
                   <SwiperNewsIda data={data.images} />
                 </div>
-                <p>{data.description}</p>
+                <div className={s.dangerouslySetInnerHTML} dangerouslySetInnerHTML={{ __html: data.description }}/>
+               
                 <span>
-                  <p>{data.views} views</p>
+                  <p>{data.views} просмотры</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="4"
