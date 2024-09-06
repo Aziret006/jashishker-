@@ -50,7 +50,7 @@ const page = () => {
             <div className={s.contactMap}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1877.6116450619597!2d74.61784127380294!3d42.8795023258938!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDLCsDUyJzQ1LjMiTiA3NMKwMzcnMDUuNiJF!5e0!3m2!1sru!2sus!4v1725529591132!5m2!1sru!2sus"
-                width="600"
+                width="100%"
                 height="450"
                 allowfullscreen=""
                 loading="lazy"
