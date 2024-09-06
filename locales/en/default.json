@@ -378,10 +378,10 @@
   "database": {
     "databaseTitle": "Entrepreneurs Database",
     "fullName": "Full Name/Company Name",
-    "email": "E-Mail",
     "phoneNumber": "Phone Number",
-    "dob": "DD/MM/YY",
-    "region": "Region"
+    "region": "Region",
+    "email": "email",
+    "data": "Data"
   },
   "news": {
     "newsTitle": "Last news"

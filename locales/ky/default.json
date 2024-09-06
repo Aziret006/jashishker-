@@ -377,10 +377,10 @@
   "database": {
     "databaseTitle": "Ишкерлер маалымат базасы",
     "fullName": "Аты-жөнү/Ишкердик иши",
-    "email": "E-Mail",
     "phoneNumber": "Телефон номери",
-    "dob": "КК/АА/ЖЖ",
-    "region": "Аймак"
+    "region": "Аймак",
+    "email": "Почта",
+    "data": "Дата"
   },
   "news": {
     "newsTitle": "Маалыматтар"
