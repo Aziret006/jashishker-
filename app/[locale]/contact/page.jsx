@@ -48,19 +48,14 @@ const page = () => {
           <div className={s.contactBorder} />
           <div className={s.contactWrap}>
             <div className={s.contactMap}>
-              <p>
-                <TrText root={"contact"} name="contact_box1_title" />
-              </p>
-              <div>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1877.6116450619597!2d74.61784127380294!3d42.8795023258938!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDLCsDUyJzQ1LjMiTiA3NMKwMzcnMDUuNiJF!5e0!3m2!1sru!2sus!4v1725529591132!5m2!1sru!2sus"
-                  width="600"
-                  height="450"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1877.6116450619597!2d74.61784127380294!3d42.8795023258938!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDLCsDUyJzQ1LjMiTiA3NMKwMzcnMDUuNiJF!5e0!3m2!1sru!2sus!4v1725529591132!5m2!1sru!2sus"
+                width="600"
+                height="450"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
             <div className={s.contactLink}>
               <div className={s.contactList}>
@@ -149,7 +144,7 @@ const page = () => {
                       target="_blank"
                     >
                       <span className={FontManrope.className}>
-                        enactuskyrgyzstan@gmail.com{" "}
+                        enactuskyrgyzstan@gmail.com
                       </span>
                     </a>
                   </div>
@@ -160,21 +155,41 @@ const page = () => {
                   <TrText root={"partner"} name="social_links" />
                 </p>
                 <div className={s.contactMedia}>
-                  <Link href="" className={s.icon}>
+                  <a
+                    target="_blank"
+                    className={s.icon}
+                    href="https://www.instagram.com/enactus_kyrgyzstan?igsh=MWFrOXh4bjRoZGllcw== "
+                  >
                     <FaInstagram />
-                  </Link>
-                  <Link href="" className={s.icon}>
+                  </a>
+                  <a
+                    target="_blank"
+                    className={s.icon}
+                    href="wa.me/996550002131"
+                  >
                     <FaWhatsapp />
-                  </Link>
-                  <Link href="" className={s.icon}>
+                  </a>
+                  <a
+                    target="_blank"
+                    className={s.icon}
+                    href="https://t.me/StartUpBlogger"
+                  >
                     <LiaTelegramPlane />
-                  </Link>
-                  <Link href="" className={s.icon}>
+                  </a>
+                  <a
+                    target="_blank"
+                    className={s.icon}
+                    href="https://youtube.com/@enactuskyrgyzstan724?si=bxKKALhlBzYBiEBK"
+                  >
                     <TbBrandYoutube />
-                  </Link>
-                  <Link href="" className={s.icon}>
+                  </a>
+                  <a
+                    target="_blank"
+                    className={s.icon}
+                    href="https://t.me/Blogger"
+                  >
                     <FaLinkedinIn />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

@@ -19,7 +19,7 @@ const SocialSidebar = () => {
           >
             <Image src="/image31.svg" alt="" width={30} height={30} />
           </a>
-          <a target="_blank" href="https://t.me/StartUpBlogger">
+          <a target="_blank" href="wa.me/996550002131">
             <Image src="/whatsapp-icon.svg" alt="" width={30} height={30} />
           </a>
           <a target="_blank" href="https://t.me/StartUpBlogger">
