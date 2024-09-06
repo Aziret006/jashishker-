@@ -19,7 +19,7 @@ export const metadata = {
 };
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
-  weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"], // specify the desired weight here
+  weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
 });
 
 const Text = ({ name }) => {
