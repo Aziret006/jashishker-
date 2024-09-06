@@ -111,12 +111,7 @@ const page = () => {
               <div className={s.newsBloc1Main}>
                 <div className={s.newsBloc1MainImage}>
                   <div className={s.mainImageBlock}>
-                    <Image
-                      src={topNews[0]?.images[0]?.image}
-                      alt="image"
-                      fill
-                      objectFit="cover"
-                    />
+                    <img src={topNews[0]?.images[0]?.image} alt="image" />
                   </div>
                   <div className={s.mainTitel}>
                     <div className={s.mainTitelBlock1}>
@@ -173,7 +168,8 @@ const page = () => {
               <p
                 onClick={() => setFilterPage("Популярная новость")}
                 style={{
-                  color: filterPage == "Популярная новость" ? "#DA4E38" : "#222",
+                  color:
+                    filterPage == "Популярная новость" ? "#DA4E38" : "#222",
                   cursor: "pointer",
                 }}
               >

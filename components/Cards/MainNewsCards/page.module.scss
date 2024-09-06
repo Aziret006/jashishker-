@@ -49,6 +49,11 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* Количество строк */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .NewsCardsTitelBlock3 {
