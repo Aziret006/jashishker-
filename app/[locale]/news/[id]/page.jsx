@@ -57,7 +57,7 @@ const page = async ({ params }) => {
                 <li>{data.status}</li>
                 <li>{data.category}</li>
               </ul>
-              <FiShare2 />
+              <p> </p>
             </div>
             <h1>{data.title}</h1>
 
