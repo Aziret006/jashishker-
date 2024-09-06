@@ -28,7 +28,6 @@ const Text = ({ name }) => {
 
 export default function Start05() {
   const parms = useParams();
-  console.log(parms);
   return (
     <div className={s.start05}>
       <div className={s.start05Content}>

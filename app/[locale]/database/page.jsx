@@ -223,13 +223,11 @@ const Page = () => {
 
   useEffect(() => {
     getUserData().then((data) => {
-      console.log(data);
       setSelectedContact(data[false]);
       setUserList(data);
     });
   }, []);
   useEffect(() => {
-    console.log(userList, "stdgahsdgashj");
 
     setLodingm(false);
   }, [userList]);

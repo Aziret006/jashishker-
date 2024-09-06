@@ -30,7 +30,6 @@ const Text = ({ name }) => {
 
 export default function Digitalization() {
   const parms = useParams();
-  console.log(parms);
   return (
     <div className={s.digitalization}>
       <div className={s.container}>

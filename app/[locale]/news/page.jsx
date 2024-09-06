@@ -85,9 +85,7 @@ const page = () => {
           text: "Check out this awesome website!",
           url: window.location.href,
         });
-        console.log("Content shared successfully");
       } catch (error) {
-        console.error("Error sharing the content:", error);
       }
     } else {
       alert("Web Share API is not supported in your browser.");

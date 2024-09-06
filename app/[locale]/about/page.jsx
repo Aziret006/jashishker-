@@ -36,7 +36,6 @@ const BeVietnamPro = Be_Vietnam_Pro({
 
 const Page = () => {
   const parms = useParams();
-  console.log(parms);
   return (
     <>
       <Haeder />

@@ -31,7 +31,6 @@ export const generateMetadata = async () => {
 const getNews = async () => {
   try {
     const card = await axios.get(`${Api}api/v1/news/`);
-    console.log("card", card);
 
     return card;
   } catch (error) {

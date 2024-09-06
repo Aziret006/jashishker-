@@ -38,7 +38,6 @@ export default function FormContact() {
       return response.data;
     } catch (error) {
       toast.error("Произошла ошибка при отправке сообщения");
-      console.log(error, "erro1111r");
       setError({
         name: error.response.data.name,
         message: error.response.data.message,

@@ -1,13 +1,6 @@
 "use client";
 import { useState } from "react";
 import styles from "./page.module.scss";
-import { FiFacebook, FiTwitter } from "react-icons/fi";
-import { PiTelegramLogoBold, PiLinkedinLogoBold } from "react-icons/pi";
-import { ImWhatsapp, ImInstagram } from "react-icons/im";
-import { GoPlus, GoDash } from "react-icons/go";
-import { IoClose } from "react-icons/io5";
-import chat from "../../public/chat.svg";
-import chatbot from "../../public/chatbot.png";
 import Image from "next/image";
 const SocialSidebar = () => {
   const [isVisible, setIsVisible] = useState(false);

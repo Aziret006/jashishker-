@@ -40,7 +40,6 @@ export async function generateMetadata({ params }) {
 const page = async ({ params: { id } }) => {
   const data = await getUser(id);
 
-  console.log(data, id);
 
   if (data === "error") {
     return notFound();
