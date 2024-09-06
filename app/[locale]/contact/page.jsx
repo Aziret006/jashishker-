@@ -172,23 +172,9 @@ const page = () => {
                   <a
                     target="_blank"
                     className={s.icon}
-                    href="https://t.me/StartUpBlogger"
-                  >
-                    <LiaTelegramPlane />
-                  </a>
-                  <a
-                    target="_blank"
-                    className={s.icon}
                     href="https://youtube.com/@enactuskyrgyzstan724?si=bxKKALhlBzYBiEBK"
                   >
                     <TbBrandYoutube />
-                  </a>
-                  <a
-                    target="_blank"
-                    className={s.icon}
-                    href="https://t.me/Blogger"
-                  >
-                    <FaLinkedinIn />
                   </a>
                 </div>
               </div>
