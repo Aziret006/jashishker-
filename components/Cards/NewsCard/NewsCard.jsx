@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import s from "./page.module.scss";
 import Image from "next/image";
@@ -40,6 +41,7 @@ const NewsCard = ({ data }) => {
       <div className={s.NewsCardsTitel}>
         <span className={s.NewsCardsTitelBlock1}>
           <button>{data.status}</button>
+
           <FiShare2 onClick={handleShare} />
         </span>
         <p className={s.NewsCardsTitelBlock2}>{data.title}</p>
