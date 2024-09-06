@@ -5,7 +5,6 @@ import TrText from "../TrText/TrText";
 import Image from "next/image";
 import { useState } from "react";
 import { Api } from "@/api";
-
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";

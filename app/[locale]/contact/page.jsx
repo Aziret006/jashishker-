@@ -113,7 +113,7 @@ const page = () => {
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
-                    </svg>{" "}
+                    </svg>
                   </div>
                   <div className={s.contactTitle}>
                     <p className={FontManrope.className}>

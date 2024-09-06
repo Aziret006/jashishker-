@@ -200,7 +200,9 @@
               margin: 0;
               opacity: 0.9;
               text-decoration: none;
-              transition: all 0, 3s ease;
+              transition:
+                all 0,
+                3s ease;
 
               @media screen and (max-width: 768px) {
                 font-size: 14px;
@@ -328,11 +330,9 @@
         align-items: center;
         gap: 118px;
         position: relative;
-
         @media screen and (max-width: 768px) {
           gap: 67px;
         }
-
         img {
           position: absolute;
           width: 403px;

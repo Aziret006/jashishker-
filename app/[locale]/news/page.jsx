@@ -29,7 +29,7 @@ const manrope = Manrope({ subsets: ["latin"] });
 const page = () => {
   const [topNews, setTopNews] = useState([]);
   const [newsPopular, setPopular] = useState([]);
-  const [filterPage, setFilterPage] = useState("popular");
+  const [filterPage, setFilterPage] = useState("Популярная новость");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -37,7 +37,7 @@ const page = () => {
     const getData = async () => {
       try {
         const topNewsResponse = await axios.get(
-          `${Api}api/v1/news/?category=top_news`
+          `${Api}api/v1/news/?category=Топ новости`
         );
         const newsPopularResponse = await axios.get(
           `${Api}api/v1/news/?status=${filterPage}`
@@ -136,7 +136,7 @@ const page = () => {
                         </Link>
                       </div>
                       <div className={s.mianTitelWiews}>
-                        <p>{topNews[0].views} views</p>
+                        <p>{topNews[0].views} просмотры</p>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="4"
@@ -160,9 +160,9 @@ const page = () => {
             </div>
             <div className={s.Tap}>
               <p
-                onClick={() => setFilterPage("new")}
+                onClick={() => setFilterPage("Новая новость")}
                 style={{
-                  color: filterPage == "new" ? "#DA4E38" : "#222",
+                  color: filterPage == "Новая новость" ? "#DA4E38" : "#222",
                   cursor: "pointer",
                 }}
               >
@@ -171,9 +171,9 @@ const page = () => {
               </p>
               <div className={s.TopBorder}></div>
               <p
-                onClick={() => setFilterPage("popular")}
+                onClick={() => setFilterPage("Популярная новость")}
                 style={{
-                  color: filterPage == "popular" ? "#DA4E38" : "#222",
+                  color: filterPage == "Популярная новость" ? "#DA4E38" : "#222",
                   cursor: "pointer",
                 }}
               >

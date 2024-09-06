@@ -47,7 +47,7 @@ const NewsCard = ({ data }) => {
         <p className={s.NewsCardsTitelBlock2}>{data.title}</p>
         <span className={s.NewsCardsTitelBlock3}>
           <span className={s.NewsCardsTime}>
-            <p>{data.views} views</p>
+            <p>{data.views} просмотры</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="4"

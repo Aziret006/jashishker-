@@ -196,8 +196,7 @@ const Footer = () => {
           >
             <img src="/evro.png" alt="" className={s.ImageEvro} />
           </a>
-          <a target="_blank"
-             href="https://enactus.kg/">
+          <a target="_blank" href="https://enactus.kg/">
             <img src="/Logo.png" alt="vk" className={s.LogoCopyn} />
           </a>
         </div>
