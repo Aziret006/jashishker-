@@ -112,9 +112,14 @@
         gap: 30px;
 
         .mainImageBlock {
-          height: 550px;
           width: 100%;
           position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
         }
       }
       .newsBloc1MainCards {
@@ -226,9 +231,7 @@
           display: flex;
           flex-direction: column;
           gap: 30px;
-          .mainImageBlock {
-            height: 400px;
-          }
+
           .mainTitelBlock1Text button {
             display: none;
           }
@@ -241,9 +244,6 @@
         @media screen and (max-width: 600px) {
           margin-top: 26px;
           .newsBloc1Main {
-            .mainImageBlock {
-              height: 300px;
-            }
           }
           .newsBloc1Titel {
             color: var(--Text-color, #222);

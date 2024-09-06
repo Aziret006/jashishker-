@@ -1,13 +1,9 @@
 .SwiperSlide {
-    position: relative;
-    height: 550px;
-  
-    @media screen and (max-width: 1112px) {
-      height: 450px;
-  
-      @media screen and (max-width: 650px) {
-        height: 300px;
-      }
-    }
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
-  
+}

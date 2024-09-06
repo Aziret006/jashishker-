@@ -67,7 +67,7 @@ export default function FormContact() {
         <div className={s.formWrapper}>
           <div className={s.formTitle}>
             <Image
-              src="/contact.svg"
+              src="/Contact.svg"
               alt="contact"
               width={403.859}
               height={470}

@@ -169,14 +169,18 @@
           padding-top: 20px;
           padding-bottom: 20px;
         }
+        @media screen and (max-width: 430px) {
+          h1 {
+            font-size: 22px;
+          }
+        }
       }
     }
   }
 }
 
-
-.dangerouslySetInnerHTML{
+.dangerouslySetInnerHTML {
   p {
     margin-bottom: 1.5em !important;
   }
-} 
+}

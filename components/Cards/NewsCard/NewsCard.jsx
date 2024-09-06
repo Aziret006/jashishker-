@@ -33,7 +33,7 @@ const NewsCard = ({ data }) => {
             placeholder="blur"
             blurDataURL={data.images[0].image}
             alt="image"
-            objectFit="cover"
+            objectFit="contain"
             fill
           />
         </Link>

@@ -37,7 +37,9 @@ const page = async ({ params }) => {
     const newsResponse = await axios.get(`${Api}api/v1/news/${params.id}/`);
     data = newsResponse.data;
 
-    const cardListResponse = await axios.get(`${Api}api/v1/news/`);
+    const cardListResponse = await axios.get(
+      `${Api}api/v1/news/?status=Популярная новость`
+    );
     cardListData = cardListResponse.data;
   } catch (err) {}
 
@@ -66,8 +68,11 @@ const page = async ({ params }) => {
                 <div className={s.Swiper}>
                   <SwiperNewsIda data={data.images} />
                 </div>
-                <div className={s.dangerouslySetInnerHTML} dangerouslySetInnerHTML={{ __html: data.description }}/>
-               
+                <div
+                  className={s.dangerouslySetInnerHTML}
+                  dangerouslySetInnerHTML={{ __html: data.description }}
+                />
+
                 <span>
                   <p>{data.views} просмотры</p>
                   <svg
