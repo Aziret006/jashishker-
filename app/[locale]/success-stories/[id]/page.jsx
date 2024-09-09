@@ -13,7 +13,12 @@ const manrope = Manrope({ subsets: ["latin"] });
 const getUser = async (id) => {
   try {
     const response = await axios.get(`${Api}api/v1/success-story/${id}/`);
-    return response.data;
+    const dataAUerList = await axios.get(
+      `https://api.jashishker.kg/api/v1/success-story/`
+    );
+    const data = [response.data, dataAUerList.data];
+
+    return data;
   } catch (error) {
     return "error";
   }
@@ -23,16 +28,16 @@ export async function generateMetadata({ params }) {
   const post = await getUser(params.id);
 
   return {
-    title: post.title,
-    description: post.description1,
+    title: post[0].title,
+    description: post[0].description1,
     openGraph: {
-      title: post.title,
-      description: post.description2,
-      images: post.images.map((image) => ({
+      title: post[0].title,
+      description: post[0].description2,
+      images: post[0]?.images.map((image) => ({
         url: image.image,
         width: 800,
         height: 600,
-        alt: post.title,
+        alt: post[0].title,
       })),
     },
   };
@@ -57,15 +62,15 @@ const page = async ({ params: { id } }) => {
             <hr />
             <div className={s.gridTemplate}>
               <div>
-                {data?.images && (
+                {data[0]?.images && (
                   <div className={s.imgall}>
-                    <img src={data?.images[0]?.image} alt="" />
+                    <img src={data[0]?.images[0]?.image} alt="" />
                   </div>
                 )}
                 <nav dangerouslySetInnerHTML={{ __html: data?.description }} />
               </div>
               <div className={s.cards}>
-                {[1, 2, 3].map((res) => (
+                {data[0]?.map((res) => (
                   <div key={res} className={s.cardsBlocks}>
                     <Image src="/store.svg" alt="" width={296} height={194} />
                     <ul>
