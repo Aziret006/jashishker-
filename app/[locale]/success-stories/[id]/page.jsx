@@ -9,6 +9,7 @@ import { notFound } from "next/navigation";
 import { Api } from "@/api";
 import Image from "next/image";
 import Link from "next/link";
+import SwiperImage from "./Swiper/Swiper";
 const manrope = Manrope({ subsets: ["latin"] });
 
 const getUser = async (id) => {
@@ -61,12 +62,10 @@ const page = async ({ params: { id } }) => {
             </div>
             <hr />
             <div className={s.gridTemplate}>
-              <div>
-                {data?.images && (
-                  <div className={s.imgall}>
-                    <img src={data?.images[0]?.image} alt="" />
-                  </div>
-                )}
+              <div className={s.cardsBldsdsocks}>
+                <div className={s.SwiperImageBlcoks}>
+                  <SwiperImage data={data?.images} />
+                </div>
                 <nav dangerouslySetInnerHTML={{ __html: data?.description }} />
               </div>
               <div className={s.cards}>

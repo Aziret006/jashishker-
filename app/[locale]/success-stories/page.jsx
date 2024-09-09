@@ -62,7 +62,7 @@ const page = async () => {
                     <Link href={`/success-stories/${res.id}`}>
                       <button>Подробнее</button>
                     </Link>
-                  </div>
+                  </div>  
                   <div className={s.backContext}>
                     <h2>{res.full_name}</h2>
                     <p>{res.occupation}</p>
