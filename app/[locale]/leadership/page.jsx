@@ -58,12 +58,10 @@ const page = () => {
               <p>
                 <Text name={"lider_box1_desc"} />
               </p>
+              <p>
+                <Text name={"lider_box1_bottom_desc"} />
+              </p>
             </div>
-          </div>
-          <div className={s.contextEnd}>
-            <p>
-              <Text name={"lider_box1_bottom_desc"} />
-            </p>
           </div>
           <div className={s.img}>
             <img
