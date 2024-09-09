@@ -42,6 +42,13 @@
       display: grid;
       // row-gap: 20px;
       padding: 14px;
+      cursor: pointer;
+      img {
+        object-fit: cover;
+        max-height: 192px;
+        object-position: top;
+        width: 100%;
+      }
       ul {
         padding: 14px;
         margin: 0;
@@ -50,12 +57,14 @@
         border-width: 0px, 0.5px, 0.5px, 0.5px;
         border-top-width: 0px;
         border-style: solid;
+        border: 2px solid #a0a0a080;
         border-color: #a0a0a080;
 
         h3 {
           margin: 0;
           padding: 0;
 
+          color: #161616;
           font-size: 22px;
           font-weight: 700;
           line-height: 30.05px;
@@ -63,6 +72,7 @@
         }
         p {
           margin: 0;
+          color: #222222;
 
           font-size: 16px;
           font-weight: 400;
@@ -70,6 +80,10 @@
           text-align: left;
         }
       }
+    }
+    @media screen and (max-width: 861px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
   }
   .gridTemplate {

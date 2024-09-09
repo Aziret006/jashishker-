@@ -8,6 +8,7 @@ import axios from "axios";
 import { notFound } from "next/navigation";
 import { Api } from "@/api";
 import Image from "next/image";
+import Link from "next/link";
 const manrope = Manrope({ subsets: ["latin"] });
 
 const getUser = async (id) => {
@@ -16,35 +17,34 @@ const getUser = async (id) => {
     const dataAUerList = await axios.get(
       `https://api.jashishker.kg/api/v1/success-story/`
     );
-    const data = [response.data, dataAUerList.data];
 
-    return data;
+    return { data: response.data, data1: dataAUerList.data };
   } catch (error) {
-    return "error";
+    return { data: "error" };
   }
 };
 
 export async function generateMetadata({ params }) {
-  const post = await getUser(params.id);
+  const { data } = await getUser(params.id);
 
   return {
-    title: post[0].title,
-    description: post[0].description1,
+    title: data.title,
+    description: data.description,
     openGraph: {
-      title: post[0].title,
-      description: post[0].description2,
-      images: post[0]?.images.map((image) => ({
+      title: data.title,
+      description: data.description,
+      images: data.images.map((image) => ({
         url: image.image,
         width: 800,
         height: 600,
-        alt: post[0].title,
+        alt: data.title,
       })),
     },
   };
 }
 
 const page = async ({ params: { id } }) => {
-  const data = await getUser(id);
+  const { data, data1 } = await getUser(id);
 
   if (data === "error") {
     return notFound();
@@ -62,22 +62,26 @@ const page = async ({ params: { id } }) => {
             <hr />
             <div className={s.gridTemplate}>
               <div>
-                {data[0]?.images && (
+                {data?.images && (
                   <div className={s.imgall}>
-                    <img src={data[0]?.images[0]?.image} alt="" />
+                    <img src={data?.images[0]?.image} alt="" />
                   </div>
                 )}
                 <nav dangerouslySetInnerHTML={{ __html: data?.description }} />
               </div>
               <div className={s.cards}>
-                {data[0]?.map((res) => (
-                  <div key={res} className={s.cardsBlocks}>
-                    <Image src="/store.svg" alt="" width={296} height={194} />
+                {data1.slice(3).map((res) => (
+                  <Link
+                    href={`/success-stories/${res.id}`}
+                    key={res}
+                    className={s.cardsBlocks}
+                  >
+                    <img src={res.avatar} alt="" />
                     <ul>
                       <h3>Айпери Абдылдаева</h3>
                       <p>Стартапер и блогер</p>
                     </ul>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
