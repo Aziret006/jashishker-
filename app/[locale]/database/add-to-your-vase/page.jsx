@@ -7,6 +7,7 @@ import { InputMask } from "@react-input/mask";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import TrText from "@/components/TrText/TrText";
 
 const regions = ["Чуй", "Ош", "Ысык-Кол", "Жалал-Абад", "Нарын", "Баткен"];
 
@@ -166,7 +167,6 @@ const Page = () => {
       <div className={s.content}>
         <div className={s.titelContent}>
           <h1>База данных молодых предпринимателей</h1>
-
           <div className={s.BlockFrom}>
             <div className={s.BlockFromInputList}>
               <div className={s.imageFroom}>
@@ -175,7 +175,6 @@ const Page = () => {
                     <img src={photoUrl} alt="" />
                   ) : (
                     <span>
-                      {" "}
                       <svg
                         width="48"
                         height="48"
@@ -294,7 +293,9 @@ const Page = () => {
                   )}
                 </label>
                 <label>
-                  <p>Вид экономической деятельности</p>
+                  <p>
+                    <TrText root={"form"} name={"economic_activity_type"} />
+                  </p>
                   <div>
                     {activityTypes.map((type, index) => (
                       <label key={index} className={s.activityLabel}>
