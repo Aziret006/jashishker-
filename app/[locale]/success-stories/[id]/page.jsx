@@ -7,6 +7,7 @@ import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import axios from "axios";
 import { notFound } from "next/navigation";
 import { Api } from "@/api";
+import Image from "next/image";
 const manrope = Manrope({ subsets: ["latin"] });
 
 const getUser = async (id) => {
@@ -40,7 +41,6 @@ export async function generateMetadata({ params }) {
 const page = async ({ params: { id } }) => {
   const data = await getUser(id);
 
-
   if (data === "error") {
     return notFound();
   }
@@ -55,16 +55,27 @@ const page = async ({ params: { id } }) => {
               <h2>{data?.title}</h2>
             </div>
             <hr />
-            <nav dangerouslySetInnerHTML={{ __html: data?.description1 }} />
-            {data?.images && (
-              <div className={s.imgall}>
-                <img src={data?.images[0]?.image} alt="" />
+            <div className={s.gridTemplate}>
+              <div>
+                {data?.images && (
+                  <div className={s.imgall}>
+                    <img src={data?.images[0]?.image} alt="" />
+                  </div>
+                )}
+                <nav dangerouslySetInnerHTML={{ __html: data?.description }} />
               </div>
-            )}
-            <div
-              className={s.contextFoot}
-              dangerouslySetInnerHTML={{ __html: data?.description1 }}
-            />
+              <div className={s.cards}>
+                {[1, 2, 3].map((res) => (
+                  <div key={res} className={s.cardsBlocks}>
+                    <Image src="/store.svg" alt="" width={296} height={194} />
+                    <ul>
+                      <h3>Айпери Абдылдаева</h3>
+                      <p>Стартапер и блогер</p>
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
