@@ -405,5 +405,31 @@
   },
   "button": {
     "buttonTitle": "Add Yourself to the Database"
+  },
+  "form": {
+    "economic_activity_type": "Type of Economic Activity",
+    "agriculture": "Agriculture, forestry, hunting, and fishing",
+    "manufacturing": "Manufacturing (processing industry)",
+    "construction": "Construction",
+    "trade_repair": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+    "transportation": "Transportation and storage",
+    "hospitality": "Hospitality and restaurants",
+    "finance": "Financial intermediation and insurance",
+    "professional_activities": "Professional, scientific, and technical activities",
+    "education": "Education",
+    "arts_entertainment": "Arts, entertainment, and recreation",
+    "specify_activity": "Specify the economic activity category of your company",
+    "example": "For example, \"growing non-perennial crops\" falls under \"agriculture, forestry, hunting, and fishing.\" So, you could write \"growing non-perennial crops\" here.",
+    "legal_registration": "Legal registration of the company",
+    "individual_entrepreneur": "Individual Entrepreneur (IP)",
+    "llc": "LLC",
+    "farm_enterprise": "Peasant Farm Enterprise (KFH)",
+    "production_cooperative": "Agricultural Production Cooperative (SPK)",
+    "closed_joint_stock": "Closed Joint-Stock Company (ZAO)",
+    "cooperative_partnership": "Cooperative Partnership (KT)",
+    "other": "Other",
+    "company_name": "Full name of the company",
+    "commercial_description": "Commercial description of the company",
+    "submit": "Submit"
   }
 }
