@@ -4,11 +4,11 @@
   padding: 170px 0 100px 0;
 
   @media screen and (max-width: 768px) {
-    padding: 60px 0 66px 0;
+    padding: 100px 0 66px 0;
   }
 
   @media screen and (max-width: 550px) {
-    padding: 40px 0 45px 0;
+    padding: 100px 0 45px 0;
   }
 
   .container {
@@ -34,18 +34,15 @@
         font-style: normal;
         font-weight: 900;
         line-height: 66px;
-
         @media screen and (max-width: 768px) {
           font-size: 62px;
           line-height: 66px;
         }
-
         @media screen and (max-width: 610px) {
           font-size: 42px;
           line-height: 66px;
         }
       }
-
       h5 {
         position: absolute;
         top: 0px;
@@ -77,11 +74,11 @@
       margin-top: 64px;
 
       @media screen and (max-width: 768px) {
-        margin-top: 74px;
+        margin-top: 24px;
       }
 
       @media screen and (max-width: 550px) {
-        margin-top: 45px;
+        margin-top: 15px;
       }
     }
 
@@ -249,6 +246,7 @@
       p {
         margin-top: 10px;
         font-size: 14px;
+        color: #161616;
       }
     }
   }

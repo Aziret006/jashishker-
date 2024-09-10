@@ -16,6 +16,7 @@ import imageorg6 from "../../../public/imageorg6.svg";
 import imageorg7 from "../../../public/imageorg7.svg";
 import imageorg8 from "../../../public/imageorg8.svg";
 import imageorg9 from "../../../public/imageorg9.svg";
+import imageorg10 from "../../../public/imageorg10.svg";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -48,11 +49,13 @@ const page = () => {
         "Департамент Органического Сельского Хозяйства при Министерстве сельского хозяйства Кыргызской Республики",
       text:
         "Департамент Органического Сельского Хозяйства при Министерстве сельского хозяйства Кыргызской Республики",
+      https: "https://agro.gov.kg/ru/dosh/",
     },
     {
       src: "/imageorg2.svg",
       alt: "Министерство Сельского хозяйства КР",
       text: "Министерство Сельского хозяйства КР",
+      https: "https://agro.gov.kg/ru/main/",
     },
     {
       src: "/imageorg4.svg",
@@ -60,6 +63,7 @@ const page = () => {
         'Государственным предприятием "Центр цифровизации и маркетинга "АгроСмарт"',
       text:
         'Государственным предприятием "Центр цифровизации и маркетинга "АгроСмарт"',
+      https: "https://cbd.minjust.gov.kg/73-227/edition/1127315/ru",
     },
     {
       src: "/imageorg5.svg",
@@ -67,6 +71,7 @@ const page = () => {
         "Общественный фонд «Фонд социального партнерства по развитию регионов»",
       text:
         "Общественный фонд «Фонд социального партнерства по развитию регионов»",
+      https: "http://fond.kg/",
     },
     {
       src: "/imageorg6.svg",
@@ -74,11 +79,15 @@ const page = () => {
         "Министерством культуры, информации, спорта и молодежной политики Кыргызской Республики",
       text:
         "Министерством культуры, информации, спорта и молодежной политики Кыргызской Республики",
+      https:
+        "https://green-alliance.kg/wp-content/uploads/2022/12/Osnovnye-vyvody-ZAK_2022_Obrashhenie_ot_Isp.Direktora-1.pdf",
     },
     {
       src: "/imageorg7.svg",
       alt: 'Объединение юридических лиц "Зеленый Альянс Кей Джи"',
       text: 'Объединение юридических лиц "Зеленый Альянс Кей Джи"',
+      https:
+        "https://green-alliance.kg/wp-content/uploads/2022/12/Osnovnye-vyvody-ZAK_2022_Obrashhenie_ot_Isp.Direktora-1.pdf",
     },
     {
       src: "/imageorg8.svg",
@@ -86,11 +95,13 @@ const page = () => {
         "Государственным агентством интеллектуальной собственности и инноваций при Кабинете Министров Кыргызской Республики",
       text:
         "Государственным агентством интеллектуальной собственности и инноваций при Кабинете Министров Кыргызской Республики",
+      https: "http://patent.gov.kg/",
     },
     {
       src: "/imageorg9.svg",
       alt: "Фонд развития предпринимательства",
       text: "Фонд развития предпринимательства",
+      https: "https://frp.kg/",
     },
     {
       src: "/imageorg4.svg",
@@ -98,11 +109,13 @@ const page = () => {
         "Министерство труда социального обеспечения и миграции Кыргызской Республики",
       text:
         "Министерство труда социального обеспечения и миграции Кыргызской Республики",
+      https: "https://mlsp.gov.kg/ru/glavnaya/",
     },
     {
-      src: "/imageorg5.svg",
+      src: "/imageorg10.svg",
       alt: "Министерство образования и науки Кыргызской Республики",
       text: "Министерство образования и науки Кыргызской Республики",
+      https: "",
     },
   ];
   return (
@@ -119,10 +132,15 @@ const page = () => {
           <div className={s.partnerBorder} />
           <div className={s["grid-container"]}>
             {items.map((item, index) => (
-              <div key={index} className={s["grid-item"]}>
+              <a
+                target="_blank"
+                className={s["grid-item"]}
+                key={index}
+                href={item.https}
+              >
                 <Image src={item.src} alt={item.alt} width={100} height={100} />
                 <p>{item.text}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
