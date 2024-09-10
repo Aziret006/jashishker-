@@ -129,7 +129,6 @@ const Menu = ({ isMenu, setMenu }) => {
                     <Text name={"navbar_knowBase_temBussiness"} />
                   </Link>
                 </li>
-                <li></li>
               </motion.ul>
             )}
           </li>
