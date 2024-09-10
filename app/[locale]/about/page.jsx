@@ -144,7 +144,7 @@ const Page = () => {
             </p>
             <img
               className={s.ourimg}
-              src="./image5.svg"
+              src="/image5.svg"
               alt="Project illustration"
               width={600}
               height={400}
