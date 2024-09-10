@@ -134,7 +134,7 @@ const Menu = ({ isMenu, setMenu }) => {
             )}
           </li>
           <li>
-            <Link className={s.Link} href={"/Economy"}>
+            <Link className={s.Link} href={"/success-stories"}>
               <Text name={"navbar_success_history"} />
             </Link>
           </li>
