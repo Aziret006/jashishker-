@@ -119,7 +119,7 @@
 
       p {
         max-width: 994px;
-        color: #191A1B;
+        color: #191a1b;
         text-align: center;
         font-size: 18px;
         font-style: normal;
@@ -165,7 +165,7 @@
             justify-content: center;
             align-items: center;
             border-radius: 100%;
-            background: #2E9537;
+            background: #2e9537;
 
             svg {
               width: 24px;
@@ -204,20 +204,51 @@
               margin: 0;
               opacity: 0.9;
               text-decoration: none;
-              transition: all 0, 3s ease;
+              transition:
+                all 0,
+                3s ease;
 
               @media screen and (max-width: 768px) {
                 font-size: 14px;
               }
 
               &:hover {
-                color: #2E9537
+                color: #2e9537;
               }
             }
-
           }
-
         }
+      }
+    }
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    @media screen and (max-width: 974px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      @media screen and (max-width: 742px) {
+        grid-template-columns: 1fr 1fr;
+        @media screen and (max-width: 526px) {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      p {
+        margin-top: 10px;
+        font-size: 14px;
       }
     }
   }
