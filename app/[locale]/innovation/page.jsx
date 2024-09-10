@@ -19,7 +19,7 @@ export const metadata = {
 };
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
-  weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"], 
+  weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
 });
 const page = () => {
   return (
@@ -42,24 +42,27 @@ const page = () => {
               <p>
                 <TrText root={"innovate"} name={"innovate_box1_topDesc"} />
               </p>
-              <h4>
-                <TrText root={"innovate"} name={"innovate_box1_descBottom"} />
-              </h4>
             </div>
-            <Image
+            {/* <Image
               className={s.image}
               src="/image.svg"
               width={508}
               height={508}
               alt="Description of image"
-            />
+            /> */}
           </div>
-          <img className={s.imgs} src="/leadership.svg" />
+          <ul className={s.innovtextBottom}>
+            <h4>
+              <TrText root={"innovate"} name={"innovate_box1_descBottom"} />
+            </h4>
+          </ul>
+          <div className={s.innovtextImage}>
+            <img className={s.imgs} src="/leadership.svg" />
+          </div>
           <nav className={s.listcontext}>
             <li>
               <SetHtml root={"innovate"} name={"innovate_box2_desc"} />
             </li>
-
             {/* <ul>
               <li>
                 Инновационное предпринимательство готово брать на себя риски
@@ -79,7 +82,7 @@ const page = () => {
                 оборудование, средства связи и системы коммуникаций.
               </li>
             </ul> */}
-            {/* <div className={s.blockimg}>
+            <div className={s.blockimg}>
               <Image
                 className={s.img11}
                 src="/image11.svg"
@@ -109,7 +112,7 @@ const page = () => {
                 ввиду масштабности предпосылок для появления и внедрения
                 инновации и нововведения требуют не малых финансовых  затрат.
               </li>
-            </ul> */}
+            </ul>
           </nav>
           <nav className={s.listendtext}>
             <ul>

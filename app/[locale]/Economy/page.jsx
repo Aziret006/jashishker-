@@ -53,7 +53,7 @@ const page = () => {
             </p>
           </div>
           <div className={s.eimg}>
-            <Image
+            <img
               className={s.imgr4}
               src="/leadership.svg"
               alt="leadership"
