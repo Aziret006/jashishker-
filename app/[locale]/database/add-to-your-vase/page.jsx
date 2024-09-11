@@ -9,7 +9,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import TrText from "@/components/TrText/TrText";
 
-const regions = ["Чуй", "Ош", "Ысык-Кол", "Жалал-Абад", "Нарын", "Баткен"];
+const regions = ["Чуй", "Ош", "Иссык-Куль", "Жалал-Абад", "Нарын", "Баткен"];
 
 const activityTypes = [
   "Сельское хозяйство, лесное хозяйство, охота и рыболовство",
@@ -293,9 +293,7 @@ const Page = () => {
                   )}
                 </label>
                 <label>
-                  <p>
-                    <TrText root={"form"} name={"economic_activity_type"} />
-                  </p>
+                  <p>Вид экономической деятельности</p>
                   <div>
                     {activityTypes.map((type, index) => (
                       <label key={index} className={s.activityLabel}>

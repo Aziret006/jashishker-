@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-
 "use client";
 import Footer from "@/components/Footer/Footer";
 import Haeder from "@/components/Haeder/Haeder";
@@ -85,8 +84,7 @@ const page = () => {
           text: "Check out this awesome website!",
           url: window.location.href,
         });
-      } catch (error) {
-      }
+      } catch (error) {}
     } else {
       alert("Web Share API is not supported in your browser.");
     }

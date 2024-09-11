@@ -13,9 +13,8 @@ import { notFound } from "next/navigation";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 export async function generateMetadata({ params }) {
   const newsResponse = await axios.get(`${Api}api/v1/news/${params.id}/`);
-
   const data = newsResponse.data;
-
+  
   return {
     title: data.title,
     description: data.description,

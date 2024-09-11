@@ -783,7 +783,7 @@
         font-size: 64px;
         font-weight: 600;
         text-transform: uppercase;
-        width: 945px;
+        max-width: 945px;
         margin: 0 0 10px 0;
 
         @media screen and (max-width: 830px) {

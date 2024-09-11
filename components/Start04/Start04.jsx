@@ -36,7 +36,7 @@ export default function Start04() {
         </div>
       </div>
       <div className={s.start04Wrapper}>
-        <Image src="./start04.svg" alt="" width={520} height={220} />
+        <Image src="/start04.svg" alt="" width={520} height={220} />
         <p>
           <Text name={"F2"} />
         </p>
