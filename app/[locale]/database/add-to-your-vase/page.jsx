@@ -293,9 +293,7 @@ const Page = () => {
                   )}
                 </label>
                 <label>
-                  <p>
-                    <TrText root={"form"} name={"economic_activity_type"} />
-                  </p>
+                  <p>Вид экономической деятельности</p>
                   <div>
                     {activityTypes.map((type, index) => (
                       <label key={index} className={s.activityLabel}>
