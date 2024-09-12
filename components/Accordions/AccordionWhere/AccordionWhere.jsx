@@ -22,40 +22,40 @@ const AccordionWhere = () => {
       title: <Text name={"J21"} />,
       id: 1,
       text: {
-        title: "Паспорт",
-        title1: "Если у вас есть виза цифрового кочевника,ПИН вам уже присвоен",
+        title: <Text name={"K333"} />,
+        title1: <Text name={"K334"} />,
       },
     },
     {
       title: <Text name={"J22"} />,
       id: 2,
       text: {
-        title: "Паспорт",
-        title1: "Если у вас есть виза цифрового кочевника,ПИН вам уже присвоен",
+        title: <Text name={"K335"} />,
+        title1: <Text name={"K336"} />,
       },
     },
     {
       title: <Text name={"J23"} />,
       id: 3,
       text: {
-        title: "Паспорт",
-        title1: "Если у вас есть виза цифрового кочевника,ПИН вам уже присвоен",
+        title: <Text name={"K337"} />,
+        title1: <Text name={"K338"} />,
       },
     },
     {
       title: <Text name={"J24"} />,
       id: 4,
       text: {
-        title: "Паспорт",
-        title1: "Если у вас есть виза цифрового кочевника,ПИН вам уже присвоен",
+        title: <Text name={"K339"} />,
+        title1: <Text name={"K34"} />,
       },
     },
     {
       title: <Text name={"J25"} />,
       id: 5,
       text: {
-        title: "Паспорт",
-        title1: "Если у вас есть виза цифрового кочевника,ПИН вам уже присвоен",
+        title: <Text name={"K341"} />,
+        title1: <Text name={"K342"} />,
       },
     },
   ];
@@ -63,7 +63,7 @@ const AccordionWhere = () => {
   const handlerPageIndex = (e) => {
     setPageIndex(e == pageIndex ? null : e);
   };
-  
+
   return (
     <div className={s.accordionWrap}>
       {data.map((item, index) => {

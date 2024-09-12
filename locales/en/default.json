@@ -288,7 +288,17 @@
     "K42": "It is to this account that the money that an individual entrepreneur receives from his main activity will be transferred.",
     "K44": "A separate account is needed because the tax is calculated based on the income received.",
     "K5": "If you decide to become an individual entrepreneur, you need to:",
-    "K6": "- contact the Tax Service;"
+    "K6": "- contact the Tax Service;",
+    "K333": "PIN for individuals",
+    "K334": "Passport with a notarized translation into the state (Kyrgyz) or official (Russian) language",
+    "K335": "PIN for legal entities",
+    "K336": "A PIN for legal entities is assigned during the registration of a legal entity by the authorized body (Ministry of Justice)",
+    "K337": "Tax authority registration",
+    "K338": "You need to come to the tax authority at your place of residence and bring a copy of your passport, as well as write an application in the prescribed form No. 163. You must bring the following documents with you: - A copy of your passport in two copies (you do not need to make a copy of the entire passport, it will be enough to make copies of the pages with personal data and registration); - Registration at the place of residence",
+    "K339": "LLC registration",
+    "K34": "For the registration of limited liability companies (LLC), citizens of the EAEU and third countries must apply to the Ministry of Justice of the Kyrgyz Republic with the necessary documents. If a tax regime is not chosen within 15 days after registration, the tax authority will automatically establish the general regime. It is necessary to fill out form No. 25, indicating income tax, sales tax, and VAT, the registration of which will begin from the date of registration with the justice authorities.",
+    "K341": "Individual Entrepreneur registration",
+    "K342": "To register an individual entrepreneur based on a certificate, the following documents must be provided: - PIN - Registration at the place of residence - Passport with a notarized translation into the state or official language - Completed form No. 163"
   },
   "business": {
     "A1": "How to write <br /> a business <br/> plan",
