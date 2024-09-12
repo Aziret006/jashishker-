@@ -87,26 +87,73 @@ const page = () => {
             </h4>
 
             <div>
-              {[1, 2, 3].map((_, i) => {
-                return (
-                  <div key={i} className={s.getextEndall}>
-                    <div className={s.getborder}>
-                      <Image
-                        src="/star.svg"
-                        width={24}
-                        height={24}
-                        alt="Picture of the author"
-                      />
-                    </div>
-                    <p>
-                      {/* <span>На технологическом уровне</span> - разработка новых
-                      компьютерных устройств и развитие интернет-пространства; */}
+              <div className={s.getextEndall}>
+                <div className={s.getborder}>
+                  <Image
+                    src="/star.svg"
+                    width={24}
+                    height={24}
+                    alt="Picture of the author"
+                  />
+                </div>
+                <p>
+                  <Text name={"lider_box3_item1"} />
+                </p>
+              </div>
+              <div className={s.getextEndall}>
+                <div className={s.getborder}>
+                  <Image
+                    src="/star.svg"
+                    width={24}
+                    height={24}
+                    alt="Picture of the author"
+                  />
+                </div>
+                <p>
+                  <Text name={"lider_box3_item2"} />
+                </p>
+              </div>
 
-                      <Text name={"lider_box3_item1"} />
-                    </p>
-                  </div>
-                );
-              })}
+              <div className={s.getextEndall}>
+                <div className={s.getborder}>
+                  <Image
+                    src="/star.svg"
+                    width={24}
+                    height={24}
+                    alt="Picture of the author"
+                  />
+                </div>
+                <p>
+                  <Text name={"lider_box3_item3"} />
+                </p>
+              </div>
+
+              <div className={s.getextEndall}>
+                <div className={s.getborder}>
+                  <Image
+                    src="/star.svg"
+                    width={24}
+                    height={24}
+                    alt="Picture of the author"
+                  />
+                </div>
+                <p>
+                  <Text name={"lider_box3_item4"} />
+                </p>
+              </div>
+              <div className={s.getextEndall}>
+                <div className={s.getborder}>
+                  <Image
+                    src="/star.svg"
+                    width={24}
+                    height={24}
+                    alt="Picture of the author"
+                  />
+                </div>
+                <p>
+                  <Text name={"lider_box3_item5"} />
+                </p>
+              </div>
               <h5 className={s.h5}>
                 <Text name={"lider_box4_title"} />
               </h5>

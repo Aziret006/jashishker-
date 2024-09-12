@@ -17,7 +17,7 @@ export const metadata = {
     icon: "/logo.svg",
   },
 };
-const BeVietnamPro = Be_Vietnam_Pro({ 
+const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
 });
@@ -64,9 +64,6 @@ const page = () => {
             <p>
               <Text name={"greenEco_box2_topDesc"} />
             </p>
-            <p>
-              <Text name={"greenEco_box2_bottomDesc"} />
-            </p>
           </div>
         </div>
       </div>
@@ -76,3 +73,7 @@ const page = () => {
 };
 
 export default page;
+
+// <p>
+//   <Text name={"greenEco_box2_bottomDesc"} />
+// </p>
