@@ -232,7 +232,6 @@ const Page = () => {
           </div>
           <div className={s.footflex4}>
             <p>
-              Выдача грантов
               <Text name={"about_box8_subtitle"} />
             </p>
             <h4>
