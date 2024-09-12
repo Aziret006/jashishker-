@@ -410,5 +410,27 @@
   },
   "button": {
     "buttonTitle": "Add Yourself to the Database"
+  },
+  "BINDING": {
+    "BINDING_lack_of_clear_goal_mission_title": "Lack of Clear Goals and Mission",
+    "BINDING_lack_of_clear_goal_mission_description": "If the project's goals and mission are not clearly understood, it will be difficult to develop an action plan and attract investors or partners.",
+    "BINDING_insufficient_market_research_title": "Insufficient Market Research",
+    "BINDING_insufficient_market_research_description": "A lack of understanding of the target market, competitors, and customer needs may lead to incorrect assessment of demand for the product or service.",
+    "BINDING_unrealistic_financial_forecasts_title": "Unrealistic Financial Forecasts",
+    "BINDING_unrealistic_financial_forecasts_description": "Overestimating revenues and underestimating expenses often leads to financial difficulties, especially in the early stages of a business.",
+    "BINDING_ignoring_risks_title": "Ignoring Risks",
+    "BINDING_ignoring_risks_description": "Failure to analyze potential risks and develop management plans may lead to unexpected crises for the company.",
+    "BINDING_incomplete_product_description_title": "Incomplete Product or Service Description",
+    "BINDING_incomplete_product_description_description": "If the product or service is not described adequately, investors and partners may not understand the unique features of the offering.",
+    "BINDING_overestimating_team_capabilities_title": "Overestimating Team Capabilities",
+    "BINDING_overestimating_team_capabilities_description": "Overestimating the team's skills or capabilities may lead to a mismatch between expectations and results.",
+    "BINDING_insufficient_marketing_strategy_title": "Insufficient Marketing Strategy",
+    "BINDING_insufficient_marketing_strategy_description": "Without a clear strategy for promoting the product, it is difficult to maintain a steady flow of customers and increase sales.",
+    "BINDING_lack_of_scaling_plan_title": "Lack of Scaling Plan",
+    "BINDING_lack_of_scaling_plan_description": "Uncertainty about growth and expansion prospects may hinder the further development of the business.",
+    "BINDING_unclear_task_deadlines_title": "Unclear Task Deadlines",
+    "BINDING_unclear_task_deadlines_description": "The absence of clear schedules and deadlines for project phases may lead to delays and missed deadlines.",
+    "BINDING_inflexible_business_plan_title": "Inflexible Business Plan",
+    "BINDING_inflexible_business_plan_description": "Adhering only to the initial plan without adapting to changing conditions may harm the business in the long term."
   }
 }

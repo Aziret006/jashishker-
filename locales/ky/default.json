@@ -409,5 +409,27 @@
   },
   "button": {
     "buttonTitle": "Өзүңүздү базага кошуу"
+  },
+  "BINDING": {
+    "BINDING_lack_of_clear_goal_mission_title": "Анык максаттардын жана миссиянын жоктугу",
+    "BINDING_lack_of_clear_goal_mission_description": "Проекттин максаттары жана миссиясы так түшүнүлбөсө, иш-аракеттер планы түзүлбөйт жана инвесторлорду же өнөктөштөрдү тартуу кыйынга турат.",
+    "BINDING_insufficient_market_research_title": "Рынокту жетишсиз изилдөө",
+    "BINDING_insufficient_market_research_description": "Максаттуу рынокту, атаандаштарды жана кардарлардын муктаждыктарын жетишсиз түшүнүү продуктка же кызматка суроо-талаптын туура эмес баалануусуна алып келиши мүмкүн.",
+    "BINDING_unrealistic_financial_forecasts_title": "Чындыкка дал келбеген каржылык божомолдор",
+    "BINDING_unrealistic_financial_forecasts_description": "Кирешелерди жогору баалап, чыгымдарды төмөн баалоо көбүнчө финансылык кыйынчылыктарга алып келет, айрыкча ишкерликтин баштапкы этабында.",
+    "BINDING_ignoring_risks_title": "Тобокелдиктерди этибарга албоо",
+    "BINDING_ignoring_risks_description": "Мүмкүн болгон тобокелдиктерди талдабоо жана аларды башкаруу пландарын түзбөө компанияны критикалык кырдаалда күтүлбөгөн жерден кармашы мүмкүн.",
+    "BINDING_incomplete_product_description_title": "Продукт же кызматтын жетишсиз сүрөттөлүшү",
+    "BINDING_incomplete_product_description_description": "Эгерде продукт же кызмат жетиштүү деңгээлде сүрөттөлбөсө, инвесторлор жана өнөктөштөр сунуштун уникалдуу өзгөчөлүктөрүн түшүнбөшү мүмкүн.",
+    "BINDING_overestimating_team_capabilities_title": "Команданын мүмкүнчүлүктөрүн жогору баалоо",
+    "BINDING_overestimating_team_capabilities_description": "Команданын компетенцияларын же мүмкүнчүлүктөрүн жогору баалоо күтүүлөр менен натыйжалардын дал келбей калышына алып келиши мүмкүн.",
+    "BINDING_insufficient_marketing_strategy_title": "Маркетинг стратегиясына жетишсиз көңүл буруу",
+    "BINDING_insufficient_marketing_strategy_description": "Продуктту илгерилетүүнүн так стратегиясы болбосо, туруктуу кардарлар агымын камсыз кылуу жана сатууну көбөйтүү кыйынга турат.",
+    "BINDING_lack_of_scaling_plan_title": "Масштабдоо планынын жоктугу",
+    "BINDING_lack_of_scaling_plan_description": "Өсүү жана кеңейүү келечегинин белгисиздиги бизнестин мындан ары өнүгүүсүнө тоскоол болушу мүмкүн.",
+    "BINDING_unclear_task_deadlines_title": "Тапшырмаларды аткаруунун так мөөнөттөрүнүн жоктугу",
+    "BINDING_unclear_task_deadlines_description": "Проекттин этаптарын бүтүрүү үчүн так графиктердин жана мөөнөттөрдүн жоктугу процессти кечиктирип, мөөнөттөрдүн бузулушуна алып келиши мүмкүн.",
+    "BINDING_inflexible_business_plan_title": "Ишкердик планынын ийкемсиздиги",
+    "BINDING_inflexible_business_plan_description": "Өзгөрүп жаткан шарттарга ылайыкташпастан баштапкы планга гана кармануу узак мөөнөттүү келечекте бизнеске зыян алып келиши мүмкүн."
   }
 }

@@ -25,6 +25,9 @@ const BeVietnamPro = Be_Vietnam_Pro({
 const Text = ({ name }) => {
   return <TrText root={"business"} name={name} />;
 };
+const Text2 = ({ name }) => {
+  return <TrText root={"BINDING"} name={name} />;
+};
 
 const page = () => {
   const item = [
@@ -124,6 +127,50 @@ const page = () => {
       id: 9,
       title: <Text name={"C9"} />,
       context: <Text name={"C10"} />,
+    },
+  ];
+
+  // Массив данных с ключами для переводов
+  const items = [
+    {
+      titleKey: "BINDING_lack_of_clear_goal_mission_title",
+      descriptionKey: "BINDING_lack_of_clear_goal_mission_description",
+    },
+    {
+      titleKey: "BINDING_insufficient_market_research_title",
+      descriptionKey: "BINDING_insufficient_market_research_description",
+    },
+    {
+      titleKey: "BINDING_unrealistic_financial_forecasts_title",
+      descriptionKey: "BINDING_unrealistic_financial_forecasts_description",
+    },
+    {
+      titleKey: "BINDING_ignoring_risks_title",
+      descriptionKey: "BINDING_ignoring_risks_description",
+    },
+    {
+      titleKey: "BINDING_incomplete_product_description_title",
+      descriptionKey: "BINDING_incomplete_product_description_description",
+    },
+    {
+      titleKey: "BINDING_overestimating_team_capabilities_title",
+      descriptionKey: "BINDING_overestimating_team_capabilities_description",
+    },
+    {
+      titleKey: "BINDING_insufficient_marketing_strategy_title",
+      descriptionKey: "BINDING_insufficient_marketing_strategy_description",
+    },
+    {
+      titleKey: "BINDING_lack_of_scaling_plan_title",
+      descriptionKey: "BINDING_lack_of_scaling_plan_description",
+    },
+    {
+      titleKey: "BINDING_unclear_task_deadlines_title",
+      descriptionKey: "BINDING_unclear_task_deadlines_description",
+    },
+    {
+      titleKey: "BINDING_inflexible_business_plan_title",
+      descriptionKey: "BINDING_inflexible_business_plan_description",
     },
   ];
 
@@ -297,18 +344,16 @@ const page = () => {
             </ul>
           </nav>
           <div className={s.gridblockcolump2}>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => {
-              return (
-                <div key={i} className={s.gridblock}>
-                  <h4>
-                    <Text name={"C22"} />
-                  </h4>
-                  <p>
-                    <Text name={"C25"} />
-                  </p>
-                </div>
-              );
-            })}
+            {items.map((item, index) => (
+              <div key={index} className={s.gridblock}>
+                <h4>
+                  <Text2 name={item.titleKey} />
+                </h4>
+                <p>
+                  <Text2 name={item.descriptionKey} />
+                </p>
+              </div>
+            ))}
           </div>
           <nav className={s.jcend}>
             <h4>

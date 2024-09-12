@@ -410,5 +410,27 @@
   },
   "button": {
     "buttonTitle": "Добавить в базу себя"
+  },
+  "BINDING": {
+    "BINDING_lack_of_clear_goal_mission_title": "Отсутствие четких целей и миссии",
+    "BINDING_lack_of_clear_goal_mission_description": "Если цели и миссия проекта не ясны, трудно разработать план действий и привлечь инвесторов или партнеров.",
+    "BINDING_insufficient_market_research_title": "Недостаточное исследование рынка",
+    "BINDING_insufficient_market_research_description": "Недостаточное понимание целевого рынка, конкурентов и потребностей клиентов может привести к неправильной оценке спроса на продукт или услугу.",
+    "BINDING_unrealistic_financial_forecasts_title": "Нереалистичные финансовые прогнозы",
+    "BINDING_unrealistic_financial_forecasts_description": "Переоценка доходов и занижение расходов часто ведет к финансовым трудностям, особенно на ранних стадиях бизнеса.",
+    "BINDING_ignoring_risks_title": "Игнорирование рисков",
+    "BINDING_ignoring_risks_description": "Отсутствие анализа потенциальных рисков и планов их управления может привести к неожиданным кризисам для компании.",
+    "BINDING_incomplete_product_description_title": "Неполное описание продукта или услуги",
+    "BINDING_incomplete_product_description_description": "Если продукт или услуга недостаточно описаны, инвесторы и партнеры могут не понять уникальные особенности предложения.",
+    "BINDING_overestimating_team_capabilities_title": "Переоценка возможностей команды",
+    "BINDING_overestimating_team_capabilities_description": "Переоценка навыков или возможностей команды может привести к несоответствию между ожиданиями и результатами.",
+    "BINDING_insufficient_marketing_strategy_title": "Недостаточная маркетинговая стратегия",
+    "BINDING_insufficient_marketing_strategy_description": "Отсутствие четкой стратегии продвижения продукта затрудняет поддержание постоянного потока клиентов и увеличение продаж.",
+    "BINDING_lack_of_scaling_plan_title": "Отсутствие плана масштабирования",
+    "BINDING_lack_of_scaling_plan_description": "Неопределенность относительно перспектив роста и расширения может помешать дальнейшему развитию бизнеса.",
+    "BINDING_unclear_task_deadlines_title": "Неопределенные сроки выполнения задач",
+    "BINDING_unclear_task_deadlines_description": "Отсутствие четких графиков и сроков для этапов проекта может привести к задержкам и пропущенным срокам.",
+    "BINDING_inflexible_business_plan_title": "Неэластичный бизнес-план",
+    "BINDING_inflexible_business_plan_description": "Придерживание только первоначального плана без адаптации к изменяющимся условиям может нанести вред бизнесу в долгосрочной перспективе."
   }
 }
