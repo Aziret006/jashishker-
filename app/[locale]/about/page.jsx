@@ -1,4 +1,6 @@
 "use client";
+
+
 import React from "react";
 import Haeder from "@/components/Haeder/Haeder";
 import Footer from "@/components/Footer/Footer";
@@ -282,6 +284,19 @@ const Page = () => {
             </h4>
           </div>
         </div>
+         <div className={s.Block6s}>
+         <div className={s.Block6} >
+           <h2>ernis</h2>
+
+            <img  src="/image5.svg" alt="" />
+
+            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat molestiae, tempora impedit tempore assumenda eaque facilis commodi placeat, ea quos earum soluta ullam laborum, quasi dolorum? Perspiciatis impedit tempora neque!</p>
+            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat molestiae, tempora impedit tempore assumenda eaque facilis commodi placeat, ea quos earum soluta ullam laborum, quasi dolorum? Perspiciatis impedit tempora neque!</p>
+         
+            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat molestiae, tempora impedit tempore assumenda eaque facilis commodi placeat, ea quos earum soluta ullam laborum, quasi dolorum? Perspiciatis impedit tempora neque!</p>
+         </div>
+         </div>
+        
       </div>
       <Footer />
     </>
