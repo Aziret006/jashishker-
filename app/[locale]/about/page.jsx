@@ -10,6 +10,7 @@ import s from "./page.module.scss";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import TrText from "@/components/TrText/TrText";
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const Text = ({ name }) => {
   return <TrText root={"about"} name={name} />;
@@ -38,6 +39,8 @@ const BeVietnamPro = Be_Vietnam_Pro({
 
 const Page = () => {
   const parms = useParams();
+
+  const t = useTranslations("about");
   return (
     <>
       <Haeder />
@@ -284,19 +287,6 @@ const Page = () => {
             </h4>
           </div>
         </div>
-         <div className={s.Block6s}>
-         <div className={s.Block6} >
-           <h2>ernis</h2>
-
-            <img  src="/image5.svg" alt="" />
-
-            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat molestiae, tempora impedit tempore assumenda eaque facilis commodi placeat, ea quos earum soluta ullam laborum, quasi dolorum? Perspiciatis impedit tempora neque!</p>
-            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat molestiae, tempora impedit tempore assumenda eaque facilis commodi placeat, ea quos earum soluta ullam laborum, quasi dolorum? Perspiciatis impedit tempora neque!</p>
-         
-            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat molestiae, tempora impedit tempore assumenda eaque facilis commodi placeat, ea quos earum soluta ullam laborum, quasi dolorum? Perspiciatis impedit tempora neque!</p>
-         </div>
-         </div>
-        
       </div>
       <Footer />
     </>
@@ -304,3 +294,21 @@ const Page = () => {
 };
 
 export default Page;
+
+// <div className={s.Block6s}>
+         
+// <div className={s.Block6} >
+//   <h2>{t("about_title_1")}</h2>
+
+//    <img  src="/image5.svg" alt="" />
+
+// <p>{t("about_title_1")}</p>
+//  </div>
+//  <div className={s.Block6} >
+//   <h2>{t("about_title_1")}</h2>
+
+//    <img  src="/image5.svg" alt="" />
+
+// <p>{t("about_title_1")}</p>
+//  </div>
+// </div>
