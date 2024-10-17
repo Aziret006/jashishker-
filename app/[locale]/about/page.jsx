@@ -1,6 +1,5 @@
 "use client";
 
-
 import React from "react";
 import Haeder from "@/components/Haeder/Haeder";
 import Footer from "@/components/Footer/Footer";
@@ -286,6 +285,7 @@ const Page = () => {
               <Text name={"about_box9_title"} />
             </h4>
           </div>
+       
         </div>
       </div>
       <Footer />
@@ -296,19 +296,12 @@ const Page = () => {
 export default Page;
 
 // <div className={s.Block6s}>
-         
-// <div className={s.Block6} >
+// <div className={s.Block6}>
 //   <h2>{t("about_title_1")}</h2>
 
-//    <img  src="/image5.svg" alt="" />
+//   <img src="/image5.svg" alt="" />
 
-// <p>{t("about_title_1")}</p>
-//  </div>
-//  <div className={s.Block6} >
-//   <h2>{t("about_title_1")}</h2>
+//   <p>{t("about_title_1")}</p>
+// </div>
 
-//    <img  src="/image5.svg" alt="" />
-
-// <p>{t("about_title_1")}</p>
-//  </div>
 // </div>
