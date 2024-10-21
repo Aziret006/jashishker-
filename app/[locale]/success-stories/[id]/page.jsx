@@ -71,7 +71,7 @@ const page = async ({ params: { id } }) => {
                 <nav dangerouslySetInnerHTML={{ __html: data?.description }} />
               </div>
               <div className={s.cards}>
-                {data1.slice(3).map((res) => (
+                {data1.slice(0 ,3).map((res) => (
                   <Link
                     href={`/success-stories/${res.id}`}
                     key={res}
