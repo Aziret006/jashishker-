@@ -285,7 +285,6 @@ const Page = () => {
               <Text name={"about_box9_title"} />
             </h4>
           </div>
-       
         </div>
       </div>
       <Footer />

@@ -46,6 +46,8 @@ export async function generateMetadata({ params }) {
 
 const page = async ({ params: { id } }) => {
   const { data, data1 } = await getUser(id);
+  console.log(data1);
+  
 
   if (data === "error") {
     return notFound();
@@ -77,8 +79,8 @@ const page = async ({ params: { id } }) => {
                   >
                     <img src={res.avatar} alt="" />
                     <ul>
-                      <h3>Айпери Абдылдаева</h3>
-                      <p>Стартапер и блогер</p>
+                      <h3>{res.full_name}</h3>
+                      <p>{res.occupation}</p>
                     </ul>
                   </Link>
                 ))}

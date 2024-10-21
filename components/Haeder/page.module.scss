@@ -239,3 +239,18 @@
 .Login {
   cursor: pointer !important;
 }
+.LogoCopyAll {
+  width: 100%;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--maxWidth);
+  padding: 0 var(--pageP);
+  margin: 0 auto;
+  .ImageEvro {
+    width: 122px;
+    height: 70px;
+  }
+}

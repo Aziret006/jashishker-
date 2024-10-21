@@ -189,17 +189,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className={s.LogoCopyAll}>
-          <a
-            target="_blank"
-            href="https://www.eeas.europa.eu/delegations/cooperation_kyr_ky?s=301"
-          >
-            <img src="/evro.png" alt="" className={s.ImageEvro} />
-          </a>
-          <a target="_blank" href="https://enactus.kg/">
-            <img src="/Logo.png" alt="vk" className={s.LogoCopyn} />
-          </a>
-        </div>
+      
       </div>
       <p className={s.endP}>
         Copyright © 2024 Jash Ishker All rights Recerved.

@@ -167,7 +167,12 @@ const Haeder = () => {
             </svg>
           </button>
         </div>
+        
       </haeder>
+      
+
+     
+      
       {navProduct && (
         <motion.div
           variants={menuVariants}

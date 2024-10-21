@@ -8,7 +8,7 @@
   position: relative;
   background-color: #fff;
   overflow: hidden;
-  padding-top: 90px;
+  padding-top: 20px;
 
   .mainBlockTitel {
     max-width: var(--maxWidth);
@@ -899,5 +899,41 @@
         }
       }
     }
+  }
+}
+
+.LogoCopyAll {
+  width: 100%;
+  border-bottom: 1px solid var(--white-40, rgba(255, 255, 255, 0.4));
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+ 
+  padding: 0 var(--pageP);
+  padding-top: 90px;
+  width: -webkit-fill-available;
+  padding-bottom: 5px;
+  @media screen and (max-width:460px) {
+    padding-top: 80px;
+    
+  }
+  .ImageEvro {
+    width: 122px;
+    height: 70px;
+    backdrop-filter: blur(5px);
+  }
+  @media screen and (max-width:398px) {
+
+      .ImageEvro { 
+        width: 100px;
+        height: 60px;
+        max-width: 100px;
+        min-width: 100px;
+        overflow: hidden;
+      }
   }
 }

@@ -45,7 +45,20 @@ export default async function Home() {
   return (
     <div className={` ${s.container}`}>
       <Haeder />
+      <div className={s.LogoCopyAll}>
+          <a
+            target="_blank"
+            href="https://www.eeas.europa.eu/delegations/cooperation_kyr_ky?s=301"
+          >
+            <img src="/evro.png" alt="/" className={s.ImageEvro} />
+          </a>
+          <a target="_blank" href="https://enactus.kg/">
+            <img src="/Logo.png" alt="vk" className={s.LogoCopyn} />
+          </a>
+        </div>
       <div className={s.mainBlock}>
+      
+    
         <SocialSidebar />
         <div className={s.mainBlockTitel}>
           <h1 className={manrope.className}>
