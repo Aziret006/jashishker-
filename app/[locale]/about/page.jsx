@@ -327,7 +327,6 @@ const Page = () => {
 
 export default Page;
 
-// <div className={s.Block6s}>
 // <div className={s.Block6}>
 //   <h2>{t("about_title_1")}</h2>
 
