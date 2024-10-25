@@ -285,6 +285,39 @@ const Page = () => {
               <Text name={"about_box9_title"} />
             </h4>
           </div>
+           <div className={s.Block6s}>
+            <div className={s.Block6}>
+              <h2>{t("about_title_1")}</h2>
+                <img src="/jash1.jpg" alt="" />
+                <p>{t("about_title_1_1")}</p>
+            </div>
+
+            <div className={s.Block6}>
+              <h2>{t("about_title_2")}</h2>
+                <img src="/jash2.jpg" alt="" />
+                <p>{t("about_title_2_2")}</p>
+            </div>
+
+            <div className={s.Block6}>
+              <h2>{t("about_title_3")}</h2>
+                <img src="/jash3.jpg" alt="" />
+                <p>{t("about_title_3_3")}</p>
+            </div>
+
+            <div className={s.Block6}>
+              <h2>{t("about_title_4")}</h2>
+                <img src="/jash4.jpg" alt="" />
+                <p>{t("about_title_4_4")}</p>
+            </div>
+
+            <div className={s.Block6}>
+              <h2>{t("about_title_5")}</h2>
+                <img src="/jash5.jpg" alt="" />
+                <p>{t("about_title_5_5")}</p>
+            </div>
+
+
+          </div>
         </div>
       </div>
       <Footer />
