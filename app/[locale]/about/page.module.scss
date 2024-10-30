@@ -845,12 +845,17 @@
   flex-direction: column;
   gap: 40px;
   max-width: var(--maxWidth);
-width: 90%;
+
   margin:  0 auto;
  .Block6 {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  img {
+    height: 400px;
+    width: 50%;
+    object-fit: cover;
+  }
   h2 {
     margin: 0;
     padding: 0;
@@ -870,6 +875,15 @@ width: 90%;
     line-height: normal;
     margin: 0;
     opacity: .7;
+  }
+  @media screen and (max-width: 555px) {
+    h2{
+      font-size: 24px;
+    }
+    img{
+      width:100%;
+    }
+    
   }
  }
 }
