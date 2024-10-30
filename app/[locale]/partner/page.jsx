@@ -1,22 +1,13 @@
+"use client"
 import Footer from "@/components/Footer/Footer";
 import Haeder from "@/components/Haeder/Haeder";
 import React from "react";
 import s from "./page.module.scss";
 import { Alex_Brush, Be_Vietnam_Pro, Manrope } from "next/font/google";
 import Image from "next/image";
-import { BiMap } from "react-icons/bi";
-import Link from "next/link";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import TrText from "@/components/TrText/TrText";
-import imageorg from "../../../public/imageorg.svg";
-import imageorg2 from "../../../public/imageorg2.svg";
-import imageorg4 from "../../../public/imageorg4.svg";
-import imageorg5 from "../../../public/imageorg5.svg";
-import imageorg6 from "../../../public/imageorg6.svg";
-import imageorg7 from "../../../public/imageorg7.svg";
-import imageorg8 from "../../../public/imageorg8.svg";
-import imageorg9 from "../../../public/imageorg9.svg";
-import imageorg10 from "../../../public/imageorg10.svg";
+import { useLocale } from "next-intl";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -28,14 +19,6 @@ const FontManrope = Manrope({
   weight: ["600", "400"],
 });
 
-export const metadata = {
-  title: "ЖАШ ИШКЕР",
-  description:
-    "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
-  icons: {
-    icon: "/logo.svg",
-  },
-};
 
 const Text = ({ name }) => {
   return <TrText name={name} root={"partner"} />;
@@ -44,80 +27,149 @@ const Text = ({ name }) => {
 const page = () => {
   const items = [
     {
-      src: "/imageorg.svg",
-      alt:
-        "Департамент Органического Сельского Хозяйства при Министерстве сельского хозяйства Кыргызской Республики",
-      text:
-        "Департамент Органического Сельского Хозяйства при Министерстве сельского хозяйства Кыргызской Республики",
-      https: "https://agro.gov.kg/ru/dosh/",
+      src: '/imageorg.svg',
+      alt: {
+        ru: 'Департамент Органического Сельского Хозяйства при Министерстве сельского хозяйства Кыргызской Республики',
+        en: 'Department of Organic Agriculture under the Ministry of Agriculture of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Айыл чарба министрлигине караштуу Органикалык айыл чарба департаменти'
+      },
+      text: {
+        ru: 'Департамент Органического Сельского Хозяйства при Министерстве сельского хозяйства Кыргызской Республики',
+        en: 'Department of Organic Agriculture under the Ministry of Agriculture of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Айыл чарба министрлигине караштуу Органикалык айыл чарба департаменти'
+      },
+      https: 'https://agro.gov.kg/ru/dosh/',
     },
     {
-      src: "/imageorg2.svg",
-      alt: "Министерство Сельского хозяйства КР",
-      text: "Министерство Сельского хозяйства КР",
-      https: "https://agro.gov.kg/ru/main/",
+      src: '/imageorg2.svg',
+      alt: {
+        ru: 'Министерство Сельского хозяйства КР',
+        en: 'Ministry of Agriculture of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Айыл чарба министрлиги'
+      },
+      text: {
+        ru: 'Министерство Сельского хозяйства КР',
+        en: 'Ministry of Agriculture of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Айыл чарба министрлиги'
+      },
+      https: 'https://agro.gov.kg/ru/main/',
     },
     {
-      src: "/imageorg4.svg",
-      alt:
-        'Государственным предприятием "Центр цифровизации и маркетинга "АгроСмарт"',
-      text:
-        'Государственным предприятием "Центр цифровизации и маркетинга "АгроСмарт"',
-      https: "https://cbd.minjust.gov.kg/73-227/edition/1127315/ru",
+      src: '/imageorg4.svg',
+      alt: {
+        ru: 'Государственным предприятием "Центр цифровизации и маркетинга "АгроСмарт"',
+        en: 'State Enterprise "AgroSmart Center for Digitalization and Marketing"',
+        ky: 'Кыргыз Республикасынын Айыл чарба министрлигине караштуу "АгроСмарт" санариптештирүү жана маркетинг борбору мамлекеттик ишканасы'
+      },
+      text: {
+        ru: 'Государственным предприятием "Центр цифровизации и маркетинга "АгроСмарт"',
+        en: 'State Enterprise "AgroSmart Center for Digitalization and Marketing"',
+        ky: 'Кыргыз Республикасынын Айыл чарба министрлигине караштуу "АгроСмарт" санариптештирүү жана маркетинг борбору мамлекеттик ишканасы'
+      },
+      https: 'https://cbd.minjust.gov.kg/73-227/edition/1127315/ru',
     },
     {
-      src: "/imageorg5.svg",
-      alt:
-        "Общественный фонд «Фонд социального партнерства по развитию регионов»",
-      text:
-        "Общественный фонд «Фонд социального партнерства по развитию регионов»",
-      https: "http://fond.kg/",
+      src: '/imageorg5.svg',
+      alt: {
+        ru: 'Общественный фонд «Фонд социального партнерства по развитию регионов»',
+        en: 'Public Fund "Social Partnership Fund for Regional Development"',
+        ky: '«Аймактарды өнүктүрүү боюнча социалдык өнөктөштүк фонду» коомдук фонду'
+      },
+      text: {
+        ru: 'Общественный фонд «Фонд социального партнерства по развитию регионов»',
+        en: 'Public Fund "Social Partnership Fund for Regional Development"',
+        ky: '«Аймактарды өнүктүрүү боюнча социалдык өнөктөштүк фонду» коомдук фонду'
+      },
+      https: 'http://fond.kg/',
     },
     {
-      src: "/imageorg6.svg",
-      alt:
-        "Министерством культуры, информации, спорта и молодежной политики Кыргызской Республики",
-      text:
-        "Министерством культуры, информации, спорта и молодежной политики Кыргызской Республики",
-      https:
-        "https://green-alliance.kg/wp-content/uploads/2022/12/Osnovnye-vyvody-ZAK_2022_Obrashhenie_ot_Isp.Direktora-1.pdf",
+      src: '/imageorg6.svg',
+      alt: {
+        ru: 'Министерством культуры, информации, спорта и молодежной политики Кыргызской Республики',
+        en: 'Ministry of Culture, Information, Sports and Youth Policy of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Маданият, маалымат, спорт жана жаштар саясаты министрлиги'
+      },
+      text: {
+        ru: 'Министерством культуры, информации, спорта и молодежной политики Кыргызской Республики',
+        en: 'Ministry of Culture, Information, Sports and Youth Policy of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Маданият, маалымат, спорт жана жаштар саясаты министрлиги'
+      },
+      https: 'https://green-alliance.kg/wp-content/uploads/2022/12/Osnovnye-vyvody-ZAK_2022_Obrashhenie_ot_Isp.Direktora-1.pdf',
     },
     {
-      src: "/imageorg7.svg",
-      alt: 'Объединение юридических лиц "Зеленый Альянс Кей Джи"',
-      text: 'Объединение юридических лиц "Зеленый Альянс Кей Джи"',
-      https:
-        "https://green-alliance.kg/wp-content/uploads/2022/12/Osnovnye-vyvody-ZAK_2022_Obrashhenie_ot_Isp.Direktora-1.pdf",
+      src: '/imageorg7.svg',
+      alt: {
+        ru: 'Объединение юридических лиц "Зеленый Альянс Кей Джи"',
+        en: 'Association of Legal Entities "Green Alliance KG"',
+        ky: '"Зеленый Альянс Кей Джи" юридикалык жактар бирикмеси'
+      },
+      text: {
+        ru: 'Объединение юридических лиц "Зеленый Альянс Кей Джи"',
+        en: 'Association of Legal Entities "Green Alliance KG"',
+        ky: '"Зеленый Альянс Кей Джи" юридикалык жактар бирикмеси'
+      },
+      https: 'https://green-alliance.kg/wp-content/uploads/2022/12/Osnovnye-vyvody-ZAK_2022_Obrashhenie_ot_Isp.Direktora-1.pdf',
     },
     {
-      src: "/imageorg8.svg",
-      alt:
-        "Государственным агентством интеллектуальной собственности и инноваций при Кабинете Министров Кыргызской Республики",
-      text:
-        "Государственным агентством интеллектуальной собственности и инноваций при Кабинете Министров Кыргызской Республики",
-      https: "http://patent.gov.kg/",
+      src: '/imageorg8.svg',
+      alt: {
+        ru: 'Государственным агентством интеллектуальной собственности и инноваций при Кабинете Министров Кыргызской Республики',
+        en: 'State Agency for Intellectual Property and Innovation under the Cabinet of Ministers of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Министрлер Кабинетине караштуу интеллектуалдык менчик жана инновациялар мамлекеттик агенттиги'
+      },
+      text: {
+        ru: 'Государственным агентством интеллектуальной собственности и инноваций при Кабинете Министров Кыргызской Республики',
+        en: 'State Agency for Intellectual Property and Innovation under the Cabinet of Ministers of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Министрлер Кабинетине караштуу интеллектуалдык менчик жана инновациялар мамлекеттик агенттиги'
+      },
+      https: 'http://patent.gov.kg/',
     },
     {
-      src: "/imageorg9.svg",
-      alt: "Фонд развития предпринимательства",
-      text: "Фонд развития предпринимательства",
-      https: "https://frp.kg/",
+      src: '/imageorg9.svg',
+      alt: {
+        ru: 'Фонд развития предпринимательства',
+        en: 'Entrepreneurship Development Fund',
+        ky: 'Ишкердикти өнүктүрүү фонду'
+      },
+      text: {
+        ru: 'Фонд развития предпринимательства',
+        en: 'Entrepreneurship Development Fund',
+        ky: 'Ишкердикти өнүктүрүү фонду'
+      },
+      https: 'https://frp.kg/',
     },
     {
-      src: "/imageorg4.svg",
-      alt:
-        "Министерство труда социального обеспечения и миграции Кыргызской Республики",
-      text:
-        "Министерство труда социального обеспечения и миграции Кыргызской Республики",
-      https: "https://mlsp.gov.kg/ru/glavnaya/",
+      src: '/imageorg4.svg',
+      alt: {
+        ru: 'Министерство труда социального обеспечения и миграции Кыргызской Республики',
+        en: 'Ministry of Labor, Social Security and Migration of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Эмгек, социалдык камсыздоо жана миграция министрлиги'
+      },
+      text: {
+        ru: 'Министерство труда социального обеспечения и миграции Кыргызской Республики',
+        en: 'Ministry of Labor, Social Security and Migration of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Эмгек, социалдык камсыздоо жана миграция министрлиги'
+      },
+      https: 'https://mlsp.gov.kg/ru/glavnaya/',
     },
     {
-      src: "/imageorg10.svg",
-      alt: "Министерство образования и науки Кыргызской Республики",
-      text: "Министерство образования и науки Кыргызской Республики",
-      https: "",
+      src: '/imageorg10.svg',
+      alt: {
+        ru: 'Министерство образования и науки Кыргызской Республики',
+        en: 'Ministry of Education and Science of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Билим берүү жана илим министрлиги'
+      },
+      text: {
+        ru: 'Министерство образования и науки Кыргызской Республики',
+        en: 'Ministry of Education and Science of the Kyrgyz Republic',
+        ky: 'Кыргыз Республикасынын Билим берүү жана илим министрлиги'
+      },
+      https: '',
     },
-  ];
+];
+const locale = useLocale();
+console.log(locale , 'locale');
+
   return (
     <div>
       <Haeder />
@@ -131,17 +183,22 @@ const page = () => {
           </div>
           <div className={s.partnerBorder} />
           <div className={s["grid-container"]}>
-            {items.map((item, index) => (
-              <a
-                target="_blank"
-                className={s["grid-item"]}
-                key={index}
-                href={item.https}
-              >
-                <Image src={item.src} alt={item.alt} width={100} height={100} />
-                <p>{item.text}</p>
-              </a>
-            ))}
+          {items.map((item, index) => (
+      <a
+        target="_blank"
+        className={s['grid-item']}
+        key={index}
+        href={item.https}
+      >
+        <Image 
+          src={item.src} 
+          alt={item.alt[locale] || item.alt['ru']} 
+          width={100} 
+          height={100} 
+        />
+        <p>{item.text[locale] || item.text['ru']}</p>
+      </a>
+    ))}
           </div>
         </div>
       </div>
