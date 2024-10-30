@@ -1,3 +1,4 @@
+"use client";
 import Footer from "@/components/Footer/Footer";
 import Haeder from "@/components/Haeder/Haeder";
 import React from "react";
@@ -14,15 +15,17 @@ import { FaLinkedinIn } from "react-icons/fa";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import TrText from "@/components/TrText/TrText";
 import FormContact from "@/components/FormContact/FormContact";
+import { useParams } from "next/navigation";
+import { useLocale } from "next-intl";
 
-export const metadata = {
-  title: "ЖАШ ИШКЕР",
-  description:
-    "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
-  icons: {
-    icon: "/logo.svg",
-  },
-};
+// export const metadata = {
+//   title: "ЖАШ ИШКЕР",
+//   description:
+//     "Проект «Молодежь за цифровизацию, лидерство и зеленые навыки» реализуется «Энактас Кыргызстан» при финансовой поддержке Европейского Союза.",
+//   icons: {
+//     icon: "/logo.svg",
+//   },
+// };
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -34,6 +37,9 @@ const FontManrope = Manrope({
   weight: ["600", "400"],
 });
 const page = () => {
+  const params = useLocale();
+  console.log(params);
+
   return (
     <div>
       <Haeder />
@@ -84,11 +90,26 @@ const page = () => {
                     <p className={FontManrope.className}>
                       <TrText root={"partner"} name="partner_address" />
                     </p>
-                    <Link href="">
-                      <span className={FontManrope.className}>
-                        Кыргызская Республика Бишкек, <br /> 720001
-                        ул.Ибраимова, 103
-                      </span>
+                    <Link href="#">
+                      {params == "ru" && (
+                        <span className={FontManrope.className}>
+                          Кыргызская Республика Бишкек, <br /> 720001
+                          ул.Ибраимова, 103
+                        </span>
+                      )}
+                      {params == "ky" && (
+                        <span className={FontManrope.className}>
+                          Кыргыз Республикасы Бишкек ш.
+                          <br />
+                          720001 Ибраимова көч., 103
+                        </span>
+                      )}
+                      {params == "en" && (
+                        <span className={FontManrope.className}>
+                          Kyrgyz Republic, Bishkek,
+                          <br /> 720001 Ibraimova St., 103
+                        </span>
+                      )}
                     </Link>
                   </div>
                 </div>

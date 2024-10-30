@@ -78,7 +78,7 @@ const Menu = ({ isMenu, setMenu }) => {
                 </li>
 
                 <li>
-                  <Link className={s.Link} href={"/parther"}>
+                  <Link className={s.Link} href={"/partner"}>
                     <Text name={"navbar_about_partners"} />
                   </Link>
                 </li>

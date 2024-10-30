@@ -99,7 +99,7 @@ const Footer = () => {
                     </li>
 
                     <li>
-                      <Link className={s.Link} href={"/parther"}>
+                      <Link className={s.Link} href={"/partner"}>
                         <Text1 name={"navbar_about_partners"} />
                       </Link>
                     </li>
