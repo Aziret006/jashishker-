@@ -54,6 +54,10 @@
         cursor: pointer;
         text-decoration: none;
         list-style: none;
+        @media screen and (max-width: 1545px) {
+          font-size: 14px;
+          line-height: 18.9px;
+        }
       }
       .Link {
         font-size: 16px;
@@ -72,6 +76,9 @@
     display: flex;
     gap: 20px;
     align-items: center;
+    @media screen and (max-width: 547px) {
+      gap: 10px;
+    }
     p {
       color: #fff;
       font-size: 16px;
@@ -100,7 +107,7 @@
     display: none;
   }
 
-  @media screen and (max-width: 1322px) {
+  @media screen and (max-width: 1478px) {
     .nav {
       display: none;
     }
@@ -240,9 +247,8 @@
   cursor: pointer !important;
 }
 .LogoCopyAll {
+  display: none;
   width: 100%;
-  padding-bottom: 60px;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   align-items: center;
@@ -250,7 +256,37 @@
   padding: 0 var(--pageP);
   margin: 0 auto;
   .ImageEvro {
-    width: 122px;
-    height: 70px;
+    width: 70px;
+  }
+
+  @media screen and (max-width: 1478px) {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    align-items: center;
+    align-items: center;
+    justify-content: flex-end;
+    @media screen and (max-width: 547px) {
+      gap: 0px;
+    }
+    a {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      width: 70px;
+      @media screen and (max-width: 547px) {
+        width: 50px ;
+      }
+    }
+  }
+}
+
+.LogoCopy {
+  display: flex;
+  gap: 10px;
+  img {
+    width: 70px;
   }
 }

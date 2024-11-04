@@ -1,14 +1,9 @@
 :root {
   --bg: #161616;
   --pageP: 100px;
-  --maxWidth: 1240px;
+  --maxWidth: 1340px;
 }
 
-/* * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-} */
 @media screen and (max-width: 1260px) {
   :root {
     --pageP: 30px;
@@ -20,10 +15,10 @@
     --pageP: 20px;
   }
 }
+
 body {
   background-color: var(--bg);
   padding: 0;
-
   box-sizing: border-box;
   margin: 0;
 }
@@ -40,6 +35,7 @@ a {
   background-color: #fff;
   min-height: 120vh;
 }
+
 button {
   cursor: pointer;
 }
@@ -52,48 +48,43 @@ button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000; /* Установите z-index в зависимости от ваших потребностей */
+  z-index: 1000;
 }
 
-/* Стилизация кнопки открытия чата */
 .pulse-chat-btn {
-  background-color: #007bff; /* Цвет фона кнопки */
-  color: #fff; /* Цвет текста кнопки */
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 5px; /* Закругление углов */
-  padding: 10px 20px; /* Отступы */
+  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
-/* Стилизация окна чата */
 .pulse-chat-window {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
-  max-width: 300px; /* Максимальная ширина чата */
-  max-height: 400px; /* Максимальная высота чата */
-  overflow-y: auto; /* Включение прокрутки по вертикали, если контент больше размеров окна */
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
-/* Стилизация заголовка чата */
 .pulse-chat-title {
-  background-color: #007bff; /* Цвет фона заголовка */
-  color: #fff; /* Цвет текста заголовка */
+  background-color: #007bff;
+  color: #fff;
   padding: 10px;
   font-weight: bold;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-/* Стилизация сообщений чата */
 .pulse-chat-message {
   padding: 5px;
   border-bottom: 1px solid #ccc;
 }
 
-/* Стилизация формы ввода сообщения */
 .pulse-chat-input {
-  width: calc(100% - 20px); /* Ширина поля ввода сообщения */
+  width: calc(100% - 20px);
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
