@@ -14,8 +14,6 @@ const BeVietnamPro = Be_Vietnam_Pro({
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
 });
 
-
-
 const FontManrope = Manrope({
   subsets: ["latin"],
   weight: ["600", "400"],

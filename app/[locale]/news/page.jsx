@@ -18,6 +18,7 @@ import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 import ChatBotCustom from "@/components/ChatBot/ChatBotCostom";
 import ChatWidget from "@/components/ChatWidget/ChatWidget";
 import TrText from "@/components/TrText/TrText";
+import { useLocale } from "next-intl";
 const Alex = Alex_Brush({ subsets: ["latin"], weight: "400" });
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -26,20 +27,24 @@ const BeVietnamPro = Be_Vietnam_Pro({
 const manrope = Manrope({ subsets: ["latin"] });
 
 const page = () => {
+
+  
+   
   const [topNews, setTopNews] = useState([]);
   const [newsPopular, setPopular] = useState([]);
   const [filterPage, setFilterPage] = useState("Популярная новость");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const locale  = useLocale();
+  console.log(locale, "test");
   useEffect(() => {
     const getData = async () => {
       try {
         const topNewsResponse = await axios.get(
-          `${Api}api/v1/news/?category=Топ новости`
+          `${Api}api/v1/news/?category=Топ новости&language=${locale}`
         );
         const newsPopularResponse = await axios.get(
-          `${Api}api/v1/news/?status=${filterPage}`
+          `${Api}api/v1/news/?status=${filterPage}&language=${locale}`
         );
 
         setTopNews(topNewsResponse.data);
@@ -57,8 +62,12 @@ const page = () => {
     const getData = async () => {
       try {
         const newsPopular = await axios.get(
-          `${Api}api/v1/news/?status=${filterPage}`
+          `${Api}api/v1/news/?status=${filterPage}&language=${locale}`
         );
+        console.log(
+          `${Api}api/v1/news/?status=${filterPage}&language=${locale}`, "test"
+        );
+
         return {
           newsPopular: newsPopular?.data,
         };
