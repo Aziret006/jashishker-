@@ -7,36 +7,135 @@ import { InputMask } from "@react-input/mask";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-import TrText from "@/components/TrText/TrText";
+import { useLocale } from 'next-intl';
 
-const regions = ["Чуй", "Ош", "Иссык-Куль", "Жалал-Абад", "Нарын", "Баткен"];
-
-const activityTypes = [
-  "Сельское хозяйство, лесное хозяйство, охота и рыболовство",
-  "Обрабатывающие производства (обрабатывающая промышленность)",
-  "Строительство",
-  "Оптовая и розничная торговля; ремонт автомобилей и мотоциклов",
-  "Транспортная деятельность и хранение грузов",
-  "Деятельность гостиниц и ресторанов",
-  "Финансовое посредничество и страхование",
-  "Профессиональная, научная и техническая деятельность",
-  "Образование",
-  "Искусство, развлечения и отдых",
-];
-
-const companyTypes = [
-  { value: "ИП", label: "ИП" },
-  { value: "ОсОО", label: "ОсОО" },
-  { value: "КФХ", label: "КФХ (Крестьянское (фермерское) хозяйство)" },
-  {
-    value: "СПК",
-    label: "СПК (Сельскохозяйственный производственный кооператив)",
+const translations = {
+  ru: {
+    title: "База данных молодых предпринимателей",
+    addPhoto: "Добавить фото",
+    fullName: "ФИО",
+    fullNamePlaceholder: "Иванов Иван Иванович",
+    dateOfBirth: "Дата рождения",
+    phone: "Номер телефона",
+    phonePlaceholder: "Номер телефона",
+    email: "E-Mail",
+    emailPlaceholder: "E-Mail",
+    region: "Регион",
+    idDocument: "Приложить удостоверение личности",
+    activityType: "Вид экономической деятельности",
+    activityCategory: "Категория экономической деятельности",
+    activityCategoryDescription: `Например, выращивание многолетних культур является одной из категорий вида экономической деятельности сельское хозяйство, лесное хозяйство, охота и рыболовство. Таким образом, в ответе для этого вопроса можно написать выращивание многолетних культур.`,
+    companyRegistration: "Юридическая регистрация компании",
+    fullCompanyName: "Полное фирменное наименование компании",
+    commercialName: "Коммерческое определение компании",
+    submit: "Отправить",
+    required: "Поле обязательно для заполнения",
+    success: "Ваша заявка успешно отправлена",
+    error: "Ваша заявка не была отправлена"
   },
-  { value: "ЗАО", label: "ЗАО" },
-  { value: "КТ", label: "КТ" },
-];
+  en: {
+    title: "Young Entrepreneurs Database",
+    addPhoto: "Add photo",
+    fullName: "Full Name",
+    fullNamePlaceholder: "John Doe",
+    dateOfBirth: "Date of Birth",
+    phone: "Phone Number",
+    phonePlaceholder: "Phone Number",
+    email: "E-Mail",
+    emailPlaceholder: "E-Mail",
+    region: "Region",
+    idDocument: "Attach ID Document",
+    activityType: "Type of Economic Activity",
+    activityCategory: "Economic Activity Category",
+    activityCategoryDescription: `For example, perennial crop cultivation is one of the categories of economic activity in agriculture, forestry, hunting and fishing. Thus, perennial crop cultivation can be written as an answer to this question.`,
+    companyRegistration: "Company Legal Registration",
+    fullCompanyName: "Full Company Name",
+    commercialName: "Commercial Company Name",
+    submit: "Submit",
+    required: "This field is required",
+    success: "Your application has been successfully sent",
+    error: "Your application was not sent"
+  },
+  ky: {
+    title: "Жаш ишкерлердин маалымат базасы",
+    addPhoto: "Сүрөт кошуу",
+    fullName: "Аты-жөнү",
+    fullNamePlaceholder: "Асанов Асан Асанович",
+    dateOfBirth: "Туулган күнү",
+    phone: "Телефон номери",
+    phonePlaceholder: "Телефон номери",
+    email: "Электрондук почта",
+    emailPlaceholder: "Электрондук почта",
+    region: "Аймак",
+    idDocument: "Инсандык күбөлүктү тиркөө",
+    activityType: "Экономикалык иш-аракеттин түрү",
+    activityCategory: "Экономикалык иш-аракеттин категориясы",
+    activityCategoryDescription: `Мисалы, көп жылдык өсүмдүктөрдү өстүрүү айыл чарба, токой чарба, аңчылык жана балык уулоо экономикалык иш-аракетинин категорияларынын бири болуп саналат. Демек, бул суроого көп жылдык өсүмдүктөрдү өстүрүү деп жазса болот.`,
+    companyRegistration: "Компаниянын юридикалык каттоосу",
+    fullCompanyName: "Компаниянын толук аталышы",
+    commercialName: "Компаниянын коммерциялык аталышы",
+    submit: "Жөнөтүү",
+    required: "Бул талаа милдеттүү түрдө толтурулушу керек",
+    success: "Сиздин арызыңыз ийгиликтүү жөнөтүлдү",
+    error: "Сиздин арызыңыз жөнөтүлгөн жок"
+  }
+};
+
+const regions = {
+  ru: ["Чуй", "Ош", "Иссык-Куль", "Жалал-Абад", "Нарын", "Баткен"],
+  en: ["Chui", "Osh", "Issyk-Kul", "Jalal-Abad", "Naryn", "Batken"],
+  ky: ["Чүй", "Ош", "Ысык-Көл", "Жалал-Абад", "Нарын", "Баткен"]
+};
+
+const activityTypes = {
+  ru: [
+    "Сельское хозяйство, лесное хозяйство, охота и рыболовство",
+    "Обрабатывающие производства",
+    "Строительство",
+    "Оптовая и розничная торговля",
+    "Транспортная деятельность",
+    "Гостиницы и рестораны"
+  ],
+  en: [
+    "Agriculture, forestry, hunting and fishing",
+    "Manufacturing",
+    "Construction",
+    "Wholesale and retail trade",
+    "Transportation",
+    "Hotels and restaurants"
+  ],
+  ky: [
+    "Айыл чарба, токой чарба, аңчылык жана балык уулоо",
+    "Өндүрүш",
+    "Курулуш",
+    "Дүң жана чекене соода",
+    "Транспорт",
+    "Мейманканалар жана ресторандар"
+  ]
+};
+
+const companyTypes = {
+  ru: [
+    { value: "ИП", label: "ИП" },
+    { value: "ОсОО", label: "ОсОО" },
+    { value: "КФХ", label: "КФХ" }
+  ],
+  en: [
+    { value: "ИП", label: "Individual Entrepreneur" },
+    { value: "ОсОО", label: "LLC" },
+    { value: "КФХ", label: "Farm Enterprise" }
+  ],
+  ky: [
+    { value: "ИП", label: "Жеке ишкер" },
+    { value: "ОсОО", label: "ЖЧК" },
+    { value: "КФХ", label: "Дыйкан чарба" }
+  ]
+};
 
 const Page = () => {
+  const locale = useLocale();
+  const t = translations[locale];
+
   const [from, setFrom] = useState({
     photo: null,
     full_name: null,
@@ -148,25 +247,15 @@ const Page = () => {
       }
     }
   };
+
   return (
     <div>
-      <ToastContainer
-        autoClose={3000}
-        limit={1}
-        hideProgressBar
-        newestOnBottom={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        position="bottom-center"
-        theme="dark"
-      />
+      <ToastContainer />
       <Haeder />
+      
       <div className={s.content}>
         <div className={s.titelContent}>
-          <h1>База данных молодых предпринимателей</h1>
+          <h1>{t.title}</h1>
           <div className={s.BlockFrom}>
             <div className={s.BlockFromInputList}>
               <div className={s.imageFroom}>
@@ -200,7 +289,7 @@ const Page = () => {
                     </span>
                   )}
                 </span>
-                <p onClick={() => photoRef.current.click()}>Добавить фото</p>
+                <p onClick={() => photoRef.current.click()}>{t.addPhoto}</p>
                 <input
                   type="file"
                   onChange={onChangeInputFille}
@@ -213,60 +302,45 @@ const Page = () => {
               </div>
               <div className={s.labelList}>
                 <label>
-                  <p>ФИО</p>
+                  <p>{t.fullName}</p>
                   <input
                     type="text"
-                    placeholder="Иванов Иван Иванович"
-                    onChange={(e) =>
-                      setFrom({ ...from, full_name: e.target.value })
-                    }
+                    placeholder={t.fullNamePlaceholder}
+                    onChange={(e) => setFrom({ ...from, full_name: e.target.value })}
                   />
-                  {errors.full_name && (
-                    <p className={s.error}>{errors.full_name}</p>
-                  )}
                 </label>
                 <label>
-                  <p>DD/MM/YY</p>
+                  <p>{t.dateOfBirth}</p>
                   <input
                     type="date"
-                    placeholder="DD/MM/YY"
-                    onChange={(e) =>
-                      setFrom({ ...from, date_of_birth: e.target.value })
-                    }
+                    onChange={(e) => setFrom({ ...from, date_of_birth: e.target.value })}
                   />
-                  {errors.date_of_birth && (
-                    <p className={s.error}>{errors.date_of_birth}</p>
-                  )}
                 </label>
                 <label>
-                  <p>Номер телефона</p>
+                  <p>{t.phone}</p>
                   <InputMask
-                    placeholder="Номер телефона"
+                    placeholder={t.phonePlaceholder}
                     type="text"
                     replacement={{ _: /\d/ }}
                     mask="+996 (___) ___-___"
                     value={from.phone}
-                    onChange={(e) =>
-                      setFrom({ ...from, phone: e.target.value })
-                    }
+                    onChange={(e) => setFrom({ ...from, phone: e.target.value })}
                   />
                   {errors.phone && <p className={s.error}>{errors.phone}</p>}
                 </label>
                 <label>
-                  <p>E-Mail</p>
+                  <p>{t.email}</p>
                   <input
                     type="text"
-                    placeholder="E-Mail"
-                    onChange={(e) =>
-                      setFrom({ ...from, email: e.target.value })
-                    }
+                    placeholder={t.emailPlaceholder}
+                    onChange={(e) => setFrom({ ...from, email: e.target.value })}
                   />
                   {errors.email && <p className={s.error}>{errors.email}</p>}
                 </label>
                 <label>
-                  <p>Регион</p>
+                  <p>{t.region}</p>
                   <div>
-                    {regions.map((region, index) => (
+                    {regions[locale].map((region, index) => (
                       <label key={index} className={s.regionLabel}>
                         <input
                           type="radio"
@@ -282,10 +356,10 @@ const Page = () => {
                   {errors.region && <p className={s.error}>{errors.region}</p>}
                 </label>
                 <label>
-                  <p>Приложить удостоверение личности</p>
+                  <p>{t.idDocument}</p>
                   <input
                     type="file"
-                    placeholder="Приложить удостоверение личности"
+                    placeholder={t.idDocument}
                     onChange={(e) => hanfleidentification_document(e)}
                   />
                   {errors.identification_document && (
@@ -293,9 +367,9 @@ const Page = () => {
                   )}
                 </label>
                 <label>
-                  <p>Вид экономической деятельности</p>
+                  <p>{t.activityType}</p>
                   <div>
-                    {activityTypes.map((type, index) => (
+                    {activityTypes[locale].map((type, index) => (
                       <label key={index} className={s.activityLabel}>
                         <input
                           type="radio"
@@ -314,30 +388,15 @@ const Page = () => {
                 </label>
                 <label className={s.fromLabelTitle}>
                   <p>
-                    Жогоруда тандалган компанияңыздын экономикалык
-                    ишмердүүлүгүнүн түрүнүн категориясын жазыңыз / Напишите
-                    категорию вида экономической деятельности вашей компании*
+                    {t.activityCategory}
                   </p>
                   <span>
-                    Мисалы, выращивание многолетних культур - бул сельское
-                    хозяйство, лесное хозяйство, охота и рыболовство
-                    экономикалык ишмердүүлүктүн категорияларынын бири. Демек,
-                    бул суроого выращивание многолетних культур жооп болушу
-                    мүмкүн.
-                  </span>
-                  <span>
-                    Например, выращивание многолетних культур является одной из
-                    категорий вида экономической деятельности сельское
-                    хозяйство, лесное хозяйство, охота и рыболовство. Таким
-                    образом, в ответе для этого вопроса можно написать
-                    выращивание многолетних культур.
+                    {t.activityCategoryDescription}
                   </span>
                   <input
                     type="text"
                     placeholder="Мой ответ"
-                    onChange={(e) =>
-                      setFrom({ ...from, activity_category: e.target.value })
-                    }
+                    onChange={(e) => setFrom({ ...from, activity_category: e.target.value })}
                   />
                   {errors.activity_category && (
                     <p className={s.error}>{errors.activity_category}</p>
@@ -345,66 +404,45 @@ const Page = () => {
                 </label>
 
                 <label>
-                  <p>Юридическая регистрация компании</p>
+                  <p>{t.companyRegistration}</p>
                   <div>
-                    {companyTypes.map((companyType, index) => (
+                    {companyTypes[locale].map((type, index) => (
                       <label key={index} className={s.companyTypeLabel}>
                         <input
                           type="radio"
                           name="company_registration"
-                          value={companyType.value}
-                          checked={
-                            from.company_registration === companyType.value
-                          }
+                          value={type.value}
+                          checked={from.company_registration === type.value}
                           onChange={handleCompanyRegistrationChange}
                         />
-                        {companyType.label}
+                        {type.label}
                       </label>
                     ))}
-                    {from.company_registration === "Other" && (
-                      <input
-                        type="text"
-                        placeholder="Введите другой тип"
-                        onChange={(e) =>
-                          setFrom({
-                            ...from,
-                            custom_company_registration: e.target.value,
-                          })
-                        }
-                      />
-                    )}
-                    {errors.company_registration && (
-                      <p className={s.error}>{errors.company_registration}</p>
-                    )}
                   </div>
                 </label>
                 <label>
-                  <p>Полное фирменное наименование компании*</p>
+                  <p>{t.fullCompanyName}</p>
                   <input
-                    placeholder="Полное фирменное наименование компании"
+                    placeholder={t.fullCompanyName}
                     type="text"
-                    onChange={(e) =>
-                      setFrom({ ...from, full_company_name: e.target.value })
-                    }
+                    onChange={(e) => setFrom({ ...from, full_company_name: e.target.value })}
                   />
                   {errors.full_company_name && (
                     <p className={s.error}>{errors.full_company_name}</p>
                   )}
                 </label>
                 <label>
-                  <p>Коммерческое определение компании</p>
+                  <p>{t.commercialName}</p>
                   <input
-                    placeholder="Коммерческое определение компании"
+                    placeholder={t.commercialName}
                     type="text"
-                    onChange={(e) =>
-                      setFrom({ ...from, commercial_name: e.target.value })
-                    }
+                    onChange={(e) => setFrom({ ...from, commercial_name: e.target.value })}
                   />
                   {errors.company_definition && (
                     <p className={s.error}>{errors.commercial_name}</p>
                   )}
                 </label>
-                <button onClick={() => handleSubmit()}>Отправить</button>
+                <button onClick={handleSubmit}>{t.submit}</button>
               </div>
             </div>
           </div>
