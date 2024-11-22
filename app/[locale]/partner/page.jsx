@@ -23,7 +23,7 @@ const Text = ({ name }) => {
   return <TrText name={name} root={"partner"} />;
 };
 
-const page = () => {
+const Page = () => {
   const items = [
     {
       src: "/imageorg.svg",
@@ -242,4 +242,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

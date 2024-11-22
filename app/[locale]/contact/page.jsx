@@ -36,7 +36,7 @@ const FontManrope = Manrope({
   subsets: ["latin"],
   weight: ["600", "400"],
 });
-const page = () => {
+const Page = () => {
   const params = useLocale();
   console.log(params);
 
@@ -209,4 +209,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
