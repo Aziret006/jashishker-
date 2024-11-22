@@ -29,9 +29,9 @@ export const generateMetadata = async () => {
     },
   };
 };
-const getNews = async () => {
+const getNews = async (locale) => {
   try {
-    const card = await axios.get(`${Api}api/v1/news/`);
+    const card = await axios.get(`${Api}api/v1/news/?language=${locale}`);
 
     return card;
   } catch (error) {
@@ -39,16 +39,14 @@ const getNews = async () => {
   }
 };
 
-export default async function Home() {
-  const { data } = await getNews();
+export default async function Home({ params }) {
+  const { data } = await getNews(params.locale);
 
   return (
     <div className={` ${s.container}`}>
       <Haeder />
-      
+
       <div className={s.mainBlock}>
-      
-    
         <SocialSidebar />
         <div className={s.mainBlockTitel}>
           <h1 className={manrope.className}>
