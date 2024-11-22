@@ -23,7 +23,7 @@ const NewsCards = ({ data }) => {
       </div>
       <div className={s.NewsCardsTitel}>
         <span className={s.NewsCardsTitelBlock1}>
-          <button>{data.status}</button>
+          <button>{data.status_display}</button>
           <FiShare2 />
         </span>
         <p className={s.NewsCardsTitelBlock2}>{data.title}</p>
