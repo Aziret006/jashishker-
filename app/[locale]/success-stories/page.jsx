@@ -14,10 +14,10 @@ const Text = ({ name }) => {
   return <TrText root={"other"} name={name} />;
 };
 
-const getUserList = async () => {
+const getUserList = async (locale) => {
   try {
     const response = await axios.get(
-      `https://api.jashishker.kg/api/v1/success-story/`
+      `https://api.jashishker.kg/api/v1/success-story/?language=${locale}`
     );
 
     return response.data;
@@ -26,8 +26,10 @@ const getUserList = async () => {
   }
 };
 
-const page = async () => {
-  const data = await getUserList();
+const page = async ({ params: { locale } }) => {
+  console.log(locale, "test");
+
+  const data = await getUserList(locale);
   if (data === "error") {
     return notFound();
   }
@@ -62,7 +64,7 @@ const page = async () => {
                     <Link href={`/success-stories/${res.id}`}>
                       <button>Подробнее</button>
                     </Link>
-                  </div>  
+                  </div>
                   <div className={s.backContext}>
                     <h2>{res.full_name}</h2>
                     <p>{res.occupation}</p>

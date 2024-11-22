@@ -1,1 +1,1 @@
-export const Api = "https://api.jashishker.kg/"
+export const Api = "https://api.jashishker.kg/";

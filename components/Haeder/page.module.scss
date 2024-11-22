@@ -40,6 +40,8 @@
     ul {
       display: flex;
       gap: 26px;
+      margin: 0 auto;
+      
       li {
         display: flex;
         gap: 10px;
@@ -277,7 +279,7 @@
     img {
       width: 70px;
       @media screen and (max-width: 547px) {
-        width: 50px ;
+        width: 50px;
       }
     }
   }

@@ -14,7 +14,7 @@ import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 export async function generateMetadata({ params }) {
   const newsResponse = await axios.get(`${Api}api/v1/news/${params.id}/`);
   const data = newsResponse.data;
-  
+
   return {
     title: data.title,
     description: data.description,
@@ -33,11 +33,13 @@ const page = async ({ params }) => {
   let error = null;
 
   try {
-    const newsResponse = await axios.get(`${Api}api/v1/news/${params.id}/`);
+    const newsResponse = await axios.get(
+      `${Api}api/v1/news/${params.id}/?language=${params.locale}`
+    );
     data = newsResponse.data;
 
     const cardListResponse = await axios.get(
-      `${Api}api/v1/news/?status=Популярная новость`
+      `${Api}api/v1/news/?status=Популярная новость&language=${params.locale}`
     );
     cardListData = cardListResponse.data;
   } catch (err) {}
@@ -55,8 +57,8 @@ const page = async ({ params }) => {
           <div className={s.newsContend}>
             <div className={s.newsNav}>
               <ul>
-                <li>{data.status}</li>
-                <li>{data.category}</li>
+                <li>{data.status_display}</li>
+                <li>{data.category_display}</li>
               </ul>
               <p> </p>
             </div>
@@ -73,7 +75,10 @@ const page = async ({ params }) => {
                 />
 
                 <span>
-                  <p>{data.views} просмотры</p>
+                  <p>
+                    {data.views}{" "}
+                    {params.locale === "ru" ? "просмотров" : "views"}
+                  </p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="4"

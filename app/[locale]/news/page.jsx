@@ -27,15 +27,12 @@ const BeVietnamPro = Be_Vietnam_Pro({
 const manrope = Manrope({ subsets: ["latin"] });
 
 const page = () => {
-
-  
-   
   const [topNews, setTopNews] = useState([]);
   const [newsPopular, setPopular] = useState([]);
   const [filterPage, setFilterPage] = useState("Популярная новость");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const locale  = useLocale();
+  const locale = useLocale();
   console.log(locale, "test");
   useEffect(() => {
     const getData = async () => {
@@ -65,7 +62,8 @@ const page = () => {
           `${Api}api/v1/news/?status=${filterPage}&language=${locale}`
         );
         console.log(
-          `${Api}api/v1/news/?status=${filterPage}&language=${locale}`, "test"
+          `${Api}api/v1/news/?status=${filterPage}&language=${locale}`,
+          "test"
         );
 
         return {
@@ -84,6 +82,7 @@ const page = () => {
   if (loading) {
     return <Loading />;
   }
+  console.log(topNews[0], "asdsadsadasd");
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -98,6 +97,7 @@ const page = () => {
       alert("Web Share API is not supported in your browser.");
     }
   };
+
   return (
     <div>
       <Haeder />
@@ -111,7 +111,7 @@ const page = () => {
               </h1>
             </div>
             <div className={`${manrope.className} ${s.newsBloc1}`}>
-              <p className={s.newsBloc1Titel}>топ новости</p>
+              <p className={s.newsBloc1Titel}>{topNews[0]?.category_display}</p>
               <div className={s.borderBootm}></div>
               <div className={s.newsBloc1Main}>
                 <div className={s.newsBloc1MainImage}>
@@ -122,8 +122,8 @@ const page = () => {
                     <div className={s.mainTitelBlock1}>
                       <div className={s.mainTitelBlock1ButtonList}>
                         <ul>
-                          <li>{topNews[0]?.category}</li>
-                          <li>{topNews[0]?.status}</li>
+                          <li>{topNews[0]?.status_display}</li>
+                          <li>{topNews[0]?.category_display}</li>
                         </ul>
                         <FiShare2 onClick={handleShare} />
                       </div>
@@ -167,7 +167,7 @@ const page = () => {
                 }}
               >
                 {" "}
-                Последние
+                {locale == "ru" ? "Новая новость" : "New news"}
               </p>
               <div className={s.TopBorder}></div>
               <p
@@ -178,7 +178,7 @@ const page = () => {
                   cursor: "pointer",
                 }}
               >
-                Популярные
+                {locale == "ru" ? "Популярные" : "Popular news"}
               </p>
             </div>
             <div className={s.borderBootm}></div>
@@ -188,13 +188,13 @@ const page = () => {
                   <NewsCard data={item} key={key} />
                 ))
               ) : (
-                <p>Ничего не найдено</p>
+                <p>{locale == "ru" ? "Ничего не найдено" : "Nothing found"}</p>
               )}
             </div>
           </div>
         ) : (
           <div className={s.notFound}>
-            <p>Ничего не найдено</p>
+            <p>{locale == "ru" ? "Ничего не найдено" : "Nothing found"}</p>
           </div>
         )}
       </div>
