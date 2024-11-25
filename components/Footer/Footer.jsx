@@ -187,8 +187,8 @@ const Footer = () => {
               </li>
               <li>
                 <p>{tFooter("Phone_Number")}</p>
-                <a href="tel:+996555973001" target="_blank">
-                  +996 (555) 973 - 001
+                <a href="tel:+996550002131" target="_blank">
+                  +996 (550) 002 - 131
                 </a>
               </li>
               <li>
