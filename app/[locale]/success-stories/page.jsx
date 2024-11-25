@@ -64,7 +64,7 @@ const page = async ({ params: { locale } }) => {
                     <Link href={`/success-stories/${res.id}`}>
                       <button>
                         {locale === "ru" && "Подробнее"}
-                        {locale === "ky" && "Подробнее"}
+                        {locale === "ky" && "Кененирээк "}
                         {locale === "en" && "More"}
                       </button>
                     </Link>
