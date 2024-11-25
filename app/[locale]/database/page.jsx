@@ -18,6 +18,7 @@ import axios from "axios";
 import Link from "next/link";
 import { IoIosArrowBack } from "react-icons/io";
 import TrText from "@/components/TrText/TrText";
+import { useLocale } from "next-intl";
 const BeVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
   weight: ["400", "100", "200", "300", "500", "600", "700", "800", "900"],
@@ -221,6 +222,8 @@ const Page = () => {
     }
   };
 
+  const locale = useLocale();
+
   useEffect(() => {
     getUserData().then((data) => {
       setSelectedContact(data[false]);
@@ -305,7 +308,12 @@ const Page = () => {
                   })}
                 >
                   {userList.length <= 0 && (
-                    <p className={styles.NoData}> нет данных</p>
+                    <p className={styles.NoData}>
+                      {" "}
+                      {locale == "en" && "No data"}
+                      {locale == "ru" && "Нет данных"}
+                      {locale == "ky" && "Маалымат  жок"}
+                    </p>
                   )}
                   {page === "favorites"
                     ? userList.map((contact) => (

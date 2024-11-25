@@ -243,7 +243,7 @@
       display: grid;
       margin: 0;
       margin: 100px 0 0 0;
-      @media screen and (max-width: 930px) {
+      @media screen and (max-width: 1345px) {
         margin: 60px 0 0 0;
         @media screen and (max-width: 500px) {
           margin: 40px 0 0 0;
@@ -259,10 +259,10 @@
           margin: 0;
           color: #191a1b;
 
-          font-size: 64px;
+          font-size: 54px;
           font-weight: 600;
           text-transform: uppercase;
-          @media screen and (max-width: 930px) {
+          @media screen and (max-width: 1345px) {
             font-size: 44px;
             @media screen and (max-width: 600px) {
               font-size: 30px;
@@ -289,7 +289,7 @@
           font-weight: 500;
           @media screen and (max-width: 1345px) {
             top: 0;
-            @media screen and (max-width: 930px) {
+            @media screen and (max-width: 1345px) {
               font-size: 18px;
               position: relative;
               width: 100%;

@@ -136,7 +136,11 @@ const page = () => {
                         </Link>
                       </div>
                       <div className={s.mianTitelWiews}>
-                        <p>{topNews[0].views} просмотры</p>
+                        <p>
+                          {topNews[0].views} {locale === "ru" && "просмотров"}
+                          {locale === "en" && "views"}
+                          {locale == "ky" && "көрүүлөр"}
+                        </p>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="4"
@@ -180,9 +184,9 @@ const page = () => {
                   cursor: "pointer",
                 }}
               >
-                {locale == "ru" && "Популярная новость"}
-                {locale == "en" && "Popular news"}
-                {locale == "ky" && "Популярдуу кабаре"}
+                {locale == "ru" && "Популярная"}
+                {locale == "en" && "Popular "}
+                {locale == "ky" && "Популярдуу "}
               </p>
             </div>
             <div className={s.borderBootm}></div>
