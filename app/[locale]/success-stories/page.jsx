@@ -62,7 +62,11 @@ const page = async ({ params: { locale } }) => {
                   />
                   <div className={s.button}>
                     <Link href={`/success-stories/${res.id}`}>
-                      <button>Подробнее</button>
+                      <button>
+                        {locale === "ru" && "Подробнее"}
+                        {locale === "ky" && "Подробнее"}
+                        {locale === "en" && "More"}
+                      </button>
                     </Link>
                   </div>
                   <div className={s.backContext}>

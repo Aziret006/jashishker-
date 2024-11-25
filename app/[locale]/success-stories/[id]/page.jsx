@@ -12,21 +12,26 @@ import Link from "next/link";
 import SwiperImage from "./Swiper/Swiper";
 const manrope = Manrope({ subsets: ["latin"] });
 
-const getUser = async (id) => {
+const getUser = async (id, locale) => {
+  console.log(id, "id", locale);
   try {
-    const response = await axios.get(`${Api}api/v1/success-story/${id}/`);
+    const response = await axios.get(
+      `${Api}api/v1/success-story/${id}?language="${locale}"`
+    );
+
     const dataAUerList = await axios.get(
-      `https://api.jashishker.kg/api/v1/success-story/`
+      `https://api.jashishker.kg/api/v1/success-story/?language=${locale}`
     );
 
     return { data: response.data, data1: dataAUerList.data };
   } catch (error) {
+    console.log(error);
     return { data: "error" };
   }
 };
 
 export async function generateMetadata({ params }) {
-  const { data } = await getUser(params.id);
+  const { data } = await getUser(params.id, params.locale);
 
   return {
     title: data.title,
@@ -34,7 +39,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: data.title,
       description: data.description,
-      images: data.images.map((image) => ({
+      images: data?.images?.map((image) => ({
         url: image.image,
         width: 800,
         height: 600,
@@ -44,10 +49,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const page = async ({ params: { id } }) => {
-  const { data, data1 } = await getUser(id);
-  console.log(data1);
-  
+const page = async ({ params }) => {
+  console.log(params, "params");
+  const { data, data1 } = await getUser(params.id, params.locale);
 
   if (data === "error") {
     return notFound();
@@ -71,7 +75,7 @@ const page = async ({ params: { id } }) => {
                 <nav dangerouslySetInnerHTML={{ __html: data?.description }} />
               </div>
               <div className={s.cards}>
-                {data1.slice(0 ,3).map((res) => (
+                {data1.slice(0, 3).map((res) => (
                   <Link
                     href={`/success-stories/${res.id}`}
                     key={res}

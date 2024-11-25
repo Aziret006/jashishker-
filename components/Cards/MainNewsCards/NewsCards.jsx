@@ -1,3 +1,4 @@
+"use clinet";
 import Image from "next/image";
 import React from "react";
 import { FiShare2 } from "react-icons/fi";
@@ -5,8 +6,11 @@ import { GoArrowUpRight } from "react-icons/go";
 
 import s from "./page.module.scss";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
 const NewsCards = ({ data }) => {
+  const locale = useLocale();
+
   return (
     <div className={s.NewsCards}>
       <div className={s.NewsCardsImage}>
@@ -29,7 +33,9 @@ const NewsCards = ({ data }) => {
         <p className={s.NewsCardsTitelBlock2}>{data.title}</p>
         <span className={s.NewsCardsTitelBlock3}>
           <span className={s.NewsCardsTime}>
-            <p>{data.views} просмотры</p>
+            <p>
+              {data.views} {locale !== "en" ? "просмотров" : "views"}
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="4"
