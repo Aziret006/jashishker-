@@ -167,7 +167,9 @@ const page = () => {
                 }}
               >
                 {" "}
-                {locale == "ru" ? "Новая новость" : "New news"}
+                {locale == "ru" && "Новая новость"}
+                {locale == "en" && "New news"}
+                {locale == "ky" && "Жаңы кабар"}
               </p>
               <div className={s.TopBorder}></div>
               <p
@@ -178,7 +180,9 @@ const page = () => {
                   cursor: "pointer",
                 }}
               >
-                {locale == "ru" ? "Популярные" : "Popular news"}
+                {locale == "ru" && "Популярная новость"}
+                {locale == "en" && "Popular news"}
+                {locale == "ky" && "Популярдуу кабаре"}
               </p>
             </div>
             <div className={s.borderBootm}></div>
@@ -188,13 +192,21 @@ const page = () => {
                   <NewsCard data={item} key={key} />
                 ))
               ) : (
-                <p>{locale == "ru" ? "Ничего не найдено" : "Nothing found"}</p>
+                <p>
+                  {locale == "ru" && "Ничего не найдено"}
+                  {locale == "en" && "Nothing found"}
+                  {locale == "ky" && "Эч нерсе табылган жок"}
+                </p>
               )}
             </div>
           </div>
         ) : (
           <div className={s.notFound}>
-            <p>{locale == "ru" ? "Ничего не найдено" : "Nothing found"}</p>
+            <p>
+              {locale == "ru" && "Ничего не найдено"}
+              {locale == "en" && "Nothing found"}
+              {locale == "ky" && "Эч нерсе табылган жок"}
+            </p>
           </div>
         )}
       </div>

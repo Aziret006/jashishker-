@@ -34,7 +34,8 @@ const NewsCards = ({ data }) => {
         <span className={s.NewsCardsTitelBlock3}>
           <span className={s.NewsCardsTime}>
             <p>
-              {data.views} {locale !== "en" ? "просмотров" : "views"}
+              {data.views} {locale === "ru" && "просмотров"}{" "}
+              {locale === "en" && "views"} {locale == "ky" && "көрүүлөр"}
             </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -76,8 +76,9 @@ const page = async ({ params }) => {
 
                 <span>
                   <p>
-                    {data.views}{" "}
-                    {params.locale === "ru" ? "просмотров" : "views"}
+                    {data.views} {params.locale === "ru" && "просмотров"}{" "}
+                    {params.locale === "en" && "views"}{" "}
+                    {params.locale == "ky" && "көрүүлөр"}
                   </p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

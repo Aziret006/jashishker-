@@ -7,7 +7,6 @@ import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
 const NewsCard = ({ data }) => {
-  
   const handleShare = async () => {
     if (navigator.share) {
       try {
@@ -45,7 +44,7 @@ const NewsCard = ({ data }) => {
         <p className={s.NewsCardsTitelBlock2}>{data.title}</p>
         <span className={s.NewsCardsTitelBlock3}>
           <span className={s.NewsCardsTime}>
-            <p>{data.views} </p>
+            <p>{data.views}</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="4"

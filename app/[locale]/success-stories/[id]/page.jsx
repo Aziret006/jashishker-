@@ -16,7 +16,7 @@ const getUser = async (id, locale) => {
   console.log(id, "id", locale);
   try {
     const response = await axios.get(
-      `${Api}api/v1/success-story/${id}?language="${locale}"`
+      `${Api}api/v1/success-story/${id}?language=${locale}`
     );
 
     const dataAUerList = await axios.get(
