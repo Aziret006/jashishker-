@@ -77,8 +77,6 @@ const Footer = () => {
                         {locale === "ru" && "О проекте"}
                         {locale === "en" && "About the project"}
                         {locale === "ky" && "Долбоор жөнүндө"}
-
-                        <Text1 name={"navbar_about"} />
                       </Link>
                     </li>
                     <li>
