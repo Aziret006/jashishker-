@@ -152,10 +152,14 @@ const Footer = () => {
                 )}
               </li>
               <li>
-                <Text1 name={"navbar_success_history"} />
+                <Link className={s.Link} href={"/success-stories"}>
+                  <Text1 name={"navbar_success_history"} />
+                </Link>
               </li>
               <li>
-                <Text1 name={"navbar_knowBase_baseData"} />
+                <Link className={s.Link} href={"/database"}>
+                  <Text1 name={"navbar_knowBase_baseData"} />
+                </Link>
               </li>
               <li>
                 <a
@@ -178,7 +182,7 @@ const Footer = () => {
                   {locale === "ru" &&
                     "Кыргызская Республика Бишкек, 720001 ул.Ибраимова, 103"}
                   {locale === "ky" &&
-                    "Кыргызская Республика Бишкек, 720001 ул.Ибраимова, 103"}
+                    "Кыргыз Республикасы Бишкек ш., 720001 Ибраимова көч., 103"}
                   {locale === "en" &&
                     "Kyrgyz Republic, Bishkek, 720001 ul.Ibrahimova, 103"}
                 </a>

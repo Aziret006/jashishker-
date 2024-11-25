@@ -183,11 +183,7 @@ const Page = () => {
                   >
                     <FaInstagram />
                   </a>
-                  <a
-                    target="_blank"
-                    className={s.icon}
-                    href="wa.me/996550002131"
-                  >
+                  <a target="_blank" className={s.icon} href="wa.me/0550002131">
                     <FaWhatsapp />
                   </a>
                   <a
