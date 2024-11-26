@@ -2,24 +2,27 @@
 
 import React, { useRef, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
 const SwiperImage = ({ data }) => {
   return (
     <>
       <Swiper
+       
         pagination={{
-          dynamicBullets: true,
+          type: 'fraction',
         }}
-        modules={[Pagination, Autoplay]}
-        autoplay={{ delay: 1500 }}
+        navigation={true}
         className="mySwiper"
+        modules={[Pagination, Autoplay, Navigation]}
+        autoplay={{ delay: 5000 }}
       >
         {data.map((res, i) => (
           <SwiperSlide key={i}>

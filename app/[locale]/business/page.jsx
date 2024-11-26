@@ -185,9 +185,9 @@ const page = () => {
               <SetHtml root={"business"} name={"A1"} />
             </h1>
             <div className={s.etext}>
-              <p className={Alex.className}>
+              {/* <p className={Alex.className}>
                 <Text name={"A2"} />
-              </p>
+              </p> */}
             </div>
           </div>
           <hr />

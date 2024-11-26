@@ -141,22 +141,23 @@ export default async function Home({ params }) {
           </div>
         </Link>
         <div className={s.CardListBlock4}>
-          <span className={s.CardListBlock4Titel}>
+
+          <Link href={'/innovation'} className={s.CardListBlock4Titel}>
             <h2>
               <TrText root={"home"} name={"section_2_fourth_box_title"} />
             </h2>
             <p>
               <TrText root={"home"} name={"section_2_fourth_box_desc"} />
             </p>
-          </span>
-          <div className={s.CardListBlock4TitelBg}>
+          </Link>
+          <Link href={'/innovation'} className={s.CardListBlock4TitelBg}>
             <Image
               src={"/04.svg"}
               alt="mainImage"
               objectFit="contain"
               layout="fill"
             />
-          </div>
+          </Link>
           <div className={s.CardListBlock4TitelImage}>
             <Image
               src={"/mainImageCardList3.png"}

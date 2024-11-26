@@ -63,6 +63,7 @@ export default function Start06() {
               target="_blank"
               className={FontManrope.className}
               href="https://mineconom.gov.kg/ru/direct/385/398"
+             
             >
               https://mineconom.gov.kg/ru/direct/385/398
             </Link>

@@ -91,7 +91,7 @@
     "about_box8_subtitle": "Issuing grants",
     "about_box8_title": "On November 27, 2023, at the Pre-competition of the Enactus Kyrgyzstan teams, grants were awarded within the framework of the Youth for Digitalization, Leadership and Green Skills project.",
     "about_subtitle": "Lorem ipsum dolor sit amet",
-    "about_title": "about the project",
+    "about_title": "About the project",
     "about_title_1": "kyrgyzcha"
   },
   "green_eco": {
@@ -201,7 +201,7 @@
     "lider_box3_title": "For example",
     "lider_box4_desc": "People's opinions will always differ, but in one thing they will always be right, it is the developed youth who will put forward their leaders that will raise our country to a new level, which is the stated goal of our leader. As he said: “The future of this country is our youth.”",
     "lider_box4_subtitle": "But we should always ask ourselves why we will need this?",
-    "lider_box4_title": "without affecting the foundations of leadership, they necessitate the search for other forms of its manifestation, new ways of its development.",
+    "lider_box4_title": "Without affecting the foundations of leadership, they necessitate the search for other forms of its manifestation, new ways of its development.",
     "lider_subtitle": "Lorem ipsum dolor sit amet",
     "lider_title": "Leadership"
   },
@@ -400,14 +400,14 @@
     "data": "Data"
   },
   "news": {
-    "newsTitle": "Last news"
+    "newsTitle": "News"
   },
-  "FOOTER": {
+  "FOOTER": {   
     "Pages": "Pages",
     "Address": "Address",
     "AddressID": "Kyrgyz Republic Bishkek, 720001 Ibraimova st. 103",
     "Phone_Number": "Phone Number",
-    "newsTitle": "Last news",
+    "newsTitle": "News",
     "button": "Add Yourself to the Database"
   },
   "modal": {

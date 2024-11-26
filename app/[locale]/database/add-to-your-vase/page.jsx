@@ -252,7 +252,7 @@ const Page = () => {
     <div>
       <ToastContainer />
       <Haeder />
-      
+
       <div className={s.content}>
         <div className={s.titelContent}>
           <h1>{t.title}</h1>
@@ -395,7 +395,12 @@ const Page = () => {
                   </span>
                   <input
                     type="text"
-                    placeholder="Мой ответ"
+                    placeholder={
+                      locale === "ky" ? "Менин жообум" :
+                        locale === "ru" ? "Мой ответ" :
+                          locale === "en" ? "My answer" :
+                            ""
+                    }
                     onChange={(e) => setFrom({ ...from, activity_category: e.target.value })}
                   />
                   {errors.activity_category && (

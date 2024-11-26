@@ -6,7 +6,10 @@ import { FiShare2 } from "react-icons/fi";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 import SocialSidebar from "@/components/SocialSidebar/SocialSidebar";
+import { useLocale } from "next-intl";
 const NewsCard = ({ data }) => {
+
+  const locale = useLocale()
   const handleShare = async () => {
     if (navigator.share) {
       try {
@@ -15,7 +18,7 @@ const NewsCard = ({ data }) => {
           text: "Check out this awesome website!",
           url: window.location.href,
         });
-      } catch (error) {}
+      } catch (error) { }
     } else {
       alert("Web Share API is not supported in your browser.");
     }
@@ -43,8 +46,12 @@ const NewsCard = ({ data }) => {
         </span>
         <p className={s.NewsCardsTitelBlock2}>{data.title}</p>
         <span className={s.NewsCardsTitelBlock3}>
-          <span className={s.NewsCardsTime}>
-            <p>{data.views}</p>
+          <span className={s.NewsCardsTime}>  
+            <p>{data.views} {locale === "en" && "views"}
+              {locale === "ru" && "просмотров"}
+              {locale === "ky"  && "көрүүлөр"}
+
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="4"

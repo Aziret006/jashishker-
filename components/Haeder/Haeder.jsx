@@ -58,8 +58,8 @@ const Haeder = () => {
       previousActiveMenuRef.current = navProduct
         ? "project"
         : navKnowledge
-        ? "knowledgeBase"
-        : null;
+          ? "knowledgeBase"
+          : null;
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -147,7 +147,7 @@ const Haeder = () => {
                 target="_blank"
                 href="https://www.eeas.europa.eu/delegations/cooperation_kyr_ky?s=301"
               >
-                <img src="/evro.png" alt="/" className={s.ImageEvro} />
+                <img src="/Logo7.png" alt="/" className={s.ImageEvro} />
               </a>
               <a target="_blank" href="https://enactus.kg/">
                 <img src="/Logo.png" alt="vk" className={s.LogoCopyn} />
@@ -162,7 +162,7 @@ const Haeder = () => {
               target="_blank"
               href="https://www.eeas.europa.eu/delegations/cooperation_kyr_ky?s=301"
             >
-              <img src="/evro.png" alt="/" className={s.ImageEvro} />
+              <img src="/Logo7.png" alt="/" className={s.ImageEvro} />
             </a>
             <a target="_blank" href="https://enactus.kg/">
               <img src="/Logo.png" alt="vk" className={s.LogoCopyn} />

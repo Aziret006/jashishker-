@@ -87,11 +87,7 @@ const Menu = ({ isMenu, setMenu }) => {
                     <Text name={"navbar_about_digital"} />
                   </Link>
                 </li>
-                <li>
-                  <Link className={s.Link} href={"/contact"}>
-                    <Text name={"navbar_about_contacts"} />
-                  </Link>
-                </li>
+
               </motion.ul>
             )}
           </li>
@@ -147,7 +143,12 @@ const Menu = ({ isMenu, setMenu }) => {
               <Text name={"navbar_about_digital"} />
             </Link>
           </li>
-          <li></li>
+          <li>
+            <Link className={s.Link} href={"/contact"}>
+              <Text name={"navbar_about_contacts"} />
+            </Link>
+          </li>
+          <li></li> 
         </ul>
       </motion.div>
     )

@@ -122,8 +122,8 @@ const page = () => {
                     <div className={s.mainTitelBlock1}>
                       <div className={s.mainTitelBlock1ButtonList}>
                         <ul>
-                          <li>{topNews[0]?.status_display}</li>
-                          <li>{topNews[0]?.category_display}</li>
+                          {/* <li>{topNews[0]?.status_display}</li>
+                          <li>{topNews[0]?.category_display}</li> */}
                         </ul>
                         <FiShare2 onClick={handleShare} />
                       </div>
@@ -171,9 +171,9 @@ const page = () => {
                 }}
               >
                 {" "}
-                {locale == "ru" && "Новая новость"}
-                {locale == "en" && "New news"}
-                {locale == "ky" && "Жаңы кабар"}
+                {locale == "ru" && "Последние"}
+                {locale == "en" && "Latest"}
+                {locale == "ky" && "Соңку"}
               </p>
               <div className={s.TopBorder}></div>
               <p
@@ -184,7 +184,7 @@ const page = () => {
                   cursor: "pointer",
                 }}
               >
-                {locale == "ru" && "Популярная"}
+                {locale == "ru" && "Популярные"}
                 {locale == "en" && "Popular "}
                 {locale == "ky" && "Популярдуу "}
               </p>

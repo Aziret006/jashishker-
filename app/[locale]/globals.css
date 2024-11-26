@@ -95,3 +95,18 @@ a[type="button"] {
   width: 40px !important;
   height: 40px !important;
 }
+
+.swiper-button-prev {
+  color: #585757 !important;
+  background: #ffffff66 !important;
+  padding: 16px !important;
+
+}
+.swiper-button-next{
+  color: #585757 !important;
+  background: #ffffff66 !important;
+  padding: 16px !important;
+}
+.swiper-pagination {
+  background-color: #ffffff6e !important;
+}
