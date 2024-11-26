@@ -309,16 +309,16 @@ const Page = () => {
               <img src="/jash4.jpg" alt="" />
               <p>{t("about_title_4_4")}</p>
             </div>
-
+{/* 
             <div className={s.Block6}>
               <p>{t("about_title_5_5")}</p>
-            </div>
+            </div> */}
 
-            <div className={s.Block6}>
+            {/* <div className={s.Block6}>
               <div className={s.Block6_image}>
                 <h2>{t("about_title_4")}</h2>
                 <img src="/jash4.jpg" alt="" />
-              </div>
+              </div>  
               <ul className={s.Block6_ul}>
                 <li>ernis enris </li>
                 <li>ernis enris </li>
@@ -327,7 +327,7 @@ const Page = () => {
               </ul>
               <p>{t("about_title_4_4")}</p>
 
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
