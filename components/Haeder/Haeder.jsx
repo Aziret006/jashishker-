@@ -170,9 +170,9 @@ const Haeder = () => {
           </div>
 
           <LocalSwitcher />
-          <button className="Login">
+          {/* <button className="Login">
             <TrText root={"navbar"} name={"login"} />
-          </button>
+          </button> */}
           <button className={s.burgerButton} onClick={() => setIsMenu(!isMenu)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
