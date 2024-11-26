@@ -77,6 +77,8 @@ const Footer = () => {
                         {locale === "ru" && "О проекте"}
                         {locale === "en" && "About the project"}
                         {locale === "ky" && "Долбоор жөнүндө"}
+
+                        <Text1 name={"navbar_about"} />
                       </Link>
                     </li>
                     <li>
@@ -114,7 +116,9 @@ const Footer = () => {
                 )}
               </li>
               <li>
-                <Text1 name={"navbar_news"} />
+                <Link className={s.Link} href={"/news"}>
+                  <Text1 name={"navbar_news"} />
+                </Link>
               </li>
               <li onClick={() => handlerNavPage(2)}>
                 <Text1 name={"navbar_knowBase"} />
