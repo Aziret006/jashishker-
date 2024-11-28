@@ -309,6 +309,12 @@ const Page = () => {
               <img src="/jash4.jpg" alt="" />
               <p>{t("about_title_4_4")}</p>
             </div>
+
+            <div className={s.Block6}>
+              <h2>{t("about_title_5")}</h2>
+              <img src="/jash5.jpg" alt="" />
+              <p>{t("about_title_5_5")}</p>
+            </div>
 {/* 
             <div className={s.Block6}>
               <p>{t("about_title_5_5")}</p>
