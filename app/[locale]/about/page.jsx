@@ -315,25 +315,102 @@ const Page = () => {
               <img src="/jash5.jpg" alt="" />
               <p>{t("about_title_5_5")}</p>
             </div>
-{/* 
+  {/* 
             <div className={s.Block6}>
               <p>{t("about_title_5_5")}</p>
             </div> */}
 
-            {/* <div className={s.Block6}>
+            {<div className={s.Block6}>
               <div className={s.Block6_image}>
-                <h2>{t("about_title_4")}</h2>
-                <img src="/jash4.jpg" alt="" />
+                <h2>{t("about_title_6")}</h2>
+                <img src="/jash6.jpg" alt="" />
               </div>  
               <ul className={s.Block6_ul}>
-                <li>ernis enris </li>
-                <li>ernis enris </li>
-                <li>ernis enris </li>
-                <li>ernis enris </li>
+                <li>{t("about_title_6_1")} </li>
+                <li>{t("about_title_6_2")}</li>
+                <li>{t("about_title_6_3")} </li>
+                <li>{t("about_title_6_4")}</li>
+                <li>{t("about_title_6_5")}</li>
+                <li>{t("about_title_6_6")}</li>
+                <li>{t("about_title_6_7")}</li>
+                <li>{t("about_title_6_8")}</li>
+                <li>{t("about_title_6_9")}</li>
+                <li>{t("about_title_6_10")}</li>
               </ul>
-              <p>{t("about_title_4_4")}</p>
+              <p>{t("about_title_6_0")}</p>
+            </div>}
 
-            </div> */}
+            {<div className={s.Block6}>
+              <div className={s.Block6_image}>
+                <h2>{t("about_title_7")}</h2>
+                <img src="/jash7.jpg" alt="" />
+              </div>  
+              <ul className={s.Block6_ul}>
+                <li>{t("about_title_7_1")} </li>
+                <li>{t("about_title_7_2")}</li>
+                <li>{t("about_title_7_3")} </li>
+                <li>{t("about_title_7_4")}</li>
+                <li>{t("about_title_7_5")}</li>
+                <li>{t("about_title_7_6")}</li>
+                <li>{t("about_title_7_7")}</li>
+                <li>{t("about_title_7_8")}</li>
+              </ul>
+              <p>{t("about_title_6_0")}</p>
+            </div>}
+
+            <div className={s.Block6}>
+              <h2>{t("about_title_8")}</h2>
+              <img src="/jash8.jpg" alt="" />
+              <p>{t("about_title_8_1")}</p>
+              <p>{t("about_title_8_2")}</p>
+            </div>
+
+            <div className={s.Block6}>
+              <h2>{t("about_title_9")}</h2>
+              <img src="/jash9.jpg" alt="" />
+              <p>{t("about_title_9_1")}</p>
+              <p>{t("about_title_9_2")}</p>
+            </div>   
+
+            <div className={s.Block6}>
+              <h2>{t("about_title_10")}</h2>
+              <img src="/jash10.jpg" alt="" />
+              <p>{t("about_title_10_1")}</p>
+              <p>{t("about_title_10_2")}</p>
+            </div>     
+
+            {<div className={s.Block6}>
+              <div className={s.Block6_image}>
+                <h2>{t("about_title_11")}</h2>
+                <img src="/jash11.jpg" alt="" />
+              </div>  
+              <ul className={s.Block6_ul}>
+                <li>{t("about_title_11_1")} </li>
+                <li>{t("about_title_11_2")}</li>
+                <li>{t("about_title_11_3")} </li>
+                <li>{t("about_title_11_4")}</li>
+                <li>{t("about_title_11_5")}</li>
+                <li>{t("about_title_11_6")}</li>
+                <li>{t("about_title_11_7")}</li>
+              </ul>
+            </div>}    
+
+            <div className={s.Block6}>
+              <h2>{t("about_title_12")}</h2>
+              <img src="/jash12.jpg" alt="" />
+              <p>{t("about_title_12_1")}</p>
+              <p>{t("about_title_12_2")}</p>
+              <p>{t("about_title_12_3")}</p>
+            </div>   
+
+            <div className={s.Block6}>
+              <h2>{t("about_title_13")}</h2>
+              <img src="/jash13.jpg" alt="" />
+              <p>{t("about_title_13_1")}</p>
+              <p>{t("about_title_13_2")}</p>
+            </div> 
+
+
           </div>
         </div>
       </div>
